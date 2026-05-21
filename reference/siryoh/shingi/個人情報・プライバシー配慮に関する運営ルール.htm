@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>個人情報・プライバシー配慮に関する運営ルール — KAGA JC GATHERING QUEST</title>
+<style>
+  :root {
+    --bg: #f6f7f9;
+    --card: #ffffff;
+    --text: #1f2937;
+    --muted: #6b7280;
+    --line: #e5e7eb;
+    --accent: #475569;
+    --ok: #2da44e;
+    --ng: #cf222e;
+    --hover: #f3f4f6;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
+    background: var(--bg); color: var(--text);
+    margin: 0; line-height: 1.75;
+  }
+  header {
+    background: linear-gradient(135deg, #1e293b 0%, #475569 100%);
+    color: #fff; padding: 44px 24px 36px; text-align: center;
+  }
+  header .eyebrow {
+    font-size: 12px; letter-spacing: 0.14em;
+    color: #cbd5e1; margin: 0 0 8px;
+    text-transform: uppercase;
+  }
+  header h1 { margin: 0 0 4px; font-size: 26px; font-weight: 700; }
+  header .subtitle { color: #e2e8f0; font-size: 13px; margin: 0; }
+
+  main { max-width: 980px; margin: 28px auto; padding: 0 16px 64px; }
+
+  .links {
+    background: #fff; border: 1px solid var(--line);
+    border-radius: 10px; padding: 14px 18px;
+    margin-bottom: 24px;
+    display: flex; flex-wrap: wrap; gap: 8px;
+  }
+  .links span.label {
+    font-size: 11px; color: var(--muted); letter-spacing: 0.06em;
+    text-transform: uppercase; align-self: center; margin-right: 6px;
+  }
+  .links a {
+    background: #f3f4f6; color: var(--text);
+    padding: 7px 12px; border-radius: 6px;
+    font-size: 12.5px; text-decoration: none;
+    border: 1px solid var(--line);
+  }
+  .links a:hover { background: #e5e7eb; }
+  .links a.current { background: #e2e8f0; border-color: var(--accent); color: var(--accent); }
+
+  .alert {
+    background: #fff7ed;
+    border-left: 4px solid #ea580c;
+    padding: 14px 18px;
+    border-radius: 4px;
+    margin-bottom: 24px;
+    font-size: 14px;
+    color: #7c2d12;
+  }
+  .alert strong { color: #c2410c; }
+
+  section {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    margin-bottom: 20px;
+    overflow: hidden;
+  }
+  .sec-head {
+    padding: 16px 22px;
+    background: #f1f5f9;
+    border-bottom: 1px solid var(--line);
+    display: flex; align-items: center; gap: 12px;
+  }
+  .sec-head .num {
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 13px;
+    flex-shrink: 0;
+  }
+  .sec-head h2 { margin: 0; font-size: 16px; font-weight: 700; }
+  .sec-body { padding: 18px 22px; }
+  .sec-body p { margin: 0 0 10px; font-size: 14px; }
+  .sec-body p:last-child { margin-bottom: 0; }
+  .sec-body ul {
+    margin: 6px 0 12px; padding-left: 22px;
+    font-size: 13.5px;
+  }
+  .sec-body ul li { margin-bottom: 4px; }
+
+  .ok-ng-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  .ok-box, .ng-box {
+    padding: 14px 16px;
+    border-radius: 8px;
+  }
+  .ok-box {
+    background: #ecfdf5;
+    border: 1px solid #86efac;
+  }
+  .ng-box {
+    background: #fef2f2;
+    border: 1px solid #fca5a5;
+  }
+  .ok-box h3, .ng-box h3 {
+    margin: 0 0 8px;
+    font-size: 14px;
+    font-weight: 700;
+  }
+  .ok-box h3 { color: #14532d; }
+  .ng-box h3 { color: #7f1d1d; }
+  .ok-box ul, .ng-box ul {
+    margin: 0; padding-left: 18px;
+    font-size: 13px;
+  }
+  .ok-box ul li { color: #14532d; margin-bottom: 4px; }
+  .ng-box ul li { color: #7f1d1d; margin-bottom: 4px; }
+
+  .flow {
+    counter-reset: flowstep;
+    list-style: none;
+    padding: 0; margin: 0;
+  }
+  .flow li {
+    counter-increment: flowstep;
+    background: #f8fafc;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 12px 14px 12px 44px;
+    margin-bottom: 8px;
+    font-size: 13.5px;
+    position: relative;
+  }
+  .flow li::before {
+    content: counter(flowstep);
+    position: absolute;
+    left: 12px; top: 12px;
+    width: 22px; height: 22px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 12px;
+  }
+
+  footer {
+    text-align: center; color: var(--muted);
+    font-size: 12px; padding: 32px 16px 48px;
+  }
+  .back {
+    display: inline-block; margin-top: 12px;
+    padding: 8px 16px; background: var(--card);
+    border: 1px solid var(--line); border-radius: 8px;
+    text-decoration: none; color: var(--text); font-size: 13px;
+  }
+  .back:hover { background: var(--hover); }
+
+  @media (max-width: 600px) {
+    header h1 { font-size: 20px; }
+    .ok-ng-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <p class="eyebrow">PRIVACY POLICY</p>
+  <h1>個人情報・プライバシー配慮に関する運営ルール</h1>
+  <p class="subtitle">KAGA JC GATHERING QUEST ／ 自己開示と承諾の範囲</p>
+</header>
+
+<main>
+
+<div class="links">
+  <span class="label">関連ページ</span>
+  <a href="KAGA_JC_GATHERING_仕様書.htm">📘 仕様書</a>
+  <a href="カードサンプル一覧.htm">🎴 カードサンプル一覧</a>
+  <a href="ゲーム進行マニュアル.htm">▶ ゲーム進行マニュアル</a>
+  <a class="current">🔒 プライバシー運営ルール</a>
+</div>
+
+<div class="alert">
+  <strong>基本方針</strong>：本事業では、個人の私生活や家庭事情、趣味、性癖などのプライバシーには踏み込みません。扱う情報は、青年経済人としての仕事観・仕事へのこだわり・地域での役割・JC活動で活かせる強み・仲間に頼ってほしいことに限定します。
+</div>
+
+<section>
+  <div class="sec-head"><span class="num">0</span><h2>メンバーカード作成の基本方針</h2></div>
+  <div class="sec-body">
+    <p>メンバーカード作成にあたっては、事前アンケートおよび必要に応じたヒアリングを実施し、本人の仕事、強み、JC活動で活かせる役割を整理します。</p>
+    <p>簡易的な役割傾向チェックを用いる場合であっても、<strong>性格診断や能力評価として扱うものではなく</strong>、あくまで当日ワークにおける相互理解と役割発見の補助情報として使用します。</p>
+    <p>カード掲載内容は本人確認を行い、本人が修正・削除できるものとします。</p>
+    <div class="ok-ng-grid" style="margin-top:14px">
+      <div class="ok-box">
+        <h3>✅ 共有すること（カードで扱う）</h3>
+        <ul>
+          <li>仕事へのこだわり</li>
+          <li>青年経済人としての価値観</li>
+          <li>地域での役割</li>
+          <li>JCで活かせる強み</li>
+          <li>仲間に頼ってほしいこと</li>
+          <li>仲間の力になれること</li>
+          <li>得意が出やすい場面</li>
+          <li>事業運営で貢献できそうな役割</li>
+        </ul>
+      </div>
+      <div class="ng-box">
+        <h3>❌ 扱わないこと</h3>
+        <ul>
+          <li>私生活の深掘り</li>
+          <li>家庭事情</li>
+          <li>恋愛、趣味、性癖などのプライバシー</li>
+          <li>活動目的と関係のない個人情報</li>
+          <li>いじりや暴露に近い情報</li>
+          <li>本人の承諾を得ていない情報</li>
+          <li>思想信条</li>
+          <li>病歴や健康情報</li>
+          <li>収入や取引先など営業色が強すぎる情報</li>
+          <li>個人の優劣や序列につながる表現</li>
+        </ul>
+      </div>
+    </div>
+    <p style="margin-top:14px;font-size:12.5px;color:var(--muted)">▶ アンケート設問・依頼文・カード作成フローの詳細は<a href="../sankoh/役割傾向チェック設計資料.htm">役割傾向チェック設計資料</a>を参照。</p>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head"><span class="num">1</span><h2>扱う情報の範囲（自己開示の範囲）</h2></div>
+  <div class="sec-body">
+    <div class="ok-ng-grid">
+      <div class="ok-box">
+        <h3>✅ 扱ってよい情報</h3>
+        <ul>
+          <li>仕事・事業領域</li>
+          <li>仕事へのこだわり</li>
+          <li>頼れること・専門性</li>
+          <li>地域での役割</li>
+          <li>JC活動で活かせる強み</li>
+          <li>仲間に頼ってほしいこと</li>
+          <li>業務上の事業者特徴（地域パートナー）</li>
+        </ul>
+      </div>
+      <div class="ng-box">
+        <h3>❌ 扱わない情報</h3>
+        <ul>
+          <li>家族構成・家庭事情</li>
+          <li>収入・資産状況</li>
+          <li>健康・病歴・身体情報</li>
+          <li>恋愛・婚姻状況</li>
+          <li>趣味・嗜好・性癖</li>
+          <li>政治・宗教・思想信条</li>
+          <li>本人または事業者の承諾を得ていない情報</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head"><span class="num">2</span><h2>カード作成時の承諾取得フロー</h2></div>
+  <div class="sec-body">
+    <p>JCメンバーカード／地域パートナーカードを作成する際、対象者本人または事業者の承諾を得た情報のみを使用します。</p>
+    <ol class="flow">
+      <li>記載予定の項目を本人または事業者に提示する（書面または電子フォーム）</li>
+      <li>用途（本事業内での教材使用、他LOM展開、事後広報での扱い）を説明する</li>
+      <li>本人または事業者の承諾を得る（書面または電子フォーム）</li>
+      <li>承諾範囲のみカード化する</li>
+      <li>変更要望はいつでも反映できる運用とする</li>
+      <li>事業終了後、本人意向に応じてカードを保管／削除する</li>
+    </ol>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head"><span class="num">3</span><h2>当日運営での配慮</h2></div>
+  <div class="sec-body">
+    <ul>
+      <li>カードの内容は、グループ内および会場内での議論に限定する</li>
+      <li>カードを撮影してSNS等に投稿しない</li>
+      <li>カードに書かれていない個人情報は、参加者本人の自発的な開示があった場合でも、他者が広めない</li>
+      <li>テーブルゲームマスター・メンターは、プライバシーに踏み込む発言を避ける（<a href="../sankoh/正副メンター役割確認シート.htm">メンター役割確認シート</a>のNG行動を参照）</li>
+      <li>「低アクティブ層」「参加率が低い」等、当事者を名指しで指摘するような表現は行わない</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head"><span class="num">4</span><h2>事業後の取り扱い</h2></div>
+  <div class="sec-body">
+    <p><strong>事業後広報</strong>：個人カードの詳細や事業者情報は公開しません。事業趣旨や学びの内容を中心に発信します。撮影した写真にカード記載内容が映り込む場合は、加工またはぼかしを入れます。</p>
+    <p><strong>カードの保管</strong>：作成したカードは委員会内で施錠保管し、二次利用前に本人意向を再確認します。</p>
+    <p><strong>キット二次利用</strong>：他LOMへの展開時は、加賀JC会員以外の情報を含むカードを除外し、テンプレートのみ提供します。</p>
+    <p><strong>削除依頼</strong>：本人または事業者からの削除依頼があった場合、速やかに該当カードを廃棄し、デジタル版もすべて削除します。</p>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head"><span class="num">5</span><h2>コンプライアンス確認</h2></div>
+  <div class="sec-body">
+    <p>本ルールは加賀JCコンプライアンス委員会の確認を受けた上で運用します。引用著作物の有無、コンプライアンス確認番号は議案本文 13. の対応欄に記載します。</p>
+    <p>事業終了後3ヶ月以内に運用ふりかえりを行い、不備があれば次年度ルールへ反映します。</p>
+  </div>
+</section>
+
+<section class="related-docs" style="margin-top:24px;background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:20px 22px">
+  <h2 style="margin:0 0 12px;font-size:12px;color:#6b7280;letter-spacing:0.06em;text-transform:uppercase">📚 関連審議資料・参考資料</h2>
+  <p style="margin:0 0 12px;font-size:12.5px;color:#374151;line-height:1.95"><strong style="color:#1f6feb">審議対象資料</strong>：
+    <a href="事業フロー.htm">1) 事業フロー</a>　／　2) 事業計画収支予算書　／　
+    <a href="当日実施要項.htm">3) 当日実施要項</a>　／　4) 当日役割分担表　／　
+    <a href="KAGA_JC_GATHERING_仕様書.htm">5) KAGA JC GATHERING QUEST 実施要項</a>　／　6) KAGA JC GATHERING QUEST 手段選定理由書　／　
+    <a href="ゲーム進行マニュアル.htm">7) ゲーム進行マニュアル</a>　／　
+    <a href="../sankoh/テーブルゲームマスター進行台本.htm">8) テーブルゲームマスター進行台本</a>　／　
+    <a href="../sankoh/正副メンター役割確認シート.htm">9) 正副メンター役割確認シート</a>　／　
+    <a href="カードサンプル一覧.htm">10) カードサンプル一覧</a>　／　
+    <a href="../sankoh/ミッションカード一覧.htm">11) ミッションカード一覧</a>　／　
+    <a href="../sankoh/ハードルカード一覧.htm">12) ハードルカード一覧</a>　／　
+    <a href="ふりかえりシート.htm">13) ふりかえりシート</a>　／　14) グループ発表シート　／　
+    <a href="会場選定理由書.htm#layout">15) 会場レイアウト・安全管理資料</a>　／　16) 表彰品・配布物管理表　／　
+    <a href="個人情報・プライバシー配慮に関する運営ルール.htm">17) 個人情報・プライバシー配慮に関する運営ルール</a>
+  </p>
+  <p style="margin:0;font-size:12.5px;color:#374151;line-height:1.95"><strong style="color:#2da44e">参考資料</strong>：
+    1) アカデミー事業後アンケート ／ 会員開発委員会方針　／　2) 加賀LOMアカデミー事業 議案参考資料　／　3) 加賀JC2026年度 理事長所信　／　4) RNCアンケート評価法　／　5) 公開議案・他LOM事例調査資料　／　6) JCプログラム公式資料　／　7) ビジネスゲーム導入事例　／　8) ABC手法比較資料　／　9) KAGA JC GATHERING QUEST 図説資料　／　
+    <a href="事業フロー.htm">10) カードゲーム進行フロー図</a>　／　11) 学術・行動経済学的根拠メモ　／　12) 事前アンケート集計結果　／　13) 簡易ヒアリング要約　／　14) 加賀JC出席状況確認資料　／　15) 役割分担確認資料　／　16) 鎌田長明「JC論：議案の書き方」シリーズ　／　17) 大垣JC・高槻JC 議案作成マニュアル
+  </p>
+  <p style="margin:14px 0 0;font-size:10.5px;color:#9ca3af;text-align:right">※ リンク付き項目はページ作成済みの資料</p>
+</section>
+
+</main>
+
+
+<footer>
+  会員開発委員会アカデミー事業 議案関連資料
+  <br>
+  <a href="../../議案本文.htm" class="back">← 議案本文に戻る</a>
+</footer>
+
+</body>
+</html>

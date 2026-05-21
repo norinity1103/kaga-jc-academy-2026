@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>ペルソナ（コアターゲット定義） — 会員開発委員会アカデミー事業</title>
+<style>
+  :root {
+    --bg: #f6f7f9;
+    --card: #ffffff;
+    --text: #1f2937;
+    --muted: #6b7280;
+    --line: #e5e7eb;
+    --hover: #f3f4f6;
+    --a: #d8345f;
+    --b: #1f6feb;
+    --c: #bf8700;
+    --d: #57606a;
+    --core: #2da44e;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    margin: 0;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+  }
+  header {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    color: #fff;
+    padding: 48px 24px 40px;
+    text-align: center;
+  }
+  header .eyebrow {
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    color: #94a3b8;
+    margin: 0 0 10px;
+    text-transform: uppercase;
+  }
+  header h1 {
+    margin: 0 0 6px;
+    font-size: 28px;
+    font-weight: 700;
+  }
+  header .subtitle {
+    color: #cbd5e1;
+    font-size: 14px;
+    margin: 0;
+  }
+  header .meta {
+    margin-top: 18px;
+    font-size: 12px;
+    color: #94a3b8;
+  }
+  main {
+    max-width: 1000px;
+    margin: 32px auto;
+    padding: 0 16px 64px;
+  }
+
+  .intro {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 22px 24px;
+    margin-bottom: 24px;
+  }
+  .intro h2 {
+    margin: 0 0 8px;
+    font-size: 13px;
+    color: var(--muted);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .intro p { margin: 0 0 10px; font-size: 14.5px; }
+  .intro p:last-child { margin-bottom: 0; }
+
+  /* Matrix */
+  .matrix {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 22px 24px;
+    margin-bottom: 24px;
+  }
+  .matrix h2 {
+    margin: 0 0 14px;
+    font-size: 16px;
+    font-weight: 600;
+  }
+  .matrix-grid {
+    display: grid;
+    grid-template-columns: 80px 1fr 1fr;
+    grid-template-rows: 36px 1fr 1fr;
+    gap: 6px;
+    font-size: 13px;
+  }
+  .matrix-grid .head, .matrix-grid .axis {
+    background: #f6f8fa;
+    color: var(--muted);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    text-align: center;
+    padding: 4px;
+  }
+  .matrix-grid .cell {
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 14px 12px;
+    min-height: 84px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4px;
+    background: #fff;
+  }
+  .matrix-grid .cell .tag {
+    display: inline-block;
+    font-size: 10px;
+    color: #fff;
+    padding: 1px 8px;
+    border-radius: 999px;
+    align-self: flex-start;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+  }
+  .matrix-grid .cell .name { font-weight: 600; font-size: 14px; }
+  .matrix-grid .cell .role { color: var(--muted); font-size: 11.5px; }
+  .core-cell { box-shadow: inset 0 0 0 2px var(--core); }
+  .core-cell .tag { background: var(--core); }
+  .b-cell .tag { background: var(--b); }
+  .c-cell .tag { background: var(--c); }
+  .d-cell .tag { background: var(--d); }
+
+  /* Persona cards */
+  .persona {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    margin-bottom: 28px;
+    overflow: hidden;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+  }
+  .persona-head {
+    padding: 20px 24px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    border-bottom: 1px solid var(--line);
+    background: #fafbfc;
+  }
+  .avatar {
+    width: 56px; height: 56px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-weight: 700;
+    font-size: 22px;
+    flex-shrink: 0;
+  }
+  .persona-head .meta { flex: 1; }
+  .persona-head .badge {
+    display: inline-block;
+    font-size: 11px;
+    color: #fff;
+    padding: 2px 10px;
+    border-radius: 999px;
+    margin-bottom: 6px;
+    letter-spacing: 0.04em;
+    font-weight: 700;
+  }
+  .persona-head h2 {
+    margin: 0 0 2px;
+    font-size: 19px;
+    font-weight: 700;
+  }
+  .persona-head .sub {
+    margin: 0;
+    color: var(--muted);
+    font-size: 13px;
+  }
+
+  /* Accent per persona */
+  #pA .avatar, #pA .badge { background: var(--a); }
+  #pA.persona { border-top: 3px solid var(--a); }
+  #pB .avatar, #pB .badge { background: var(--b); }
+  #pB.persona { border-top: 3px solid var(--b); }
+  #pC .avatar, #pC .badge { background: var(--c); }
+  #pC.persona { border-top: 3px solid var(--c); }
+  #pD .avatar, #pD .badge { background: var(--d); }
+  #pD.persona { border-top: 3px solid var(--d); }
+  #pA .core-label { background: var(--core); color: #fff; padding: 2px 8px; border-radius: 4px; font-size: 11px; font-weight: 700; margin-left: 8px; }
+  #pB .core-label { background: var(--core); color: #fff; padding: 2px 8px; border-radius: 4px; font-size: 11px; font-weight: 700; margin-left: 8px; }
+
+  .persona-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+  }
+  .panel {
+    padding: 18px 24px;
+    border-right: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+  .panel:nth-child(2n) { border-right: none; }
+  .panel:nth-last-child(-n+2) { border-bottom: none; }
+  .panel h3 {
+    margin: 0 0 8px;
+    font-size: 12px;
+    color: var(--muted);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .panel ul {
+    margin: 0;
+    padding-left: 18px;
+    font-size: 13.5px;
+  }
+  .panel ul li { margin-bottom: 4px; }
+  .panel p { margin: 0; font-size: 13.5px; }
+
+  .quote {
+    background: #f8fafc;
+    border-left: 4px solid currentColor;
+    padding: 12px 16px;
+    border-radius: 6px;
+    font-size: 13.5px;
+    font-style: italic;
+    margin: 0;
+  }
+  #pA .quote { color: var(--a); }
+  #pB .quote { color: var(--b); }
+  #pC .quote { color: var(--c); }
+  #pD .quote { color: var(--d); }
+  .quote::before { content: "「"; }
+  .quote::after { content: "」"; }
+
+  /* KGI section */
+  .kgi {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 22px 24px;
+    margin-bottom: 24px;
+  }
+  .kgi h2 {
+    margin: 0 0 14px;
+    font-size: 16px;
+    font-weight: 600;
+  }
+  .kgi table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13.5px;
+  }
+  .kgi table th, .kgi table td {
+    border: 1px solid var(--line);
+    padding: 10px 12px;
+    text-align: left;
+    vertical-align: top;
+  }
+  .kgi table th {
+    background: #f6f8fa;
+    color: var(--muted);
+    font-weight: 600;
+  }
+
+  footer {
+    text-align: center;
+    color: var(--muted);
+    font-size: 12px;
+    padding: 32px 16px 48px;
+  }
+  .back {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 8px 16px;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    text-decoration: none;
+    color: var(--text);
+    font-size: 13px;
+  }
+  .back:hover { background: var(--hover); }
+
+  @media (max-width: 700px) {
+    header h1 { font-size: 22px; }
+    .matrix-grid { grid-template-columns: 60px 1fr 1fr; font-size: 12px; }
+    .persona-body { grid-template-columns: 1fr; }
+    .panel { border-right: none; }
+    .panel:nth-last-child(-n+2) { border-bottom: 1px solid var(--line); }
+    .panel:last-child { border-bottom: none; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <p class="eyebrow">PERSONA DOCUMENT</p>
+  <h1>ペルソナ（コアターゲット定義）</h1>
+  <p class="subtitle">会員開発委員会アカデミー事業 ／ KAGA JC GATHERING 想定参加者</p>
+  <div class="meta">対内 54 名 ／ コアターゲット：参加率の低いメンバー・入会歴の浅いメンバー</div>
+</header>
+
+<main>
+
+<!-- Intro -->
+<div class="intro">
+  <h2>定義の趣旨</h2>
+  <p>本事業のコアターゲットは「<strong>参加率の低いメンバー</strong>」と「<strong>入会歴の浅いメンバー</strong>」の2層。彼らに事業価値が届くことを最優先の設計指針とする。</p>
+  <p>本書では、参加状況 × 入会歴 のマトリクス上に4つのペルソナを定義し、それぞれの<strong>感情・障壁・本事業で得たい変化・カードゲーム上での想定行動</strong>を整理する。ペルソナA・Bがコアターゲット、C・Dは設計バランスを取るための比較参照ペルソナ。</p>
+</div>
+
+<!-- Matrix -->
+<div class="matrix">
+  <h2>ターゲットマトリクス</h2>
+  <div class="matrix-grid">
+    <div class="head"></div>
+    <div class="head">参加率：低</div>
+    <div class="head">参加率：高</div>
+    <div class="axis">入会歴<br>浅</div>
+    <div class="cell core-cell">
+      <span class="tag">A · コア</span>
+      <span class="name">入会間もない若手</span>
+      <span class="role">役割を見出せず受け身</span>
+    </div>
+    <div class="cell c-cell">
+      <span class="tag">C</span>
+      <span class="name">熱量はあるが空回り</span>
+      <span class="role">次のステップが見えない</span>
+    </div>
+    <div class="axis">入会歴<br>深</div>
+    <div class="cell core-cell b-cell">
+      <span class="tag">B · コア</span>
+      <span class="name">中堅・低アクティブ</span>
+      <span class="role">仕事・家庭で疲弊／孤立</span>
+    </div>
+    <div class="cell d-cell">
+      <span class="tag">D · 参照</span>
+      <span class="name">負担集中型ベテラン</span>
+      <span class="role">役職経験／頼り方が不明</span>
+    </div>
+  </div>
+</div>
+
+<!-- Persona A -->
+<article class="persona" id="pA">
+  <div class="persona-head">
+    <div class="avatar">A</div>
+    <div class="meta">
+      <span class="badge">CORE TARGET</span>
+      <h2>入会1年未満・若手会員<span class="core-label">最重要</span></h2>
+      <p class="sub">30代前半／製造業（家業継承）／入会8ヶ月</p>
+    </div>
+  </div>
+  <div class="persona-body">
+    <div class="panel">
+      <h3>プロフィール</h3>
+      <ul>
+        <li>家業を継承して2年目、地域コミュニティへの繋がりを求めて入会</li>
+        <li>JCの仕組みも先輩メンバーの顔も、まだほとんど分からない</li>
+        <li>例会への出席率は60%程度、委員会活動への発言は少ない</li>
+      </ul>
+    </div>
+    <div class="panel">
+      <h3>感情・障壁</h3>
+      <ul>
+        <li>「自分は何をすればよいのか」が見えない</li>
+        <li>先輩との接点が少なく、相談しにくい</li>
+        <li>事業準備の話に入っていけず、置いていかれる感覚</li>
+      </ul>
+    </div>
+    <div class="panel">
+      <h3>本事業で得たい変化</h3>
+      <ul>
+        <li>メンバーの仕事や強みを知り、頼り合える相手を見つける</li>
+        <li>自分の本業や強みが JC で活かせる場面を見出す</li>
+        <li>次の例会・委員会で「自分から手を挙げる」一歩を踏み出す</li>
+      </ul>
+    </div>
+    <div class="panel">
+      <h3>カードゲームでの想定行動</h3>
+      <p>頼れる仲間カードを通じて先輩の専門領域を知る。自分のカードに記載された強みが他のメンバーから引かれる体験で、「自分も役立てる」という感覚を得る。ふりかえりでは「次に引き受けられる役割」を具体化する。</p>
+    </div>
+  </div>
+  <div class="panel" style="grid-column:1/-1;border-right:none;border-bottom:none">
+    <h3>当事者の声（想定）</h3>
+    <p class="quote">JCに入ったはいいけど、まだ誰に何を頼っていいのか分からない。今日のワークで、先輩の仕事や強みを知れたのが大きい。次の例会では、自分から声をかけてみようと思う。</p>
+  </div>
+</article>
+
+<!-- Persona B -->
+<article class="persona" id="pB">
+  <div class="persona-head">
+    <div class="avatar">B</div>
+    <div class="meta">
+      <span class="badge">CORE TARGET</span>
+      <h2>中堅・低アクティブ会員<span class="core-label">最重要</span></h2>
+      <p class="sub">30代後半／飲食サービス業／入会5年</p>
+    </div>
+  </div>
+  <div class="persona-body">
+    <div class="panel">
+      <h3>プロフィール</h3>
+      <ul>
+        <li>入会当初は活発、現在は本業繁忙・育児で参加率が30〜40%に低下</li>
+        <li>過去の委員会経験あり、JCの目的・意義は理解している</li>
+        <li>「行きたい気持ちはあるが、時間が取れない」状態が続く</li>
+      </ul>
+    </div>
+    <div class="panel">
+      <h3>感情・障壁</h3>
+      <ul>
+        <li>久しぶりに参加しても「浦島太郎」状態で居場所がない</li>
+        <li>かつての仲間に頼られなくなり、孤立感がある</li>
+        <li>「もう抜けようか」と退会も視野に入りつつある</li>
+      </ul>
+    </div>
+    <div class="panel">
+      <h3>本事業で得たい変化</h3>
+      <ul>
+        <li>自分の現在の仕事・強みが今のJCで活きる場面を再発見</li>
+        <li>負担にならない範囲で関われる役割を見出す</li>
+        <li>「頼られる場面」が再び生まれ、参加意欲が回復する</li>
+      </ul>
+    </div>
+    <div class="panel">
+      <h3>カードゲームでの想定行動</h3>
+      <p>カードに「飲食・懇親会設計」が記載され、他グループから指名される。自分の強みが今もJCで価値を持つことを実感。ハプニングカード（会場変更・天候悪化）の対応で実務経験が活き、改めて頼られる感覚を得る。</p>
+    </div>
+  </div>
+  <div class="panel" style="grid-column:1/-1;border-right:none;border-bottom:none">
+    <h3>当事者の声（想定）</h3>
+    <p class="quote">最近は仕事と家庭で精一杯で、JCから遠ざかっていた。でも今日「飲食まわりはBさんに頼みたい」と言われて、まだ自分にもできることがあると思えた。月1回くらいなら、また関わってみたい。</p>
+  </div>
+</article>
+
+<!-- Persona C -->
+<article class="persona" id="pC">
+  <div class="persona-head">
+    <div class="avatar">C</div>
+    <div class="meta">
+      <span class="badge">参照ペルソナ</span>
+      <h2>熱量はあるが空回り型</h2>
+      <p class="sub">30代半ば／サービス業／入会3年</p>
+    </div>
+  </div>
+  <div class="persona-body">
+    <div class="panel">
+      <h3>プロフィール</h3>
+      <ul>
+        <li>例会・委員会出席率は高い（80%以上）が、発言や立候補は少ない</li>
+        <li>「次は何をすればいいか」を待っている受け身姿勢</li>
+        <li>同期との横の繋がりは薄い</li>
+      </ul>
+    </div>
+    <div class="panel">
+      <h3>感情・障壁</h3>
+      <ul>
+        <li>役割を引き受けたい気持ちはあるが、機会を掴めない</li>
+        <li>誰に何を相談すればよいか分からない</li>
+        <li>「自分が手を挙げて良いのか」迷いがある</li>
+      </ul>
+    </div>
+    <div class="panel">
+      <h3>本事業で得たい変化</h3>
+      <ul>
+        <li>他メンバーの強み・頼れる場面を知り、相談先が明確になる</li>
+        <li>自分が引き受けられる役割の具体像を持つ</li>
+        <li>次の事業で自分から手を挙げる動機を持つ</li>
+      </ul>
+    </div>
+    <div class="panel">
+      <h3>カードゲームでの想定行動</h3>
+      <p>2周目チャレンジで「キーパーソンが使用不可」の状況下、自分のカードを能動的にチームへ提案する経験を積む。ファシリの後押しで、想像していたよりも自分の役割の幅が広いことに気づく。</p>
+    </div>
+  </div>
+  <div class="panel" style="grid-column:1/-1;border-right:none;border-bottom:none">
+    <h3>当事者の声（想定）</h3>
+    <p class="quote">参加はしているけど、何をすればいいか分からなくて待ってばかりだった。今日のワークで、自分の業界の知見が地域連携の場面で使えると気づいた。次は委員会で「自分にやらせてほしい」と言ってみる。</p>
+  </div>
+</article>
+
+<!-- Persona D -->
+<article class="persona" id="pD">
+  <div class="persona-head">
+    <div class="avatar">D</div>
+    <div class="meta">
+      <span class="badge">設計バランス参照</span>
+      <h2>負担集中型ベテラン</h2>
+      <p class="sub">40代／建設業／入会7年・委員長経験者</p>
+    </div>
+  </div>
+  <div class="persona-body">
+    <div class="panel">
+      <h3>プロフィール</h3>
+      <ul>
+        <li>歴代委員会の中心メンバー、複数役職を経験</li>
+        <li>事業準備の8割を自分で抱える傾向</li>
+        <li>「他のメンバーに頼みたいが、どう振っていいか分からない」</li>
+      </ul>
+    </div>
+    <div class="panel">
+      <h3>感情・障壁</h3>
+      <ul>
+        <li>頼める相手の強みが整理されていない</li>
+        <li>遠慮されることが多く、結局自分でやってしまう</li>
+        <li>疲弊感はあるが「頼り方」を知らない</li>
+      </ul>
+    </div>
+    <div class="panel">
+      <h3>本事業で得たい変化</h3>
+      <ul>
+        <li>頼れる仲間カードを通じて、誰に何を任せられるかが可視化される</li>
+        <li>低アクティブ層・新人にも具体的に役割を依頼できるようになる</li>
+        <li>負担分散による持続可能な活動スタイルを獲得する</li>
+      </ul>
+    </div>
+    <div class="panel">
+      <h3>カードゲームでの想定行動</h3>
+      <p>2周目チャレンジで「自分（多用カード）が使えない」設計を体験することで、頼り方の引き出しが増える。新人ペルソナA・低アクティブBへの依頼の練習機会となる。</p>
+    </div>
+  </div>
+  <div class="panel" style="grid-column:1/-1;border-right:none;border-bottom:none">
+    <h3>当事者の声（想定）</h3>
+    <p class="quote">いつも自分で抱え込んでしまうクセがあった。今日のワークで、AさんやBさんに具体的に振れる役割がたくさんあると気づいた。次の事業では、最初に「役割マップ」を作ってから動こうと思う。</p>
+  </div>
+</article>
+
+<!-- KGI -->
+<div class="kgi">
+  <h2>コアターゲットに対する達成指標（KGI）</h2>
+  <table>
+    <thead>
+      <tr><th>対象</th><th>指標</th><th>目標値</th></tr>
+    </thead>
+    <tbody>
+      <tr><td rowspan="2">ペルソナA（入会浅）</td><td>事業への参加</td><td>該当者の <strong>80%以上</strong> が参加</td></tr>
+      <tr><td>事業後アンケート「自分の役割を考えられた」</td><td><strong>70%以上</strong></td></tr>
+      <tr><td rowspan="2">ペルソナB（低アクティブ）</td><td>事業への参加</td><td>該当者の <strong>60%以上</strong> が参加</td></tr>
+      <tr><td>事業後3ヶ月の例会出席率変化</td><td>事業前比 <strong>+15pt 以上</strong></td></tr>
+      <tr><td>全体</td><td>事業後アンケート「仲間を支える意識が高まった」</td><td><strong>80%以上</strong></td></tr>
+      <tr><td>全体</td><td>自由記述に「具体的に頼りたい人／引き受けたい役割」が記載</td><td><strong>70%以上</strong></td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- 設計の前提 -->
+<div class="intro">
+  <h2>設計の前提</h2>
+  <p>本ペルソナは公開議案リサーチ（小田原JC・大阪JC・東京JC ほか）と加賀JC内のヒアリング想定に基づく仮説像。事業前アンケート（参考資料10：事前アンケート集計結果）の回収後に、実数値とのギャップを検証し、必要に応じて当日のグループ編成・ファシリ介入ポイントを再設計する。</p>
+  <p>個人を特定する記述は避け、参加状況・入会歴の組み合わせから類型化したペルソナとして扱う。実在メンバーの情報は本事業の<a href="../shingi/KAGA_JC_GATHERING_仕様書.htm">KAGA JC GATHERING 仕様書</a>に基づく承諾範囲でのみカード化する。</p>
+</div>
+
+<section class="related-docs" style="margin-top:24px;background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:20px 22px">
+  <h2 style="margin:0 0 12px;font-size:12px;color:#6b7280;letter-spacing:0.06em;text-transform:uppercase">📚 関連審議資料・参考資料</h2>
+  <p style="margin:0 0 12px;font-size:12.5px;color:#374151;line-height:1.95"><strong style="color:#1f6feb">審議対象資料</strong>：
+    <a href="../shingi/事業フロー.htm">1) 事業フロー</a>　／　2) 事業計画収支予算書　／　
+    <a href="../shingi/当日実施要項.htm">3) 当日実施要項</a>　／　4) 当日役割分担表　／　
+    <a href="../shingi/KAGA_JC_GATHERING_仕様書.htm">5) KAGA JC GATHERING QUEST 実施要項</a>　／　6) KAGA JC GATHERING QUEST 手段選定理由書　／　
+    <a href="../shingi/ゲーム進行マニュアル.htm">7) ゲーム進行マニュアル</a>　／　
+    <a href="テーブルゲームマスター進行台本.htm">8) テーブルゲームマスター進行台本</a>　／　
+    <a href="正副メンター役割確認シート.htm">9) 正副メンター役割確認シート</a>　／　
+    <a href="../shingi/カードサンプル一覧.htm">10) カードサンプル一覧</a>　／　
+    <a href="ミッションカード一覧.htm">11) ミッションカード一覧</a>　／　
+    <a href="ハードルカード一覧.htm">12) ハードルカード一覧</a>　／　
+    <a href="../shingi/ふりかえりシート.htm">13) ふりかえりシート</a>　／　14) グループ発表シート　／　
+    <a href="../shingi/会場選定理由書.htm#layout">15) 会場レイアウト・安全管理資料</a>　／　16) 表彰品・配布物管理表　／　
+    <a href="../shingi/個人情報・プライバシー配慮に関する運営ルール.htm">17) 個人情報・プライバシー配慮に関する運営ルール</a>
+  </p>
+  <p style="margin:0;font-size:12.5px;color:#374151;line-height:1.95"><strong style="color:#2da44e">参考資料</strong>：
+    1) アカデミー事業後アンケート ／ 会員開発委員会方針　／　2) 加賀LOMアカデミー事業 議案参考資料　／　3) 加賀JC2026年度 理事長所信　／　4) RNCアンケート評価法　／　5) 公開議案・他LOM事例調査資料　／　6) JCプログラム公式資料　／　7) ビジネスゲーム導入事例　／　8) ABC手法比較資料　／　9) KAGA JC GATHERING QUEST 図説資料　／　
+    <a href="../shingi/事業フロー.htm">10) カードゲーム進行フロー図</a>　／　11) 学術・行動経済学的根拠メモ　／　12) 事前アンケート集計結果　／　13) 簡易ヒアリング要約　／　14) 加賀JC出席状況確認資料　／　15) 役割分担確認資料　／　16) 鎌田長明「JC論：議案の書き方」シリーズ　／　17) 大垣JC・高槻JC 議案作成マニュアル
+  </p>
+  <p style="margin:14px 0 0;font-size:10.5px;color:#9ca3af;text-align:right">※ リンク付き項目はページ作成済みの資料</p>
+</section>
+
+</main>
+
+
+<footer>
+  会員開発委員会アカデミー事業 議案関連資料
+  <br>
+  <a href="../../議案本文.htm" class="back">← 議案本文に戻る</a>
+</footer>
+
+</body>
+</html>

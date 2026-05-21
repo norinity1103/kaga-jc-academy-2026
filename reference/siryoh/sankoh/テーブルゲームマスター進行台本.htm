@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>テーブルゲームマスター進行台本 — KAGA JC GATHERING QUEST</title>
+<style>
+  :root {
+    --bg: #f6f7f9;
+    --card: #ffffff;
+    --text: #1f2937;
+    --muted: #6b7280;
+    --line: #e5e7eb;
+    --gm: #ea580c;
+    --hover: #f3f4f6;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
+    background: var(--bg); color: var(--text);
+    margin: 0; line-height: 1.75;
+  }
+  header {
+    background: linear-gradient(135deg, #9a3412 0%, #ea580c 100%);
+    color: #fff; padding: 44px 24px 36px; text-align: center;
+  }
+  header .eyebrow {
+    font-size: 12px; letter-spacing: 0.14em;
+    color: #fed7aa; margin: 0 0 8px;
+    text-transform: uppercase;
+  }
+  header h1 { margin: 0 0 4px; font-size: 28px; font-weight: 700; }
+  header .subtitle { color: #ffedd5; font-size: 13px; margin: 0; }
+
+  main { max-width: 1000px; margin: 28px auto; padding: 0 16px 64px; }
+
+  .toolbar {
+    background: #fff; border-bottom: 1px solid var(--line);
+    padding: 10px 16px; display: flex; gap: 8px;
+    position: sticky; top: 0; z-index: 10;
+    align-items: center;
+  }
+  .toolbar .label {
+    font-size: 12px; color: var(--muted); flex: 1;
+  }
+  .toolbar button {
+    background: var(--gm); color: #fff; border: none;
+    padding: 7px 14px; border-radius: 6px;
+    font-size: 12.5px; cursor: pointer; font-family: inherit;
+  }
+  .toolbar a {
+    background: #fff; color: var(--text);
+    padding: 7px 14px; border-radius: 6px;
+    text-decoration: none; font-size: 12.5px;
+    border: 1px solid var(--line);
+  }
+
+  .links {
+    background: #fff; border: 1px solid var(--line);
+    border-radius: 10px; padding: 14px 18px;
+    margin-bottom: 24px;
+    display: flex; flex-wrap: wrap; gap: 8px;
+  }
+  .links span.label {
+    font-size: 11px; color: var(--muted); letter-spacing: 0.06em;
+    text-transform: uppercase; align-self: center; margin-right: 6px;
+  }
+  .links a {
+    background: #f3f4f6; color: var(--text);
+    padding: 7px 12px; border-radius: 6px;
+    font-size: 12.5px; text-decoration: none;
+    border: 1px solid var(--line);
+  }
+  .links a:hover { background: #e5e7eb; }
+  .links a.current { background: #ffedd5; border-color: var(--gm); color: #9a3412; }
+
+  .intro {
+    background: #fff; border: 1px solid var(--line);
+    border-radius: 12px; padding: 22px 24px;
+    margin-bottom: 24px;
+  }
+  .intro h2 {
+    margin: 0 0 8px; font-size: 13px;
+    color: var(--muted); letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .intro p { margin: 0 0 8px; font-size: 14.5px; }
+  .intro p:last-child { margin-bottom: 0; }
+
+  .scene {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    margin-bottom: 18px;
+    overflow: hidden;
+  }
+  .scene-head {
+    padding: 14px 22px;
+    background: #fff7ed;
+    border-bottom: 1px solid var(--line);
+    display: flex; align-items: center; gap: 14px;
+  }
+  .scene-num {
+    width: 32px; height: 32px;
+    border-radius: 50%;
+    background: var(--gm); color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 15px;
+    flex-shrink: 0;
+  }
+  .scene-head h2 { margin: 0; font-size: 16px; font-weight: 700; }
+  .scene-body { padding: 18px 22px; }
+  .scene-body p { margin: 0 0 10px; font-size: 14px; }
+
+  .script {
+    background: #fff7ed;
+    border-left: 4px solid var(--gm);
+    padding: 12px 16px;
+    border-radius: 4px;
+    margin: 10px 0;
+    font-size: 13.5px;
+    color: #7c2d12;
+    font-style: italic;
+  }
+  .script::before { content: "「"; }
+  .script::after { content: "」"; }
+
+  .check {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    font-size: 13.5px;
+    margin-bottom: 4px;
+  }
+  .check::before {
+    content: ""; width: 14px; height: 14px;
+    border: 1.5px solid #94a3b8;
+    border-radius: 3px; flex-shrink: 0;
+    margin-top: 4px;
+  }
+
+  .qbox {
+    background: #f8fafc;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 12px 14px;
+    margin: 10px 0;
+    font-size: 13px;
+  }
+  .qbox .qlabel {
+    font-size: 10.5px;
+    color: var(--gm);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+  .qbox ul {
+    margin: 0; padding-left: 18px;
+  }
+  .qbox ul li { margin-bottom: 4px; }
+
+  footer {
+    text-align: center; color: var(--muted);
+    font-size: 12px; padding: 32px 16px 48px;
+  }
+  .back {
+    display: inline-block; margin-top: 12px;
+    padding: 8px 16px; background: var(--card);
+    border: 1px solid var(--line); border-radius: 8px;
+    text-decoration: none; color: var(--text); font-size: 13px;
+  }
+  .back:hover { background: var(--hover); }
+
+  @media print {
+    @page { size: A4 portrait; margin: 12mm 14mm; }
+    body { background: #fff; }
+    .toolbar, .links { display: none; }
+    .scene, .intro { page-break-inside: avoid; box-shadow: none; }
+    header { background: #fff !important; color: var(--text) !important; padding: 24px 0 16px; }
+    header .eyebrow, header .subtitle { color: var(--muted); }
+    main { padding: 0; }
+    a { color: inherit; text-decoration: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="toolbar">
+  <span class="label">テーブルゲームマスター（参加委員長） 用</span>
+  <a href="../../議案本文.htm">← 議案本文</a>
+  <button onclick="window.print()">🖨️ 印刷する</button>
+</div>
+
+<header>
+  <p class="eyebrow">GAMEMASTER SCRIPT</p>
+  <h1>テーブルゲームマスター進行台本</h1>
+  <p class="subtitle">KAGA JC GATHERING QUEST ／ 参加委員長用</p>
+</header>
+
+<main>
+
+<div class="links">
+  <span class="label">関連ページ</span>
+  <a href="../shingi/KAGA_JC_GATHERING_仕様書.htm">📘 仕様書</a>
+  <a href="../shingi/ゲーム進行マニュアル.htm">▶ ゲーム進行マニュアル</a>
+  <a class="current">🎙️ GM進行台本</a>
+  <a href="正副メンター役割確認シート.htm">🧭 メンター役割確認</a>
+  <a href="../shingi/ふりかえりシート.htm">📝 ふりかえりシート</a>
+</div>
+
+<div class="intro">
+  <h2>あなたの役割</h2>
+  <p>各グループに1名配置されるテーブルゲームマスター（GM）は、<strong>答えを出す役ではありません</strong>。参加者が互いの仕事や強みを理解し、公益事業の実現に向けて誰に何を頼るかを考えられるよう、<strong>問いかけで進行を支える役</strong>です。</p>
+  <p>本台本は7ステップに沿った声かけテンプレート。状況に応じて言葉を変えても構いませんが、「指示する」のではなく「問いかける」スタンスを守ってください。</p>
+</div>
+
+<!-- Scene 1: 導入 -->
+<section class="scene">
+  <div class="scene-head"><div class="scene-num">0</div><h2>テーブル開始時（30秒）</h2></div>
+  <div class="scene-body">
+    <p>カードを並べたら、まず自己紹介と場の温度作り。</p>
+    <p class="script">こんにちは。今日このテーブルで進行を担当します。私は答えを出す役ではなく、皆さんが互いの強みを知り、誰に何を頼るかを考える場をサポートする役です。気軽に話し合いましょう。</p>
+    <div class="check">参加者の名前と所属を一周確認</div>
+    <div class="check">カード5種類（ミッション／ハードル／JCメンバー／地域パートナー／ロール）を簡単に紹介</div>
+  </div>
+</section>
+
+<!-- Scene 1 -->
+<section class="scene">
+  <div class="scene-head"><div class="scene-num">1</div><h2>ステップ1：ミッションカードを選ぶ</h2></div>
+  <div class="scene-body">
+    <p class="script">まずミッションカードを回します。気になるテーマがあれば声に出してください。最終的に1枚に絞ります。</p>
+    <div class="qbox">
+      <div class="qlabel">問いかけ例</div>
+      <ul>
+        <li>このミッションが自分の仕事や強みと結びつきそうな人はいますか？</li>
+        <li>加賀JCでもし実際にやるとしたら、どのミッションが一番現実味がありますか？</li>
+      </ul>
+    </div>
+    <p class="script">ミッションが決まったら、次にハードルカードを1〜2枚引きましょう。これは事業実施時の制約条件です。</p>
+  </div>
+</section>
+
+<!-- Scene 2 -->
+<section class="scene">
+  <div class="scene-head"><div class="scene-num">2</div><h2>ステップ2：カードを引く</h2></div>
+  <div class="scene-body">
+    <p class="script">JCメンバーカードを3枚、地域パートナーカードを3枚、それぞれ裏向きから引いてください。引いたカードは表向きで全員に見えるようテーブル中央に並べます。</p>
+    <div class="qbox">
+      <div class="qlabel">問いかけ例</div>
+      <ul>
+        <li>このメンバー、初めて知った仕事や強みはありますか？</li>
+        <li>カードに書かれていないけど、知っている強みはありますか？</li>
+        <li>地域パートナーカードで、加賀JCがまだ接点を持てていない事業者はいますか？</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Scene 3 -->
+<section class="scene">
+  <div class="scene-head"><div class="scene-num">3</div><h2>ステップ3：役割を確認する</h2></div>
+  <div class="scene-body">
+    <p class="script">事業に必要な役割をロールカードを見ながら整理します。今回のミッション×ハードルでは、どの役割が特に重要そうですか？</p>
+    <div class="qbox">
+      <div class="qlabel">問いかけ例</div>
+      <ul>
+        <li>このミッションを成功させるには、どんな役割が必要ですか？</li>
+        <li>8つのロールカードのうち、特に重要なのはどれですか？</li>
+        <li>逆に「これは無くてもいい」役割はありそうですか？</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Scene 4 -->
+<section class="scene">
+  <div class="scene-head"><div class="scene-num">4</div><h2>ステップ4：実現プロセスを考える（1周目）</h2></div>
+  <div class="scene-body">
+    <p class="script">模造紙に「企画」「準備」「実施」「広報」「事後フォロー」の5段階を書きました。各段階で、誰に何を頼むかを置いていきましょう。</p>
+    <div class="qbox">
+      <div class="qlabel">問いかけ例（負担分散）</div>
+      <ul>
+        <li>この人の強みは、企画・準備・実働・動員・広報のどこで活きそうですか？</li>
+        <li>委員長だけが抱えない設計になっていますか？</li>
+        <li>低アクティブなメンバーでも関われる小さな役割はありますか？</li>
+        <li>拡大対象との接点をどう作りますか？</li>
+      </ul>
+    </div>
+    <div class="check">15分計測・残り3分で声かけ「そろそろ1周目をまとめましょう」</div>
+  </div>
+</section>
+
+<!-- Scene 5 -->
+<section class="scene">
+  <div class="scene-head"><div class="scene-num">5</div><h2>ステップ5：2周目チャレンジ</h2></div>
+  <div class="scene-body">
+    <p class="script">1周目でもっとも使われた人物カードはこの3枚ですね。これらは「委員長・副委員長・運営幹事になったため使用できない」想定にします。別の組み合わせで同じミッションをどう実現しますか？</p>
+    <div class="qbox">
+      <div class="qlabel">問いかけ例（共助の発想）</div>
+      <ul>
+        <li>いつもの頼れる人が使えない場合、誰の力を活かせますか？</li>
+        <li>これまで頼ったことがなかった人の強みはどう活かせますか？</li>
+        <li>新しい組み合わせで気づいた、別の役割の可能性はありますか？</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Scene 6 -->
+<section class="scene">
+  <div class="scene-head"><div class="scene-num">6</div><h2>ステップ6：グループ発表</h2></div>
+  <div class="scene-body">
+    <p class="script">これからグループ発表です。1〜2分で、選んだミッション・活用したカード・役割分担・1周目と2周目の工夫を共有しましょう。代表者は決まりましたか？</p>
+    <div class="check">発表シート（審議14）を渡す</div>
+    <div class="check">代表者と支援者（補足する人）を決める</div>
+    <div class="check">1〜2分以内で要点をまとめるよう促す</div>
+  </div>
+</section>
+
+<!-- Scene 7 -->
+<section class="scene">
+  <div class="scene-head"><div class="scene-num">7</div><h2>ステップ7：ふりかえり</h2></div>
+  <div class="scene-body">
+    <p class="script">最後に、ふりかえりシートに記入します。今日のワークを通じて、自分が次に何をするかを言葉にしてみましょう。</p>
+    <div class="qbox">
+      <div class="qlabel">記入を促す問い</div>
+      <ul>
+        <li>自分が委員長／副委員長／運営幹事だったらどうするか</li>
+        <li>今後、誰にどんなことで頼れそうか</li>
+        <li>自分が次に引き受けられる小さな役割は何か</li>
+      </ul>
+    </div>
+    <p>シート記入は<a href="../shingi/ふりかえりシート.htm">ふりかえりシート</a>を使用。</p>
+  </div>
+</section>
+
+<!-- Closing -->
+<section class="scene">
+  <div class="scene-head"><div class="scene-num">✓</div><h2>クロージング</h2></div>
+  <div class="scene-body">
+    <p class="script">今日のワーク、お疲れさまでした。皆さんが書いてくださった「次の一歩」を、来月の委員会・例会で実際にやってみてください。今日の場で生まれた頼り合いの関係性が、次のJC活動につながります。</p>
+    <div class="check">ふりかえりシートを回収</div>
+    <div class="check">グループの良かった点を1つ承認して終わる</div>
+  </div>
+</section>
+
+<section class="related-docs" style="margin-top:24px;background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:20px 22px">
+  <h2 style="margin:0 0 12px;font-size:12px;color:#6b7280;letter-spacing:0.06em;text-transform:uppercase">📚 関連審議資料・参考資料</h2>
+  <p style="margin:0 0 12px;font-size:12.5px;color:#374151;line-height:1.95"><strong style="color:#1f6feb">審議対象資料</strong>：
+    <a href="../shingi/事業フロー.htm">1) 事業フロー</a>　／　2) 事業計画収支予算書　／　
+    <a href="../shingi/当日実施要項.htm">3) 当日実施要項</a>　／　4) 当日役割分担表　／　
+    <a href="../shingi/KAGA_JC_GATHERING_仕様書.htm">5) KAGA JC GATHERING QUEST 実施要項</a>　／　6) KAGA JC GATHERING QUEST 手段選定理由書　／　
+    <a href="../shingi/ゲーム進行マニュアル.htm">7) ゲーム進行マニュアル</a>　／　
+    <a href="テーブルゲームマスター進行台本.htm">8) テーブルゲームマスター進行台本</a>　／　
+    <a href="正副メンター役割確認シート.htm">9) 正副メンター役割確認シート</a>　／　
+    <a href="../shingi/カードサンプル一覧.htm">10) カードサンプル一覧</a>　／　
+    <a href="ミッションカード一覧.htm">11) ミッションカード一覧</a>　／　
+    <a href="ハードルカード一覧.htm">12) ハードルカード一覧</a>　／　
+    <a href="../shingi/ふりかえりシート.htm">13) ふりかえりシート</a>　／　14) グループ発表シート　／　
+    <a href="../shingi/会場選定理由書.htm#layout">15) 会場レイアウト・安全管理資料</a>　／　16) 表彰品・配布物管理表　／　
+    <a href="../shingi/個人情報・プライバシー配慮に関する運営ルール.htm">17) 個人情報・プライバシー配慮に関する運営ルール</a>
+  </p>
+  <p style="margin:0;font-size:12.5px;color:#374151;line-height:1.95"><strong style="color:#2da44e">参考資料</strong>：
+    1) アカデミー事業後アンケート ／ 会員開発委員会方針　／　2) 加賀LOMアカデミー事業 議案参考資料　／　3) 加賀JC2026年度 理事長所信　／　4) RNCアンケート評価法　／　5) 公開議案・他LOM事例調査資料　／　6) JCプログラム公式資料　／　7) ビジネスゲーム導入事例　／　8) ABC手法比較資料　／　9) KAGA JC GATHERING QUEST 図説資料　／　
+    <a href="../shingi/事業フロー.htm">10) カードゲーム進行フロー図</a>　／　11) 学術・行動経済学的根拠メモ　／　12) 事前アンケート集計結果　／　13) 簡易ヒアリング要約　／　14) 加賀JC出席状況確認資料　／　15) 役割分担確認資料　／　16) 鎌田長明「JC論：議案の書き方」シリーズ　／　17) 大垣JC・高槻JC 議案作成マニュアル
+  </p>
+  <p style="margin:14px 0 0;font-size:10.5px;color:#9ca3af;text-align:right">※ リンク付き項目はページ作成済みの資料</p>
+</section>
+
+</main>
+
+
+<footer>
+  会員開発委員会アカデミー事業 議案関連資料
+  <br>
+  <a href="../../議案本文.htm" class="back">← 議案本文に戻る</a>
+</footer>
+
+</body>
+</html>

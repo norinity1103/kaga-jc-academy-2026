@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>会員開発委員会アカデミー事業 - 理事会正副 想定問答集</title>
+<style>
+  :root {
+    --bg: #f6f7f9;
+    --card: #ffffff;
+    --text: #1f2937;
+    --muted: #6b7280;
+    --accent-1: #d8345f; /* 総務 */
+    --accent-2: #1f6feb; /* 財審 */
+    --accent-3: #2da44e; /* 事業内容 */
+    --accent-4: #8957e5; /* スケジュール・会場 */
+    --accent-5: #bf8700; /* 広報 */
+    --accent-6: #cf222e; /* 検証 */
+    --accent-7: #57606a; /* 上位整合 */
+    --border: #e5e7eb;
+    --hover: #f3f4f6;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    margin: 0;
+    padding: 0;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+  header {
+    background: linear-gradient(135deg, #1f2937 0%, #374151 100%);
+    color: #fff;
+    padding: 40px 24px 32px;
+    text-align: center;
+  }
+  header h1 {
+    margin: 0 0 8px;
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+  }
+  header .subtitle {
+    color: #d1d5db;
+    font-size: 14px;
+    margin: 0;
+  }
+  header .meta {
+    margin-top: 16px;
+    font-size: 12px;
+    color: #9ca3af;
+  }
+  main {
+    max-width: 960px;
+    margin: 32px auto;
+    padding: 0 16px 80px;
+  }
+  .toc {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 20px 24px;
+    margin-bottom: 32px;
+  }
+  .toc-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--muted);
+    letter-spacing: 0.06em;
+    margin: 0 0 12px;
+    text-transform: uppercase;
+  }
+  .toc ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 8px 16px;
+  }
+  .toc a {
+    color: var(--text);
+    text-decoration: none;
+    font-size: 14px;
+    padding: 6px 0;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .toc a:hover { color: #1f6feb; }
+  .toc .dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    display: inline-block;
+  }
+  .category {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    margin-bottom: 24px;
+    overflow: hidden;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+  }
+  .category-header {
+    padding: 18px 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-bottom: 1px solid var(--border);
+    background: #fafbfc;
+  }
+  .category-header .badge {
+    display: inline-block;
+    width: 6px;
+    height: 28px;
+    border-radius: 3px;
+  }
+  .category-header h2 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+  }
+  .category-header .count {
+    margin-left: auto;
+    font-size: 12px;
+    color: var(--muted);
+    background: #eef0f3;
+    padding: 3px 10px;
+    border-radius: 999px;
+  }
+  .qa-list { padding: 8px 0; }
+  .qa-item {
+    padding: 16px 24px;
+    border-bottom: 1px solid #f1f3f5;
+  }
+  .qa-item:last-child { border-bottom: none; }
+  .qa-item .q {
+    font-weight: 600;
+    color: var(--text);
+    margin: 0 0 8px;
+    display: flex;
+    gap: 8px;
+    line-height: 1.5;
+  }
+  .qa-item .q::before {
+    content: "Q";
+    flex-shrink: 0;
+    width: 22px; height: 22px;
+    background: var(--text);
+    color: #fff;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2px;
+  }
+  .qa-item .a {
+    color: #374151;
+    font-size: 14px;
+    margin: 0 0 0 30px;
+    line-height: 1.7;
+  }
+  .qa-item .a::before {
+    content: "A. ";
+    font-weight: 700;
+    color: var(--muted);
+  }
+  .qa-item .tag {
+    display: inline-block;
+    font-size: 11px;
+    color: var(--muted);
+    background: #f3f4f6;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-left: 30px;
+    margin-top: 6px;
+  }
+  /* Accent colors per category */
+  #cat-soumu .badge { background: var(--accent-1); }
+  #cat-zaishin .badge { background: var(--accent-2); }
+  #cat-jigyo .badge { background: var(--accent-3); }
+  #cat-schedule .badge { background: var(--accent-4); }
+  #cat-koho .badge { background: var(--accent-5); }
+  #cat-kensho .badge { background: var(--accent-6); }
+  #cat-joui .badge { background: var(--accent-7); }
+  #cat-soumu .dot { background: var(--accent-1); }
+  #cat-zaishin .dot, [data-cat="zaishin"] .dot { background: var(--accent-2); }
+  #cat-jigyo .dot, [data-cat="jigyo"] .dot { background: var(--accent-3); }
+  #cat-schedule .dot, [data-cat="schedule"] .dot { background: var(--accent-4); }
+  #cat-koho .dot, [data-cat="koho"] .dot { background: var(--accent-5); }
+  #cat-kensho .dot, [data-cat="kensho"] .dot { background: var(--accent-6); }
+  #cat-joui .dot, [data-cat="joui"] .dot { background: var(--accent-7); }
+  [data-cat="soumu"] .dot { background: var(--accent-1); }
+
+  footer {
+    text-align: center;
+    color: var(--muted);
+    font-size: 12px;
+    padding: 32px 16px 48px;
+  }
+  footer a { color: var(--muted); }
+  .back {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 8px 16px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    text-decoration: none;
+    color: var(--text);
+    font-size: 13px;
+  }
+  .back:hover { background: var(--hover); }
+
+  @media (max-width: 600px) {
+    header h1 { font-size: 20px; }
+    .toc ul { grid-template-columns: 1fr; }
+    .qa-item { padding: 14px 16px; }
+    .category-header { padding: 14px 16px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>会員開発委員会アカデミー事業</h1>
+  <p class="subtitle">理事会正副 想定問答集</p>
+  <div class="meta">2026年5月19日 上程 ／ 確認日 2026年5月21日</div>
+</header>
+
+<main>
+
+<nav class="toc">
+  <p class="toc-title">カテゴリ一覧</p>
+  <ul>
+    <li data-cat="soumu"><a href="#cat-soumu"><span class="dot"></span>総務チェック</a></li>
+    <li data-cat="zaishin"><a href="#cat-zaishin"><span class="dot"></span>財審</a></li>
+    <li data-cat="jigyo"><a href="#cat-jigyo"><span class="dot"></span>事業内容</a></li>
+    <li data-cat="schedule"><a href="#cat-schedule"><span class="dot"></span>スケジュール・会場</a></li>
+    <li data-cat="koho"><a href="#cat-koho"><span class="dot"></span>広報</a></li>
+    <li data-cat="kensho"><a href="#cat-kensho"><span class="dot"></span>検証方法</a></li>
+    <li data-cat="joui"><a href="#cat-joui"><span class="dot"></span>上位整合</a></li>
+  </ul>
+</nav>
+
+<!-- 総務チェック -->
+<section class="category" id="cat-soumu">
+  <div class="category-header">
+    <span class="badge"></span>
+    <h2>総務チェック</h2>
+    <span class="count">8 件</span>
+  </div>
+  <div class="qa-list">
+    <div class="qa-item">
+      <p class="q">議案上程日（5月19日）と確認日（5月21日）の日付に整合性はあるか。</p>
+      <p class="a">上程日は理事会開催日、確認日は委員会内最終確認日として整理しています。スケジュール表とも齟齬はありません。</p>
+    </div>
+    <div class="qa-item">
+      <p class="q">室長・委員長の氏名表記は正式か。職務分掌との整合は取れているか。</p>
+      <p class="a">室長：中谷一世／委員長：藤澤祐希、職務分掌「信頼を集めるリーダー像を学び、実践力を高める研修事業の実施」とアカデミー事業の目的が一致していることを背景・目的で示しています。</p>
+    </div>
+    <div class="qa-item">
+      <p class="q">委員会名「会員開発委員会」、事業名「会員開発委員会アカデミー事業」の表記揺れはないか。</p>
+      <p class="a">本文・ヘッダ・添付資料すべてで統一しています。</p>
+    </div>
+    <div class="qa-item">
+      <p class="q">引用著作物「有」とした根拠は何か。コンプライアンス確認番号「-」のままで問題ないか。</p>
+      <p class="a">ミッションカードのテーマや参考資料に他LOM公開議案・既存研究資料を参照するため「有」としています。確認番号は引用元確定後にコンプライアンス委員会へ申請し付番予定です。</p>
+    </div>
+    <div class="qa-item">
+      <p class="q">対外配付資料「無」、公益性「無」、公益確認番号「空欄」で進めて良いか。</p>
+      <p class="a">本事業は既存会員向け対内研修のため対外配付・公益性は無で整理。地域事業者を実際に招く設計に変更する場合は再整理する旨を 9. 対象者欄に注記済みです。</p>
+    </div>
+    <div class="qa-item">
+      <p class="q">添付資料はすべて準備済みか。未作成のものはどれか。</p>
+      <p class="a">15. 審議対象資料・16. 参考資料の一覧に整理。優先度の高い未作成資料は付録「追加で作ると強い資料」5点（実施要項／カードサンプル／ミッション一覧／ふりかえりシート／プライバシー配慮ルール）です。</p>
+    </div>
+    <div class="qa-item">
+      <p class="q">個人情報・プライバシー配慮の根拠資料は何か。</p>
+      <p class="a">審議対象資料 13）個人情報・プライバシー配慮に関する運営ルールに集約し、カード記載項目を「青年経済人としての仕事観・強み・地域での役割」に限定する旨を明記しています。</p>
+    </div>
+    <div class="qa-item">
+      <p class="q">前回上程からのブラッシュアップ点は明確に示されているか。</p>
+      <p class="a">11. に整理。①事業内容の具体化（カードゲーム手法の追加）／②2周目チャレンジによる負担集中の疑似再現／③プライバシーに踏み込まない設計、の3点です。</p>
+    </div>
+  </div>
+</section>
+
+<!-- 財審 -->
+<section class="category" id="cat-zaishin">
+  <div class="category-header">
+    <span class="badge"></span>
+    <h2>財審</h2>
+    <span class="count">6 件</span>
+  </div>
+  <div class="qa-list">
+    <div class="qa-item">
+      <p class="q">予算総額が「未定」のままで上程して良いのか。確定タイミングは。</p>
+      <p class="a">7月の事業審議までに講師招聘有無・会場・印刷数量を確定し、事業計画収支予算書に反映します。それまでは想定項目のみで合意形成を進めます。</p>
+    </div>
+    <div class="qa-item">
+      <p class="q">想定予算項目にある「カード印刷費」「備品費」の概算根拠は。</p>
+      <p class="a">A4印刷＋ラミネートのDIY形式を前提に試算します。カード総数・グループ数（4〜6名×5〜7班）を基に、印刷ロット・ラミネートシート数量を見積もる予定です。</p>
+    </div>
+    <div class="qa-item">
+      <p class="q">BBQまたは懇親に係る費用の負担区分は。事業予算で全額負担するのか、参加者個人負担か。</p>
+      <p class="a">事業予算と参加者会費の按分とする方針です。具体的な配分は会場決定・予算確定時に提示します。</p>
+    </div>
+    <div class="qa-item">
+      <p class="q">講師謝礼や交通費が想定項目にないが、外部講師は招かない設計か。</p>
+      <p class="a">本事業は会員主体のカードゲーム形式のため外部講師招聘は想定していません。地域事業者リーダーの講話を追加する場合は別途予算計上します。</p>
+    </div>
+    <div class="qa-item">
+      <p class="q">協賛品・表彰品を会員や地域事業者から受領する場合の処理は。</p>
+      <p class="a">提供者・品目・概算額・用途を一覧化し、審議対象資料 12）協賛品・表彰品管理表に集約。必要に応じてコンプライアンス確認を行います。</p>
+    </div>
+    <div class="qa-item">
+      <p class="q">予備費の設定はあるか。会場変更や追加発注のリスクに対応できるか。</p>
+      <p class="a">想定予算項目「その他運営費」に一定額を計上し、当日の備品追加・会場変更等の不測コストに備える予定です。</p>
+    </div>
+  </div>
+</section>
+
+<!-- 事業内容 -->
+<section class="category" id="cat-jigyo">
+  <div class="category-header">
+    <span class="badge"></span>
+    <h2>事業内容</h2>
+    <span class="count">10 件</span>
+  </div>
+  <div class="qa-list">
+    <div class="qa-item">
+      <p class="q">コアターゲット「参加率の低いメンバー、入会歴の浅いメンバー」の具体的な人数想定は。</p>
+      <p class="a">参考資料 12）加賀JC出席状況確認資料をもとに数値化します。54名中の該当者数は事前ヒアリング後に確定します。</p>
+    </div>
+    <div class="qa-item">
+      <p class="q">想定参加54名のうち、コアターゲットが何名参加すれば成功と見なすか。</p>
+      <p class="a">検証指標案で「参加者の80%以上が相互理解できた」と回答する設計のため、コアターゲットの参加と肯定回答比率の両方を成果として見ます。具体的なKGI数値は事業前アンケート後に確定します。</p>
+    </div>
+    <div class="qa-item">
+      <p class="q">カードに掲載するメンバー情報の事前承諾はどう取るか。</p>
+      <p class="a">対象者全員に記載項目（氏名／事業領域／頼れること／JCで活かせる場面）と用途を提示し、書面または電子フォームで承諾を取得します。プロセスは審議対象資料 13）プライバシー配慮ルールに明文化します。</p>
+    </div>
+    <div class="qa-item">
+      <p class="q">プライバシー配慮のラインはどこで引くか。家庭事情・趣味は扱わない理解で良いか。</p>
+      <p class="a">そのとおりです。記載は「青年経済人としての仕事観・地域での役割・JCで活かせる強み」に限定し、私生活・家庭事情・趣味・嗜好は扱いません。</p>
+    </div>
+    <div class="qa-item">
+      <p class="q">地域事業者・拡大対象者のカード化は誰が承諾を取るか。</p>
+      <p class="a">委員会内で担当者を割り当て、事業者・拡大対象者の代表に直接承諾を取得します。承諾済情報のみカード化します。</p>
+    </div>
+    <div class="qa-item">
+      <p class="q">2周目チャレンジで「役職に就いた」想定のカード除外は、ファシリテーションが難しくないか。</p>
+      <p class="a">1周目で最も使用された人物カードを機械的に抽出して2周目で使用不可とするルールで運用します。ファシリ手順は審議対象資料 4）頼れる仲間カードゲーム実施要項に明記します。</p>
+    </div>
+    <div class="qa-item">
+      <p class="q">ミッションカードのテーマ選定基準は何か。9種類で網羅できているか。</p>
+      <p class="a">加賀JCおよびJCIで頻出する公益事業領域（防災／青少年育成／家族向け／地域交流／清掃／まちづくり／会員交流／地域資源活用／拡大連携）から選定。当日は各グループ1テーマを選び、全体で多様性を確保します。</p>
+    </div>
+    <div class="qa-item">
+      <p class="q">グループ編成「4〜6名×5〜7班」の根拠は。</p>
+      <p class="a">想定参加54名を前提に、対話・ワークの集中度を保てる規模として一般的なファシリ知見に基づき設計。各班に少なくとも1名のコアターゲットを含む配置とします。</p>
+    </div>
+    <div class="qa-item">
+      <p class="q">ふりかえりシートの設問はいつまでに確定するか。</p>
+      <p class="a">6月のカードゲーム設計フェーズで設問初版を作成、7月の事業審議で確定します。検証項目6点・検証指標案6点と整合させます。</p>
+    </div>
+    <div class="qa-item">
+      <p class="q">当日のファシリテーターは誰が担当するか。委員会内で対応可能か。</p>
+      <p class="a">委員会メンバーが班ごとに1名ファシリとして配置される運用を想定。事前にファシリ研修（簡易OJT）を実施します。</p>
+    </div>
+  </div>
+</section>
+
+<!-- スケジュール・会場 -->
+<section class="category" id="cat-schedule">
+  <div class="category-header">
+    <span class="badge"></span>
+    <h2>スケジュール・会場</h2>
+    <span class="count">5 件</span>
+  </div>
+  <div class="qa-list">
+    <div class="qa-item">
+      <p class="q">8月30日実施に対し、カード制作のスケジュールに余裕はあるか。</p>
+      <p class="a">6月にカードゲーム設計、7月にカード内容精査・承諾取得・印刷発注、8月実施の流れで余裕を持って進めます。</p>
+    </div>
+    <div class="qa-item">
+      <p class="q">事前アンケートの実施時期と回答率の目標は。</p>
+      <p class="a">6月のカードゲーム設計フェーズに合わせて配信、回答率70%以上を目標とします。委員会・例会で直接呼びかけることで回収率を確保します。</p>
+    </div>
+    <div class="qa-item">
+      <p class="q">9月の事業報告作成の体制とアウトプットは。</p>
+      <p class="a">委員会内で報告書ドラフトを作成し、事業後アンケート結果・ふりかえりシート・グループ発表内容を統合した報告資料として理事会に提出します。</p>
+    </div>
+    <div class="qa-item">
+      <p class="q">会場「加賀イノベーションセンター」の選定理由は。</p>
+      <p class="a">審議対象資料 14）会場選定理由書を参照。グループワーク・カードゲーム実施スペース、懇親・BBQ実施可否、立地等の総合判断により選定しました。</p>
+    </div>
+    <div class="qa-item">
+      <p class="q">会場の収容人数・グループワーク実施可否・BBQ実施可否は確認済みか。</p>
+      <p class="a">想定参加54名＋運営10名前後を収容可能、グループワーク用テーブル配置、屋外スペース利用可を確認済みです。詳細は会場選定理由書に記載します。</p>
+    </div>
+  </div>
+</section>
+
+<!-- 広報 -->
+<section class="category" id="cat-koho">
+  <div class="category-header">
+    <span class="badge"></span>
+    <h2>広報</h2>
+    <span class="count">3 件</span>
+  </div>
+  <div class="qa-list">
+    <div class="qa-item">
+      <p class="q">対内広報の発信時期はいつか。</p>
+      <p class="a">事前アンケート配信と同時に第1報（6月）、実施1ヶ月前に第2報（7月末）、実施前週に最終リマインド（8月下旬）の3回を予定しています。</p>
+    </div>
+    <div class="qa-item">
+      <p class="q">低アクティブメンバーへの個別声かけの体制は。</p>
+      <p class="a">委員会内で対象者ごとに担当者を割り当て、グループLINE等の一斉案内に加えて個別の声かけを行います。「自分の仕事や強みがJC活動で活かせる機会である」という参加意義を伝える点を統一します。</p>
+    </div>
+    <div class="qa-item">
+      <p class="q">事業後の広報発信は行うか。個人カード情報の取り扱いは。</p>
+      <p class="a">事業後発信は行いますが、個人のカード内容や事業者情報は公開せず、事業趣旨・学びの内容を中心に発信します。10. 広報戦略 02 に明記済みです。</p>
+    </div>
+  </div>
+</section>
+
+<!-- 検証方法 -->
+<section class="category" id="cat-kensho">
+  <div class="category-header">
+    <span class="badge"></span>
+    <h2>検証方法</h2>
+    <span class="count">4 件</span>
+  </div>
+  <div class="qa-list">
+    <div class="qa-item">
+      <p class="q">検証指標案の「80%以上」「70%以上」の数値根拠は。</p>
+      <p class="a">参考資料 4）RNCアンケート評価法を参照し、研修事業の標準的な肯定回答率水準として設定。事業後の実測値と比較して翌年度以降の指標調整の基礎データとします。</p>
+    </div>
+    <div class="qa-item">
+      <p class="q">事業後アンケートの実施タイミングは当日直後か後日か。</p>
+      <p class="a">当日その場で実施する直後アンケート（紙またはGoogleフォーム）と、3ヶ月後のフォローアップアンケートの2点測定とします。詳細は審議対象資料 1）アカデミー事業後アンケート（参考資料）に記載予定です。</p>
+    </div>
+    <div class="qa-item">
+      <p class="q">自由記述の集計・分析方法は。</p>
+      <p class="a">「今後頼りたいメンバー」「自分が引き受けられる役割」のキーワードを抽出し、定性分析として報告書に反映します。</p>
+    </div>
+    <div class="qa-item">
+      <p class="q">検証結果は誰がいつまでにまとめるか。</p>
+      <p class="a">委員長・室長を責任者として、9月中に事業報告書としてまとめ、次年度議案へのフィードバックとして理事会に提出します。</p>
+    </div>
+  </div>
+</section>
+
+<!-- 上位整合 -->
+<section class="category" id="cat-joui">
+  <div class="category-header">
+    <span class="badge"></span>
+    <h2>上位整合</h2>
+    <span class="count">3 件</span>
+  </div>
+  <div class="qa-list">
+    <div class="qa-item">
+      <p class="q">加賀JC2026年度理事長所信のどの部分と整合するか。</p>
+      <p class="a">参考資料 3）加賀JC2026年度 理事長所信を参照。「挑戦する人を孤立させない」「全員で支え合う文化の醸成」というメッセージと、本事業の目的・期待される効果が一致しています。</p>
+    </div>
+    <div class="qa-item">
+      <p class="q">会員開発委員会方針との整合性は。</p>
+      <p class="a">参考資料 1）会員開発委員会方針を参照。「信頼を集めるリーダー像を学び、実践力を高める研修事業の実施」という職務分掌に対し、本事業はカードゲーム形式でリーダー視点と仲間を支える実践力を高める設計としています。</p>
+    </div>
+    <div class="qa-item">
+      <p class="q">石川ブロック協議会や他LOMの先行事例との比較は行ったか。</p>
+      <p class="a">参考資料 5）公開議案・他LOM事例調査資料／15）大垣JC・高槻JC 議案作成マニュアルを参照。先行事例の構成・KPI設定・運営ノウハウを取り込んだうえで、加賀JC独自のカードゲーム手法を組み込んでいます。</p>
+    </div>
+  </div>
+</section>
+
+<section class="related-docs" style="margin-top:24px;background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:20px 22px">
+  <h2 style="margin:0 0 12px;font-size:12px;color:#6b7280;letter-spacing:0.06em;text-transform:uppercase">📚 関連審議資料・参考資料</h2>
+  <p style="margin:0 0 12px;font-size:12.5px;color:#374151;line-height:1.95"><strong style="color:#1f6feb">審議対象資料</strong>：
+    <a href="siryoh/shingi/事業フロー.htm">1) 事業フロー</a>　／　2) 事業計画収支予算書　／　
+    <a href="siryoh/shingi/当日実施要項.htm">3) 当日実施要項</a>　／　4) 当日役割分担表　／　
+    <a href="siryoh/shingi/KAGA_JC_GATHERING_仕様書.htm">5) KAGA JC GATHERING QUEST 実施要項</a>　／　6) KAGA JC GATHERING QUEST 手段選定理由書　／　
+    <a href="siryoh/shingi/ゲーム進行マニュアル.htm">7) ゲーム進行マニュアル</a>　／　
+    <a href="siryoh/sankoh/テーブルゲームマスター進行台本.htm">8) テーブルゲームマスター進行台本</a>　／　
+    <a href="siryoh/sankoh/正副メンター役割確認シート.htm">9) 正副メンター役割確認シート</a>　／　
+    <a href="siryoh/shingi/カードサンプル一覧.htm">10) カードサンプル一覧</a>　／　
+    <a href="siryoh/sankoh/ミッションカード一覧.htm">11) ミッションカード一覧</a>　／　
+    <a href="siryoh/sankoh/ハードルカード一覧.htm">12) ハードルカード一覧</a>　／　
+    <a href="siryoh/shingi/ふりかえりシート.htm">13) ふりかえりシート</a>　／　14) グループ発表シート　／　
+    <a href="siryoh/shingi/会場選定理由書.htm#layout">15) 会場レイアウト・安全管理資料</a>　／　16) 表彰品・配布物管理表　／　
+    <a href="siryoh/shingi/個人情報・プライバシー配慮に関する運営ルール.htm">17) 個人情報・プライバシー配慮に関する運営ルール</a>
+  </p>
+  <p style="margin:0;font-size:12.5px;color:#374151;line-height:1.95"><strong style="color:#2da44e">参考資料</strong>：
+    1) アカデミー事業後アンケート ／ 会員開発委員会方針　／　2) 加賀LOMアカデミー事業 議案参考資料　／　3) 加賀JC2026年度 理事長所信　／　4) RNCアンケート評価法　／　5) 公開議案・他LOM事例調査資料　／　6) JCプログラム公式資料　／　7) ビジネスゲーム導入事例　／　8) ABC手法比較資料　／　9) KAGA JC GATHERING QUEST 図説資料　／　
+    <a href="siryoh/shingi/事業フロー.htm">10) カードゲーム進行フロー図</a>　／　11) 学術・行動経済学的根拠メモ　／　12) 事前アンケート集計結果　／　13) 簡易ヒアリング要約　／　14) 加賀JC出席状況確認資料　／　15) 役割分担確認資料　／　16) 鎌田長明「JC論：議案の書き方」シリーズ　／　17) 大垣JC・高槻JC 議案作成マニュアル
+  </p>
+  <p style="margin:14px 0 0;font-size:10.5px;color:#9ca3af;text-align:right">※ リンク付き項目はページ作成済みの資料</p>
+</section>
+
+</main>
+
+
+<footer>
+  会員開発委員会アカデミー事業 議案関連資料
+  <br>
+  <a href="議案本文.htm" class="back">← 議案本文に戻る</a>
+</footer>
+
+</body>
+</html>
