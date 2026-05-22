@@ -220,6 +220,18 @@
     .qa-item { padding: 14px 16px; }
     .category-header { padding: 14px 16px; }
   }
+
+  /* Q&A importance badges */
+  .qa-meta { display:flex; gap:8px; align-items:center; flex-wrap:wrap; margin-bottom:8px; }
+  .qa-badge { display:inline-block; font-size:11px; font-weight:700; padding:2px 8px; border-radius:4px; border:1px solid; }
+  .qa-badge.kakunin { background:#e0f2fe; color:#075985; border-color:#7dd3fc; }   /* 確認: light blue */
+  .qa-badge.shusei  { background:#fee2e2; color:#991b1b; border-color:#fca5a5; }   /* 修正: red */
+  .qa-badge.iken    { background:#ecfccb; color:#3f6212; border-color:#bef264; }   /* 意見: green */
+  .qa-links { margin-top:8px; font-size:12px; color:#374151; padding-top:6px; border-top:1px dashed #e5e7eb; }
+  .qa-links .label { color:#6b7280; margin-right:6px; font-weight:600; }
+  .qa-links a { color:#1f6feb; text-decoration:none; margin-right:10px; white-space:nowrap; }
+  .qa-links a:hover { text-decoration:underline; }
+
 </style>
 </head>
 <body>
@@ -243,6 +255,12 @@
     <li data-cat="kensho"><a href="#cat-kensho"><span class="dot"></span>検証方法</a></li>
     <li data-cat="joui"><a href="#cat-joui"><span class="dot"></span>上位整合</a></li>
   </ul>
+  <div style="margin-top:18px;padding-top:14px;border-top:1px solid #e5e7eb;display:flex;gap:16px;font-size:12.5px;color:#374151;flex-wrap:wrap;align-items:center">
+    <span style="color:#6b7280;font-weight:600">重要度ラベル：</span>
+    <span><span class="qa-badge kakunin">確認</span> 情報や根拠の確認が必要</span>
+    <span><span class="qa-badge shusei">修正</span> 議案・資料側の追記・修正が必要</span>
+    <span><span class="qa-badge iken">意見</span> 議論・意見交換が必要</span>
+  </div>
 </nav>
 
 <!-- 総務チェック -->
@@ -254,34 +272,42 @@
   </div>
   <div class="qa-list">
     <div class="qa-item">
+      <div class="qa-meta"><span class="qa-badge kakunin">確認</span></div>
       <p class="q">議案上程日（5月19日）と確認日（5月21日）の日付に整合性はあるか。</p>
       <p class="a">上程日は理事会開催日、確認日は委員会内最終確認日として整理しています。スケジュール表とも齟齬はありません。</p>
     </div>
     <div class="qa-item">
+      <div class="qa-meta"><span class="qa-badge kakunin">確認</span></div>
       <p class="q">室長・委員長の氏名表記は正式か。職務分掌との整合は取れているか。</p>
       <p class="a">室長：中谷一世／委員長：藤澤祐希、職務分掌「信頼を集めるリーダー像を学び、実践力を高める研修事業の実施」とアカデミー事業の目的が一致していることを背景・目的で示しています。</p>
     </div>
     <div class="qa-item">
+      <div class="qa-meta"><span class="qa-badge kakunin">確認</span></div>
       <p class="q">委員会名「会員開発委員会」、事業名「会員開発委員会アカデミー事業」の表記揺れはないか。</p>
       <p class="a">本文・ヘッダ・添付資料すべてで統一しています。</p>
     </div>
     <div class="qa-item">
+      <div class="qa-meta"><span class="qa-badge kakunin">確認</span></div>
       <p class="q">引用著作物「有」とした根拠は何か。コンプライアンス確認番号「-」のままで問題ないか。</p>
       <p class="a">ミッションカードのテーマや参考資料に他LOM公開議案・既存研究資料を参照するため「有」としています。確認番号は引用元確定後にコンプライアンス委員会へ申請し付番予定です。</p>
     </div>
     <div class="qa-item">
+      <div class="qa-meta"><span class="qa-badge kakunin">確認</span></div>
       <p class="q">対外配付資料「無」、公益性「無」、公益確認番号「空欄」で進めて良いか。</p>
       <p class="a">本事業は既存会員向け対内研修のため対外配付・公益性は無で整理。地域事業者を実際に招く設計に変更する場合は再整理する旨を 9. 対象者欄に注記済みです。</p>
     </div>
     <div class="qa-item">
+      <div class="qa-meta"><span class="qa-badge shusei">修正</span></div>
       <p class="q">添付資料はすべて準備済みか。未作成のものはどれか。</p>
       <p class="a">15. 審議対象資料・16. 参考資料の一覧に整理。優先度の高い未作成資料は付録「追加で作ると強い資料」5点（実施要項／カードサンプル／ミッション一覧／ふりかえりシート／プライバシー配慮ルール）です。</p>
     </div>
     <div class="qa-item">
+      <div class="qa-meta"><span class="qa-badge kakunin">確認</span></div>
       <p class="q">個人情報・プライバシー配慮の根拠資料は何か。</p>
       <p class="a">審議対象資料 13）個人情報・プライバシー配慮に関する運営ルールに集約し、カード記載項目を「青年経済人としての仕事観・強み・地域での役割」に限定する旨を明記しています。</p>
     </div>
     <div class="qa-item">
+      <div class="qa-meta"><span class="qa-badge kakunin">確認</span></div>
       <p class="q">前回上程からのブラッシュアップ点は明確に示されているか。</p>
       <p class="a">11. に整理。①事業内容の具体化（カードゲーム手法の追加）／②2周目チャレンジによる負担集中の疑似再現／③プライバシーに踏み込まない設計、の3点です。</p>
     </div>
@@ -297,46 +323,57 @@
   </div>
   <div class="qa-list">
     <div class="qa-item">
+      <div class="qa-meta"><span class="qa-badge shusei">修正</span></div>
       <p class="q">予算総額が「未定」のままで上程して良いのか。確定タイミングは。</p>
       <p class="a">7月の事業審議までに講師招聘有無・会場・印刷数量を確定し、事業計画収支予算書に反映します。それまでは想定項目のみで合意形成を進めます。</p>
     </div>
     <div class="qa-item">
+      <div class="qa-meta"><span class="qa-badge kakunin">確認</span></div>
       <p class="q">想定予算項目にある「カード印刷費」「備品費」の概算根拠は。</p>
       <p class="a">A4印刷＋ラミネートのDIY形式を前提に試算します。カード総数・グループ数（4〜6名×5〜7班）を基に、印刷ロット・ラミネートシート数量を見積もる予定です。</p>
     </div>
     <div class="qa-item">
+      <div class="qa-meta"><span class="qa-badge shusei">修正</span></div>
       <p class="q">BBQまたは懇親に係る費用の負担区分は。事業予算で全額負担するのか、参加者個人負担か。</p>
       <p class="a">事業予算と参加者会費の按分とする方針です。具体的な配分は会場決定・予算確定時に提示します。</p>
     </div>
     <div class="qa-item">
+      <div class="qa-meta"><span class="qa-badge kakunin">確認</span></div>
       <p class="q">講師謝礼や交通費が想定項目にないが、外部講師は招かない設計か。</p>
       <p class="a">本事業は会員主体のカードゲーム形式のため外部講師招聘は想定していません。地域事業者リーダーの講話を追加する場合は別途予算計上します。</p>
     </div>
     <div class="qa-item">
+      <div class="qa-meta"><span class="qa-badge kakunin">確認</span></div>
       <p class="q">協賛品・表彰品を会員や地域事業者から受領する場合の処理は。</p>
       <p class="a">提供者・品目・概算額・用途を一覧化し、審議対象資料 12）協賛品・表彰品管理表に集約。必要に応じてコンプライアンス確認を行います。</p>
     </div>
     <div class="qa-item">
+      <div class="qa-meta"><span class="qa-badge kakunin">確認</span></div>
       <p class="q">予備費の設定はあるか。会場変更や追加発注のリスクに対応できるか。</p>
       <p class="a">想定予算項目「その他運営費」に一定額を計上し、当日の備品追加・会場変更等の不測コストに備える予定です。</p>
     </div>
     <div class="qa-item">
+      <div class="qa-meta"><span class="qa-badge kakunin">確認</span></div>
       <p class="q">加賀JCの過去アカデミー事業／会員開発事業における予算規模の前例と比較して、本事業230,000円は妥当な水準か。</p>
       <p class="a">財審担当・事務局および歴代委員長に過去事業の予算水準・項目内訳をヒアリングのうえ、本事業の230,000円が加賀JC過去判例の範囲内に収まることを確認します。ヒアリング結果と比較表は上程までに提示します。</p>
     </div>
     <div class="qa-item">
+      <div class="qa-meta"><span class="qa-badge kakunin">確認</span></div>
       <p class="q">表彰品・配布物について、加賀JCの過去事業ではどのように取り扱われてきたか。「景品」とみなされ問題視された前例はないか。</p>
       <p class="a">加賀JC過去事業における表彰品・配布物の運用判例を事務局・財審にヒアリングします。本事業では「景品」ではなく「共助行動・地域資源活用提案への表彰」「共助アクションキット」「公益事業啓発品」「地域資源理解促進品」として位置づける方針ですが、過去判例とのギャップがあれば再整理します（審議対象資料11：予算項目の取扱いに関するメモ参照）。</p>
     </div>
     <div class="qa-item">
+      <div class="qa-meta"><span class="qa-badge kakunin">確認</span></div>
       <p class="q">BBQ・懇親会の飲食費・会場費を事業予算で計上した加賀JC過去事例はあるか。本事業60,000円の扱いに前例上の懸念はないか。</p>
       <p class="a">BBQ・交流時間は単なる懇親ではなく「役割分担ワークを通じた支え合いの体験」として位置づけ、公益事業の一部として整理しています。ただし、加賀JC過去事業における類似の飲食費計上事例の有無・処理方法を事務局および歴代財務担当にヒアリングし、判例上の整合性を確認します。</p>
     </div>
     <div class="qa-item">
+      <div class="qa-meta"><span class="qa-badge kakunin">確認</span></div>
       <p class="q">参加者から会費を徴収するかしないか。加賀JCの過去判例ではアカデミー系事業の会費徴収はどう扱われてきたか。</p>
       <p class="a">現方針では事業予算と参加者会費の按分を想定しています。加賀JC過去のアカデミー系・会員開発系事業における会費徴収の有無・金額水準・按分ルールをヒアリングし、本事業の方針と整合する形で確定します。会費を取る場合は徴収根拠・使途を予算書に明記します。</p>
     </div>
     <div class="qa-item">
+      <div class="qa-meta"><span class="qa-badge kakunin">確認</span></div>
       <p class="q">協賛品や地域事業者からの提供を受けた場合、加賀JCの過去処理事例とコンプライアンス確認の手順は。</p>
       <p class="a">過去の協賛品受領事例における処理フロー（提供者一覧化・コンプライアンス確認・事業後報告への記載方法）を事務局にヒアリングし、本事業でも同等以上の手続きを踏みます。判断基準は「公益性との整合」「継続的義務・対価関係の不発生」「参加者・地域への透明性」の3点（審議対象資料11：予算項目の取扱いに関するメモ参照）。</p>
     </div>
@@ -352,44 +389,68 @@
   </div>
   <div class="qa-list">
     <div class="qa-item">
+      <div class="qa-meta"><span class="qa-badge kakunin">確認</span></div>
       <p class="q">コアターゲット「参加率の低いメンバー、入会歴の浅いメンバー」の具体的な人数想定は。</p>
       <p class="a">参考資料 12）加賀JC出席状況確認資料をもとに数値化します。54名中の該当者数は事前ヒアリング後に確定します。</p>
     </div>
     <div class="qa-item">
+      <div class="qa-meta"><span class="qa-badge shusei">修正</span></div>
       <p class="q">想定参加54名のうち、コアターゲットが何名参加すれば成功と見なすか。</p>
       <p class="a">検証指標案で「参加者の80%以上が相互理解できた」と回答する設計のため、コアターゲットの参加と肯定回答比率の両方を成果として見ます。具体的なKGI数値は事業前アンケート後に確定します。</p>
     </div>
     <div class="qa-item">
+      <div class="qa-meta"><span class="qa-badge kakunin">確認</span></div>
       <p class="q">カードに掲載するメンバー情報の事前承諾はどう取るか。</p>
       <p class="a">対象者全員に記載項目（氏名／事業領域／頼れること／JCで活かせる場面）と用途を提示し、書面または電子フォームで承諾を取得します。プロセスは審議対象資料 13）プライバシー配慮ルールに明文化します。</p>
     </div>
     <div class="qa-item">
+      <div class="qa-meta"><span class="qa-badge iken">意見</span></div>
       <p class="q">プライバシー配慮のラインはどこで引くか。家庭事情・趣味は扱わない理解で良いか。</p>
       <p class="a">そのとおりです。記載は「青年経済人としての仕事観・地域での役割・JCで活かせる強み」に限定し、私生活・家庭事情・趣味・嗜好は扱いません。</p>
+      <div class="qa-links"><span class="label">関連:</span><a href="siryoh/shingi/個人情報・プライバシー配慮に関する運営ルール.htm">審議対象資料9：個人情報・プライバシー配慮</a><a href="siryoh/shingi/加賀JCメンバーへの周知文.htm">審議対象資料13：加賀JCメンバーへの周知文</a><a href="siryoh/sankoh/役割傾向チェック設計資料.htm">審議対象資料14：役割傾向チェック設計資料</a></div>
+      <div class="qa-links"><span class="label">関連:</span><a href="siryoh/shingi/個人情報・プライバシー配慮に関する運営ルール.htm">審議対象資料9：個人情報・プライバシー配慮</a></div>
     </div>
     <div class="qa-item">
+      <div class="qa-meta"><span class="qa-badge shusei">修正</span></div>
       <p class="q">地域事業者・拡大対象者のカード化は誰が承諾を取るか。</p>
       <p class="a">委員会内で担当者を割り当て、事業者・拡大対象者の代表に直接承諾を取得します。承諾済情報のみカード化します。</p>
+      <div class="qa-links"><span class="label">関連:</span><a href="議案本文.htm">議案本文 8.目的の検証方法</a><a href="議案本文.htm">議案本文 9.対象者</a></div>
+      <div class="qa-links"><span class="label">関連:</span><a href="議案本文.htm">議案本文 3.連携する外部/内部</a><a href="議案本文.htm">議案本文 9.対象者</a></div>
     </div>
     <div class="qa-item">
+      <div class="qa-meta"><span class="qa-badge iken">意見</span></div>
       <p class="q">2周目チャレンジで「役職に就いた」想定のカード除外は、ファシリテーションが難しくないか。</p>
       <p class="a">1周目で最も使用された人物カードを機械的に抽出して2周目で使用不可とするルールで運用します。ファシリ手順は審議対象資料 4）頼れる仲間カードゲーム実施要項に明記します。</p>
+      <div class="qa-links"><span class="label">関連:</span><a href="議案本文.htm">議案本文 9.対象者</a><a href="siryoh/sankoh/加賀JC出席状況確認資料.htm">参考資料7：加賀JC出席状況確認資料</a><a href="siryoh/sankoh/ペルソナ.htm">参考資料8：ペルソナ資料</a></div>
+      <div class="qa-links"><span class="label">関連:</span><a href="siryoh/shingi/KAGA_JC_GATHERING_仕様書.htm">審議対象資料3：QUEST 実施要項</a><a href="siryoh/shingi/ゲーム進行マニュアル.htm">審議対象資料5：ゲーム進行マニュアル</a></div>
     </div>
     <div class="qa-item">
+      <div class="qa-meta"><span class="qa-badge iken">意見</span></div>
       <p class="q">ミッションカードのテーマ選定基準は何か。9種類で網羅できているか。</p>
       <p class="a">加賀JCおよびJCIで頻出する公益事業領域（防災／青少年育成／家族向け／地域交流／清掃／まちづくり／会員交流／地域資源活用／拡大連携）から選定。当日は各グループ1テーマを選び、全体で多様性を確保します。</p>
+      <div class="qa-links"><span class="label">関連:</span><a href="siryoh/shingi/予算項目の取扱いに関するメモ.htm">審議対象資料11：予算項目の取扱いに関するメモ</a></div>
+      <div class="qa-links"><span class="label">関連:</span><a href="siryoh/shingi/KAGA_JC_GATHERING_仕様書.htm">審議対象資料3：QUEST 実施要項</a><a href="siryoh/sankoh/ミッションカード一覧.htm">参考資料11：ミッションカード一覧</a></div>
     </div>
     <div class="qa-item">
+      <div class="qa-meta"><span class="qa-badge shusei">修正</span></div>
       <p class="q">グループ編成「4〜6名×5〜7班」の根拠は。</p>
       <p class="a">想定参加54名を前提に、対話・ワークの集中度を保てる規模として一般的なファシリ知見に基づき設計。各班に少なくとも1名のコアターゲットを含む配置とします。</p>
+      <div class="qa-links"><span class="label">関連:</span><a href="議案本文.htm">議案本文 12.予算</a><a href="siryoh/shingi/予算項目の取扱いに関するメモ.htm">審議対象資料11：予算項目の取扱いに関するメモ</a></div>
+      <div class="qa-links"><span class="label">関連:</span><a href="siryoh/shingi/グループ編成計画.htm">審議対象資料12：グループ編成計画</a></div>
     </div>
     <div class="qa-item">
+      <div class="qa-meta"><span class="qa-badge shusei">修正</span></div>
       <p class="q">ふりかえりシートの設問はいつまでに確定するか。</p>
       <p class="a">6月のカードゲーム設計フェーズで設問初版を作成、7月の事業審議で確定します。検証項目6点・検証指標案6点と整合させます。</p>
+      <div class="qa-links"><span class="label">関連:</span><a href="siryoh/shingi/予算項目の取扱いに関するメモ.htm">審議対象資料11：予算項目の取扱いに関するメモ</a></div>
+      <div class="qa-links"><span class="label">関連:</span><a href="siryoh/shingi/ふりかえりシート.htm">審議対象資料8：ふりかえりシート</a></div>
     </div>
     <div class="qa-item">
+      <div class="qa-meta"><span class="qa-badge shusei">修正</span></div>
       <p class="q">当日のファシリテーターは誰が担当するか。委員会内で対応可能か。</p>
       <p class="a">委員会メンバーが班ごとに1名ファシリとして配置される運用を想定。事前にファシリ研修（簡易OJT）を実施します。</p>
+      <div class="qa-links"><span class="label">関連:</span><a href="siryoh/shingi/予算項目の取扱いに関するメモ.htm">審議対象資料11：予算項目の取扱いに関するメモ</a></div>
+      <div class="qa-links"><span class="label">関連:</span><a href="siryoh/shingi/当日役割分担表.htm">審議対象資料6：当日役割分担表</a><a href="siryoh/shingi/当日実施要項.htm">審議対象資料2：当日実施要項</a></div>
     </div>
   </div>
 </section>
@@ -403,24 +464,39 @@
   </div>
   <div class="qa-list">
     <div class="qa-item">
+      <div class="qa-meta"><span class="qa-badge kakunin">確認</span></div>
       <p class="q">8月30日実施に対し、カード制作のスケジュールに余裕はあるか。</p>
       <p class="a">6月にカードゲーム設計、7月にカード内容精査・承諾取得・印刷発注、8月実施の流れで余裕を持って進めます。</p>
+      <div class="qa-links"><span class="label">関連:</span><a href="議案本文.htm">議案本文 12.予算</a><a href="siryoh/shingi/予算項目の取扱いに関するメモ.htm">審議対象資料11：予算項目の取扱いに関するメモ</a></div>
+      <div class="qa-links"><span class="label">関連:</span><a href="議案本文.htm">議案本文 5.スケジュール</a><a href="siryoh/sankoh/役割傾向チェック設計資料.htm">審議対象資料14：役割傾向チェック設計資料</a></div>
     </div>
     <div class="qa-item">
+      <div class="qa-meta"><span class="qa-badge kakunin">確認</span></div>
       <p class="q">事前アンケートの実施時期と回答率の目標は。</p>
       <p class="a">6月のカードゲーム設計フェーズに合わせて配信、回答率70%以上を目標とします。委員会・例会で直接呼びかけることで回収率を確保します。</p>
+      <div class="qa-links"><span class="label">関連:</span><a href="議案本文.htm">議案本文 12.予算</a></div>
+      <div class="qa-links"><span class="label">関連:</span><a href="議案本文.htm">議案本文 5.スケジュール</a><a href="siryoh/sankoh/役割傾向チェック設計資料.htm">審議対象資料14：役割傾向チェック設計資料</a></div>
     </div>
     <div class="qa-item">
+      <div class="qa-meta"><span class="qa-badge kakunin">確認</span></div>
       <p class="q">9月の事業報告作成の体制とアウトプットは。</p>
       <p class="a">委員会内で報告書ドラフトを作成し、事業後アンケート結果・ふりかえりシート・グループ発表内容を統合した報告資料として理事会に提出します。</p>
+      <div class="qa-links"><span class="label">関連:</span><a href="siryoh/shingi/予算項目の取扱いに関するメモ.htm">審議対象資料11：予算項目の取扱いに関するメモ</a></div>
+      <div class="qa-links"><span class="label">関連:</span><a href="議案本文.htm">議案本文 5.スケジュール</a><a href="siryoh/shingi/ふりかえりシート.htm">審議対象資料8：ふりかえりシート</a></div>
     </div>
     <div class="qa-item">
+      <div class="qa-meta"><span class="qa-badge kakunin">確認</span></div>
       <p class="q">会場「加賀イノベーションセンター」の選定理由は。</p>
       <p class="a">審議対象資料 14）会場選定理由書を参照。グループワーク・カードゲーム実施スペース、懇親・BBQ実施可否、立地等の総合判断により選定しました。</p>
+      <div class="qa-links"><span class="label">関連:</span><a href="議案本文.htm">議案本文 12.予算</a></div>
+      <div class="qa-links"><span class="label">関連:</span><a href="siryoh/shingi/会場選定理由書.htm">審議対象資料10：会場選定理由書</a></div>
     </div>
     <div class="qa-item">
+      <div class="qa-meta"><span class="qa-badge kakunin">確認</span></div>
       <p class="q">会場の収容人数・グループワーク実施可否・BBQ実施可否は確認済みか。</p>
       <p class="a">想定参加54名＋運営10名前後を収容可能、グループワーク用テーブル配置、屋外スペース利用可を確認済みです。詳細は会場選定理由書に記載します。</p>
+      <div class="qa-links"><span class="label">関連:</span><a href="議案本文.htm">議案本文 12.予算</a><a href="siryoh/shingi/予算項目の取扱いに関するメモ.htm">審議対象資料11：予算項目の取扱いに関するメモ</a></div>
+      <div class="qa-links"><span class="label">関連:</span><a href="siryoh/shingi/会場選定理由書.htm">審議対象資料10：会場選定理由書</a></div>
     </div>
   </div>
 </section>
@@ -434,16 +510,25 @@
   </div>
   <div class="qa-list">
     <div class="qa-item">
+      <div class="qa-meta"><span class="qa-badge kakunin">確認</span></div>
       <p class="q">対内広報の発信時期はいつか。</p>
       <p class="a">事前アンケート配信と同時に第1報（6月）、実施1ヶ月前に第2報（7月末）、実施前週に最終リマインド（8月下旬）の3回を予定しています。</p>
+      <div class="qa-links"><span class="label">関連:</span><a href="siryoh/shingi/予算項目の取扱いに関するメモ.htm">審議対象資料11：予算項目の取扱いに関するメモ</a></div>
+      <div class="qa-links"><span class="label">関連:</span><a href="議案本文.htm">議案本文 10.広報戦略</a><a href="siryoh/shingi/加賀JCメンバーへの周知文.htm">審議対象資料13：加賀JCメンバーへの周知文</a></div>
     </div>
     <div class="qa-item">
+      <div class="qa-meta"><span class="qa-badge iken">意見</span></div>
       <p class="q">低アクティブメンバーへの個別声かけの体制は。</p>
       <p class="a">委員会内で対象者ごとに担当者を割り当て、グループLINE等の一斉案内に加えて個別の声かけを行います。「自分の仕事や強みがJC活動で活かせる機会である」という参加意義を伝える点を統一します。</p>
+      <div class="qa-links"><span class="label">関連:</span><a href="議案本文.htm">議案本文 12.予算</a><a href="siryoh/shingi/予算項目の取扱いに関するメモ.htm">審議対象資料11：予算項目の取扱いに関するメモ</a></div>
+      <div class="qa-links"><span class="label">関連:</span><a href="議案本文.htm">議案本文 10.広報戦略</a><a href="siryoh/shingi/加賀JCメンバーへの周知文.htm">審議対象資料13：加賀JCメンバーへの周知文</a></div>
     </div>
     <div class="qa-item">
+      <div class="qa-meta"><span class="qa-badge kakunin">確認</span></div>
       <p class="q">事業後の広報発信は行うか。個人カード情報の取り扱いは。</p>
       <p class="a">事業後発信は行いますが、個人のカード内容や事業者情報は公開せず、事業趣旨・学びの内容を中心に発信します。10. 広報戦略 02 に明記済みです。</p>
+      <div class="qa-links"><span class="label">関連:</span><a href="議案本文.htm">議案本文 11.ブラッシュアップ</a></div>
+      <div class="qa-links"><span class="label">関連:</span><a href="議案本文.htm">議案本文 10.広報戦略</a></div>
     </div>
   </div>
 </section>
@@ -457,20 +542,32 @@
   </div>
   <div class="qa-list">
     <div class="qa-item">
+      <div class="qa-meta"><span class="qa-badge kakunin">確認</span></div>
       <p class="q">検証指標案の「80%以上」「70%以上」の数値根拠は。</p>
       <p class="a">参考資料 4）RNCアンケート評価法を参照し、研修事業の標準的な肯定回答率水準として設定。事業後の実測値と比較して翌年度以降の指標調整の基礎データとします。</p>
+      <div class="qa-links"><span class="label">関連:</span><a href="siryoh/shingi/個人情報・プライバシー配慮に関する運営ルール.htm">審議対象資料9：個人情報・プライバシー配慮</a></div>
+      <div class="qa-links"><span class="label">関連:</span><a href="議案本文.htm">議案本文 8.目的の検証方法</a></div>
     </div>
     <div class="qa-item">
+      <div class="qa-meta"><span class="qa-badge kakunin">確認</span></div>
       <p class="q">事業後アンケートの実施タイミングは当日直後か後日か。</p>
       <p class="a">当日その場で実施する直後アンケート（紙またはGoogleフォーム）と、3ヶ月後のフォローアップアンケートの2点測定とします。詳細は審議対象資料 1）アカデミー事業後アンケート（参考資料）に記載予定です。</p>
+      <div class="qa-links"><span class="label">関連:</span><a href="議案本文.htm#shingi">議案本文 15.審議対象資料／16.参考資料</a></div>
+      <div class="qa-links"><span class="label">関連:</span><a href="議案本文.htm">議案本文 8.目的の検証方法</a><a href="siryoh/shingi/ふりかえりシート.htm">審議対象資料8：ふりかえりシート</a></div>
     </div>
     <div class="qa-item">
+      <div class="qa-meta"><span class="qa-badge kakunin">確認</span></div>
       <p class="q">自由記述の集計・分析方法は。</p>
       <p class="a">「今後頼りたいメンバー」「自分が引き受けられる役割」のキーワードを抽出し、定性分析として報告書に反映します。</p>
+      <div class="qa-links"><span class="label">関連:</span><a href="議案本文.htm">議案本文 9.対象者・14.対外配付資料</a></div>
+      <div class="qa-links"><span class="label">関連:</span><a href="議案本文.htm">議案本文 8.目的の検証方法</a><a href="siryoh/shingi/ふりかえりシート.htm">審議対象資料8：ふりかえりシート</a></div>
     </div>
     <div class="qa-item">
+      <div class="qa-meta"><span class="qa-badge kakunin">確認</span></div>
       <p class="q">検証結果は誰がいつまでにまとめるか。</p>
       <p class="a">委員長・室長を責任者として、9月中に事業報告書としてまとめ、次年度議案へのフィードバックとして理事会に提出します。</p>
+      <div class="qa-links"><span class="label">関連:</span><a href="議案本文.htm#cite">議案本文 13.引用著作物</a></div>
+      <div class="qa-links"><span class="label">関連:</span><a href="議案本文.htm">議案本文 8.目的の検証方法</a></div>
     </div>
   </div>
 </section>
@@ -484,16 +581,25 @@
   </div>
   <div class="qa-list">
     <div class="qa-item">
+      <div class="qa-meta"><span class="qa-badge kakunin">確認</span></div>
       <p class="q">加賀JC2026年度理事長所信のどの部分と整合するか。</p>
       <p class="a">参考資料 3）加賀JC2026年度 理事長所信を参照。「挑戦する人を孤立させない」「全員で支え合う文化の醸成」というメッセージと、本事業の目的・期待される効果が一致しています。</p>
+      <div class="qa-links"><span class="label">関連:</span><a href="議案本文.htm">議案本文</a></div>
+      <div class="qa-links"><span class="label">関連:</span><a href="議案本文.htm">議案本文 1.背景</a><a href="siryoh/sankoh/加賀JC2026年度_理事長所信.htm">参考資料3：加賀JC2026年度 理事長所信</a></div>
     </div>
     <div class="qa-item">
+      <div class="qa-meta"><span class="qa-badge kakunin">確認</span></div>
       <p class="q">会員開発委員会方針との整合性は。</p>
       <p class="a">参考資料 1）会員開発委員会方針を参照。「信頼を集めるリーダー像を学び、実践力を高める研修事業の実施」という職務分掌に対し、本事業はカードゲーム形式でリーダー視点と仲間を支える実践力を高める設計としています。</p>
+      <div class="qa-links"><span class="label">関連:</span><a href="議案本文.htm">議案本文（ヘッダー）</a></div>
+      <div class="qa-links"><span class="label">関連:</span><a href="議案本文.htm">議案本文 1.背景</a><a href="https://agendasys.com/kaga/2026/data/bill/11833/144316/academy2/sankou/%EF%BC%AA%EF%BC%A32026%E6%96%B9%E9%87%9D%E3%80%80%E4%BC%9A%E5%93%A1%E9%96%8B%E7%99%BA%E5%A7%94%E5%93%A1%E4%BC%9A%E6%96%B9%E9%87%9D%E3%80%80%E8%97%A4%E6%BE%A4%E3%80%80.pdf">外部PDF：会員開発委員会方針</a></div>
     </div>
     <div class="qa-item">
+      <div class="qa-meta"><span class="qa-badge kakunin">確認</span></div>
       <p class="q">石川ブロック協議会や他LOMの先行事例との比較は行ったか。</p>
       <p class="a">参考資料 5）公開議案・他LOM事例調査資料／15）大垣JC・高槻JC 議案作成マニュアルを参照。先行事例の構成・KPI設定・運営ノウハウを取り込んだうえで、加賀JC独自のカードゲーム手法を組み込んでいます。</p>
+      <div class="qa-links"><span class="label">関連:</span><a href="議案本文.htm">議案本文（ヘッダー）</a></div>
+      <div class="qa-links"><span class="label">関連:</span><a href="siryoh/sankoh/公開議案_他LOM事例調査資料.htm">参考資料4：公開議案・他LOM事例調査資料</a></div>
     </div>
   </div>
 </section>
