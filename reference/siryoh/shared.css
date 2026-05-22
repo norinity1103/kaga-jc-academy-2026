@@ -1,0 +1,850 @@
+/* ==========================================================
+   KAGA JC GATHERING QUEST — Shared Component Library
+   reference/siryoh/shared.css
+   2026 会員開発委員会アカデミー事業 議案関連資料 共通スタイル
+   ========================================================== */
+
+/* ─────────────────────────────────────────────────────────
+   § 1.  Design Tokens
+   ───────────────────────────────────────────────────────── */
+:root {
+  /* Surface */
+  --bg:       #f6f7f9;
+  --card:     #ffffff;
+  --hover:    #f3f4f6;
+
+  /* Text */
+  --text:     #1f2937;
+  --muted:    #6b7280;
+  --subtle:   #9ca3af;
+
+  /* Border */
+  --line:     #e5e7eb;
+  --line-md:  #d1d5db;
+
+  /* Game Card Palette */
+  --c1:       #d8345f;   /* Mission */
+  --c1-dk:    #6b1a30;
+  --c1-lt:    #fde0e8;
+  --c2:       #bf8700;   /* Hurdle */
+  --c2-dk:    #6b4900;
+  --c2-lt:    #fef3c7;
+  --c3:       #1f6feb;   /* JC Member */
+  --c3-dk:    #0a3a6b;
+  --c3-lt:    #dbeafe;
+  --c4:       #2da44e;   /* Partner */
+  --c4-dk:    #166534;
+  --c4-lt:    #dcfce7;
+  --c5:       #8957e5;   /* Role */
+  --c5-dk:    #4c1d95;
+  --c5-lt:    #ede9fe;
+
+  /* Feedback */
+  --ok-text:  #14532d;
+  --ok-bg:    #ecfdf5;
+  --ok-line:  #86efac;
+  --ng-text:  #7f1d1d;
+  --ng-bg:    #fef2f2;
+  --ng-line:  #fca5a5;
+  --warn-text:#92400e;
+  --warn-bg:  #fef3c7;
+  --warn-line:#fcd34d;
+  --info-text:#1e40af;
+  --info-bg:  #dbeafe;
+  --info-line:#93c5fd;
+
+  /* Elevation */
+  --shadow-xs: 0 1px 2px rgba(0,0,0,.04);
+  --shadow-sm: 0 2px 6px rgba(0,0,0,.06);
+  --shadow-md: 0 4px 12px rgba(0,0,0,.08);
+  --shadow-lg: 0 8px 24px rgba(0,0,0,.10);
+
+  /* Radius */
+  --r-sm: 6px;
+  --r-md: 10px;
+  --r-lg: 12px;
+  --r-xl: 16px;
+
+  /* Typography */
+  --font-sans: -apple-system, BlinkMacSystemFont, "Hiragino Sans",
+               "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
+  --font-mono: "SF Mono", "Fira Code", Menlo, Consolas, monospace;
+}
+
+
+/* ─────────────────────────────────────────────────────────
+   § 2.  Reset & Base
+   ───────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  font-family: var(--font-sans);
+  background:  var(--bg);
+  color:       var(--text);
+  margin:      0;
+  line-height: 1.75;
+}
+
+a { color: var(--c3); }
+a:hover { text-decoration: underline; }
+
+img { max-width: 100%; height: auto; }
+
+
+/* ─────────────────────────────────────────────────────────
+   § 3.  Page Header
+   ───────────────────────────────────────────────────────── */
+header {
+  color: #fff;
+  padding: 44px 24px 36px;
+  text-align: center;
+}
+header .eyebrow {
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.60);
+  margin: 0 0 8px;
+}
+header h1 {
+  margin: 0 0 6px;
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1.25;
+}
+header .subtitle {
+  font-size: 13px;
+  margin: 0;
+  color: rgba(255,255,255,.75);
+}
+header .meta {
+  font-size: 12px;
+  margin-top: 14px;
+  color: rgba(255,255,255,.55);
+}
+
+
+/* ─────────────────────────────────────────────────────────
+   § 4.  Sticky Navigation Bar  (.links / .nav)
+   ───────────────────────────────────────────────────────── */
+
+/* — Top bar variant (.nav) — appears before <header>, full-width — */
+.nav {
+  position:       sticky;
+  top:            0;
+  z-index:        200;
+  background:     var(--card);
+  border-bottom:  1px solid var(--line);
+  padding:        10px 16px;
+  display:        flex;
+  flex-wrap:      wrap;
+  gap:            8px;
+  align-items:    center;
+  font-size:      13px;
+  color:          var(--muted);
+  box-shadow:     0 1px 4px rgba(0,0,0,.06);
+}
+.nav a {
+  color:          var(--c3);
+  text-decoration:none;
+  margin-right:   12px;
+}
+.nav a:hover { text-decoration: underline; }
+.links {
+  /* — Layout — */
+  display:        flex;
+  flex-wrap:      wrap;
+  gap:            8px;
+  align-items:    center;
+  padding:        10px 16px;
+  /* — Sticky — */
+  position:       sticky;
+  top:            8px;
+  z-index:        100;
+  /* — Visual — */
+  background:     var(--card);
+  border:         1px solid var(--line);
+  border-radius:  var(--r-md);
+  box-shadow:     var(--shadow-md);
+  margin-bottom:  20px;
+}
+.links span.label {
+  font-size:       11px;
+  color:           var(--muted);
+  letter-spacing:  0.06em;
+  text-transform:  uppercase;
+  align-self:      center;
+  margin-right:    4px;
+  flex-shrink:     0;
+}
+.links a {
+  background:     var(--hover);
+  color:          var(--text);
+  padding:        6px 12px;
+  border-radius:  var(--r-sm);
+  font-size:      12.5px;
+  text-decoration:none;
+  border:         1px solid var(--line);
+  white-space:    nowrap;
+  transition:     background 0.15s;
+}
+.links a:hover {
+  background: #e5e7eb;
+  text-decoration: none;
+}
+/* Active / current page indicator */
+.links a.current {
+  background:   #eef2ff;
+  border-color: #6366f1;
+  color:        #312e81;
+  font-weight:  600;
+}
+
+/* ── Toolbar variant (already sticky on some pages) ── */
+.toolbar {
+  position:     sticky;
+  top:          0;
+  z-index:      100;
+  background:   var(--card);
+  border-bottom:1px solid var(--line);
+  padding:      10px 16px;
+  display:      flex;
+  flex-wrap:    wrap;
+  gap:          8px;
+  align-items:  center;
+}
+.toolbar a {
+  font-size: 12.5px;
+  color: var(--text);
+  text-decoration: none;
+  padding: 5px 10px;
+  border-radius: var(--r-sm);
+  background: var(--hover);
+  border: 1px solid var(--line);
+}
+.toolbar a:hover { background: #e5e7eb; }
+
+
+/* ─────────────────────────────────────────────────────────
+   § 5.  Page Main
+   ───────────────────────────────────────────────────────── */
+main {
+  max-width: 1100px;
+  margin: 28px auto 0;
+  padding: 0 16px 64px;
+}
+
+
+/* ─────────────────────────────────────────────────────────
+   § 6.  Section / Card Container
+   ───────────────────────────────────────────────────────── */
+
+/* — Base card — */
+.card,
+section.card {
+  background:    var(--card);
+  border:        1px solid var(--line);
+  border-radius: var(--r-lg);
+  margin-bottom: 20px;
+  overflow:      hidden;
+  box-shadow:    var(--shadow-xs);
+}
+.card h2 {
+  margin: 0 0 12px;
+  font-size: 15px;
+  font-weight: 700;
+  padding-left: 10px;
+  border-left: 4px solid currentColor;
+}
+
+/* — Card with head/body — */
+.card-head,
+.sec-head {
+  padding:       16px 22px;
+  background:    #fafbfc;
+  border-bottom: 1px solid var(--line);
+  display:       flex;
+  align-items:   center;
+  gap:           12px;
+}
+/* Left accent stripe */
+.card-head .badge,
+.sec-head .badge {
+  width:         6px;
+  height:        26px;
+  border-radius: 3px;
+  background:    currentColor;
+  flex-shrink:   0;
+}
+.card-head h2,
+.sec-head h2 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 700;
+}
+.card-head .tag,
+.sec-head .tag {
+  margin-left:   auto;
+  font-size:     11px;
+  color:         var(--muted);
+  background:    #eef0f3;
+  padding:       3px 10px;
+  border-radius: 999px;
+  white-space:   nowrap;
+  flex-shrink:   0;
+}
+.card-body,
+.sec-body {
+  padding: 18px 22px;
+}
+.card-body p,
+.sec-body p {
+  margin: 0 0 10px;
+  font-size: 14px;
+}
+.card-body p:last-child,
+.sec-body p:last-child { margin-bottom: 0; }
+
+/* — Number circle (①②③ type heading) — */
+.num-circle {
+  width:          28px;
+  height:         28px;
+  border-radius:  50%;
+  display:        flex;
+  align-items:    center;
+  justify-content:center;
+  font-size:      13px;
+  font-weight:    700;
+  color:          #fff;
+  flex-shrink:    0;
+}
+
+/* — Kind section (card-type with colored top border) — */
+.kind-head {
+  background:    var(--card);
+  border:        1px solid var(--line);
+  border-radius: var(--r-md) var(--r-md) 0 0;
+  border-bottom: none;
+  padding:       16px 22px;
+  display:       flex;
+  align-items:   center;
+  gap:           12px;
+}
+.kind-head .badge {
+  display:       inline-block;
+  width:         6px;
+  height:        26px;
+  border-radius: 3px;
+}
+.kind-head h2 { margin: 0; font-size: 17px; font-weight: 700; }
+.kind-head .tag {
+  margin-left:   auto;
+  font-size:     11px;
+  color:         var(--muted);
+  background:    #eef0f3;
+  padding:       3px 10px;
+  border-radius: 999px;
+}
+.kind-body {
+  background:    var(--card);
+  border:        1px solid var(--line);
+  border-top:    none;
+  border-radius: 0 0 var(--r-md) var(--r-md);
+  padding:       20px 22px;
+}
+.kind-desc {
+  font-size: 13px;
+  color:     #374151;
+  margin:    0 0 16px;
+}
+
+
+/* ─────────────────────────────────────────────────────────
+   § 7.  Badges & Tags
+   ───────────────────────────────────────────────────────── */
+
+/* Status badges (used inline in body text & index lists) */
+.badge-draft {
+  display:       inline-block;
+  font-size:     8.5px;
+  background:    var(--warn-bg);
+  color:         var(--warn-text);
+  border:        1px solid var(--warn-line);
+  border-radius: 4px;
+  padding:       0 5px;
+  margin-left:   6px;
+  line-height:   1.5;
+  vertical-align:middle;
+  white-space:   nowrap;
+}
+.badge-update {
+  display:       inline-block;
+  font-size:     8.5px;
+  background:    var(--info-bg);
+  color:         var(--info-text);
+  border:        1px solid var(--info-line);
+  border-radius: 4px;
+  padding:       0 5px;
+  margin-left:   6px;
+  line-height:   1.5;
+  vertical-align:middle;
+  white-space:   nowrap;
+}
+
+/* Pill tag (rounded label) */
+.pill {
+  display:       inline-block;
+  border-radius: 999px;
+  padding:       3px 10px;
+  font-size:     11px;
+  font-weight:   700;
+  letter-spacing:0.04em;
+  line-height:   1.4;
+}
+.pill-red    { background: var(--c1);  color: #fff; }
+.pill-amber  { background: var(--c2);  color: #fff; }
+.pill-blue   { background: var(--c3);  color: #fff; }
+.pill-green  { background: var(--c4);  color: #fff; }
+.pill-purple { background: var(--c5);  color: #fff; }
+.pill-gray   { background: #374151;    color: #fff; }
+
+/* Inline tag chip (subtle) */
+.tag-chip {
+  display:       inline-block;
+  font-size:     11px;
+  color:         var(--muted);
+  background:    #eef0f3;
+  padding:       2px 8px;
+  border-radius: 999px;
+  line-height:   1.6;
+}
+
+/* Small inline label */
+.inline-label {
+  font-size:     10.5px;
+  font-weight:   700;
+  color:         var(--muted);
+  letter-spacing:0.04em;
+  text-transform:uppercase;
+  margin-right:  6px;
+}
+
+
+/* ─────────────────────────────────────────────────────────
+   § 8.  Table
+   ───────────────────────────────────────────────────────── */
+.tbl,
+table.tbl {
+  width:          100%;
+  border-collapse:collapse;
+  font-size:      13.5px;
+}
+.tbl th,
+.tbl td {
+  border:   1px solid var(--line);
+  padding:  10px 12px;
+  text-align: left;
+  vertical-align: top;
+}
+.tbl th {
+  background:  #f6f8fa;
+  color:       var(--muted);
+  font-weight: 600;
+  white-space: nowrap;
+}
+.tbl tr:hover td { background: #fafbfc; }
+.tbl td code {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  background: #f0f4f8;
+  border-radius: 3px;
+  padding: 1px 5px;
+}
+
+
+/* ─────────────────────────────────────────────────────────
+   § 9.  Checklist
+   ───────────────────────────────────────────────────────── */
+.checklist {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.checklist li {
+  padding:       9px 0;
+  border-bottom: 1px solid var(--line);
+  display:       flex;
+  align-items:   flex-start;
+  gap:           12px;
+  font-size:     14px;
+  line-height:   1.6;
+}
+.checklist li:last-child { border-bottom: none; }
+.checklist li::before {
+  content:      "";
+  width:        16px;
+  height:       16px;
+  border:       1.5px solid #94a3b8;
+  border-radius:3px;
+  flex-shrink:  0;
+  margin-top:   3px;
+}
+
+
+/* ─────────────────────────────────────────────────────────
+   § 10.  OK / NG Grid
+   ───────────────────────────────────────────────────────── */
+.ok-ng-grid {
+  display:               grid;
+  grid-template-columns: 1fr 1fr;
+  gap:                   12px;
+}
+@media (max-width: 600px) {
+  .ok-ng-grid { grid-template-columns: 1fr; }
+}
+.ok-box,
+.ng-box {
+  border-radius: var(--r-md);
+  padding:       16px 18px;
+}
+.ok-box {
+  background: var(--ok-bg);
+  border:     1px solid var(--ok-line);
+}
+.ng-box {
+  background: var(--ng-bg);
+  border:     1px solid var(--ng-line);
+}
+.ok-box h3 { color: var(--ok-text); font-size: 14px; margin: 0 0 8px; }
+.ng-box h3 { color: var(--ng-text); font-size: 14px; margin: 0 0 8px; }
+.ok-box ul,
+.ng-box ul {
+  margin: 0;
+  padding: 0 0 0 18px;
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+
+/* ─────────────────────────────────────────────────────────
+   § 11.  Alert / Note Box
+   ───────────────────────────────────────────────────────── */
+.note-box {
+  border-radius: var(--r-md);
+  padding:       14px 16px;
+  font-size:     13.5px;
+  line-height:   1.7;
+}
+.note-box.info  { background: var(--info-bg);  border: 1px solid var(--info-line);  color: var(--info-text); }
+.note-box.warn  { background: var(--warn-bg);  border: 1px solid var(--warn-line);  color: var(--warn-text); }
+.note-box.ok    { background: var(--ok-bg);    border: 1px solid var(--ok-line);    color: var(--ok-text);   }
+.note-box.ng    { background: var(--ng-bg);    border: 1px solid var(--ng-line);    color: var(--ng-text);   }
+.note-box strong { font-weight: 700; margin-right: 4px; }
+
+
+/* ─────────────────────────────────────────────────────────
+   § 12.  TOC Block
+   ───────────────────────────────────────────────────────── */
+.toc {
+  background:    var(--card);
+  border:        1px solid var(--line);
+  border-radius: var(--r-md);
+  padding:       18px 22px;
+  margin-bottom: 24px;
+}
+.toc-title {
+  font-size:     12px;
+  font-weight:   600;
+  color:         var(--muted);
+  letter-spacing:0.06em;
+  text-transform:uppercase;
+  margin:        0 0 10px;
+}
+.toc-grid {
+  display:               grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap:                   8px 16px;
+}
+.toc-grid a {
+  color:          var(--text);
+  text-decoration:none;
+  font-size:      13.5px;
+  display:        inline-flex;
+  align-items:    center;
+  gap:            8px;
+}
+.toc-grid a:hover { color: var(--c3); text-decoration: none; }
+.toc-dot {
+  width:         8px;
+  height:        8px;
+  border-radius: 50%;
+  display:       inline-block;
+  flex-shrink:   0;
+}
+/* Color variants for toc-dot via data-c attribute */
+[data-c="m"] .toc-dot { background: var(--c1); }
+[data-c="h"] .toc-dot { background: var(--c2); }
+[data-c="j"] .toc-dot { background: var(--c3); }
+[data-c="p"] .toc-dot { background: var(--c4); }
+[data-c="r"] .toc-dot { background: var(--c5); }
+
+
+/* ─────────────────────────────────────────────────────────
+   § 13.  Game Cards  (Mission / Hurdle / Member / Partner / Role)
+   ───────────────────────────────────────────────────────── */
+
+/* — Mission card — */
+.mcard {
+  background:    var(--card);
+  border:        1px solid var(--line);
+  border-top:    4px solid var(--c1);
+  border-radius: var(--r-md);
+  padding:       18px 18px 16px;
+  box-shadow:    var(--shadow-xs);
+  display:       flex;
+  flex-direction:column;
+}
+.mcard .num {
+  display:       inline-block;
+  background:    var(--c1);
+  color:         #fff;
+  font-size:     11px;
+  font-weight:   700;
+  padding:       2px 10px;
+  border-radius: 999px;
+  margin-bottom: 8px;
+  align-self:    flex-start;
+}
+.mcard h3 { margin: 0 0 8px; font-size: 17px; font-weight: 700; }
+.mcard .desc { color: #374151; font-size: 13px; margin: 0 0 12px; flex: 1; }
+.mcard .meta {
+  border-top: 1px solid var(--line);
+  padding-top: 10px;
+  font-size: 12px;
+  color: var(--muted);
+}
+.mcard .meta .lbl { font-weight: 700; color: #374151; margin-right: 6px; }
+.mcard .tags { margin-top: 6px; }
+.mtag {
+  display:       inline-block;
+  background:    var(--c1-lt);
+  color:         var(--c1-dk);
+  border-radius: 999px;
+  padding:       2px 8px;
+  font-size:     11px;
+  margin-right:  4px;
+  margin-bottom: 4px;
+}
+
+/* — Hurdle card — */
+.hcard {
+  background:    var(--card);
+  border:        1px solid var(--line);
+  border-left:   4px solid var(--c2);
+  border-radius: var(--r-md);
+  padding:       16px 18px;
+  box-shadow:    var(--shadow-xs);
+}
+.hcard .num {
+  display:       inline-block;
+  background:    var(--c2);
+  color:         #fff;
+  font-size:     11px;
+  font-weight:   700;
+  padding:       2px 10px;
+  border-radius: 999px;
+  margin-bottom: 6px;
+}
+.hcard h3 { margin: 0 0 6px; font-size: 15px; font-weight: 700; }
+.hcard .desc { color: #374151; font-size: 13px; margin: 0 0 8px; }
+.hcard .effect {
+  border-top:  1px solid var(--line);
+  padding-top: 8px;
+  font-size:   12px;
+  color:       var(--muted);
+}
+.hcard .effect strong { color: var(--c2-dk); font-weight: 700; margin-right: 4px; }
+
+/* — Generic Game Card (Member / Partner / Role) — */
+.game-card {
+  border-radius: var(--r-lg);
+  padding:       16px;
+  background:    var(--card);
+  border:        1.5px solid var(--line);
+  box-shadow:    var(--shadow-sm);
+  display:       flex;
+  flex-direction:column;
+  min-height:    200px;
+}
+.game-card.member { border-top: 4px solid var(--c3); }
+.game-card.partner{ border-top: 4px solid var(--c4); }
+.game-card.role   { border-top: 4px solid var(--c5); }
+.game-card .gid {
+  font-size:     10px;
+  letter-spacing:0.12em;
+  margin-bottom: 6px;
+}
+.game-card.member .gid { color: var(--c3); }
+.game-card.partner .gid{ color: var(--c4); }
+.game-card.role .gid   { color: var(--c5); }
+.game-card h3 { margin: 0 0 8px; font-size: 16px; font-weight: 700; }
+.game-card .body { flex: 1; font-size: 12.5px; color: #374151; }
+.game-card .body .row { margin-bottom: 6px; }
+.game-card .body .row b {
+  display:       block;
+  font-size:     10.5px;
+  color:         var(--muted);
+  margin-bottom: 1px;
+  letter-spacing:0.04em;
+}
+
+/* — Card grids — */
+.grid-mission {
+  display:               grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap:                   16px;
+}
+.grid-hurdle {
+  display:               grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap:                   16px;
+}
+.deck {
+  display:               grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap:                   14px;
+}
+
+
+/* ─────────────────────────────────────────────────────────
+   § 14.  Related-Docs Footer Block
+   ───────────────────────────────────────────────────────── */
+.related-docs {
+  margin-top:    24px;
+  background:    var(--card);
+  border:        1px solid var(--line);
+  border-radius: var(--r-lg);
+  padding:       20px 22px;
+}
+.related-docs > h2 {
+  margin:        0 0 12px;
+  font-size:     12px;
+  color:         var(--muted);
+  letter-spacing:0.06em;
+  text-transform:uppercase;
+  border-left:   none;  /* override .card h2 */
+  padding-left:  0;
+}
+.related-docs p {
+  margin:      0 0 10px;
+  font-size:   12.5px;
+  color:       #374151;
+  line-height: 1.95;
+}
+.related-docs p:last-of-type { margin-bottom: 0; }
+.related-docs .rd-note {
+  margin:     14px 0 0;
+  font-size:  10.5px;
+  color:      var(--subtle);
+  text-align: right;
+}
+
+
+/* ─────────────────────────────────────────────────────────
+   § 15.  Page Footer
+   ───────────────────────────────────────────────────────── */
+footer {
+  text-align:  center;
+  color:       var(--muted);
+  font-size:   12px;
+  padding:     32px 16px 48px;
+}
+.back {
+  display:       inline-block;
+  margin-top:    12px;
+  padding:       8px 16px;
+  background:    var(--card);
+  border:        1px solid var(--line);
+  border-radius: var(--r-md);
+  text-decoration:none;
+  color:         var(--text);
+  font-size:     13px;
+  transition:    background 0.15s;
+}
+.back:hover { background: var(--hover); text-decoration: none; }
+
+
+/* ─────────────────────────────────────────────────────────
+   § 16.  Utility Classes
+   ───────────────────────────────────────────────────────── */
+.text-muted   { color: var(--muted) !important; }
+.text-subtle  { color: var(--subtle) !important; }
+.text-sm      { font-size: 12.5px; }
+.text-xs      { font-size: 11px; }
+.fw-bold      { font-weight: 700; }
+.mt-0  { margin-top: 0 !important; }
+.mb-0  { margin-bottom: 0 !important; }
+.mb-sm { margin-bottom: 8px; }
+.mb-md { margin-bottom: 16px; }
+.mb-lg { margin-bottom: 24px; }
+
+/* Two-column info grid */
+.info-grid {
+  display:               grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap:                   12px 24px;
+}
+.info-grid dt {
+  color:       var(--muted);
+  font-size:   11.5px;
+  margin-bottom:2px;
+  letter-spacing:0.04em;
+}
+.info-grid dd {
+  margin:      0 0 8px;
+  font-weight: 500;
+  font-size:   14px;
+}
+
+/* "more link" style */
+.more-link {
+  display:     inline-block;
+  margin-top:  12px;
+  font-size:   13px;
+  color:       var(--c3);
+  text-decoration:none;
+  font-weight: 600;
+}
+.more-link:hover { text-decoration: underline; }
+
+
+/* ─────────────────────────────────────────────────────────
+   § 17.  Responsive
+   ───────────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  header { padding: 32px 16px 28px; }
+  header h1 { font-size: 22px; }
+  main { padding: 0 12px 48px; }
+  .card-body, .sec-body, .kind-body { padding: 14px 16px; }
+  .links { padding: 8px 12px; gap: 6px; top: 4px; }
+  .links a { padding: 5px 9px; font-size: 12px; }
+}
+
+
+/* ─────────────────────────────────────────────────────────
+   § 18.  Print
+   ───────────────────────────────────────────────────────── */
+@media print {
+  .links, .toolbar { display: none; }
+  footer { display: none; }
+  body   { background: #fff; color: #000; }
+  main   { padding: 0; margin: 0; max-width: none; }
+  .card,
+  section.card { box-shadow: none; page-break-inside: avoid; }
+  header { background: #fff !important; color: #000 !important; }
+  header .eyebrow,
+  header .subtitle,
+  header .meta { color: var(--muted) !important; }
+  a { color: #000; text-decoration: none; }
+  .related-docs { display: none; }
+}

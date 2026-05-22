@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <title>加賀JC 出席状況確認資料 — 会員開発委員会アカデミー事業</title>
+<link rel="stylesheet" href="../shared.css">
 <style>
   * { box-sizing: border-box; }
   body {
@@ -27,7 +28,10 @@
   table.tbl th { background:#f3f4f6; font-weight:600; white-space:nowrap; }
   a { color:#1f6feb; text-decoration:none; }
   a:hover { text-decoration:underline; }
-  .nav { font-size:13px; color:#6b7280; padding:12px 16px; background:#fff; border-bottom:1px solid #e5e7eb; }
+  .nav {
+  position: sticky;
+  top: 0;
+  z-index: 200; font-size:13px; color:#6b7280; padding:12px 16px; background:#fff; border-bottom:1px solid #e5e7eb; }
   .nav a { margin-right:14px; }
   .muted { color:#6b7280; font-size:13px; }
   blockquote { border-left:3px solid #cbd5e1; margin:10px 0; padding:6px 14px; color:#374151; background:#f9fafb; font-size:14px; }
