@@ -39,7 +39,7 @@ kaga-jc-academy/
 │   ├── 06_proposal-structure.md        # 議案構成テンプレ（Why/Who/What/How）
 │   └── 07_next-steps.md                # 次にやること（着手順）
 └── reference/
-    ├── 議案本文.htm                    # 既存LOM議案システム出力（書式参照用）
+    ├── gian.htm                    # 既存LOM議案システム出力（書式参照用）
     └── 加賀LOMアカデミー事業_議案参考資料.pdf  # 既製の参考資料PDF
 ```
 
@@ -57,16 +57,16 @@ kaga-jc-academy/
 
 | 依頼パターン | 参照すべきファイル |
 |---|---|
-| 議案文の起案／推敲 | `02_proposal-background.md` + `06_proposal-structure.md` + `reference/議案本文.htm` |
+| 議案文の起案／推敲 | `02_proposal-background.md` + `06_proposal-structure.md` + `reference/gian.htm` |
 | 事例で論拠を補強したい | `03_research-summary.md` + `04_case-references.md` |
 | KPI設計を見直したい | `05_kpi-design.md` |
 | 当日プログラム／タイムテーブル設計 | `04_case-references.md`（D-1ビジネスゲーム研究所事例の90分構成テンプレ参照） |
 | 他LOMの議案を追加調査したい | `07_next-steps.md` の「追加リサーチ候補」セクション |
-| .htm 議案テンプレへの内容反映 | `reference/議案本文.htm` の該当セルを編集（CSS/構造は触らない） |
+| .htm 議案テンプレへの内容反映 | `reference/gian.htm` の該当セルを編集（CSS/構造は触らない） |
 
 ## 6. 守ってほしい運用ルール
 
-- **書式に手を入れない**：`reference/議案本文.htm` の CSS／mso-* 属性／テーブル構造は変更禁止。テキストセル内のみ編集する。
+- **書式に手を入れない**：`reference/gian.htm` の CSS／mso-* 属性／テーブル構造は変更禁止。テキストセル内のみ編集する。
 - **加賀JC2026理事長所信との整合を必ず確認**：`docs/01_project-context.md` の「上位方針との接続マップ」を参照。
 - **既存会員向け事業として成立させる**：新人研修テンプレに引きずられない。`docs/02_proposal-background.md` の論点表を必ず参照。
 - **アウトプットは必ず根拠付き**：事例・先例・データのいずれかを引いて主張する。出典URLは `04_case-references.md` に集約済み。
@@ -77,7 +77,7 @@ kaga-jc-academy/
 - ✅ 公開議案リサーチ完了（小田原JC・大阪JC・兵庫BC・神奈川BC・帯広JC・岡山BC・埼玉BC・東京JC 他）
 - ✅ 加賀JC2026理事長所信との整合確認
 - ✅ KPIセット設計（参加率／意識変化／行動変容／関係資本／帰属意識）
-- ✅ 議案HTMLの書式テンプレ取得（`reference/議案本文.htm`）
+- ✅ 議案HTMLの書式テンプレ取得（`reference/gian.htm`）
 - ✅ 参考資料PDF生成（`reference/加賀LOMアカデミー事業_議案参考資料.pdf`）
 - ⏳ 議案本文の最終推敲（赤字部分）
 - ⏳ 当日プログラムの90分タイムテーブル確定
