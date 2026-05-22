@@ -4,102 +4,110 @@
 <meta charset="UTF-8">
 <title>事業フロー — 会員開発委員会アカデミー事業</title>
 <style>
-  :root {
-    --s1: #fbbf24; --s2: #ef4444; --s3: #14b8a6; --s4: #6366f1;
-    --s5: #f97316; --s6: #475569; --s7: #8b5cf6; --s8: #ec4899;
-    --bbq: #fde68a;
-  }
   * { box-sizing: border-box; }
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
-    background:#f6f7f9; color:#1f2937; margin:0; line-height:1.75;
-    -webkit-font-smoothing:antialiased;
-  }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
+    background:#f6f7f9; color:#1f2937; margin:0; line-height:1.75; -webkit-font-smoothing:antialiased; }
   header { background: linear-gradient(135deg,#0f172a,#1e293b); color:#fff; padding:48px 24px 40px; text-align:center; }
   header .eyebrow { font-size:12px; letter-spacing:.14em; color:#94a3b8; margin:0 0 10px; text-transform:uppercase; }
   header h1 { margin:0 0 6px; font-size:28px; font-weight:700; }
   header .subtitle { color:#cbd5e1; font-size:14px; margin:0; }
   header .meta { margin-top:18px; font-size:12px; color:#94a3b8; }
-  main { max-width:1000px; margin:32px auto; padding:0 16px 64px; }
+  main { max-width:1100px; margin:32px auto; padding:0 16px 64px; }
   .card { background:#fff; border:1px solid #e5e7eb; border-radius:12px; padding:22px 26px; margin-bottom:20px; }
-  .card h2 { margin:0 0 12px; font-size:18px; color:#0f172a; border-left:4px solid #d8345f; padding-left:10px; }
-  .card h2.center { text-align:center; border-left:none; padding-left:0; color:#0f172a; }
+  .card h2 { margin:0 0 14px; font-size:18px; color:#0f172a; border-left:4px solid #d8345f; padding-left:10px; }
+  .card h2.center { text-align:center; border-left:none; padding-left:0; }
   .card h3 { margin:18px 0 8px; font-size:15px; color:#1f2937; }
   .card p { margin:0 0 10px; font-size:14.5px; }
   .card ul { margin:0 0 10px 1.2em; padding:0; }
   .card li { font-size:14.5px; margin-bottom:6px; }
+  .nav { font-size:13px; color:#6b7280; padding:12px 16px; background:#fff; border-bottom:1px solid #e5e7eb; }
+  .nav a { margin-right:14px; color:#1f6feb; text-decoration:none; }
   a { color:#1f6feb; text-decoration:none; }
   a:hover { text-decoration:underline; }
-  .nav { font-size:13px; color:#6b7280; padding:12px 16px; background:#fff; border-bottom:1px solid #e5e7eb; }
-  .nav a { margin-right:14px; }
   .muted { color:#6b7280; font-size:13px; }
 
-  /* Flow Steps (unique to this page) */
-  .flow-intro { text-align:center; color:#6b7280; font-size:13px; margin:0 0 18px; }
-  .step {
-    display: grid; grid-template-columns: 56px 44px 1fr 110px;
-    gap: 14px; align-items: stretch; margin-bottom: 10px;
+  /* Outline at a glance */
+  .outline {
+    background: linear-gradient(135deg,#fef3c7 0%,#fde68a 100%);
+    border:1px solid #fcd34d; border-radius:14px;
+    padding:24px 28px; margin-bottom:24px;
   }
-  .step .icon { background:#f8fafc; border:2px solid; border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:24px; }
-  .step .num { display:flex; align-items:center; justify-content:center; font-weight:800; font-size:22px; color:#1f6feb; }
-  .step .body { background:#fff; border:1px solid #e5e7eb; border-radius:10px; padding:12px 16px; border-left:4px solid; }
-  .step .body h3 { margin:0 0 4px; font-size:16px; font-weight:700; }
-  .step .body .detail { margin:0; font-size:12.5px; color:#6b7280; }
-  .step .role { background:#f8fafc; border:1px solid #e5e7eb; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:28px; }
-  .arrow { text-align:center; color:#94a3b8; font-size:18px; line-height:1; margin:-2px 0 8px; }
-  .step.s1 .icon { border-color: var(--s1); } .step.s1 .body { border-left-color: var(--s1); }
-  .step.s2 .icon { border-color: var(--s2); } .step.s2 .body { border-left-color: var(--s2); }
-  .step.s3 .icon { border-color: var(--s3); } .step.s3 .body { border-left-color: var(--s3); }
-  .step.s4 .icon { border-color: var(--s4); } .step.s4 .body { border-left-color: var(--s4); }
-  .step.s5 .icon { border-color: var(--s5); } .step.s5 .body { border-left-color: var(--s5); }
-  .step.s6 .icon { border-color: var(--s6); } .step.s6 .body { border-left-color: var(--s6); }
-  .step.s7 .icon { border-color: var(--s7); } .step.s7 .body { border-left-color: var(--s7); }
-  .step.s8 .icon { border-color: var(--s8); } .step.s8 .body { border-left-color: var(--s8); }
+  .outline h2 { margin:0 0 14px; font-size:17px; color:#78350f; border-left:4px solid #d97706; padding-left:10px; }
+  .outline p { margin:0 0 10px; font-size:15px; line-height:1.9; color:#451a03; }
+  .outline .formula { background:#fff; border-radius:8px; padding:14px 18px; font-size:14.5px; color:#1f2937; border:1px solid #fcd34d; margin-top:10px; }
+  .outline .formula b { color:#92400e; }
 
-  .roles-grid { display:grid; grid-template-columns: repeat(3, 1fr); gap:12px; }
-  .role-card { border-radius:10px; padding:14px; border:1px solid; background:#fff; }
-  .role-card.a { border-color:#16a34a; background:#f0fdf4; }
-  .role-card.b { border-color:#2563eb; background:#eff6ff; }
-  .role-card.c { border-color:#f97316; background:#fff7ed; }
-  .role-card h3 { margin:0 0 8px; font-size:14px; font-weight:700; }
-  .role-card.a h3 { color:#14532d; }
-  .role-card.b h3 { color:#1e3a8a; }
-  .role-card.c h3 { color:#7c2d12; }
-  .role-card ul { margin:0; padding-left:18px; font-size:12.5px; color:#374151; }
-  .role-card ul li { margin-bottom:3px; }
+  /* 3-phase grid */
+  .phases { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-bottom:14px; }
+  .phase {
+    background:#fff; border:1px solid #e5e7eb; border-radius:12px; padding:18px 20px;
+    border-top:4px solid;
+  }
+  .phase.before { border-top-color:#3b82f6; }
+  .phase.day { border-top-color:#d8345f; }
+  .phase.after { border-top-color:#16a34a; }
+  .phase .ph-label {
+    font-size:11px; letter-spacing:.12em; text-transform:uppercase;
+    font-weight:700; margin-bottom:6px;
+  }
+  .phase.before .ph-label { color:#1d4ed8; }
+  .phase.day .ph-label { color:#b91c4d; }
+  .phase.after .ph-label { color:#15803d; }
+  .phase h3 { margin:0 0 6px; font-size:16px; color:#0f172a; }
+  .phase .ph-period { font-size:12px; color:#6b7280; margin-bottom:12px; }
+  .phase ul { margin:0 0 12px 1.1em; padding:0; }
+  .phase ul li { font-size:13.5px; margin-bottom:5px; line-height:1.6; }
+  .phase .deliverable { background:#f9fafb; border:1px solid #e5e7eb; border-radius:8px; padding:8px 12px; font-size:12.5px; color:#374151; }
+  .phase .deliverable b { color:#0f172a; }
 
-  .aims-list { display:grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap:10px; }
-  .aim { border-radius:999px; padding:8px 14px; font-size:13px; font-weight:600; text-align:center; border:1px solid; }
-  .aim.a1 { background:#fee2e8; border-color:#f9a8d4; color:#9d174d; }
-  .aim.a2 { background:#dbeafe; border-color:#93c5fd; color:#1e3a8a; }
-  .aim.a3 { background:#d1fae5; border-color:#6ee7b7; color:#065f46; }
-  .aim.a4 { background:#fef3c7; border-color:#fcd34d; color:#92400e; }
-  .aim.a5 { background:#e0e7ff; border-color:#a5b4fc; color:#312e81; }
+  .phase-flow-arrow {
+    text-align:center; color:#94a3b8; font-size:22px; margin:4px 0 14px;
+    display:none; /* flex on mobile */
+  }
 
-  .outcome-flow { display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:8px; }
-  .outcome { background:#f8fafc; border:1px solid #e5e7eb; border-radius:10px; padding:12px 16px; min-width:140px; text-align:center; border-top:4px solid; }
-  .outcome h3 { margin:0 0 2px; font-size:14px; font-weight:700; }
-  .outcome p { margin:0; font-size:11.5px; color:#6b7280; }
-  .outcome.o1 { border-top-color:#fbbf24; } .outcome.o1 h3 { color:#92400e; }
-  .outcome.o2 { border-top-color:#2563eb; } .outcome.o2 h3 { color:#1e3a8a; }
-  .outcome.o3 { border-top-color:#ef4444; } .outcome.o3 h3 { color:#991b1b; }
-  .outcome.o4 { border-top-color:#16a34a; } .outcome.o4 h3 { color:#14532d; }
-  .outcome-arrow { color:#94a3b8; font-size:22px; }
+  /* Why-What-How-Verify chain */
+  .chain { display:grid; grid-template-columns:repeat(4,1fr); gap:10px; }
+  .chain-step {
+    background:#fff; border:1px solid #e5e7eb; border-radius:10px;
+    padding:14px 16px;
+    border-left:4px solid;
+  }
+  .chain-step.why { border-left-color:#8b5cf6; }
+  .chain-step.what { border-left-color:#f59e0b; }
+  .chain-step.how { border-left-color:#d8345f; }
+  .chain-step.verify { border-left-color:#16a34a; }
+  .chain-step .step-label { font-size:11px; font-weight:700; letter-spacing:.1em; margin-bottom:4px; }
+  .chain-step.why .step-label { color:#6d28d9; }
+  .chain-step.what .step-label { color:#b45309; }
+  .chain-step.how .step-label { color:#b91c4d; }
+  .chain-step.verify .step-label { color:#15803d; }
+  .chain-step h4 { margin:0 0 6px; font-size:14px; color:#0f172a; }
+  .chain-step p { margin:0; font-size:12.5px; color:#374151; line-height:1.6; }
+  .chain-step a { font-size:12px; color:#1f6feb; }
 
-  .bbq-note { background: var(--bbq); border:1px dashed #d97706; border-radius:10px; padding:10px 14px; margin:14px 0 0; font-size:13px; color:#78350f; text-align:center; }
+  /* Section mapping table */
+  table.map { width:100%; border-collapse:collapse; font-size:13.5px; }
+  table.map th, table.map td { border:1px solid #e5e7eb; padding:9px 12px; text-align:left; vertical-align:top; }
+  table.map th { background:#f3f4f6; font-weight:600; white-space:nowrap; }
+  table.map td.phase-col { font-weight:600; white-space:nowrap; }
+  table.map td.phase-col.before { color:#1d4ed8; }
+  table.map td.phase-col.day { color:#b91c4d; }
+  table.map td.phase-col.after { color:#15803d; }
 
-  @media (max-width:700px) {
-    header h1 { font-size:22px; }
-    .step { grid-template-columns: 44px 36px 1fr; }
-    .step .role { display:none; }
-    .roles-grid { grid-template-columns: 1fr; }
-    .outcome { min-width:120px; }
+  /* Status badges */
+  .badge-draft { display:inline-block; font-size:10.5px; background:#fef3c7; color:#92400e; border:1px solid #fcd34d; border-radius:4px; padding:1px 6px; margin-left:4px; font-weight:600; }
+  .badge-update { display:inline-block; font-size:10.5px; background:#dbeafe; color:#1e40af; border:1px solid #93c5fd; border-radius:4px; padding:1px 6px; margin-left:4px; font-weight:600; }
+
+  @media (max-width:760px) {
+    .phases { grid-template-columns:1fr; }
+    .chain { grid-template-columns:1fr 1fr; }
+    .phase-flow-arrow { display:block; }
   }
   @media print {
-    @page { size: A4 portrait; margin: 10mm 12mm; }
+    @page { size: A4 landscape; margin: 10mm 12mm; }
     body { background:#fff; }
     .nav { display:none; }
-    .card { page-break-inside: avoid; box-shadow:none; }
+    .card, .outline { page-break-inside: avoid; box-shadow:none; }
     header { background:#fff !important; color:#1f2937 !important; padding:20px 0 14px; }
     header .eyebrow, header .subtitle, header .meta { color:#6b7280 !important; }
   }
@@ -113,135 +121,163 @@
 <header>
   <p class="eyebrow">審議対象資料 1</p>
   <h1>事業フロー</h1>
-  <p class="subtitle">事前準備から行動宣言までの全体像（KAGA JC GATHERING QUEST）</p>
+  <p class="subtitle">議案全体の構造と、事前→当日→事後の流れを一望する資料</p>
   <p class="meta">2026年度 会員開発委員会アカデミー事業</p>
 </header>
 <main>
 
-<div class="card">
-  <h2 class="center">当日の流れ（8ステップ）</h2>
-  <p class="flow-intro">事前準備から行動宣言まで、参加者の動きを一気通貫で設計</p>
-
-  <div class="step s1">
-    <div class="icon">📋</div><div class="num">1</div>
-    <div class="body"><h3>事前準備</h3><p class="detail">カード作成 / 役割分担 / 会場準備 / 参加案内</p></div>
-    <div class="role">🧑‍💻</div>
+<!-- ===== Outline at a glance ===== -->
+<div class="outline">
+  <h2>📌 この事業を1行で言うと</h2>
+  <p>既存会員を対象に、メンバーの<b>仕事観・強み・地域での役割をカード化</b>し、公益事業ミッションを起点に「誰に何を頼り、どう役割分担するか」をグループで考える<b>参加型カードワーク</b>を通じて、相互理解・役割発見・共助意識を育てる事業。</p>
+  <div class="formula">
+    <b>WHY</b> 一部メンバーへの負担集中・関わり方の差　→
+    <b>WHAT</b> 全員で支え合う関係づくり　→
+    <b>HOW</b> KAGA JC GATHERING QUEST（仮）　→
+    <b>VERIFY</b> アンケート・ふりかえりで定量検証
   </div>
-  <div class="arrow">▼</div>
-
-  <div class="step s2">
-    <div class="icon">📣</div><div class="num">2</div>
-    <div class="body"><h3>開会・趣旨説明</h3><p class="detail">背景共有 / 目的共有 / ルール説明 / プライバシー配慮</p></div>
-    <div class="role">🎤</div>
-  </div>
-  <div class="arrow">▼</div>
-
-  <div class="step s3">
-    <div class="icon">🎴</div><div class="num">3</div>
-    <div class="body"><h3>ミッションカードを選ぶ</h3><p class="detail">公益事業テーマを決定</p></div>
-    <div class="role">💡</div>
-  </div>
-  <div class="arrow">▼</div>
-
-  <div class="step s4">
-    <div class="icon">🃏</div><div class="num">4</div>
-    <div class="body"><h3>カードを引いて読み合わせ</h3><p class="detail">JCメンバーカード3枚 / 地域パートナーカード3枚 / 強みを確認</p></div>
-    <div class="role">👥</div>
-  </div>
-  <div class="arrow">▼</div>
-
-  <div class="step s5">
-    <div class="icon">🧩</div><div class="num">5</div>
-    <div class="body"><h3>実現プロセスを考える</h3><p class="detail">企画 → 準備 → 実施 → 広報 / 誰に何を頼るか / 役割分担</p></div>
-    <div class="role">📊</div>
-  </div>
-  <div class="arrow">▼</div>
-
-  <div class="step s6">
-    <div class="icon">🔒</div><div class="num">6</div>
-    <div class="body"><h3>2周目チャレンジ</h3><p class="detail">多用カード封印 / 負担集中の疑似体験 / 共助意識の体得</p></div>
-    <div class="role">🔄</div>
-  </div>
-  <div class="arrow">▼</div>
-
-  <div class="step s7">
-    <div class="icon">🏆</div><div class="num">7</div>
-    <div class="body"><h3>グループ発表</h3><p class="detail">工夫点共有 / 共助の視点 / 投票・表彰</p></div>
-    <div class="role">🗳️</div>
-  </div>
-  <div class="arrow">▼</div>
-
-  <div class="step s8">
-    <div class="icon">📝</div><div class="num">8</div>
-    <div class="body"><h3>ふりかえり・行動宣言</h3><p class="detail">自分ならどう動く？ / 今後誰に頼れる？ / 自分は何で貢献できる？</p></div>
-    <div class="role">💬</div>
-  </div>
-
-  <div class="bbq-note">🍖 交流タイム（軽食・<span lang="en">BBQ</span>）— 当日プログラム終了後、関係性を深める補助的な交流時間</div>
 </div>
 
+<!-- ===== Phase 1: 全体フロー（事前→当日→事後）===== -->
 <div class="card">
-  <h2 class="center">当日の役割</h2>
-  <div class="roles-grid">
-    <div class="role-card a">
-      <h3>A. 運営本部（会員開発委員会）</h3>
+  <h2 class="center">事業全体フロー（事前 → 当日 → 事後）</h2>
+  <p style="text-align:center; color:#6b7280; font-size:13px; margin:0 0 18px">本事業は3フェーズで構成される。当日のカードワークだけでなく、事前準備と事後検証を含めた一連の体験として設計。</p>
+
+  <div class="phases">
+
+    <!-- 事前準備 -->
+    <div class="phase before">
+      <div class="ph-label">PHASE 1</div>
+      <h3>事前準備</h3>
+      <p class="ph-period">事業 6〜2週間前</p>
       <ul>
-        <li>全体進行</li><li>カード管理</li><li>記録</li><li>安全管理</li>
+        <li>事前アンケート＋簡易ヒアリング＋役割傾向チェック</li>
+        <li>メンバーカード制作</li>
+        <li><b>本人確認・修正</b>（プライバシー配慮）</li>
+        <li>会員への周知・出欠回収</li>
+        <li>会場・備品・運営役割の最終確認</li>
       </ul>
+      <div class="deliverable">
+        <b>主な成果物：</b>JCメンバーカード／地域パートナーカード／ミッション・ハードルカードセット
+      </div>
     </div>
-    <div class="role-card b">
-      <h3>B. テーブルゲームマスター（参加委員長）</h3>
+
+    <!-- 当日 -->
+    <div class="phase day">
+      <div class="ph-label">PHASE 2</div>
+      <h3>当日（2026/8/30 土）</h3>
+      <p class="ph-period">10:00〜12:00 本編＋12:00〜 BBQ</p>
       <ul>
-        <li>各グループ進行</li><li>問いかけ</li><li>発言促進</li>
+        <li>開会・趣旨説明（10分）</li>
+        <li>ルール説明・アイスブレイク（10分）</li>
+        <li><b>メインワーク：QUEST</b>（70分／2周）</li>
+        <li>グループ発表・ふりかえり（25分）</li>
+        <li>閉会・JC活動への接続（5分）</li>
+        <li><b>BBQ・懇親会</b>（昼食を兼ねた交流時間）</li>
       </ul>
+      <div class="deliverable">
+        <b>主な成果物：</b>ふりかえりシート記入物／グループ発表内容／当日アンケート回答
+      </div>
     </div>
-    <div class="role-card c">
-      <h3>C. メンター（正副メンバー）</h3>
+
+    <!-- 事後 -->
+    <div class="phase after">
+      <div class="ph-label">PHASE 3</div>
+      <h3>事後</h3>
+      <p class="ph-period">事業後 1〜3ヶ月</p>
       <ul>
-        <li>巡回</li><li>助言</li><li>JC活動への接続を講評</li>
+        <li>事業後アンケート集計・分析</li>
+        <li>ふりかえりシート内容の整理</li>
+        <li><b>検証項目に基づく目的達成度評価</b></li>
+        <li>事業報告書作成・理事会報告</li>
+        <li>次のJC活動・委員会活動への接続</li>
+        <li>3ヶ月後フォローアップアンケート（行動変容測定）</li>
       </ul>
+      <div class="deliverable">
+        <b>主な成果物：</b>事業報告書／検証結果サマリ／次年度議案へのフィードバック
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ===== Why → What → How → Verify ===== -->
+<div class="card">
+  <h2 class="center">議案の論理構造（WHY → WHAT → HOW → VERIFY）</h2>
+  <p style="text-align:center; color:#6b7280; font-size:13px; margin:0 0 18px">議案を上から読み進めた際に、各セクションがどの役割を果たしているか。</p>
+
+  <div class="chain">
+    <div class="chain-step why">
+      <div class="step-label">WHY</div>
+      <h4>なぜやるか</h4>
+      <p>関わり方の差・負担集中・孤立リスク</p>
+      <p style="margin-top:6px"><a href="../../議案本文.htm">1. 背景</a> ／ <a href="../../議案本文.htm">2. 目的</a></p>
+    </div>
+    <div class="chain-step what">
+      <div class="step-label">WHAT</div>
+      <h4>何を変えるか</h4>
+      <p>相互理解・役割発見・共助意識の醸成</p>
+      <p style="margin-top:6px"><a href="../../議案本文.htm">4. 期待される効果</a></p>
+    </div>
+    <div class="chain-step how">
+      <div class="step-label">HOW</div>
+      <h4>どうやって</h4>
+      <p>KAGA JC GATHERING QUEST／カードワーク</p>
+      <p style="margin-top:6px"><a href="../../議案本文.htm">7. 事業内容</a> ／ <a href="KAGA_JC_GATHERING_仕様書.htm">審議3</a></p>
+    </div>
+    <div class="chain-step verify">
+      <div class="step-label">VERIFY</div>
+      <h4>どう確かめるか</h4>
+      <p>3点検証（アンケート／シート／発表）</p>
+      <p style="margin-top:6px"><a href="../../議案本文.htm">8. 検証方法</a> ／ <a href="ふりかえりシート.htm">審議8</a></p>
     </div>
   </div>
 </div>
 
+<!-- ===== 議案セクションとフェーズの対応マップ ===== -->
 <div class="card">
-  <h2 class="center">事業のねらい</h2>
-  <div class="aims-list">
-    <div class="aim a1">👥 相互理解</div>
-    <div class="aim a2">📋 役割認識</div>
-    <div class="aim a3">💚 共助の精神</div>
-    <div class="aim a4">🏠 帰属意識</div>
-    <div class="aim a5">📈 参加意欲向上</div>
-  </div>
+  <h2>議案セクション × フェーズ 対応マップ</h2>
+  <p>議案を流し読みする理事のために、各セクションが事前／当日／事後のどこに作用するかを整理。</p>
+  <table class="map">
+    <thead>
+      <tr><th>議案セクション</th><th>主に作用するフェーズ</th><th>関連審議資料</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>1. 背景／2. 目的</td><td class="phase-col">前提（全体）</td><td>—</td></tr>
+      <tr><td>3. 連携する外部/内部</td><td class="phase-col before">事前</td><td><a href="../sankoh/ペルソナ.htm">参考8：ペルソナ</a></td></tr>
+      <tr><td>4. 期待される効果</td><td class="phase-col after">事後</td><td>—</td></tr>
+      <tr><td>5. スケジュール</td><td class="phase-col">全体</td><td>—</td></tr>
+      <tr><td>6. 実施場所</td><td class="phase-col day">当日</td><td><a href="会場選定理由書.htm">審議10：会場選定理由書</a></td></tr>
+      <tr><td>7. 事業内容（QUESTの仕様・進行・カード5種）</td><td class="phase-col day">当日</td><td><a href="KAGA_JC_GATHERING_仕様書.htm">審議3</a><span class="badge-update">要更新</span> ／ <a href="ゲーム進行マニュアル.htm">審議5</a><span class="badge-update">要更新</span> ／ <a href="カードサンプル一覧.htm">審議7</a><span class="badge-draft">案・要確定</span></td></tr>
+      <tr><td>7. 事業内容（実施プロセス）</td><td class="phase-col before">事前</td><td><a href="../sankoh/役割傾向チェック設計資料.htm">審議14：役割傾向チェック設計資料</a><span class="badge-update">要更新</span></td></tr>
+      <tr><td>8. 目的の検証方法</td><td class="phase-col after">事後</td><td><a href="ふりかえりシート.htm">審議8：ふりかえりシート</a></td></tr>
+      <tr><td>9. 対象者及び参加員数</td><td class="phase-col before">事前</td><td><a href="グループ編成計画.htm">審議12：グループ編成計画</a> ／ <a href="../sankoh/加賀JC出席状況確認資料.htm">参考7</a></td></tr>
+      <tr><td>10. 広報戦略</td><td class="phase-col before">事前</td><td><a href="加賀JCメンバーへの周知文.htm">審議13：メンバーへの周知文</a><span class="badge-draft">案・要確定</span></td></tr>
+      <tr><td>11. ブラッシュアップ点</td><td class="phase-col">設計判断</td><td><a href="KAGA_JC_GATHERING_QUEST_手段選定理由書.htm">審議4：手段選定理由書</a></td></tr>
+      <tr><td>12. 予算</td><td class="phase-col">全体</td><td><a href="予算項目の取扱いに関するメモ.htm">審議11：予算項目の取扱いに関するメモ</a><span class="badge-update">要更新</span></td></tr>
+      <tr><td>運営体制（3層）</td><td class="phase-col day">当日</td><td><a href="当日役割分担表.htm">審議6：当日役割分担表</a><span class="badge-update">要更新</span> ／ <a href="../sankoh/テーブルゲームマスター進行台本.htm">参考9</a> ／ <a href="../sankoh/正副メンター役割確認シート.htm">参考10</a></td></tr>
+      <tr><td>プライバシー配慮</td><td class="phase-col">全体</td><td><a href="個人情報・プライバシー配慮に関する運営ルール.htm">審議9：プライバシー配慮ルール</a></td></tr>
+    </tbody>
+  </table>
 </div>
 
+<!-- ===== 関連資料 ===== -->
 <div class="card">
-  <h2 class="center">目指す成果</h2>
-  <div class="outcome-flow">
-    <div class="outcome o1"><h3>知る</h3><p>人や強みを知る</p></div>
-    <div class="outcome-arrow">▶</div>
-    <div class="outcome o2"><h3>頼れる</h3><p>つながりを築く</p></div>
-    <div class="outcome-arrow">▶</div>
-    <div class="outcome o3"><h3>支え合う</h3><p>共に挑戦する</p></div>
-    <div class="outcome-arrow">▶</div>
-    <div class="outcome o4"><h3>参加したくなる</h3><p>未来の活動へ</p></div>
-  </div>
-</div>
-
-<div class="card">
-  <h2>関連資料</h2>
+  <h2>関連審議資料一覧</h2>
   <ul>
-    <li><a href="当日実施要項.htm">審議対象資料2：当日実施要項</a></li>
-    <li><a href="KAGA_JC_GATHERING_仕様書.htm">審議対象資料3：KAGA JC GATHERING QUEST 実施要項</a></li>
-    <li><a href="KAGA_JC_GATHERING_QUEST_手段選定理由書.htm">審議対象資料4：KAGA JC GATHERING QUEST 手段選定理由書</a></li>
-    <li><a href="ゲーム進行マニュアル.htm">審議対象資料5：ゲーム進行マニュアル</a></li>
-    <li><a href="当日役割分担表.htm">審議対象資料6：当日役割分担表</a></li>
-    <li><a href="カードサンプル一覧.htm">審議対象資料7：カードサンプル一覧</a></li>
-    <li><a href="ふりかえりシート.htm">審議対象資料8：アカデミー事業後アンケート・ふりかえりシート</a></li>
+    <li><a href="当日実施要項.htm">審議対象資料2：当日実施要項</a> — 当日タイムテーブル・3層役割設計</li>
+    <li><a href="KAGA_JC_GATHERING_仕様書.htm">審議対象資料3：KAGA JC GATHERING QUEST 実施要項</a> — カード5種＋ゲーム進行7ステップ</li>
+    <li><a href="KAGA_JC_GATHERING_QUEST_手段選定理由書.htm">審議対象資料4：手段選定理由書</a> — 代替案A〜E比較</li>
+    <li><a href="ゲーム進行マニュアル.htm">審議対象資料5：ゲーム進行マニュアル</a> — 各ステップの所要時間・GM声かけ</li>
+    <li><a href="当日役割分担表.htm">審議対象資料6：当日役割分担表</a> — 運営本部7担当／GM／メンター</li>
+    <li><a href="カードサンプル一覧.htm">審議対象資料7：カードサンプル一覧</a> — カード見本</li>
+    <li><a href="ふりかえりシート.htm">審議対象資料8：アカデミー事業後アンケート・ふりかえりシート</a> — 検証項目</li>
     <li><a href="個人情報・プライバシー配慮に関する運営ルール.htm">審議対象資料9：個人情報・プライバシー配慮に関する運営ルール</a></li>
-    <li><a href="会場選定理由書.htm">審議対象資料10：会場選定理由書</a></li>
+    <li><a href="会場選定理由書.htm">審議対象資料10：会場選定理由書</a> — 加賀イノベーションセンター選定根拠</li>
     <li><a href="予算項目の取扱いに関するメモ.htm">審議対象資料11：予算項目の取扱いに関するメモ</a></li>
     <li><a href="グループ編成計画.htm">審議対象資料12：グループ編成計画</a></li>
+    <li><a href="加賀JCメンバーへの周知文.htm">審議対象資料13：加賀JCメンバーへの周知文</a></li>
+    <li><a href="../sankoh/役割傾向チェック設計資料.htm">審議対象資料14：役割傾向チェック設計資料</a></li>
   </ul>
 </div>
 
