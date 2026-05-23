@@ -1,0 +1,62 @@
+name: PDF自動生成
+
+on:
+  push:
+    branches: [main]
+    paths:
+      # HTM / CSS が更新されたときだけ実行
+      - 'reference/siryoh/**/*.htm'
+      - 'reference/siryoh/shared.css'
+      - 'reference/*.htm'
+      - 'scripts/generate-pdfs.js'
+  workflow_dispatch: # 手動実行ボタン
+
+permissions:
+  contents: write  # PDF を自動コミットするために必要
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+
+    steps:
+      # ── 1. チェックアウト ────────────────────────────────────────────────
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # ── 2. Node.js セットアップ ──────────────────────────────────────────
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      # ── 3. 依存パッケージインストール（Puppeteer 同梱 Chromium も含む）──
+      - name: Install dependencies
+        run: npm ci
+
+      # ── 4. ローカルサーバー起動（reference/ をルートとして配信）─────────
+      - name: Start local server
+        run: npx serve reference -p 8080 --no-clipboard &
+
+      - name: Wait for server ready
+        run: |
+          for i in $(seq 1 10); do
+            curl -s http://localhost:8080/ > /dev/null && echo "Server ready" && break
+            echo "Waiting... ($i)"
+            sleep 1
+          done
+
+      # ── 5. PDF 生成 ────────────────────────────────────────────────────
+      - name: Generate PDFs
+        run: node scripts/generate-pdfs.js
+
+      # ── 6. 生成した PDF をリポジトリにコミット & プッシュ ───────────────
+      - name: Commit generated PDFs
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add reference/pdf/
+          git diff --staged --quiet \
+            && echo "変更なし — コミットをスキップ" \
+            || git commit -m "chore: PDFを自動生成 [skip ci]"
+          git push

@@ -1,0 +1,14 @@
+{
+  "name": "kaga-jc-academy",
+  "version": "1.0.0",
+  "private": true,
+  "description": "加賀JC 2026 会員開発委員会アカデミー事業 議案サイト",
+  "scripts": {
+    "generate-pdfs": "node scripts/generate-pdfs.js",
+    "serve": "serve reference -p 8080 --no-clipboard"
+  },
+  "dependencies": {
+    "puppeteer": "^22.0.0",
+    "serve": "^14.0.0"
+  }
+}

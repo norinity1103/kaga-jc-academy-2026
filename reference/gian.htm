@@ -2971,137 +2971,99 @@ mso-bidi-font-family:&quot;ＭＳ Ｐゴシック&quot;"><o:p>&nbsp;</o:p></span
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 <script>
-// ─── PDF変換ページリスト（fetch相対パス → ZIP内パス） ───────────────────────
-const PDF_PAGES = [
+/**
+ * 議案一式 ZIP ダウンロード
+ *
+ * GitHub Actions（generate-pdfs.yml）が push 時に
+ * reference/pdf/ へ事前生成した PDF を fetch して ZIP にまとめる。
+ * クライアントサイドでの変換処理は一切なし → 数秒で完了。
+ *
+ * PDF ファイルが存在しない場合（初回 push 直後など）は
+ * ボタンに警告を表示してスキップする。
+ */
+
+// ─── 事前生成済み PDF のパス一覧（gian.htm からの相対パス） ────────────────
+const ZIP_FILES = [
   // 審議対象資料
-  { src: 'siryoh/shingi/事業フロー.htm',                               out: 'reference/siryoh/shingi/事業フロー.pdf' },
-  { src: 'siryoh/shingi/ブランドマネジメントシート.htm',                out: 'reference/siryoh/shingi/ブランドマネジメントシート.pdf' },
-  { src: 'siryoh/shingi/KAGA_JC_GATHERING_QUEST_手段選定理由書.htm',   out: 'reference/siryoh/shingi/KAGA_JC_GATHERING_QUEST_手段選定理由書.pdf' },
-  { src: 'siryoh/shingi/KAGA_JC_GATHERING_仕様書.htm',                 out: 'reference/siryoh/shingi/KAGA_JC_GATHERING_仕様書.pdf' },
-  { src: 'siryoh/shingi/ふりかえりシート.htm',                          out: 'reference/siryoh/shingi/ふりかえりシート.pdf' },
-  { src: 'siryoh/shingi/カード一覧.htm',                               out: 'reference/siryoh/shingi/カード一覧.pdf' },
-  { src: 'siryoh/shingi/グループ編成計画.htm',                          out: 'reference/siryoh/shingi/グループ編成計画.pdf' },
-  { src: 'siryoh/shingi/ゲーム進行マニュアル.htm',                      out: 'reference/siryoh/shingi/ゲーム進行マニュアル.pdf' },
-  { src: 'siryoh/shingi/予算項目の取扱いに関するメモ.htm',              out: 'reference/siryoh/shingi/予算項目の取扱いに関するメモ.pdf' },
-  { src: 'siryoh/shingi/会場選定理由書.htm',                           out: 'reference/siryoh/shingi/会場選定理由書.pdf' },
-  { src: 'siryoh/shingi/個人情報・プライバシー配慮に関する運営ルール.htm', out: 'reference/siryoh/shingi/個人情報・プライバシー配慮に関する運営ルール.pdf' },
-  { src: 'siryoh/shingi/加賀JCメンバーへの周知文.htm',                 out: 'reference/siryoh/shingi/加賀JCメンバーへの周知文.pdf' },
-  { src: 'siryoh/shingi/当日実施要項.htm',                             out: 'reference/siryoh/shingi/当日実施要項.pdf' },
-  { src: 'siryoh/shingi/当日役割分担表.htm',                           out: 'reference/siryoh/shingi/当日役割分担表.pdf' },
-  { src: 'siryoh/shingi/想定問答集.htm',                               out: 'reference/siryoh/shingi/想定問答集.pdf' },
+  { fetch: 'pdf/shingi/事業フロー.pdf',                                zip: 'reference/pdf/shingi/事業フロー.pdf' },
+  { fetch: 'pdf/shingi/ブランドマネジメントシート.pdf',                 zip: 'reference/pdf/shingi/ブランドマネジメントシート.pdf' },
+  { fetch: 'pdf/shingi/KAGA_JC_GATHERING_QUEST_手段選定理由書.pdf',    zip: 'reference/pdf/shingi/KAGA_JC_GATHERING_QUEST_手段選定理由書.pdf' },
+  { fetch: 'pdf/shingi/KAGA_JC_GATHERING_仕様書.pdf',                  zip: 'reference/pdf/shingi/KAGA_JC_GATHERING_仕様書.pdf' },
+  { fetch: 'pdf/shingi/ふりかえりシート.pdf',                           zip: 'reference/pdf/shingi/ふりかえりシート.pdf' },
+  { fetch: 'pdf/shingi/カード一覧.pdf',                                zip: 'reference/pdf/shingi/カード一覧.pdf' },
+  { fetch: 'pdf/shingi/グループ編成計画.pdf',                           zip: 'reference/pdf/shingi/グループ編成計画.pdf' },
+  { fetch: 'pdf/shingi/ゲーム進行マニュアル.pdf',                       zip: 'reference/pdf/shingi/ゲーム進行マニュアル.pdf' },
+  { fetch: 'pdf/shingi/予算項目の取扱いに関するメモ.pdf',               zip: 'reference/pdf/shingi/予算項目の取扱いに関するメモ.pdf' },
+  { fetch: 'pdf/shingi/会場選定理由書.pdf',                            zip: 'reference/pdf/shingi/会場選定理由書.pdf' },
+  { fetch: 'pdf/shingi/個人情報・プライバシー配慮に関する運営ルール.pdf', zip: 'reference/pdf/shingi/個人情報・プライバシー配慮に関する運営ルール.pdf' },
+  { fetch: 'pdf/shingi/加賀JCメンバーへの周知文.pdf',                  zip: 'reference/pdf/shingi/加賀JCメンバーへの周知文.pdf' },
+  { fetch: 'pdf/shingi/当日実施要項.pdf',                              zip: 'reference/pdf/shingi/当日実施要項.pdf' },
+  { fetch: 'pdf/shingi/当日役割分担表.pdf',                            zip: 'reference/pdf/shingi/当日役割分担表.pdf' },
   // 参考資料
-  { src: 'siryoh/sankoh/JCプログラム公式資料.htm',                     out: 'reference/siryoh/sankoh/JCプログラム公式資料.pdf' },
-  { src: 'siryoh/sankoh/ビジネスゲーム導入事例.htm',                   out: 'reference/siryoh/sankoh/ビジネスゲーム導入事例.pdf' },
-  { src: 'siryoh/sankoh/ペルソナ.htm',                                 out: 'reference/siryoh/sankoh/ペルソナ.pdf' },
-  { src: 'siryoh/sankoh/テーブルゲームマスター進行台本.htm',            out: 'reference/siryoh/sankoh/テーブルゲームマスター進行台本.pdf' },
-  { src: 'siryoh/sankoh/コンプライアンスチェックシート.htm',            out: 'reference/siryoh/sankoh/コンプライアンスチェックシート.pdf' },
-  { src: 'siryoh/sankoh/コンプライアンス受付表.htm',                   out: 'reference/siryoh/sankoh/コンプライアンス受付表.pdf' },
-  { src: 'siryoh/sankoh/加賀JC2026年度_理事長所信.htm',               out: 'reference/siryoh/sankoh/加賀JC2026年度_理事長所信.pdf' },
-  { src: 'siryoh/sankoh/加賀JC出席状況確認資料.htm',                   out: 'reference/siryoh/sankoh/加賀JC出席状況確認資料.pdf' },
-  { src: 'siryoh/sankoh/公開議案_他LOM事例調査資料.htm',               out: 'reference/siryoh/sankoh/公開議案_他LOM事例調査資料.pdf' },
-  { src: 'siryoh/sankoh/正副メンター役割確認シート.htm',                out: 'reference/siryoh/sankoh/正副メンター役割確認シート.pdf' },
-  { src: 'siryoh/sankoh/役割傾向チェック設計資料.htm',                  out: 'reference/siryoh/sankoh/役割傾向チェック設計資料.pdf' }
+  { fetch: 'pdf/sankoh/JCプログラム公式資料.pdf',                      zip: 'reference/pdf/sankoh/JCプログラム公式資料.pdf' },
+  { fetch: 'pdf/sankoh/ビジネスゲーム導入事例.pdf',                    zip: 'reference/pdf/sankoh/ビジネスゲーム導入事例.pdf' },
+  { fetch: 'pdf/sankoh/ペルソナ.pdf',                                  zip: 'reference/pdf/sankoh/ペルソナ.pdf' },
+  { fetch: 'pdf/sankoh/テーブルゲームマスター進行台本.pdf',              zip: 'reference/pdf/sankoh/テーブルゲームマスター進行台本.pdf' },
+  { fetch: 'pdf/sankoh/ハードルカード一覧.pdf',                         zip: 'reference/pdf/sankoh/ハードルカード一覧.pdf' },
+  { fetch: 'pdf/sankoh/ミッションカード一覧.pdf',                        zip: 'reference/pdf/sankoh/ミッションカード一覧.pdf' },
+  { fetch: 'pdf/sankoh/コンプライアンスチェックシート.pdf',              zip: 'reference/pdf/sankoh/コンプライアンスチェックシート.pdf' },
+  { fetch: 'pdf/sankoh/コンプライアンス受付表.pdf',                    zip: 'reference/pdf/sankoh/コンプライアンス受付表.pdf' },
+  { fetch: 'pdf/sankoh/加賀JC2026年度_理事長所信.pdf',                zip: 'reference/pdf/sankoh/加賀JC2026年度_理事長所信.pdf' },
+  { fetch: 'pdf/sankoh/加賀JC出席状況確認資料.pdf',                    zip: 'reference/pdf/sankoh/加賀JC出席状況確認資料.pdf' },
+  { fetch: 'pdf/sankoh/公開議案_他LOM事例調査資料.pdf',                zip: 'reference/pdf/sankoh/公開議案_他LOM事例調査資料.pdf' },
+  { fetch: 'pdf/sankoh/正副メンター役割確認シート.pdf',                  zip: 'reference/pdf/sankoh/正副メンター役割確認シート.pdf' },
+  { fetch: 'pdf/sankoh/役割傾向チェック設計資料.pdf',                   zip: 'reference/pdf/sankoh/役割傾向チェック設計資料.pdf' },
+  // 想定問答集
+  { fetch: 'pdf/想定問答集.pdf',                                       zip: 'reference/pdf/想定問答集.pdf' },
 ];
 
-// ─── iframeで同一オリジンページをPDF Blobに変換 ────────────────────────────
-function pageToPdfBlob(relUrl) {
-  return new Promise((resolve, reject) => {
-    const iframe = document.createElement('iframe');
-    iframe.setAttribute('aria-hidden', 'true');
-    iframe.style.cssText = [
-      'position:fixed', 'left:-9999px', 'top:0',
-      'width:794px', 'height:1122px',   // A4 px @96dpi
-      'border:none', 'opacity:0', 'pointer-events:none', 'z-index:-1'
-    ].join(';');
-    document.body.appendChild(iframe);
-
-    const cleanup = () => { if (iframe.parentNode) iframe.parentNode.removeChild(iframe); };
-    const tid = setTimeout(() => { cleanup(); reject(new Error('timeout: ' + relUrl)); }, 30000);
-
-    iframe.addEventListener('load', () => {
-      // フォント・画像の描画完了を待つ
-      setTimeout(async () => {
-        try {
-          const doc = iframe.contentDocument;
-          // ナビゲーションバー等の印刷不要要素を非表示
-          doc.querySelectorAll('.nav, .pdf-btn, .links, #gian-dl-bar').forEach(el => {
-            el.style.display = 'none';
-          });
-
-          const opt = {
-            margin:        [8, 8, 8, 8],
-            image:         { type: 'jpeg', quality: 0.92 },
-            html2canvas:   {
-              scale:       1.5,
-              useCORS:     true,
-              allowTaint:  false,
-              scrollX:     0,
-              scrollY:     0,
-              windowWidth: 794,
-              logging:     false
-            },
-            jsPDF:         { unit: 'mm', format: 'a4', orientation: 'portrait' },
-            pagebreak:     { mode: ['avoid-all', 'css', 'legacy'] }
-          };
-
-          const worker = html2pdf().set(opt).from(doc.body);
-          const pdfDoc = await worker.toPdf().get('pdf');
-          const blob = pdfDoc.output('blob');
-          clearTimeout(tid);
-          cleanup();
-          resolve(blob);
-        } catch (e) {
-          clearTimeout(tid);
-          cleanup();
-          reject(e);
-        }
-      }, 1200); // フォント読み込み待ち
-    });
-
-    iframe.src = relUrl;
-  });
-}
-
-// ─── メイン：ZIP生成・ダウンロード ────────────────────────────────────────
 async function downloadZip() {
-  const btn = document.getElementById('btn-zip');
+  const btn   = document.getElementById('btn-zip');
   btn.disabled = true;
+  btn.textContent = '⏳ 準備中…';
 
-  const total = PDF_PAGES.length;
   const zip   = new JSZip();
+  const total = ZIP_FILES.length;
+  let   ok    = 0, missing = 0;
 
-  // gian.htm 自身を HTML で格納（リンクを .htm → .pdf に書き換え）
+  // ── gian.htm 自身（ナビバー除去 ＋ リンクを PDF パスに書き換え）────────
   try {
     const res  = await fetch('gian.htm');
     let   html = await res.text();
-    // 審議・参考資料へのリンクを PDF パスに差し替え
-    html = html.replace(/href="(siryoh\/(?:shingi|sankoh)\/[^"]+?)\.htm"/g, 'href="$1.pdf"');
+    // 開発用ダウンロードバーを削除
+    html = html.replace(/<style[^>]*>#gian-dl-bar[\s\S]*?<\/style>\s*/i, '');
+    html = html.replace(/<div id="gian-dl-bar"[\s\S]*?<\/div>\s*/i, '');
+    // HTM リンクを事前生成 PDF パスに差し替え
+    html = html.replace(/href="siryoh\/(shingi|sankoh)\/([^"]+?)\.htm"/g,
+                        'href="pdf/$1/$2.pdf"');
+    html = html.replace(/href="想定問答集\.htm"/g, 'href="pdf/想定問答集.pdf"');
     zip.file('reference/gian.htm', html);
   } catch(e) { console.warn('gian.htm fetch failed', e); }
 
-  // shared.css も同梱（PDF内フォールバック用）
-  try {
-    const res = await fetch('siryoh/shared.css');
-    zip.file('reference/siryoh/shared.css', await res.text());
-  } catch(e) { console.warn('shared.css fetch failed', e); }
-
-  // 各ページを順番に PDF 変換（メモリ節約のため逐次処理）
-  for (let i = 0; i < total; i++) {
-    const { src, out } = PDF_PAGES[i];
-    const label = out.split('/').pop().replace('.pdf', '');
-    btn.textContent = `⏳ PDF変換中 ${i + 1}/${total}：${label}`;
-
+  // ── 事前生成 PDF を並列 fetch ─────────────────────────────────────────
+  await Promise.all(ZIP_FILES.map(async ({ fetch: fetchPath, zip: zipPath }) => {
     try {
-      const blob = await pageToPdfBlob(src);
-      zip.file(out, blob);
+      const res = await fetch(fetchPath);
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const buf = await res.arrayBuffer();
+      zip.file(zipPath, buf);
+      ok++;
     } catch(e) {
-      console.warn('PDF変換失敗（スキップ）:', src, e);
+      console.warn(`スキップ（未生成またはエラー）: ${fetchPath}`, e.message);
+      missing++;
     }
+    btn.textContent = `⏳ 取得中 ${ok + missing}/${total}…`;
+  }));
+
+  // PDF が 1 件も取得できなかった場合は Actions 未実行と判断して案内
+  if (ok === 0) {
+    btn.disabled    = false;
+    btn.textContent = '⚠️ PDF未生成 — Actions を確認してください';
+    alert('PDFがまだ生成されていません。\nGitHub Actions（generate-pdfs.yml）が完了してから再度お試しください。');
+    return;
   }
 
-  // ZIP 圧縮・ダウンロード
   btn.textContent = '⏳ ZIP 圧縮中…';
   const zipBlob = await zip.generateAsync({
     type: 'blob',
