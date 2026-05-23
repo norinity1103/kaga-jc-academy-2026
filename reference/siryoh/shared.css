@@ -943,10 +943,66 @@ footer {
 /* ─────────────────────────────────────────────────────────
    § 18.  Print
    ───────────────────────────────────────────────────────── */
+/* ─────────────────────────────────────────────────────────
+   § Global Staff Footer  (.rel-footer)
+   関係者向けナビゲーション — 印刷・PDF出力対象外
+   ───────────────────────────────────────────────────────── */
+footer.rel-footer {
+  border-top:     2px solid var(--line);
+  margin-top:     56px;
+  padding:        20px 24px 28px;
+  background:     #f8f9fb;
+  font-family:    var(--font-sans);
+}
+footer.rel-footer .rf-label {
+  font-size:      10px;
+  font-weight:    700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color:          var(--subtle);
+  margin:         0 0 12px;
+  display:        flex;
+  align-items:    center;
+  gap:            8px;
+}
+footer.rel-footer .rf-label::after {
+  content:        '';
+  flex:           1;
+  height:         1px;
+  background:     var(--line);
+}
+footer.rel-footer ul {
+  margin:         0;
+  padding:        0;
+  list-style:     none;
+  display:        flex;
+  flex-wrap:      wrap;
+  gap:            6px 0;
+}
+footer.rel-footer li {
+  display:        flex;
+  align-items:    center;
+  font-size:      13px;
+  color:          var(--muted);
+}
+footer.rel-footer li::before {
+  content:        '→';
+  margin:         0 6px 0 0;
+  color:          var(--subtle);
+  font-size:      11px;
+}
+footer.rel-footer li + li { margin-left: 20px; }
+footer.rel-footer a {
+  color:          var(--c3);
+  text-decoration:none;
+}
+footer.rel-footer a:hover { text-decoration: underline; }
+
+
 @media print {
   @page { size: A4 portrait; margin: 15mm 12mm; }
   .nav, .pdf-btn, .links, .toolbar { display: none; }
-  footer { display: none; }
+  footer { display: none !important; }
   body   { background: #fff; color: #000; }
   main   { padding: 0; margin: 0; max-width: none; }
   .card,
