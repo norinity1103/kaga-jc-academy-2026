@@ -950,6 +950,17 @@ table.MsoTableGrid
 
 <body lang="JA" link="blue" vlink="blue" style="tab-interval:42.0pt;word-wrap:break-word;background:#ffffff;color:#000000">
 
+<!-- ▼ Download bar — フォント/スタイル/MSO属性には一切影響しません ▼ -->
+<style>#gian-dl-bar{position:sticky;top:0;z-index:9999;background:#fff;border-bottom:2px solid #e5e7eb;padding:9px 20px;display:flex;align-items:center;gap:10px;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",Meiryo,sans-serif;font-size:13px;box-shadow:0 2px 8px rgba(0,0,0,.07)}#gian-dl-bar a{color:#1f6feb;text-decoration:none}#gian-dl-bar button{border:none;border-radius:6px;padding:6px 15px;font-size:12px;font-weight:600;cursor:pointer;font-family:inherit;display:inline-flex;align-items:center;gap:5px}#gian-dl-bar .btn-pdf{background:#d8345f;color:#fff}#gian-dl-bar .btn-zip{background:#0f172a;color:#fff}#gian-dl-bar .btn-zip:disabled{opacity:.6;cursor:default}@media print{#gian-dl-bar{display:none!important}}</style>
+<div id="gian-dl-bar">
+  <a href="../index.html">← 資料一覧</a>
+  <span style="color:#94a3b8;font-size:11px;letter-spacing:.08em;text-transform:uppercase">KAGA JC 2026 ／ 会員開発委員会アカデミー事業</span>
+  <span style="flex:1"></span>
+  <button class="btn-zip" id="btn-zip" onclick="downloadZip()">📦 議案一式 ZIP</button>
+  <button class="btn-pdf" onclick="window.print()">📄 PDF で保存</button>
+</div>
+<!-- ▲ Download bar ▲ -->
+
 <div class="WordSection1">
 
 <p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-family:&quot;ＭＳ Ｐゴシック&quot;
@@ -2958,4 +2969,74 @@ mso-bidi-font-family:&quot;ＭＳ Ｐゴシック&quot;"><o:p>&nbsp;</o:p></span
   <div style="font-size:13px;color:#57606a;margin-bottom:16px">総務チェック／財審／事業内容／スケジュール・会場／広報／検証方法／上位整合の<strong>39件</strong>を整理しています。</div>
   <a href="想定問答集.htm" style="display:inline-block;padding:10px 24px;background:#1f6feb;color:#fff;text-decoration:none;border-radius:6px;font-size:14px;font-weight:600">想定問答集を開く →</a>
 </div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script>
+async function downloadZip() {
+  const btn = document.getElementById('btn-zip');
+  btn.disabled = true;
+  btn.textContent = '⏳ 作成中…';
+
+  const files = [
+    { fetch: 'gian.htm',                                            zip: 'reference/gian.htm' },
+    { fetch: 'siryoh/shared.css',                                   zip: 'reference/siryoh/shared.css' },
+    // 審議対象資料
+    { fetch: 'siryoh/shingi/事業フロー.htm',                        zip: 'reference/siryoh/shingi/事業フロー.htm' },
+    { fetch: 'siryoh/shingi/ブランドマネジメントシート.htm',         zip: 'reference/siryoh/shingi/ブランドマネジメントシート.htm' },
+    { fetch: 'siryoh/shingi/KAGA_JC_GATHERING_QUEST_手段選定理由書.htm', zip: 'reference/siryoh/shingi/KAGA_JC_GATHERING_QUEST_手段選定理由書.htm' },
+    { fetch: 'siryoh/shingi/KAGA_JC_GATHERING_仕様書.htm',          zip: 'reference/siryoh/shingi/KAGA_JC_GATHERING_仕様書.htm' },
+    { fetch: 'siryoh/shingi/ふりかえりシート.htm',                   zip: 'reference/siryoh/shingi/ふりかえりシート.htm' },
+    { fetch: 'siryoh/shingi/カード一覧.htm',                        zip: 'reference/siryoh/shingi/カード一覧.htm' },
+    { fetch: 'siryoh/shingi/グループ編成計画.htm',                   zip: 'reference/siryoh/shingi/グループ編成計画.htm' },
+    { fetch: 'siryoh/shingi/ゲーム進行マニュアル.htm',               zip: 'reference/siryoh/shingi/ゲーム進行マニュアル.htm' },
+    { fetch: 'siryoh/shingi/予算項目の取扱いに関するメモ.htm',       zip: 'reference/siryoh/shingi/予算項目の取扱いに関するメモ.htm' },
+    { fetch: 'siryoh/shingi/会場選定理由書.htm',                    zip: 'reference/siryoh/shingi/会場選定理由書.htm' },
+    { fetch: 'siryoh/shingi/個人情報・プライバシー配慮に関する運営ルール.htm', zip: 'reference/siryoh/shingi/個人情報・プライバシー配慮に関する運営ルール.htm' },
+    { fetch: 'siryoh/shingi/加賀JCメンバーへの周知文.htm',          zip: 'reference/siryoh/shingi/加賀JCメンバーへの周知文.htm' },
+    { fetch: 'siryoh/shingi/当日実施要項.htm',                      zip: 'reference/siryoh/shingi/当日実施要項.htm' },
+    { fetch: 'siryoh/shingi/当日役割分担表.htm',                    zip: 'reference/siryoh/shingi/当日役割分担表.htm' },
+    { fetch: 'siryoh/shingi/想定問答集.htm',                        zip: 'reference/siryoh/shingi/想定問答集.htm' },
+    // 参考資料
+    { fetch: 'siryoh/sankoh/JCプログラム公式資料.htm',              zip: 'reference/siryoh/sankoh/JCプログラム公式資料.htm' },
+    { fetch: 'siryoh/sankoh/ビジネスゲーム導入事例.htm',            zip: 'reference/siryoh/sankoh/ビジネスゲーム導入事例.htm' },
+    { fetch: 'siryoh/sankoh/ペルソナ.htm',                          zip: 'reference/siryoh/sankoh/ペルソナ.htm' },
+    { fetch: 'siryoh/sankoh/テーブルゲームマスター進行台本.htm',     zip: 'reference/siryoh/sankoh/テーブルゲームマスター進行台本.htm' },
+    { fetch: 'siryoh/sankoh/コンプライアンスチェックシート.htm',     zip: 'reference/siryoh/sankoh/コンプライアンスチェックシート.htm' },
+    { fetch: 'siryoh/sankoh/コンプライアンス受付表.htm',            zip: 'reference/siryoh/sankoh/コンプライアンス受付表.htm' },
+    { fetch: 'siryoh/sankoh/加賀JC2026年度_理事長所信.htm',        zip: 'reference/siryoh/sankoh/加賀JC2026年度_理事長所信.htm' },
+    { fetch: 'siryoh/sankoh/加賀JC出席状況確認資料.htm',            zip: 'reference/siryoh/sankoh/加賀JC出席状況確認資料.htm' },
+    { fetch: 'siryoh/sankoh/公開議案_他LOM事例調査資料.htm',        zip: 'reference/siryoh/sankoh/公開議案_他LOM事例調査資料.htm' },
+    { fetch: 'siryoh/sankoh/正副メンター役割確認シート.htm',         zip: 'reference/siryoh/sankoh/正副メンター役割確認シート.htm' },
+    { fetch: 'siryoh/sankoh/役割傾向チェック設計資料.htm',          zip: 'reference/siryoh/sankoh/役割傾向チェック設計資料.htm' }
+  ];
+
+  const zip = new JSZip();
+  let done = 0;
+
+  await Promise.all(files.map(async ({ fetch: path, zip: zipPath }) => {
+    try {
+      const res = await fetch(path);
+      if (!res.ok) throw new Error(res.status);
+      const text = await res.text();
+      zip.file(zipPath, text);
+    } catch (e) {
+      console.warn('skip:', path, e);
+    }
+    done++;
+    btn.textContent = `⏳ ${done}/${files.length} 取得中…`;
+  }));
+
+  btn.textContent = '⏳ ZIP 生成中…';
+  const blob = await zip.generateAsync({ type: 'blob', compression: 'DEFLATE', compressionOptions: { level: 6 } });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = '加賀JCアカデミー事業_議案資料一式.zip';
+  a.click();
+  setTimeout(() => URL.revokeObjectURL(url), 60000);
+
+  btn.disabled = false;
+  btn.textContent = '📦 議案一式 ZIP';
+}
+</script>
 </body></html>
