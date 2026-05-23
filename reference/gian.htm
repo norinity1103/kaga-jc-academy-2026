@@ -2971,71 +2971,152 @@ mso-bidi-font-family:&quot;ＭＳ Ｐゴシック&quot;"><o:p>&nbsp;</o:p></span
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 <script>
+// ─── PDF変換ページリスト（fetch相対パス → ZIP内パス） ───────────────────────
+const PDF_PAGES = [
+  // 審議対象資料
+  { src: 'siryoh/shingi/事業フロー.htm',                               out: 'reference/siryoh/shingi/事業フロー.pdf' },
+  { src: 'siryoh/shingi/ブランドマネジメントシート.htm',                out: 'reference/siryoh/shingi/ブランドマネジメントシート.pdf' },
+  { src: 'siryoh/shingi/KAGA_JC_GATHERING_QUEST_手段選定理由書.htm',   out: 'reference/siryoh/shingi/KAGA_JC_GATHERING_QUEST_手段選定理由書.pdf' },
+  { src: 'siryoh/shingi/KAGA_JC_GATHERING_仕様書.htm',                 out: 'reference/siryoh/shingi/KAGA_JC_GATHERING_仕様書.pdf' },
+  { src: 'siryoh/shingi/ふりかえりシート.htm',                          out: 'reference/siryoh/shingi/ふりかえりシート.pdf' },
+  { src: 'siryoh/shingi/カード一覧.htm',                               out: 'reference/siryoh/shingi/カード一覧.pdf' },
+  { src: 'siryoh/shingi/グループ編成計画.htm',                          out: 'reference/siryoh/shingi/グループ編成計画.pdf' },
+  { src: 'siryoh/shingi/ゲーム進行マニュアル.htm',                      out: 'reference/siryoh/shingi/ゲーム進行マニュアル.pdf' },
+  { src: 'siryoh/shingi/予算項目の取扱いに関するメモ.htm',              out: 'reference/siryoh/shingi/予算項目の取扱いに関するメモ.pdf' },
+  { src: 'siryoh/shingi/会場選定理由書.htm',                           out: 'reference/siryoh/shingi/会場選定理由書.pdf' },
+  { src: 'siryoh/shingi/個人情報・プライバシー配慮に関する運営ルール.htm', out: 'reference/siryoh/shingi/個人情報・プライバシー配慮に関する運営ルール.pdf' },
+  { src: 'siryoh/shingi/加賀JCメンバーへの周知文.htm',                 out: 'reference/siryoh/shingi/加賀JCメンバーへの周知文.pdf' },
+  { src: 'siryoh/shingi/当日実施要項.htm',                             out: 'reference/siryoh/shingi/当日実施要項.pdf' },
+  { src: 'siryoh/shingi/当日役割分担表.htm',                           out: 'reference/siryoh/shingi/当日役割分担表.pdf' },
+  { src: 'siryoh/shingi/想定問答集.htm',                               out: 'reference/siryoh/shingi/想定問答集.pdf' },
+  // 参考資料
+  { src: 'siryoh/sankoh/JCプログラム公式資料.htm',                     out: 'reference/siryoh/sankoh/JCプログラム公式資料.pdf' },
+  { src: 'siryoh/sankoh/ビジネスゲーム導入事例.htm',                   out: 'reference/siryoh/sankoh/ビジネスゲーム導入事例.pdf' },
+  { src: 'siryoh/sankoh/ペルソナ.htm',                                 out: 'reference/siryoh/sankoh/ペルソナ.pdf' },
+  { src: 'siryoh/sankoh/テーブルゲームマスター進行台本.htm',            out: 'reference/siryoh/sankoh/テーブルゲームマスター進行台本.pdf' },
+  { src: 'siryoh/sankoh/コンプライアンスチェックシート.htm',            out: 'reference/siryoh/sankoh/コンプライアンスチェックシート.pdf' },
+  { src: 'siryoh/sankoh/コンプライアンス受付表.htm',                   out: 'reference/siryoh/sankoh/コンプライアンス受付表.pdf' },
+  { src: 'siryoh/sankoh/加賀JC2026年度_理事長所信.htm',               out: 'reference/siryoh/sankoh/加賀JC2026年度_理事長所信.pdf' },
+  { src: 'siryoh/sankoh/加賀JC出席状況確認資料.htm',                   out: 'reference/siryoh/sankoh/加賀JC出席状況確認資料.pdf' },
+  { src: 'siryoh/sankoh/公開議案_他LOM事例調査資料.htm',               out: 'reference/siryoh/sankoh/公開議案_他LOM事例調査資料.pdf' },
+  { src: 'siryoh/sankoh/正副メンター役割確認シート.htm',                out: 'reference/siryoh/sankoh/正副メンター役割確認シート.pdf' },
+  { src: 'siryoh/sankoh/役割傾向チェック設計資料.htm',                  out: 'reference/siryoh/sankoh/役割傾向チェック設計資料.pdf' }
+];
+
+// ─── iframeで同一オリジンページをPDF Blobに変換 ────────────────────────────
+function pageToPdfBlob(relUrl) {
+  return new Promise((resolve, reject) => {
+    const iframe = document.createElement('iframe');
+    iframe.setAttribute('aria-hidden', 'true');
+    iframe.style.cssText = [
+      'position:fixed', 'left:-9999px', 'top:0',
+      'width:794px', 'height:1122px',   // A4 px @96dpi
+      'border:none', 'opacity:0', 'pointer-events:none', 'z-index:-1'
+    ].join(';');
+    document.body.appendChild(iframe);
+
+    const cleanup = () => { if (iframe.parentNode) iframe.parentNode.removeChild(iframe); };
+    const tid = setTimeout(() => { cleanup(); reject(new Error('timeout: ' + relUrl)); }, 30000);
+
+    iframe.addEventListener('load', () => {
+      // フォント・画像の描画完了を待つ
+      setTimeout(async () => {
+        try {
+          const doc = iframe.contentDocument;
+          // ナビゲーションバー等の印刷不要要素を非表示
+          doc.querySelectorAll('.nav, .pdf-btn, .links, #gian-dl-bar').forEach(el => {
+            el.style.display = 'none';
+          });
+
+          const opt = {
+            margin:        [8, 8, 8, 8],
+            image:         { type: 'jpeg', quality: 0.92 },
+            html2canvas:   {
+              scale:       1.5,
+              useCORS:     true,
+              allowTaint:  false,
+              scrollX:     0,
+              scrollY:     0,
+              windowWidth: 794,
+              logging:     false
+            },
+            jsPDF:         { unit: 'mm', format: 'a4', orientation: 'portrait' },
+            pagebreak:     { mode: ['avoid-all', 'css', 'legacy'] }
+          };
+
+          const worker = html2pdf().set(opt).from(doc.body);
+          const pdfDoc = await worker.toPdf().get('pdf');
+          const blob = pdfDoc.output('blob');
+          clearTimeout(tid);
+          cleanup();
+          resolve(blob);
+        } catch (e) {
+          clearTimeout(tid);
+          cleanup();
+          reject(e);
+        }
+      }, 1200); // フォント読み込み待ち
+    });
+
+    iframe.src = relUrl;
+  });
+}
+
+// ─── メイン：ZIP生成・ダウンロード ────────────────────────────────────────
 async function downloadZip() {
   const btn = document.getElementById('btn-zip');
   btn.disabled = true;
-  btn.textContent = '⏳ 作成中…';
 
-  const files = [
-    { fetch: 'gian.htm',                                            zip: 'reference/gian.htm' },
-    { fetch: 'siryoh/shared.css',                                   zip: 'reference/siryoh/shared.css' },
-    // 審議対象資料
-    { fetch: 'siryoh/shingi/事業フロー.htm',                        zip: 'reference/siryoh/shingi/事業フロー.htm' },
-    { fetch: 'siryoh/shingi/ブランドマネジメントシート.htm',         zip: 'reference/siryoh/shingi/ブランドマネジメントシート.htm' },
-    { fetch: 'siryoh/shingi/KAGA_JC_GATHERING_QUEST_手段選定理由書.htm', zip: 'reference/siryoh/shingi/KAGA_JC_GATHERING_QUEST_手段選定理由書.htm' },
-    { fetch: 'siryoh/shingi/KAGA_JC_GATHERING_仕様書.htm',          zip: 'reference/siryoh/shingi/KAGA_JC_GATHERING_仕様書.htm' },
-    { fetch: 'siryoh/shingi/ふりかえりシート.htm',                   zip: 'reference/siryoh/shingi/ふりかえりシート.htm' },
-    { fetch: 'siryoh/shingi/カード一覧.htm',                        zip: 'reference/siryoh/shingi/カード一覧.htm' },
-    { fetch: 'siryoh/shingi/グループ編成計画.htm',                   zip: 'reference/siryoh/shingi/グループ編成計画.htm' },
-    { fetch: 'siryoh/shingi/ゲーム進行マニュアル.htm',               zip: 'reference/siryoh/shingi/ゲーム進行マニュアル.htm' },
-    { fetch: 'siryoh/shingi/予算項目の取扱いに関するメモ.htm',       zip: 'reference/siryoh/shingi/予算項目の取扱いに関するメモ.htm' },
-    { fetch: 'siryoh/shingi/会場選定理由書.htm',                    zip: 'reference/siryoh/shingi/会場選定理由書.htm' },
-    { fetch: 'siryoh/shingi/個人情報・プライバシー配慮に関する運営ルール.htm', zip: 'reference/siryoh/shingi/個人情報・プライバシー配慮に関する運営ルール.htm' },
-    { fetch: 'siryoh/shingi/加賀JCメンバーへの周知文.htm',          zip: 'reference/siryoh/shingi/加賀JCメンバーへの周知文.htm' },
-    { fetch: 'siryoh/shingi/当日実施要項.htm',                      zip: 'reference/siryoh/shingi/当日実施要項.htm' },
-    { fetch: 'siryoh/shingi/当日役割分担表.htm',                    zip: 'reference/siryoh/shingi/当日役割分担表.htm' },
-    { fetch: 'siryoh/shingi/想定問答集.htm',                        zip: 'reference/siryoh/shingi/想定問答集.htm' },
-    // 参考資料
-    { fetch: 'siryoh/sankoh/JCプログラム公式資料.htm',              zip: 'reference/siryoh/sankoh/JCプログラム公式資料.htm' },
-    { fetch: 'siryoh/sankoh/ビジネスゲーム導入事例.htm',            zip: 'reference/siryoh/sankoh/ビジネスゲーム導入事例.htm' },
-    { fetch: 'siryoh/sankoh/ペルソナ.htm',                          zip: 'reference/siryoh/sankoh/ペルソナ.htm' },
-    { fetch: 'siryoh/sankoh/テーブルゲームマスター進行台本.htm',     zip: 'reference/siryoh/sankoh/テーブルゲームマスター進行台本.htm' },
-    { fetch: 'siryoh/sankoh/コンプライアンスチェックシート.htm',     zip: 'reference/siryoh/sankoh/コンプライアンスチェックシート.htm' },
-    { fetch: 'siryoh/sankoh/コンプライアンス受付表.htm',            zip: 'reference/siryoh/sankoh/コンプライアンス受付表.htm' },
-    { fetch: 'siryoh/sankoh/加賀JC2026年度_理事長所信.htm',        zip: 'reference/siryoh/sankoh/加賀JC2026年度_理事長所信.htm' },
-    { fetch: 'siryoh/sankoh/加賀JC出席状況確認資料.htm',            zip: 'reference/siryoh/sankoh/加賀JC出席状況確認資料.htm' },
-    { fetch: 'siryoh/sankoh/公開議案_他LOM事例調査資料.htm',        zip: 'reference/siryoh/sankoh/公開議案_他LOM事例調査資料.htm' },
-    { fetch: 'siryoh/sankoh/正副メンター役割確認シート.htm',         zip: 'reference/siryoh/sankoh/正副メンター役割確認シート.htm' },
-    { fetch: 'siryoh/sankoh/役割傾向チェック設計資料.htm',          zip: 'reference/siryoh/sankoh/役割傾向チェック設計資料.htm' }
-  ];
+  const total = PDF_PAGES.length;
+  const zip   = new JSZip();
 
-  const zip = new JSZip();
-  let done = 0;
+  // gian.htm 自身を HTML で格納（リンクを .htm → .pdf に書き換え）
+  try {
+    const res  = await fetch('gian.htm');
+    let   html = await res.text();
+    // 審議・参考資料へのリンクを PDF パスに差し替え
+    html = html.replace(/href="(siryoh\/(?:shingi|sankoh)\/[^"]+?)\.htm"/g, 'href="$1.pdf"');
+    zip.file('reference/gian.htm', html);
+  } catch(e) { console.warn('gian.htm fetch failed', e); }
 
-  await Promise.all(files.map(async ({ fetch: path, zip: zipPath }) => {
+  // shared.css も同梱（PDF内フォールバック用）
+  try {
+    const res = await fetch('siryoh/shared.css');
+    zip.file('reference/siryoh/shared.css', await res.text());
+  } catch(e) { console.warn('shared.css fetch failed', e); }
+
+  // 各ページを順番に PDF 変換（メモリ節約のため逐次処理）
+  for (let i = 0; i < total; i++) {
+    const { src, out } = PDF_PAGES[i];
+    const label = out.split('/').pop().replace('.pdf', '');
+    btn.textContent = `⏳ PDF変換中 ${i + 1}/${total}：${label}`;
+
     try {
-      const res = await fetch(path);
-      if (!res.ok) throw new Error(res.status);
-      const text = await res.text();
-      zip.file(zipPath, text);
-    } catch (e) {
-      console.warn('skip:', path, e);
+      const blob = await pageToPdfBlob(src);
+      zip.file(out, blob);
+    } catch(e) {
+      console.warn('PDF変換失敗（スキップ）:', src, e);
     }
-    done++;
-    btn.textContent = `⏳ ${done}/${files.length} 取得中…`;
-  }));
+  }
 
-  btn.textContent = '⏳ ZIP 生成中…';
-  const blob = await zip.generateAsync({ type: 'blob', compression: 'DEFLATE', compressionOptions: { level: 6 } });
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement('a');
-  a.href = url;
+  // ZIP 圧縮・ダウンロード
+  btn.textContent = '⏳ ZIP 圧縮中…';
+  const zipBlob = await zip.generateAsync({
+    type: 'blob',
+    compression: 'DEFLATE',
+    compressionOptions: { level: 5 }
+  });
+
+  const url = URL.createObjectURL(zipBlob);
+  const a   = document.createElement('a');
+  a.href    = url;
   a.download = '加賀JCアカデミー事業_議案資料一式.zip';
   a.click();
-  setTimeout(() => URL.revokeObjectURL(url), 60000);
+  setTimeout(() => URL.revokeObjectURL(url), 120000);
 
-  btn.disabled = false;
+  btn.disabled    = false;
   btn.textContent = '📦 議案一式 ZIP';
 }
 </script>
