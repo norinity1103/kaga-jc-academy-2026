@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<title>ふりかえりシート — KAGA JC GATHERING</title>
+<title>事業後アンケート — KAGA JC GATHERING</title>
 <link rel="stylesheet" href="../shared.css">
 <style>
   :root {
@@ -12,7 +12,7 @@
     --muted: #6b7280;
     --line: #d0d7de;
     --rule: #94a3b8;
-    --accent: #0a4b7a;
+    --accent: #1d4ed8;
   }
   * { box-sizing: border-box; }
   body {
@@ -118,7 +118,7 @@
   .meta-row .field .val { color: var(--text); }
 
   section.block {
-    margin-bottom: 22px;
+    margin-bottom: 24px;
     page-break-inside: avoid;
   }
   section.block h2 {
@@ -135,26 +135,10 @@
     padding-left: 14px;
   }
 
-  .lines {
-    border: 1px solid var(--line);
-    border-radius: 4px;
-    padding: 14px 16px;
-    background: repeating-linear-gradient(
-      to bottom,
-      transparent 0,
-      transparent 30px,
-      var(--rule) 30px,
-      var(--rule) 31px
-    );
-    min-height: 124px;
-  }
-  .lines.tall { min-height: 188px; }
-  .lines.short { min-height: 64px; }
-
   .scale {
     display: flex;
     gap: 10px;
-    margin-top: 6px;
+    margin: 6px 0 14px;
     align-items: center;
   }
   .scale-item {
@@ -181,25 +165,13 @@
     border-radius: 50%;
     margin-top: 4px;
   }
-
-  .checklist {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 8px 16px;
-  }
-  .check {
+  .scale-label {
     display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 13px;
-  }
-  .check::before {
-    content: "";
-    width: 14px;
-    height: 14px;
-    border: 1.5px solid var(--rule);
-    border-radius: 3px;
-    flex-shrink: 0;
+    justify-content: space-between;
+    font-size: 10.5px;
+    color: var(--muted);
+    margin-bottom: 4px;
+    padding: 0 2px;
   }
 
   .qa {
@@ -221,6 +193,31 @@
     margin-bottom: 4px;
   }
   .qa .a:last-child { margin-bottom: 0; }
+  .qa .a.tall { min-height: 72px; }
+
+  .lines {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 14px 16px;
+    background: repeating-linear-gradient(
+      to bottom,
+      transparent 0,
+      transparent 30px,
+      var(--rule) 30px,
+      var(--rule) 31px
+    );
+    min-height: 96px;
+  }
+
+  .info-box {
+    background: #eff6ff;
+    border: 1px solid #bfdbfe;
+    border-radius: 6px;
+    padding: 12px 14px;
+    font-size: 12.5px;
+    color: #1d4ed8;
+    margin-bottom: 18px;
+  }
 
   .footer-note {
     border-top: 1px solid var(--line);
@@ -231,32 +228,18 @@
     text-align: center;
   }
 
-  /* Print styles */
   @media print {
-    @page {
-      size: A4 portrait;
-      margin: 12mm 14mm;
-    }
-    body {
-      background: #fff;
-    }
+    @page { size: A4 portrait; margin: 12mm 14mm; }
+    body { background: #fff; }
     .toolbar { display: none; }
-    .sheet {
-      box-shadow: none;
-      border: none;
-      margin: 0;
-      padding: 0;
-      max-width: none;
-    }
-    .qa, .lines, .scale-item, .meta-row .field {
-      page-break-inside: avoid;
-    }
+    .sheet { box-shadow: none; border: none; margin: 0; padding: 0; max-width: none; }
+    .qa, .lines, .scale-item, .meta-row .field { page-break-inside: avoid; }
     a { color: var(--text); text-decoration: none; }
+    .info-box { background: #f0f4ff !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
   }
 
   @media (max-width: 600px) {
     .meta-row { grid-template-columns: 1fr; }
-    .checklist { grid-template-columns: 1fr; }
     .sheet { padding: 20px; }
   }
 </style>
@@ -280,158 +263,158 @@
 </div>
 
 <div class="toolbar">
-  <p class="eyebrow" style="font-size:12px;letter-spacing:.14em;color:#6b7280;margin:0 0 6px;text-transform:uppercase">審議対象資料 9</p>
-  <h1>ふりかえりシート — KAGA JC GATHERING（仮）</h1>
+  <p class="eyebrow" style="font-size:12px;letter-spacing:.14em;color:#6b7280;margin:0 0 6px;text-transform:uppercase">審議対象資料 10</p>
+  <h1>事業後アンケート — KAGA JC GATHERING</h1>
   <a href="../gian.htm" class="secondary">← 議案本文</a>
   <a href="../資料一覧.htm">資料一覧</a>
   <button class="pdf-btn" onclick="window.print()">📄 PDFで保存</button>
 </div>
 
 <div class="sheet">
+  <div class="sheet-header">
+    <p class="label">審議対象資料 10 — 事業後アンケート</p>
+    <h1>事業後アンケート</h1>
+    <p class="subtitle">KAGA JC GATHERING（仮） ／ 2026年度 会員開発委員会アカデミー事業</p>
+  </div>
+
+  <div class="info-box">
+    本アンケートは事業終了後に回答いただく<b>KPI計測用アンケート</b>です。回答内容は個人を特定せず、事業後報告・次年度議案ブラッシュアップにのみ活用します。所要時間：約5分。
+  </div>
+
   <div class="meta-row">
     <div class="field">
-      <span class="lbl">氏名</span>
+      <span class="lbl">氏名（任意）</span>
       <span class="val">&nbsp;</span>
     </div>
     <div class="field">
-      <span class="lbl">グループ</span>
+      <span class="lbl">入会年度</span>
       <span class="val">&nbsp;</span>
     </div>
     <div class="field">
-      <span class="lbl">記入日</span>
+      <span class="lbl">回答日</span>
       <span class="val">　　年　　月　　日</span>
     </div>
   </div>
 
-  <!-- 1. 今日のミッション -->
+  <!-- Q1 参加率・満足度 -->
   <section class="block">
-    <h2>1. 今日のグループのミッション</h2>
-    <p class="desc">グループで選んだ公益ミッションカードのテーマと、設定された条件を書き出してください。</p>
-    <div class="qa">
-      <p class="q">選んだミッションテーマ</p>
-      <div class="a"></div>
-      <p class="q" style="margin-top:8px">設定された条件</p>
-      <div class="a"></div>
+    <h2>Q1. 本日の事業への参加満足度</h2>
+    <p class="desc">全体を通じた満足度を5段階で評価してください（1=不満 ／ 5=非常に満足）。</p>
+    <div class="scale-label"><span>1 不満</span><span>5 非常に満足</span></div>
+    <div class="scale">
+      <div class="scale-item"><span class="num">1</span><span class="bubble"></span></div>
+      <div class="scale-item"><span class="num">2</span><span class="bubble"></span></div>
+      <div class="scale-item"><span class="num">3</span><span class="bubble"></span></div>
+      <div class="scale-item"><span class="num">4</span><span class="bubble"></span></div>
+      <div class="scale-item"><span class="num">5</span><span class="bubble"></span></div>
     </div>
   </section>
 
-  <!-- 2. 印象に残った頼れる仲間カード -->
+  <!-- Q2 相互理解（KPI） -->
   <section class="block">
-    <h2>2. 印象に残った「頼れる仲間カード」</h2>
-    <p class="desc">活用したカードのうち、特に印象に残った人物・事業者を3つまで挙げてください。</p>
-    <div class="qa">
-      <p class="q">①</p>
-      <div class="a"></div>
-      <p class="q" style="margin-top:8px">②</p>
-      <div class="a"></div>
-      <p class="q" style="margin-top:8px">③</p>
-      <div class="a"></div>
+    <h2>Q2. 仲間理解の変化（KPI①）</h2>
+    <p class="desc">各設問を5段階で評価してください（1=全くそう思わない ／ 5=強くそう思う）。</p>
+
+    <p style="font-size:12.5px;margin:10px 0 2px"><strong>① 他のメンバーの仕事・強みを、以前より具体的に知ることができた</strong></p>
+    <div class="scale-label"><span>1 そう思わない</span><span>5 強くそう思う</span></div>
+    <div class="scale">
+      <div class="scale-item"><span class="num">1</span><span class="bubble"></span></div>
+      <div class="scale-item"><span class="num">2</span><span class="bubble"></span></div>
+      <div class="scale-item"><span class="num">3</span><span class="bubble"></span></div>
+      <div class="scale-item"><span class="num">4</span><span class="bubble"></span></div>
+      <div class="scale-item"><span class="num">5</span><span class="bubble"></span></div>
+    </div>
+
+    <p style="font-size:12.5px;margin:12px 0 2px"><strong>② 地域の事業者・地域資源との接点を、以前より意識できるようになった</strong></p>
+    <div class="scale-label"><span>1 そう思わない</span><span>5 強くそう思う</span></div>
+    <div class="scale">
+      <div class="scale-item"><span class="num">1</span><span class="bubble"></span></div>
+      <div class="scale-item"><span class="num">2</span><span class="bubble"></span></div>
+      <div class="scale-item"><span class="num">3</span><span class="bubble"></span></div>
+      <div class="scale-item"><span class="num">4</span><span class="bubble"></span></div>
+      <div class="scale-item"><span class="num">5</span><span class="bubble"></span></div>
     </div>
   </section>
 
-  <!-- 3. ロール別ふりかえり -->
+  <!-- Q3 役割発見・共助意識（KPI） -->
   <section class="block">
-    <h2>3. もし自分がその役職だったら…</h2>
-    <p class="desc">それぞれの立場で「誰に何を頼るか」を整理してください。</p>
-    <div class="qa">
-      <p class="q">委員長だったら、誰に何を頼みますか？</p>
-      <div class="a"></div>
-      <div class="a"></div>
+    <h2>Q3. 役割発見・共助意識の変化（KPI②）</h2>
+
+    <p style="font-size:12.5px;margin:10px 0 2px"><strong>① JC活動の中で自分が担える役割を具体的にイメージできるようになった</strong></p>
+    <div class="scale-label"><span>1 そう思わない</span><span>5 強くそう思う</span></div>
+    <div class="scale">
+      <div class="scale-item"><span class="num">1</span><span class="bubble"></span></div>
+      <div class="scale-item"><span class="num">2</span><span class="bubble"></span></div>
+      <div class="scale-item"><span class="num">3</span><span class="bubble"></span></div>
+      <div class="scale-item"><span class="num">4</span><span class="bubble"></span></div>
+      <div class="scale-item"><span class="num">5</span><span class="bubble"></span></div>
     </div>
-    <div class="qa">
-      <p class="q">副委員長だったら、どのように委員長を支えますか？</p>
-      <div class="a"></div>
-      <div class="a"></div>
-    </div>
-    <div class="qa">
-      <p class="q">運営幹事だったら、どのようにメンバーを巻き込みますか？</p>
-      <div class="a"></div>
-      <div class="a"></div>
+
+    <p style="font-size:12.5px;margin:12px 0 2px"><strong>② 困っている仲間を支えたい・頼り合いたいという気持ちが高まった</strong></p>
+    <div class="scale-label"><span>1 そう思わない</span><span>5 強くそう思う</span></div>
+    <div class="scale">
+      <div class="scale-item"><span class="num">1</span><span class="bubble"></span></div>
+      <div class="scale-item"><span class="num">2</span><span class="bubble"></span></div>
+      <div class="scale-item"><span class="num">3</span><span class="bubble"></span></div>
+      <div class="scale-item"><span class="num">4</span><span class="bubble"></span></div>
+      <div class="scale-item"><span class="num">5</span><span class="bubble"></span></div>
     </div>
   </section>
 
-  <!-- 4. 2周目チャレンジ -->
+  <!-- Q4 参加意欲（KPI） -->
   <section class="block">
-    <h2>4. 2周目チャレンジで気づいたこと</h2>
-    <p class="desc">1周目で多用された人物カードが使えない条件下、どのように事業を再設計しましたか？気づきを記録してください。</p>
+    <h2>Q4. 今後のJC活動への参加意欲（KPI③）</h2>
+
+    <p style="font-size:12.5px;margin:10px 0 2px"><strong>① 今後の例会・委員会・事業に、今より主体的に参加したいと思う</strong></p>
+    <div class="scale-label"><span>1 そう思わない</span><span>5 強くそう思う</span></div>
+    <div class="scale">
+      <div class="scale-item"><span class="num">1</span><span class="bubble"></span></div>
+      <div class="scale-item"><span class="num">2</span><span class="bubble"></span></div>
+      <div class="scale-item"><span class="num">3</span><span class="bubble"></span></div>
+      <div class="scale-item"><span class="num">4</span><span class="bubble"></span></div>
+      <div class="scale-item"><span class="num">5</span><span class="bubble"></span></div>
+    </div>
+
+    <p style="font-size:12.5px;margin:12px 0 2px"><strong>② 本事業を経て、加賀JCの仲間への信頼感が高まった</strong></p>
+    <div class="scale-label"><span>1 そう思わない</span><span>5 強くそう思う</span></div>
+    <div class="scale">
+      <div class="scale-item"><span class="num">1</span><span class="bubble"></span></div>
+      <div class="scale-item"><span class="num">2</span><span class="bubble"></span></div>
+      <div class="scale-item"><span class="num">3</span><span class="bubble"></span></div>
+      <div class="scale-item"><span class="num">4</span><span class="bubble"></span></div>
+      <div class="scale-item"><span class="num">5</span><span class="bubble"></span></div>
+    </div>
+  </section>
+
+  <!-- Q5 今後のアクション -->
+  <section class="block">
+    <h2>Q5. 今後1ヶ月以内に取り組みたいアクション</h2>
+    <p class="desc">具体的な行動を自由に記述してください。</p>
     <div class="lines"></div>
   </section>
 
-  <!-- 5. 自己評価スケール -->
+  <!-- Q6 改善提案 -->
   <section class="block">
-    <h2>5. 自己評価（事業前後の比較）</h2>
-    <p class="desc">今日のワークを通じた変化を、5段階で評価してください（1=低い／5=高い）。</p>
-    <p style="font-size:12.5px;margin:10px 0 4px"><strong>① 他のメンバーの仕事や強みを知ることができた</strong></p>
-    <div class="scale">
-      <div class="scale-item"><span class="num">1</span><span class="bubble"></span></div>
-      <div class="scale-item"><span class="num">2</span><span class="bubble"></span></div>
-      <div class="scale-item"><span class="num">3</span><span class="bubble"></span></div>
-      <div class="scale-item"><span class="num">4</span><span class="bubble"></span></div>
-      <div class="scale-item"><span class="num">5</span><span class="bubble"></span></div>
-    </div>
-    <p style="font-size:12.5px;margin:12px 0 4px"><strong>② 仲間を支える意識が高まった</strong></p>
-    <div class="scale">
-      <div class="scale-item"><span class="num">1</span><span class="bubble"></span></div>
-      <div class="scale-item"><span class="num">2</span><span class="bubble"></span></div>
-      <div class="scale-item"><span class="num">3</span><span class="bubble"></span></div>
-      <div class="scale-item"><span class="num">4</span><span class="bubble"></span></div>
-      <div class="scale-item"><span class="num">5</span><span class="bubble"></span></div>
-    </div>
-    <p style="font-size:12.5px;margin:12px 0 4px"><strong>③ 自分が JC 活動で担える役割を考えることができた</strong></p>
-    <div class="scale">
-      <div class="scale-item"><span class="num">1</span><span class="bubble"></span></div>
-      <div class="scale-item"><span class="num">2</span><span class="bubble"></span></div>
-      <div class="scale-item"><span class="num">3</span><span class="bubble"></span></div>
-      <div class="scale-item"><span class="num">4</span><span class="bubble"></span></div>
-      <div class="scale-item"><span class="num">5</span><span class="bubble"></span></div>
-    </div>
-    <p style="font-size:12.5px;margin:12px 0 4px"><strong>④ 今後の JC 活動に主体的に関わりたい</strong></p>
-    <div class="scale">
-      <div class="scale-item"><span class="num">1</span><span class="bubble"></span></div>
-      <div class="scale-item"><span class="num">2</span><span class="bubble"></span></div>
-      <div class="scale-item"><span class="num">3</span><span class="bubble"></span></div>
-      <div class="scale-item"><span class="num">4</span><span class="bubble"></span></div>
-      <div class="scale-item"><span class="num">5</span><span class="bubble"></span></div>
-    </div>
-  </section>
-
-  <!-- 6. 今後の行動宣言 -->
-  <section class="block">
-    <h2>6. 今後の行動宣言</h2>
-    <p class="desc">事業後の具体的なアクションを宣言してください。該当するものにチェック＋自分の言葉も自由記述。</p>
-    <div class="checklist">
-      <span class="check">委員会内で自分から一つ役割を引き受ける</span>
-      <span class="check">困っているメンバーに声をかける</span>
-      <span class="check">事業準備に一度は関わる</span>
-      <span class="check">委員長や担当者の考えを聞く</span>
-      <span class="check">新しいメンバーに活動の流れを共有する</span>
-      <span class="check">頼れる仲間カードに沿って実際に頼る</span>
-    </div>
-    <p style="font-size:12.5px;margin:14px 0 4px"><strong>自分の言葉での宣言</strong></p>
-    <div class="lines"></div>
-  </section>
-
-  <!-- 7. 今後頼りたいメンバー -->
-  <section class="block">
-    <h2>7. 今後頼りたいメンバー</h2>
-    <p class="desc">具体的に「誰に・どんな場面で・何を」頼りたいかを記入してください。</p>
+    <h2>Q6. 事業への改善提案・要望</h2>
+    <p class="desc">次年度の事業設計に活用します。率直なご意見をお聞かせください。</p>
     <div class="qa">
-      <p class="q">頼りたいメンバー</p>
-      <div class="a"></div>
-      <p class="q" style="margin-top:8px">頼りたい場面・内容</p>
-      <div class="a"></div>
-      <div class="a"></div>
+      <p class="q">よかった点</p>
+      <div class="a tall"></div>
+    </div>
+    <div class="qa">
+      <p class="q">改善してほしい点・追加してほしい要素</p>
+      <div class="a tall"></div>
     </div>
   </section>
 
-  <!-- 8. 自由記述 -->
+  <!-- Q7 自由記述 -->
   <section class="block">
-    <h2>8. 自由記述（感想・改善提案・委員会への要望）</h2>
-    <div class="lines tall"></div>
+    <h2>Q7. その他・自由記述</h2>
+    <div class="lines"></div>
   </section>
 
   <div class="footer-note">
-    記入いただいたシートは、事業後アンケート・グループ発表内容とあわせて、検証指標の集計・次年度議案のブラッシュアップに活用します。<br>
+    回答いただいた内容は個人が特定されない形で集計し、事業後報告・次年度議案ブラッシュアップに活用します。<br>
     会員開発委員会アカデミー事業 ／ 室長：中谷一世 ／ 委員長：藤澤祐希
   </div>
 </div>
