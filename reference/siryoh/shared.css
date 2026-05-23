@@ -177,7 +177,7 @@ header .meta {
   color:          var(--muted);
   font-size:      11px;
 }
-/* — Divider between brand and links — */
+/* — Divider between brand and first link — */
 .nav-brand + a::before {
   content:        '';
   display:        inline-block;
@@ -186,6 +186,55 @@ header .meta {
   background:     var(--line-md);
   margin-right:   16px;
   vertical-align: middle;
+}
+
+/* — Dropdown menu (実行タスク) — */
+.nav-dd {
+  position:       relative;
+  display:        inline-flex;
+  align-items:    center;
+}
+.nav-dd-btn {
+  background:     none;
+  border:         none;
+  cursor:         pointer;
+  font-size:      13px;
+  font-family:    inherit;
+  color:          var(--c3);
+  padding:        0;
+  display:        inline-flex;
+  align-items:    center;
+  gap:            3px;
+  letter-spacing: .01em;
+}
+.nav-dd-btn:hover { text-decoration: underline; }
+.nav-dd-menu {
+  display:        none;
+  position:       absolute;
+  top:            calc(100% + 8px);
+  left:           0;
+  background:     #fff;
+  border:         1px solid var(--line);
+  border-radius:  var(--r-md);
+  padding:        6px 0;
+  min-width:      220px;
+  box-shadow:     var(--shadow-md);
+  z-index:        400;
+  white-space:    nowrap;
+}
+.nav-dd:hover .nav-dd-menu,
+.nav-dd:focus-within .nav-dd-menu { display: block; }
+.nav-dd-menu a {
+  display:        block;
+  padding:        9px 18px;
+  color:          var(--text) !important;
+  font-size:      13px;
+  margin:         0 !important;
+  text-decoration:none;
+}
+.nav-dd-menu a:hover {
+  background:     var(--hover);
+  text-decoration:none;
 }
 
 /* — PDF download button — */

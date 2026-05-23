@@ -951,11 +951,35 @@ table.MsoTableGrid
 <body lang="JA" link="blue" vlink="blue" style="tab-interval:42.0pt;word-wrap:break-word;background:#ffffff;color:#000000">
 
 <!-- ▼ Download bar — フォント/スタイル/MSO属性には一切影響しません ▼ -->
-<style>#gian-dl-bar{position:sticky;top:0;z-index:9999;background:#fff;border-bottom:2px solid #e5e7eb;padding:9px 20px;display:flex;align-items:center;gap:10px;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",Meiryo,sans-serif;font-size:13px;box-shadow:0 2px 8px rgba(0,0,0,.07)}#gian-dl-bar a{color:#1f6feb;text-decoration:none}#gian-dl-bar button{border:none;border-radius:6px;padding:6px 15px;font-size:12px;font-weight:600;cursor:pointer;font-family:inherit;display:inline-flex;align-items:center;gap:5px}#gian-dl-bar .btn-pdf{background:#d8345f;color:#fff}#gian-dl-bar .btn-zip{background:#0f172a;color:#fff}#gian-dl-bar .btn-zip:disabled{opacity:.6;cursor:default}@media print{#gian-dl-bar{display:none!important}}</style>
+<style>
+#gian-dl-bar{position:sticky;top:0;z-index:9999;background:#fff;border-bottom:2px solid #e5e7eb;padding:9px 20px;display:flex;align-items:center;gap:10px;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",Meiryo,sans-serif;font-size:13px;box-shadow:0 2px 8px rgba(0,0,0,.07)}
+#gian-dl-bar a{color:#1f6feb;text-decoration:none;white-space:nowrap}
+#gian-dl-bar a:hover{text-decoration:underline}
+#gian-dl-bar button{border:none;border-radius:6px;padding:6px 15px;font-size:12px;font-weight:600;cursor:pointer;font-family:inherit;display:inline-flex;align-items:center;gap:5px}
+#gian-dl-bar .btn-pdf{background:#d8345f;color:#fff}
+#gian-dl-bar .btn-zip{background:#0f172a;color:#fff}
+#gian-dl-bar .btn-zip:disabled{opacity:.6;cursor:default}
+.gbar-dd{position:relative;display:inline-flex;align-items:center}
+.gbar-dd-btn{background:none;border:none;cursor:pointer;font-size:13px;font-family:inherit;color:#1f6feb;padding:0;display:inline-flex;align-items:center;gap:3px;white-space:nowrap}
+.gbar-dd-btn:hover{text-decoration:underline}
+.gbar-dd-menu{display:none;position:absolute;top:calc(100% + 8px);left:0;background:#fff;border:1px solid #e5e7eb;border-radius:10px;padding:6px 0;min-width:220px;box-shadow:0 4px 12px rgba(0,0,0,.1);z-index:400;white-space:nowrap}
+.gbar-dd:hover .gbar-dd-menu,.gbar-dd:focus-within .gbar-dd-menu{display:block}
+.gbar-dd-menu a{display:block;padding:9px 18px;color:#1f2937!important;font-size:13px;text-decoration:none}
+.gbar-dd-menu a:hover{background:#f3f4f6;text-decoration:none}
+@media print{#gian-dl-bar{display:none!important}}
+</style>
 <div id="gian-dl-bar">
-  <a href="../index.html" style="font-weight:700;color:#0f172a!important;letter-spacing:.05em;margin-right:18px;white-space:nowrap">KAGA JC <span style="font-weight:400;color:#6b7280;font-size:11px">2026</span></a>
-  <span style="display:inline-block;width:1px;height:12px;background:#e5e7eb;margin-right:16px;vertical-align:middle"></span>
+  <a href="gian.htm" style="font-weight:700;color:#0f172a!important;letter-spacing:.05em;margin-right:4px">KAGA JC <span style="font-weight:400;color:#6b7280;font-size:11px">2026</span></a>
+  <span style="display:inline-block;width:1px;height:12px;background:#e5e7eb;margin:0 14px;vertical-align:middle"></span>
   <a href="siryoh/資料一覧.htm">資料一覧</a>
+  <a href="想定問答集.htm">想定問答集</a>
+  <div class="gbar-dd">
+    <button class="gbar-dd-btn">実行タスク ▾</button>
+    <div class="gbar-dd-menu">
+      <a href="委員長の実行アクション.htm">委員長の実行アクション</a>
+      <a href="室長確認依頼項目.htm">室長確認依頼項目</a>
+    </div>
+  </div>
   <span style="flex:1"></span>
   <button class="btn-zip" id="btn-zip" onclick="downloadZip()">📦 議案一式 ZIP</button>
   <button class="btn-pdf" onclick="window.print()">📄 PDF で保存</button>
@@ -2964,12 +2988,6 @@ mso-bidi-font-family:&quot;ＭＳ Ｐゴシック&quot;"><o:p>&nbsp;</o:p></span
 
 
 
-<div style="max-width:720px;margin:48px auto 32px;padding:24px;border:1px solid #d0d7de;border-radius:10px;background:#f6f8fa;text-align:center;font-family:-apple-system,BlinkMacSystemFont,'Hiragino Sans','Yu Gothic',Meiryo,sans-serif">
-  <div style="font-size:12px;color:#6b7280;letter-spacing:0.06em;margin-bottom:8px">RELATED DOCUMENT</div>
-  <div style="font-size:16px;font-weight:600;color:#1f2937;margin-bottom:12px">理事会正副 想定問答集</div>
-  <div style="font-size:13px;color:#57606a;margin-bottom:16px">総務チェック／財審／事業内容／スケジュール・会場／広報／検証方法／上位整合の<strong>39件</strong>を整理しています。</div>
-  <a href="想定問答集.htm" style="display:inline-block;padding:10px 24px;background:#1f6feb;color:#fff;text-decoration:none;border-radius:6px;font-size:14px;font-weight:600">想定問答集を開く →</a>
-</div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
 <script>
