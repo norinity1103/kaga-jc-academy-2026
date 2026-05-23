@@ -858,6 +858,7 @@ footer {
    § 18.  Print
    ───────────────────────────────────────────────────────── */
 @media print {
+  @page { size: A4 portrait; margin: 15mm 12mm; }
   .nav, .pdf-btn, .links, .toolbar { display: none; }
   footer { display: none; }
   body   { background: #fff; color: #000; }
