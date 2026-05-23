@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>資料一覧 — 会員開発委員会アカデミー事業</title>
+<link rel="stylesheet" href="shared.css">
+<style>
+  * { box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", Meiryo, sans-serif;
+    background: #f6f7f9; color: #1f2937; margin: 0; line-height: 1.75; -webkit-font-smoothing: antialiased; }
+
+  /* ── Nav ── */
+  .nav { position: sticky; top: 0; z-index: 200; font-size: 13px; color: #6b7280;
+    padding: 12px 16px; background: #fff; border-bottom: 1px solid #e5e7eb;
+    display: flex; align-items: center; gap: 4px; flex-wrap: wrap; }
+  .nav a { margin-right: 14px; color: #1f6feb; text-decoration: none; }
+  .nav a:hover { text-decoration: underline; }
+
+  /* ── Header ── */
+  header { background: linear-gradient(135deg, #0f172a, #1e293b); color: #fff;
+    padding: 48px 24px 40px; text-align: center; }
+  header .eyebrow { font-size: 12px; letter-spacing: .14em; color: #94a3b8;
+    margin: 0 0 10px; text-transform: uppercase; }
+  header h1 { margin: 0 0 6px; font-size: 28px; font-weight: 700; }
+  header .subtitle { color: #cbd5e1; font-size: 14px; margin: 0; }
+
+  /* ── Main ── */
+  main { max-width: 900px; margin: 32px auto; padding: 0 16px 80px; }
+
+  /* ── Section heading ── */
+  .section-head {
+    display: flex; align-items: center; gap: 10px;
+    margin: 40px 0 14px;
+  }
+  .section-head h2 {
+    margin: 0; font-size: 15px; font-weight: 700; letter-spacing: .06em;
+    text-transform: uppercase; color: #6b7280;
+  }
+  .section-head .line { flex: 1; height: 1px; background: #e5e7eb; }
+
+  /* ── Document list ── */
+  .doc-list { display: flex; flex-direction: column; gap: 8px; }
+
+  .doc-item {
+    background: #fff; border: 1px solid #e5e7eb; border-radius: 10px;
+    padding: 14px 18px;
+    display: flex; align-items: flex-start; gap: 14px;
+    transition: box-shadow .15s, border-color .15s;
+    text-decoration: none; color: inherit;
+  }
+  .doc-item:hover { border-color: #93c5fd; box-shadow: 0 2px 8px rgba(31,111,235,.1); text-decoration: none; }
+
+  .doc-num {
+    flex-shrink: 0; width: 32px; height: 32px;
+    display: flex; align-items: center; justify-content: center;
+    border-radius: 8px; font-size: 12px; font-weight: 700;
+  }
+  .doc-num.shingi { background: #fee2e2; color: #b91c4d; }
+  .doc-num.sankoh { background: #dbeafe; color: #1d4ed8; }
+
+  .doc-body { flex: 1; min-width: 0; }
+  .doc-title { font-size: 14.5px; font-weight: 600; color: #0f172a; margin: 0 0 3px; }
+  .doc-desc  { font-size: 12.5px; color: #6b7280; margin: 0; }
+
+  .doc-arrow { color: #9ca3af; font-size: 16px; flex-shrink: 0; align-self: center; }
+
+  @media (max-width: 600px) {
+    .doc-item { padding: 12px 14px; }
+  }
+  @media print {
+    @page { size: A4 portrait; margin: 15mm 12mm; }
+    .nav, .pdf-btn { display: none; }
+    .doc-item { border: 1px solid #ccc; page-break-inside: avoid; }
+    header { background: #fff !important; color: #1f2937 !important; padding: 20px 0 14px; }
+    header .eyebrow, header .subtitle { color: #6b7280 !important; }
+  }
+</style>
+</head>
+<body>
+
+<div class="nav">
+  <a href="../gian.htm">← 議案本文へ戻る</a>
+  <button class="pdf-btn" onclick="window.print()">📄 PDFで保存</button>
+</div>
+
+<header>
+  <p class="eyebrow">KAGA JC 2026 ／ 会員開発委員会アカデミー事業</p>
+  <h1>資料一覧</h1>
+  <p class="subtitle">審議対象資料・参考資料の全ページへのリンク集</p>
+</header>
+
+<main>
+
+  <!-- ── 審議対象資料 ────────────────────────────────────────── -->
+  <div class="section-head">
+    <h2>審議対象資料</h2>
+    <div class="line"></div>
+  </div>
+
+  <div class="doc-list">
+    <a class="doc-item" href="shingi/事業フロー.htm">
+      <div class="doc-num shingi">1</div>
+      <div class="doc-body">
+        <p class="doc-title">事業フロー</p>
+        <p class="doc-desc">議案全体の構造と、事前→当日→事後の流れを一望する資料</p>
+      </div>
+      <span class="doc-arrow">›</span>
+    </a>
+
+    <a class="doc-item" href="shingi/ブランドマネジメントシート.htm">
+      <div class="doc-num shingi">2</div>
+      <div class="doc-body">
+        <p class="doc-title">ブランドマネジメントシート</p>
+        <p class="doc-desc">事業のブランド設計・コンセプト整理</p>
+      </div>
+      <span class="doc-arrow">›</span>
+    </a>
+
+    <a class="doc-item" href="shingi/当日実施要項.htm">
+      <div class="doc-num shingi">3</div>
+      <div class="doc-body">
+        <p class="doc-title">当日実施要項</p>
+        <p class="doc-desc">当日タイムテーブル・3層役割設計</p>
+      </div>
+      <span class="doc-arrow">›</span>
+    </a>
+
+    <a class="doc-item" href="shingi/KAGA_JC_GATHERING_仕様書.htm">
+      <div class="doc-num shingi">4</div>
+      <div class="doc-body">
+        <p class="doc-title">KAGA JC GATHERING QUEST 実施要項（仕様書）</p>
+        <p class="doc-desc">カード5種・ゲーム進行7ステップ・QUESTの全体設計</p>
+      </div>
+      <span class="doc-arrow">›</span>
+    </a>
+
+    <a class="doc-item" href="shingi/KAGA_JC_GATHERING_QUEST_手段選定理由書.htm">
+      <div class="doc-num shingi">5</div>
+      <div class="doc-body">
+        <p class="doc-title">KAGA JC GATHERING QUEST 手段選定理由書</p>
+        <p class="doc-desc">代替案A〜E比較・採用根拠</p>
+      </div>
+      <span class="doc-arrow">›</span>
+    </a>
+
+    <a class="doc-item" href="shingi/ゲーム進行マニュアル.htm">
+      <div class="doc-num shingi">6</div>
+      <div class="doc-body">
+        <p class="doc-title">ゲーム進行マニュアル</p>
+        <p class="doc-desc">各ステップの所要時間・GMの声かけ例</p>
+      </div>
+      <span class="doc-arrow">›</span>
+    </a>
+
+    <a class="doc-item" href="shingi/当日役割分担表.htm">
+      <div class="doc-num shingi">7</div>
+      <div class="doc-body">
+        <p class="doc-title">当日役割分担表</p>
+        <p class="doc-desc">運営本部7担当・GM・メンターの役割一覧</p>
+      </div>
+      <span class="doc-arrow">›</span>
+    </a>
+
+    <a class="doc-item" href="shingi/カード一覧.htm">
+      <div class="doc-num shingi">8</div>
+      <div class="doc-body">
+        <p class="doc-title">カードサンプル一覧</p>
+        <p class="doc-desc">JCメンバーカード・ミッション・ハードル等のカード見本</p>
+      </div>
+      <span class="doc-arrow">›</span>
+    </a>
+
+    <a class="doc-item" href="shingi/ふりかえりシート.htm">
+      <div class="doc-num shingi">9</div>
+      <div class="doc-body">
+        <p class="doc-title">アカデミー事業後アンケート・ふりかえりシート</p>
+        <p class="doc-desc">事業後の検証項目・アンケート設計</p>
+      </div>
+      <span class="doc-arrow">›</span>
+    </a>
+
+    <a class="doc-item" href="shingi/個人情報・プライバシー配慮に関する運営ルール.htm">
+      <div class="doc-num shingi">10</div>
+      <div class="doc-body">
+        <p class="doc-title">個人情報・プライバシー配慮に関する運営ルール</p>
+        <p class="doc-desc">カード作成・当日運営における個人情報の取り扱い方針</p>
+      </div>
+      <span class="doc-arrow">›</span>
+    </a>
+
+    <a class="doc-item" href="shingi/会場選定理由書.htm">
+      <div class="doc-num shingi">11</div>
+      <div class="doc-body">
+        <p class="doc-title">会場選定理由書</p>
+        <p class="doc-desc">加賀イノベーションセンター選定根拠・比較検討</p>
+      </div>
+      <span class="doc-arrow">›</span>
+    </a>
+
+    <a class="doc-item" href="shingi/予算項目の取扱いに関するメモ.htm">
+      <div class="doc-num shingi">12</div>
+      <div class="doc-body">
+        <p class="doc-title">予算項目の取扱いに関するメモ</p>
+        <p class="doc-desc">各費目の計上区分・財審対応メモ</p>
+      </div>
+      <span class="doc-arrow">›</span>
+    </a>
+
+    <a class="doc-item" href="shingi/グループ編成計画.htm">
+      <div class="doc-num shingi">13</div>
+      <div class="doc-body">
+        <p class="doc-title">グループ編成計画</p>
+        <p class="doc-desc">参加員数・グループ分け方針</p>
+      </div>
+      <span class="doc-arrow">›</span>
+    </a>
+
+    <a class="doc-item" href="shingi/加賀JCメンバーへの周知文.htm">
+      <div class="doc-num shingi">14</div>
+      <div class="doc-body">
+        <p class="doc-title">加賀JCメンバーへの周知文</p>
+        <p class="doc-desc">事業案内・参加呼びかけ文（案）</p>
+      </div>
+      <span class="doc-arrow">›</span>
+    </a>
+
+    <a class="doc-item" href="sankoh/役割傾向チェック設計資料.htm">
+      <div class="doc-num shingi">15</div>
+      <div class="doc-body">
+        <p class="doc-title">役割傾向チェック設計資料</p>
+        <p class="doc-desc">アンケート設問・カード作成フロー・依頼文</p>
+      </div>
+      <span class="doc-arrow">›</span>
+    </a>
+  </div>
+
+  <!-- ── 参考資料 ──────────────────────────────────────────── -->
+  <div class="section-head">
+    <h2>参考資料</h2>
+    <div class="line"></div>
+  </div>
+
+  <div class="doc-list">
+    <a class="doc-item" href="sankoh/加賀JC2026年度_理事長所信.htm">
+      <div class="doc-num sankoh">参1</div>
+      <div class="doc-body">
+        <p class="doc-title">加賀JC2026年度 理事長所信</p>
+        <p class="doc-desc">上位方針との整合確認用</p>
+      </div>
+      <span class="doc-arrow">›</span>
+    </a>
+
+    <a class="doc-item" href="sankoh/加賀JC出席状況確認資料.htm">
+      <div class="doc-num sankoh">参2</div>
+      <div class="doc-body">
+        <p class="doc-title">加賀JC出席状況確認資料</p>
+        <p class="doc-desc">課題の定量的根拠・出席率データ</p>
+      </div>
+      <span class="doc-arrow">›</span>
+    </a>
+
+    <a class="doc-item" href="sankoh/ペルソナ.htm">
+      <div class="doc-num sankoh">参3</div>
+      <div class="doc-body">
+        <p class="doc-title">ペルソナ資料</p>
+        <p class="doc-desc">対象メンバー像・行動特性の整理</p>
+      </div>
+      <span class="doc-arrow">›</span>
+    </a>
+
+    <a class="doc-item" href="sankoh/公開議案_他LOM事例調査資料.htm">
+      <div class="doc-num sankoh">参4</div>
+      <div class="doc-body">
+        <p class="doc-title">公開議案・他LOM事例調査資料</p>
+        <p class="doc-desc">他LOMの類似事業・先行事例リサーチ</p>
+      </div>
+      <span class="doc-arrow">›</span>
+    </a>
+
+    <a class="doc-item" href="sankoh/JCプログラム公式資料.htm">
+      <div class="doc-num sankoh">参5</div>
+      <div class="doc-body">
+        <p class="doc-title">JCプログラム公式資料</p>
+        <p class="doc-desc">JCI公式プログラムとの整合参照用</p>
+      </div>
+      <span class="doc-arrow">›</span>
+    </a>
+
+    <a class="doc-item" href="sankoh/ビジネスゲーム導入事例.htm">
+      <div class="doc-num sankoh">参6</div>
+      <div class="doc-body">
+        <p class="doc-title">ビジネスゲーム導入事例</p>
+        <p class="doc-desc">カードワーク・ゲーミフィケーション活用事例</p>
+      </div>
+      <span class="doc-arrow">›</span>
+    </a>
+
+    <a class="doc-item" href="sankoh/コンプライアンス受付表.htm">
+      <div class="doc-num sankoh">参7</div>
+      <div class="doc-body">
+        <p class="doc-title">コンプライアンス受付表</p>
+        <p class="doc-desc">参加者同意・確認書類</p>
+      </div>
+      <span class="doc-arrow">›</span>
+    </a>
+
+    <a class="doc-item" href="sankoh/コンプライアンスチェックシート.htm">
+      <div class="doc-num sankoh">参8</div>
+      <div class="doc-body">
+        <p class="doc-title">コンプライアンスチェックシート</p>
+        <p class="doc-desc">事業実施前の法的・倫理的確認項目</p>
+      </div>
+      <span class="doc-arrow">›</span>
+    </a>
+
+    <a class="doc-item" href="sankoh/テーブルゲームマスター進行台本.htm">
+      <div class="doc-num sankoh">参9</div>
+      <div class="doc-body">
+        <p class="doc-title">テーブルゲームマスター進行台本</p>
+        <p class="doc-desc">GMマスター向け進行スクリプト</p>
+      </div>
+      <span class="doc-arrow">›</span>
+    </a>
+
+    <a class="doc-item" href="sankoh/正副メンター役割確認シート.htm">
+      <div class="doc-num sankoh">参10</div>
+      <div class="doc-body">
+        <p class="doc-title">正副メンター役割確認シート</p>
+        <p class="doc-desc">メンターの役割・当日行動指針</p>
+      </div>
+      <span class="doc-arrow">›</span>
+    </a>
+
+    <a class="doc-item" href="sankoh/ハードルカード一覧.htm">
+      <div class="doc-num sankoh">参11</div>
+      <div class="doc-body">
+        <p class="doc-title">ハードルカード一覧</p>
+        <p class="doc-desc">QUESTで使用するハードルカードの全種サンプル</p>
+      </div>
+      <span class="doc-arrow">›</span>
+    </a>
+
+    <a class="doc-item" href="sankoh/ミッションカード一覧.htm">
+      <div class="doc-num sankoh">参12</div>
+      <div class="doc-body">
+        <p class="doc-title">ミッションカード一覧</p>
+        <p class="doc-desc">QUESTで使用するミッションカードの全種サンプル</p>
+      </div>
+      <span class="doc-arrow">›</span>
+    </a>
+  </div>
+
+  <!-- ── その他 ──────────────────────────────────────────── -->
+  <div class="section-head">
+    <h2>その他</h2>
+    <div class="line"></div>
+  </div>
+
+  <div class="doc-list">
+    <a class="doc-item" href="../想定問答集.htm">
+      <div class="doc-num" style="background:#f0fdf4;color:#15803d;width:32px;height:32px;display:flex;align-items:center;justify-content:center;border-radius:8px;font-size:12px;font-weight:700;flex-shrink:0">Q</div>
+      <div class="doc-body">
+        <p class="doc-title">理事会正副 想定問答集</p>
+        <p class="doc-desc">総務チェック／財審／事業内容／スケジュール等 39件</p>
+      </div>
+      <span class="doc-arrow">›</span>
+    </a>
+  </div>
+
+</main>
+</body>
+</html>
