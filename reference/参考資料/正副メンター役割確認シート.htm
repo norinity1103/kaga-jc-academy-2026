@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>正副メンター役割確認シート — KAGA JC GATHERING QUEST</title>
+<link rel="stylesheet" href="../shared.css">
+<style>
+  :root {
+    --bg: #f6f7f9;
+    --card: #ffffff;
+    --text: #1f2937;
+    --muted: #6b7280;
+    --line: #e5e7eb;
+    --mentor: #6366f1;
+    --ok: #2da44e;
+    --ng: #cf222e;
+    --hover: #f3f4f6;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
+    background: var(--bg); color: var(--text);
+    margin: 0; line-height: 1.75;
+  }
+  header {
+    background: linear-gradient(135deg, #312e81 0%, #6366f1 100%);
+    color: #fff; padding: 44px 24px 36px; text-align: center;
+  }
+  header .eyebrow {
+    font-size: 12px; letter-spacing: 0.14em;
+    color: #c7d2fe; margin: 0 0 8px;
+    text-transform: uppercase;
+  }
+  header h1 { margin: 0 0 4px; font-size: 28px; font-weight: 700; }
+  header .subtitle { color: #ddd6fe; font-size: 13px; margin: 0; }
+
+  .toolbar {
+    background: #fff; border-bottom: 1px solid var(--line);
+    padding: 10px 16px; display: flex; gap: 8px;
+    position: sticky; top: 0; z-index: 10;
+    align-items: center;
+  }
+  .toolbar .label {
+    font-size: 12px; color: var(--muted); flex: 1;
+  }
+  .toolbar button {
+    background: var(--mentor); color: #fff; border: none;
+    padding: 7px 14px; border-radius: 6px;
+    font-size: 12.5px; cursor: pointer; font-family: inherit;
+  }
+  .toolbar a {
+    background: #fff; color: var(--text);
+    padding: 7px 14px; border-radius: 6px;
+    text-decoration: none; font-size: 12.5px;
+    border: 1px solid var(--line);
+  }
+
+  main { max-width: 980px; margin: 28px auto; padding: 0 16px 64px; }
+
+  .links {
+    background: #fff; border: 1px solid var(--line);
+    border-radius: 10px; padding: 14px 18px;
+    margin-bottom: 24px;
+    display: flex; flex-wrap: wrap; gap: 8px;
+  }
+  .links span.label {
+    font-size: 11px; color: var(--muted); letter-spacing: 0.06em;
+    text-transform: uppercase; align-self: center; margin-right: 6px;
+  }
+  .links a {
+    background: #f3f4f6; color: var(--text);
+    padding: 7px 12px; border-radius: 6px;
+    font-size: 12.5px; text-decoration: none;
+    border: 1px solid var(--line);
+  }
+  .links a:hover { background: #e5e7eb; }
+  .links a.current { background: #eef2ff; border-color: var(--mentor); color: #312e81; }
+
+  .intro {
+    background: #fff; border: 1px solid var(--line);
+    border-radius: 12px; padding: 22px 24px;
+    margin-bottom: 24px;
+  }
+  .intro h2 {
+    margin: 0 0 8px; font-size: 13px;
+    color: var(--muted); letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .intro p { margin: 0 0 8px; font-size: 14.5px; }
+  .intro p:last-child { margin-bottom: 0; }
+
+  section.block {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    margin-bottom: 20px;
+    overflow: hidden;
+  }
+  .block-head {
+    padding: 16px 22px;
+    background: #f5f3ff;
+    border-bottom: 1px solid var(--line);
+    display: flex; align-items: center; gap: 10px;
+  }
+  .block-head h2 { margin: 0; font-size: 17px; font-weight: 700; color: #312e81; }
+  .block-body { padding: 20px 22px; }
+  .block-body p { margin: 0 0 10px; font-size: 14px; }
+  .block-body p:last-child { margin-bottom: 0; }
+
+  .role-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 12px;
+  }
+  .role-card {
+    background: #f8fafc;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 14px;
+    font-size: 13.5px;
+  }
+  .role-card h3 {
+    margin: 0 0 6px;
+    font-size: 14px;
+    color: var(--mentor);
+    font-weight: 700;
+  }
+
+  .checkpoints {
+    list-style: none;
+    padding: 0; margin: 0;
+  }
+  .checkpoints li {
+    border-bottom: 1px solid var(--line);
+    padding: 10px 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 14px;
+  }
+  .checkpoints li:last-child { border-bottom: none; }
+  .checkpoints li::before {
+    content: "";
+    width: 16px; height: 16px;
+    border: 1.5px solid #94a3b8;
+    border-radius: 3px;
+    flex-shrink: 0;
+    margin-top: 4px;
+  }
+
+  .ok-ng-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  .ok-box, .ng-box {
+    padding: 16px;
+    border-radius: 8px;
+  }
+  .ok-box {
+    background: #ecfdf5;
+    border: 1px solid #86efac;
+  }
+  .ng-box {
+    background: #fef2f2;
+    border: 1px solid #fca5a5;
+  }
+  .ok-box h3, .ng-box h3 {
+    margin: 0 0 8px;
+    font-size: 14px;
+    font-weight: 700;
+  }
+  .ok-box h3 { color: #14532d; }
+  .ng-box h3 { color: #7f1d1d; }
+  .ok-box ul, .ng-box ul {
+    margin: 0; padding-left: 18px;
+    font-size: 13px;
+  }
+  .ok-box ul li { color: #14532d; margin-bottom: 4px; }
+  .ng-box ul li { color: #7f1d1d; margin-bottom: 4px; }
+
+  .quote-script {
+    background: #eef2ff;
+    border-left: 4px solid var(--mentor);
+    padding: 12px 16px;
+    border-radius: 4px;
+    margin: 10px 0;
+    font-size: 13.5px;
+    color: #312e81;
+    font-style: italic;
+  }
+  .quote-script::before { content: "「"; }
+  .quote-script::after { content: "」"; }
+
+  footer {
+    text-align: center; color: var(--muted);
+    font-size: 12px; padding: 32px 16px 48px;
+  }
+  .back {
+    display: inline-block; margin-top: 12px;
+    padding: 8px 16px; background: var(--card);
+    border: 1px solid var(--line); border-radius: 8px;
+    text-decoration: none; color: var(--text); font-size: 13px;
+  }
+  .back:hover { background: var(--hover); }
+
+  @media print {
+    @page { size: A4 portrait; margin: 12mm 14mm; }
+    body { background: #fff; }
+    .toolbar, .links { display: none; }
+    section.block, .intro { page-break-inside: avoid; }
+    header { background: #fff !important; color: var(--text) !important; padding: 24px 0 16px; }
+    header .eyebrow, header .subtitle { color: var(--muted); }
+    main { padding: 0; }
+  }
+
+  @media (max-width: 600px) {
+    .ok-ng-grid { grid-template-columns: 1fr; }
+    header h1 { font-size: 22px; }
+  }
+</style>
+</head>
+<body>
+<div class="nav">
+  <a class="nav-brand" href="../gian.htm">KAGA JC <span>2026</span></a>
+  <a href="../資料一覧.htm">資料一覧</a>
+  <a href="../想定問答集.htm">想定問答集</a>
+  <a href="コンプライアンス審査ガイド.htm">コンプライアンス</a>
+  <a href="../改善ロードマップ.htm">改善ロードマップ</a>
+  <div class="nav-dd">
+    <button class="nav-dd-btn">実行タスク ▾</button>
+    <div class="nav-dd-menu">
+      <a href="../委員長の実行アクション.htm">委員長の実行アクション</a>
+      <a href="../室長確認依頼項目.htm">室長確認依頼項目</a>
+      <a href="../改善ロードマップ.htm">改善ロードマップ</a>
+    </div>
+  </div>
+  <button class="pdf-btn" onclick="window.print()">📄 PDFで保存</button>
+</div>
+
+<div class="toolbar">
+  <span class="label">正副メンバー（メンター）用</span>
+  <a href="../gian.htm">← 議案本文</a>
+  <button onclick="window.print()">🖨️ 印刷する</button>
+</div>
+
+<header>
+  <p class="eyebrow">参考資料 11</p>
+  <h1>正副メンター役割確認シート</h1>
+  <p class="subtitle">KAGA JC GATHERING QUEST ／ 正副メンバー用</p>
+</header>
+
+<main>
+
+<div class="links">
+  <span class="label">関連ページ</span>
+  <a href="../審議対象資料/KAGA_JC_GATHERING_仕様書.htm">📘 仕様書</a>
+  <a href="../審議対象資料/ゲーム進行マニュアル.htm">▶ ゲーム進行マニュアル</a>
+  <a href="テーブルゲームマスター進行台本.htm">🎙️ GM進行台本</a>
+  <a class="current">🧭 メンター役割確認</a>
+  <a href="../審議対象資料/ふりかえりシート.htm">📝 ふりかえりシート</a>
+</div>
+
+<div class="intro">
+  <h2>このシートの位置づけ</h2>
+  <p>正副メンバー（理事長・副理事長・室長等）は本事業において<strong>審査員ではなくメンター</strong>として振る舞います。本シートは当日の立ち位置・問いかけ方・避けたい行動を事前に共有するための確認資料です。</p>
+  <p>当日は各グループを巡回し、答えを示すのではなく問いを投げ、相互理解・役割分担・共助の視点から助言します。</p>
+</div>
+
+<section class="block">
+  <div class="block-head"><h2>🧭 役割の4本柱</h2></div>
+  <div class="block-body">
+    <div class="role-grid">
+      <div class="role-card">
+        <h3>① 巡回</h3>
+        各グループを順番に回り、全テーブルに少なくとも1回は介入する。
+      </div>
+      <div class="role-card">
+        <h3>② 問いを投げる</h3>
+        答えを示すのではなく、参加者自身が言葉にできるよう問いで導く。
+      </div>
+      <div class="role-card">
+        <h3>③ 視点を加える</h3>
+        相互理解／役割分担／共助の観点から、見落としを補う助言を行う。
+      </div>
+      <div class="role-card">
+        <h3>④ 接続を講評</h3>
+        最後にJC活動全体への接続を講評。「次の例会・委員会で何が変わるか」を言語化する。
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="block-head"><h2>✅ OK行動 ／ ❌ NG行動</h2></div>
+  <div class="block-body">
+    <div class="ok-ng-grid">
+      <div class="ok-box">
+        <h3>✅ OK行動</h3>
+        <ul>
+          <li>各グループを均等に巡回</li>
+          <li>問いを投げて参加者が話す時間を作る</li>
+          <li>良い視点・気づきを承認する</li>
+          <li>低アクティブ層に意見の出しやすい問いを向ける</li>
+          <li>発表後30秒以内で要点を承認・接続講評</li>
+          <li>沈黙を恐れず「考える時間」を作る</li>
+        </ul>
+      </div>
+      <div class="ng-box">
+        <h3>❌ NG行動</h3>
+        <ul>
+          <li>即否定しない</li>
+          <li>自分の経験談を長く話しすぎない</li>
+          <li>特定の答えに誘導しない</li>
+          <li>審査員感を出しすぎない</li>
+          <li>低アクティブ層を名指しで指摘しない</li>
+          <li>正解を示してグループの思考を止めない</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="block-head"><h2>💬 問いかけのテンプレート</h2></div>
+  <div class="block-body">
+    <p><strong>相互理解を促す</strong></p>
+    <p class="quote-script">このカードの方の強み、初めて知った人いますか？</p>
+    <p class="quote-script">このメンバー、普段どんな仕事をされているか想像できますか？</p>
+
+    <p style="margin-top:14px"><strong>役割分担を見直す</strong></p>
+    <p class="quote-script">委員長一人で抱えていそうな部分はないですか？</p>
+    <p class="quote-script">低アクティブな人でも入りやすい小さな役割はありますか？</p>
+
+    <p style="margin-top:14px"><strong>共助の発想に導く</strong></p>
+    <p class="quote-script">いつも頼ってる人以外で、活かせそうな強みはありますか？</p>
+    <p class="quote-script">自分の業界の知見が、どの場面で活きそうですか？</p>
+
+    <p style="margin-top:14px"><strong>JC接続を促す</strong></p>
+    <p class="quote-script">今日の気づきを、次の例会で実際にやってみるとしたら何ですか？</p>
+    <p class="quote-script">自分が次に引き受けられる小さな役割は何ですか？</p>
+  </div>
+</section>
+
+<section class="block">
+  <div class="block-head"><h2>📋 当日チェックリスト</h2></div>
+  <div class="block-body">
+    <ul class="checkpoints">
+      <li>事前に5種のカード内容を理解している（仕様書・カードサンプル一覧を確認）</li>
+      <li>進行マニュアル7ステップを把握している</li>
+      <li>担当するグループ／巡回順を確認した</li>
+      <li>GM（参加委員長）との役割分担を確認した</li>
+      <li>OK行動／NG行動を読んだ</li>
+      <li>クロージングで何を講評するか、自分の言葉でメモした</li>
+      <li>ふりかえりシートの設問を事前に確認している</li>
+    </ul>
+  </div>
+</section>
+
+<section class="block">
+  <div class="block-head"><h2>🎤 クロージング講評の型</h2></div>
+  <div class="block-body">
+    <p>事業の最後、参加者全員に向けて講評します。以下の3要素を含めると、JC活動への接続が作りやすくなります。</p>
+    <ol style="font-size:14px;padding-left:20px">
+      <li><strong>承認</strong>：今日のグループの良かった視点・気づきを1つ承認する</li>
+      <li><strong>接続</strong>：今日の学びが、加賀JCの次の事業・例会・委員会でどう活きるかを示す</li>
+      <li><strong>呼びかけ</strong>：参加者一人ひとりが「次に何をするか」を実行する後押し</li>
+    </ol>
+    <p class="quote-script">今日皆さんが書いた「次の一歩」を、来月の委員会で実際に動かしてみてください。今日生まれた頼り合いの関係が、加賀JCを支えます。</p>
+  </div>
+</section>
+
+<section class="related-docs" style="margin-top:24px;background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:20px 22px">
+  <h2 style="margin:0 0 12px;font-size:12px;color:#6b7280;letter-spacing:0.06em;text-transform:uppercase">📚 関連審議資料・参考資料</h2>
+  <p style="margin:0 0 12px;font-size:12.5px;color:#374151;line-height:1.95"><strong style="color:#1f6feb">審議対象資料</strong>：
+    <a href="../審議対象資料/事業フロー.htm">1) 事業フロー</a>　／　2) 事業計画収支予算書　／　
+    <a href="../審議対象資料/当日実施要項.htm">3) 当日実施要項</a>　／　4) 当日役割分担表　／　
+    <a href="../審議対象資料/KAGA_JC_GATHERING_仕様書.htm">5) KAGA JC GATHERING QUEST 実施要項</a>　／　6) KAGA JC GATHERING QUEST 手段選定理由書　／　
+    <a href="../審議対象資料/ゲーム進行マニュアル.htm">7) ゲーム進行マニュアル</a>　／　
+    <a href="テーブルゲームマスター進行台本.htm">8) テーブルゲームマスター進行台本</a>　／　
+    <a href="正副メンター役割確認シート.htm">9) 正副メンター役割確認シート</a>　／　
+    <a href="../審議対象資料/カード一覧.htm">10) カードサンプル一覧</a>　／　
+    <a href="../審議対象資料/カード一覧.htm#mission">11) ミッションカード一覧</a>　／　
+    <a href="../審議対象資料/カード一覧.htm#hurdle">12) ハードルカード一覧</a>　／　
+    <a href="../審議対象資料/ふりかえりシート.htm">13) ふりかえりシート</a>　／　14) グループ発表シート　／　
+    <a href="../審議対象資料/会場選定理由書.htm#layout">15) 会場レイアウト・安全管理資料</a>　／　16) 表彰品・配布物管理表　／　
+    <a href="../審議対象資料/個人情報・プライバシー配慮に関する運営ルール.htm">17) 個人情報・プライバシー配慮に関する運営ルール</a>
+  </p>
+  <p style="margin:0;font-size:12.5px;color:#374151;line-height:1.95"><strong style="color:#2da44e">参考資料</strong>：
+    1) アカデミー事業後アンケート ／ 会員開発委員会方針　／　2) 加賀LOMアカデミー事業 議案参考資料　／　3) 加賀JC2026年度 理事長所信　／　4) RNCアンケート評価法　／　5) 公開議案・他LOM事例調査資料　／　6) JCプログラム公式資料　／　7) ビジネスゲーム導入事例　／　8) ABC手法比較資料　／　9) KAGA JC GATHERING QUEST 図説資料　／　
+    <a href="../審議対象資料/事業フロー.htm">10) カードゲーム進行フロー図</a>　／　11) 学術・行動経済学的根拠メモ　／　12) 事前アンケート集計結果　／　13) 簡易ヒアリング要約　／　14) 加賀JC出席状況確認資料　／　15) 役割分担確認資料　／　16) 鎌田長明「JC論：議案の書き方」シリーズ　／　17) 大垣JC・高槻JC 議案作成マニュアル
+  </p>
+  <p style="margin:14px 0 0;font-size:10.5px;color:#9ca3af;text-align:right">※ リンク付き項目はページ作成済みの資料</p>
+</section>
+
+</main>
+
+
+<footer class="rel-footer">
+  <p class="rf-label">FOR STAFF — 関連資料ナビゲーション</p>
+  <ul>
+    <li><a href="../gian.htm">議案本文</a></li>
+  </ul>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>会場選定理由書 — 加賀イノベーションセンター</title>
+<link rel="stylesheet" href="../shared.css">
+<style>
+  :root {
+    --bg: #f6f7f9;
+    --card: #ffffff;
+    --text: #1f2937;
+    --muted: #6b7280;
+    --line: #e5e7eb;
+    --hover: #f3f4f6;
+    --brand: #0a4b7a;
+    --brand-light: #1f6feb;
+    --ok: #2da44e;
+    --warn: #bf8700;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    margin: 0;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+  }
+  .hero {
+    position: relative;
+    background: linear-gradient(135deg, #0a4b7a 0%, #062e4d 100%);
+    color: #fff;
+    padding: 56px 24px 48px;
+    text-align: center;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("https://www.city.kaga.ishikawa.jp/material/images/group/2/innovationcenter003.jpg");
+    background-size: cover;
+    background-position: center;
+    opacity: 0.18;
+    z-index: 0;
+  }
+  .hero > * { position: relative; z-index: 1; }
+  .hero .eyebrow {
+    font-size: 12px;
+    letter-spacing: 0.16em;
+    color: #cfe2f3;
+    margin: 0 0 10px;
+    text-transform: uppercase;
+  }
+  .hero h1 {
+    margin: 0 0 8px;
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+  }
+  .hero .subtitle {
+    color: #dbeafe;
+    font-size: 15px;
+    margin: 0;
+  }
+  .hero .meta {
+    margin-top: 18px;
+    font-size: 12px;
+    color: #93c5fd;
+  }
+
+  main {
+    max-width: 1000px;
+    margin: 32px auto;
+    padding: 0 16px 64px;
+  }
+
+  section {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    margin-bottom: 24px;
+    overflow: hidden;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+  }
+  .sec-head {
+    padding: 18px 24px;
+    border-bottom: 1px solid var(--line);
+    background: #fafbfc;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .sec-head .badge {
+    display: inline-block;
+    width: 6px; height: 26px;
+    background: var(--brand);
+    border-radius: 3px;
+  }
+  .sec-head h2 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+  }
+  .sec-head .tag {
+    margin-left: auto;
+    font-size: 11px;
+    color: var(--muted);
+    background: #eef0f3;
+    padding: 3px 10px;
+    border-radius: 999px;
+  }
+  .sec-body { padding: 22px 24px; }
+  .sec-body p { margin: 0 0 12px; font-size: 14.5px; }
+  .sec-body p:last-child { margin-bottom: 0; }
+
+  /* 概要 grid */
+  .summary-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px 24px;
+    font-size: 14px;
+  }
+  .summary-grid dt {
+    color: var(--muted);
+    font-size: 12px;
+    margin-bottom: 2px;
+    letter-spacing: 0.04em;
+  }
+  .summary-grid dd {
+    margin: 0 0 10px;
+    font-weight: 500;
+  }
+
+  /* 選定理由 */
+  .reasons {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+  }
+  .reason {
+    background: #f8fafc;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 16px;
+  }
+  .reason .num {
+    display: inline-block;
+    background: var(--brand);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 2px 10px;
+    border-radius: 999px;
+    margin-bottom: 8px;
+  }
+  .reason h3 {
+    margin: 0 0 6px;
+    font-size: 15px;
+    font-weight: 600;
+  }
+  .reason p {
+    margin: 0;
+    font-size: 13px;
+    color: #374151;
+    line-height: 1.7;
+  }
+
+  /* Photo gallery */
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 12px;
+  }
+  .gallery figure {
+    margin: 0;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    overflow: hidden;
+    background: #fff;
+  }
+  .gallery img {
+    display: block;
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+  }
+  .gallery figcaption {
+    padding: 8px 12px;
+    font-size: 12px;
+    color: var(--muted);
+    border-top: 1px solid var(--line);
+  }
+
+  /* Spaces table */
+  table.spaces {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13.5px;
+  }
+  table.spaces th, table.spaces td {
+    border: 1px solid var(--line);
+    padding: 10px 12px;
+    text-align: left;
+    vertical-align: top;
+  }
+  table.spaces th {
+    background: #f6f8fa;
+    font-weight: 600;
+    color: var(--muted);
+  }
+  table.spaces td.use {
+    background: #ecfdf5;
+    color: #166534;
+    font-weight: 600;
+  }
+  .badge-ok {
+    display: inline-block;
+    font-size: 11px;
+    background: var(--ok);
+    color: #fff;
+    padding: 1px 8px;
+    border-radius: 999px;
+    margin-left: 4px;
+  }
+
+  /* Comparison */
+  table.compare {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13.5px;
+  }
+  table.compare th, table.compare td {
+    border: 1px solid var(--line);
+    padding: 10px 12px;
+    text-align: center;
+  }
+  table.compare th {
+    background: #f6f8fa;
+    font-weight: 600;
+    color: var(--muted);
+  }
+  table.compare th:first-child, table.compare td:first-child {
+    text-align: left;
+    font-weight: 500;
+  }
+  table.compare .yes { color: var(--ok); font-weight: 700; }
+  table.compare .no { color: #cf222e; }
+  table.compare .mid { color: var(--warn); }
+  table.compare tr.winner {
+    background: #f0fdf4;
+  }
+
+  .callout {
+    background: #eff6ff;
+    border-left: 4px solid var(--brand-light);
+    padding: 14px 18px;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #1e3a8a;
+    margin: 16px 0 0;
+  }
+  .source {
+    text-align: right;
+    font-size: 11px;
+    color: var(--muted);
+    margin-top: 8px;
+  }
+  .source a { color: var(--muted); }
+
+  footer {
+    text-align: center;
+    color: var(--muted);
+    font-size: 12px;
+    padding: 32px 16px 48px;
+  }
+  .back {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 8px 16px;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    text-decoration: none;
+    color: var(--text);
+    font-size: 13px;
+  }
+  .back:hover { background: var(--hover); }
+
+  @media (max-width: 700px) {
+    .hero h1 { font-size: 22px; }
+    .summary-grid { grid-template-columns: 1fr; }
+    .sec-body { padding: 16px; }
+    .sec-head { padding: 14px 16px; }
+    .gallery img { height: 130px; }
+  }
+
+  /* Layout section */
+  .floor-wrap {
+    background: #fafbfc;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 16px 0;
+  }
+  .floor {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: auto auto auto;
+    gap: 12px;
+    max-width: 760px;
+    margin: 0 auto;
+  }
+  .floor .zone {
+    border: 2px dashed #94a3b8;
+    border-radius: 10px;
+    padding: 14px 12px;
+    background: #fff;
+    text-align: center;
+    font-size: 13px;
+    color: #334155;
+    min-height: 64px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+  }
+  .floor .zone strong {
+    font-size: 14px;
+    color: #0f172a;
+  }
+  .floor .zone small { color: var(--muted); font-size: 11px; }
+  .floor .stage { grid-column: 1 / -1; background: #0a4b7a; color: #fff; border-color: #0a4b7a; }
+  .floor .stage strong { color: #fff; }
+  .floor .stage small { color: #cfe2f3; }
+  .floor .reception { background: #fff7ed; border-color: #fdba74; }
+  .floor .ops { background: #f3e8ff; border-color: #c4b5fd; }
+  .floor .tables {
+    background: #ecfdf5;
+    border-color: #6ee7b7;
+    grid-row: 2 / span 1;
+    padding: 16px 14px;
+  }
+  .group-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    width: 100%;
+    margin-top: 8px;
+  }
+  .group {
+    background: #fff;
+    border: 1.5px solid #34d399;
+    border-radius: 8px;
+    padding: 8px 4px;
+    text-align: center;
+    font-size: 11px;
+    color: #065f46;
+    font-weight: 600;
+  }
+  .group .num {
+    display: block;
+    font-size: 16px;
+    color: #047857;
+  }
+  .bbq { grid-column: 1 / -1; background: #fef2f2; border-color: #fca5a5; color: #991b1b; }
+  .bbq strong { color: #7f1d1d; }
+  .bbq small { color: #b91c1c; }
+
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 16px;
+    font-size: 12px;
+    color: var(--muted);
+    justify-content: center;
+  }
+  .legend span {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend i {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    border-radius: 3px;
+    border: 1.5px dashed;
+  }
+  .legend .l-stage { background: #0a4b7a; border-color: #0a4b7a; }
+  .legend .l-tables { background: #ecfdf5; border-color: #6ee7b7; }
+  .legend .l-reception { background: #fff7ed; border-color: #fdba74; }
+  .legend .l-ops { background: #f3e8ff; border-color: #c4b5fd; }
+  .legend .l-bbq { background: #fef2f2; border-color: #fca5a5; }
+
+  @media (max-width: 600px) {
+    .floor { grid-template-columns: 1fr; }
+    .group-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+</style>
+</head>
+<body>
+
+<div class="nav">
+  <a class="nav-brand" href="../gian.htm">KAGA JC <span>2026</span></a>
+  <a href="../資料一覧.htm">資料一覧</a>
+  <a href="../想定問答集.htm">想定問答集</a>
+  <a href="../参考資料/コンプライアンス審査ガイド.htm">コンプライアンス</a>
+  <a href="../改善ロードマップ.htm">改善ロードマップ</a>
+  <div class="nav-dd">
+    <button class="nav-dd-btn">実行タスク ▾</button>
+    <div class="nav-dd-menu">
+      <a href="../委員長の実行アクション.htm">委員長の実行アクション</a>
+      <a href="../室長確認依頼項目.htm">室長確認依頼項目</a>
+      <a href="../改善ロードマップ.htm">改善ロードマップ</a>
+    </div>
+  </div>
+  <button class="pdf-btn" onclick="window.print()">📄 PDFで保存</button>
+</div>
+
+<div class="hero">
+  <p class="eyebrow">審議対象資料 11</p>
+  <h1>会場選定理由書</h1>
+  <p class="subtitle">加賀イノベーションセンター ／ KAGA JC GATHERING 実施会場</p>
+  <div class="meta">会員開発委員会アカデミー事業 ／ 2026年8月30日（土）実施予定</div>
+</div>
+
+<main>
+
+<!-- 結論 -->
+<section>
+  <div class="sec-head">
+    <span class="badge"></span>
+    <h2>結論</h2>
+    <span class="tag">Recommendation</span>
+  </div>
+  <div class="sec-body">
+    <p>本事業の会場として、<strong>加賀イノベーションセンター</strong>を選定します。「新しいビジネスが生まれる場所、新たなコミュニティやつながりが生まれる拠点」というセンターのコンセプトと、本事業の目的（メンバー同士の相互理解と支え合う文化の醸成）が高い親和性を持つこと、グループワーク・カードゲーム・ふりかえりまで一連の流れを<strong>一会場内で完結</strong>できることが主な理由です。</p>
+    <div class="callout">
+      <strong>選定要件サマリ</strong><br>
+      ① 想定参加54名＋運営10名が収容できる広さ／② カードゲーム・グループワーク可能なテーブル配置／③ 加賀市内で全会員のアクセスが良好／④ オープンスペース・カンファレンスホール等の複数スペース併用可能／⑤ コミュニティ拠点としての文脈が事業趣旨と合致
+    </div>
+  </div>
+</section>
+
+<!-- 施設概要 -->
+<section>
+  <div class="sec-head">
+    <span class="badge"></span>
+    <h2>施設概要</h2>
+    <span class="tag">About the Venue</span>
+  </div>
+  <div class="sec-body">
+    <p>加賀イノベーションセンターは、2022年4月に北陸初の国家戦略特区指定を受けた加賀市が設立した施設です。「新しいビジネスが生まれる場所、そして新たなコミュニティやつながりが生まれる拠点」として、ものづくりルーム・インキュベーションルーム・カンファレンスホール・オープンスペース等の多様な機能を備えています。</p>
+    <dl class="summary-grid">
+      <div>
+        <dt>所在地</dt>
+        <dd>〒922-0057 石川県加賀市大聖寺八間道65</dd>
+      </div>
+      <div>
+        <dt>電話</dt>
+        <dd>0761-72-7826</dd>
+      </div>
+      <div>
+        <dt>営業時間</dt>
+        <dd>平日 8:30 〜 17:15</dd>
+      </div>
+      <div>
+        <dt>設立</dt>
+        <dd>2022年4月（北陸初の国家戦略特区指定）</dd>
+      </div>
+      <div>
+        <dt>運営</dt>
+        <dd>加賀市産業部デジタル推進課（0761-72-7833）</dd>
+      </div>
+      <div>
+        <dt>公式</dt>
+        <dd><a href="https://www.city.kaga.ishikawa.jp/senryaku_tokku/innovation_center/index.html" target="_blank" rel="noopener">加賀市公式ページ</a></dd>
+      </div>
+    </dl>
+    <div class="gallery" style="margin-top:18px">
+      <figure>
+        <img src="https://www.city.kaga.ishikawa.jp/material/images/group/2/innovationcenter003.jpg" alt="加賀イノベーションセンター 外観">
+        <figcaption>センター外観</figcaption>
+      </figure>
+      <figure>
+        <img src="https://www.city.kaga.ishikawa.jp/material/images/group/126/IMG_4591-2.jpg" alt="センター内部 1">
+        <figcaption>オープンスペース</figcaption>
+      </figure>
+      <figure>
+        <img src="https://www.city.kaga.ishikawa.jp/material/images/group/126/IMG_4293-2.jpg" alt="センター内部 2">
+        <figcaption>カンファレンス／会議スペース</figcaption>
+      </figure>
+      <figure>
+        <img src="https://www.city.kaga.ishikawa.jp/material/images/group/126/IMG_4547-2.jpg" alt="センター内部 3">
+        <figcaption>クリエイタースタジオ</figcaption>
+      </figure>
+    </div>
+    <p class="source">画像・概要：<a href="https://www.city.kaga.ishikawa.jp/senryaku_tokku/innovation_center/index.html" target="_blank" rel="noopener">加賀市イノベーションセンター 公式サイト</a>より</p>
+  </div>
+</section>
+
+<!-- 選定理由 -->
+<section>
+  <div class="sec-head">
+    <span class="badge"></span>
+    <h2>選定理由</h2>
+    <span class="tag">Why Here</span>
+  </div>
+  <div class="sec-body">
+    <div class="reasons">
+      <div class="reason">
+        <span class="num">01</span>
+        <h3>事業趣旨との親和性</h3>
+        <p>「新しいコミュニティやつながりが生まれる拠点」というセンターのコンセプトが、本事業の目的「メンバー同士の相互理解と支え合う文化の醸成」と一致。会場そのものが事業メッセージを補強します。</p>
+      </div>
+      <div class="reason">
+        <span class="num">02</span>
+        <h3>収容人数と多目的利用</h3>
+        <p>オープンスペース・カンファレンスホール・クリエイタースタジオ等を組み合わせれば、想定参加54名＋運営10名前後を収容可能。グループワーク用のテーブル配置にも対応します。</p>
+      </div>
+      <div class="reason">
+        <span class="num">03</span>
+        <h3>カードゲーム実施スペース</h3>
+        <p>4〜6名×5〜7班のグループワーク、カード配布・ピックアップ・発表まで一会場内で完結。複数スペースの併用により、メインワーク（カードゲーム）→ふりかえり→懇親への動線を作りやすい設計です。</p>
+      </div>
+      <div class="reason">
+        <span class="num">04</span>
+        <h3>立地・アクセス</h3>
+        <p>加賀市大聖寺、加賀LOMメンバーの活動拠点に近く、全会員のアクセスが良好。市内であることで、参加率の低いメンバーへのハードルを下げます。</p>
+      </div>
+      <div class="reason">
+        <span class="num">05</span>
+        <h3>設備の充実</h3>
+        <p>フリーWi-Fi、AC電源、ディスプレイ、延長コード、冷蔵庫、電子レンジ、IHクッキングヒーター完備。発表用ディスプレイ・運営用電源・懇親に必要な設備が揃っており、追加調達コストを抑えられます。</p>
+      </div>
+      <div class="reason">
+        <span class="num">06</span>
+        <h3>地域文脈との接続</h3>
+        <p>加賀市の戦略拠点である同センターでの開催は、本事業が「地域に開かれた人財育成」であることを内外に示すシグナルとなり、将来的な地域事業者・拡大対象者との連携にも繋がります。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 利用予定スペース -->
+<section>
+  <div class="sec-head">
+    <span class="badge"></span>
+    <h2>利用予定スペースと料金</h2>
+    <span class="tag">Rooms &amp; Pricing</span>
+  </div>
+  <div class="sec-body">
+    <table class="spaces">
+      <thead>
+        <tr>
+          <th>スペース</th>
+          <th>料金（時間単価）</th>
+          <th>本事業での想定用途</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>オープンスペース</td>
+          <td>2,500円/時間</td>
+          <td class="use">メイン会場（カードゲーム・全体ワーク）<span class="badge-ok">使用</span></td>
+        </tr>
+        <tr>
+          <td>カンファレンスホール</td>
+          <td>600円/時間</td>
+          <td class="use">開会・趣旨説明・グループ発表・閉会<span class="badge-ok">使用</span></td>
+        </tr>
+        <tr>
+          <td>クリエイタースタジオ1・2</td>
+          <td>各200円/時間</td>
+          <td>運営控室・カード準備・備品保管</td>
+        </tr>
+        <tr>
+          <td>ものづくりルーム</td>
+          <td>1,200円/時間</td>
+          <td>カード追加印刷・物理プロト（必要時）</td>
+        </tr>
+        <tr>
+          <td>オンラインルーム</td>
+          <td>100〜200円/時間</td>
+          <td>遠隔参加メンバー対応（オプション）</td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="source">料金：<a href="https://www.city.kaga.ishikawa.jp/senryaku_tokku/innovation_center/index.html" target="_blank" rel="noopener">公式サイト</a>より（2026年5月時点）。実費は事業計画収支予算書に反映。</p>
+  </div>
+</section>
+
+<!-- 比較検討 -->
+<section>
+  <div class="sec-head">
+    <span class="badge"></span>
+    <h2>比較検討（候補会場）</h2>
+    <span class="tag">Comparison</span>
+  </div>
+  <div class="sec-body">
+    <table class="compare">
+      <thead>
+        <tr>
+          <th>評価項目</th>
+          <th>加賀イノベーションセンター</th>
+          <th>市内公共施設（一般会議室）</th>
+          <th>民間貸会議室</th>
+          <th>会員企業オフィス</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="winner">
+          <td>収容人数（54名＋運営）</td>
+          <td class="yes">○ 複数スペース併用で十分</td>
+          <td class="mid">△ 部屋により可</td>
+          <td class="yes">○ 規模次第</td>
+          <td class="no">× 多くは不可</td>
+        </tr>
+        <tr class="winner">
+          <td>グループワーク適性</td>
+          <td class="yes">○ テーブル配置自由</td>
+          <td class="mid">△ レイアウト固定</td>
+          <td class="mid">△ 物件次第</td>
+          <td class="no">× 業務用配置</td>
+        </tr>
+        <tr class="winner">
+          <td>事業趣旨との親和性</td>
+          <td class="yes">○ コミュニティ拠点</td>
+          <td class="no">× 中立</td>
+          <td class="no">× 中立</td>
+          <td class="mid">△ 私的色強い</td>
+        </tr>
+        <tr class="winner">
+          <td>設備充実度</td>
+          <td class="yes">○ Wi-Fi／電源／キッチン</td>
+          <td class="mid">△ 基本のみ</td>
+          <td class="yes">○</td>
+          <td class="mid">△ 業務都合</td>
+        </tr>
+        <tr class="winner">
+          <td>地域メッセージ性</td>
+          <td class="yes">○ 国家戦略特区拠点</td>
+          <td class="no">× なし</td>
+          <td class="no">× なし</td>
+          <td class="no">× なし</td>
+        </tr>
+        <tr>
+          <td>コスト水準</td>
+          <td class="mid">△ 中（時間課金）</td>
+          <td class="yes">○ 低</td>
+          <td class="no">× 高</td>
+          <td class="yes">○ 低／無償</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="callout">
+      コストは中位ですが、<strong>事業趣旨との親和性・グループワーク適性・地域メッセージ性</strong>の3点で他候補を上回るため、総合評価で加賀イノベーションセンターを選定します。
+    </div>
+  </div>
+</section>
+
+<!-- 想定費用 -->
+<section>
+  <div class="sec-head">
+    <span class="badge"></span>
+    <h2>想定費用</h2>
+    <span class="tag">Estimated Cost</span>
+  </div>
+  <div class="sec-body">
+    <p>想定実施時間：当日 120分本編＋準備60分＋撤収30分＝<strong>合計約3時間</strong>、複数スペース併用の場合の概算は以下です。</p>
+    <table class="spaces">
+      <thead>
+        <tr><th>スペース</th><th>単価</th><th>時間</th><th>概算</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>オープンスペース</td><td>2,500円</td><td>3時間</td><td>7,500円</td></tr>
+        <tr><td>カンファレンスホール</td><td>600円</td><td>3時間</td><td>1,800円</td></tr>
+        <tr><td>クリエイタースタジオ1</td><td>200円</td><td>4時間（準備含む）</td><td>800円</td></tr>
+        <tr><td colspan="3" style="text-align:right;font-weight:600">小計</td><td style="font-weight:700;color:var(--brand)">約 10,100円</td></tr>
+      </tbody>
+    </table>
+    <p class="source">※ 7月の事業審議時に貸切利用申込（WEB予約／2営業日前まで）を確定し、最終金額は事業計画収支予算書に反映します。</p>
+  </div>
+</section>
+
+<!-- アクセス -->
+<section>
+  <div class="sec-head">
+    <span class="badge"></span>
+    <h2>アクセス・利用申込</h2>
+    <span class="tag">Access</span>
+  </div>
+  <div class="sec-body">
+    <dl class="summary-grid">
+      <div>
+        <dt>住所</dt>
+        <dd>〒922-0057 石川県加賀市大聖寺八間道65</dd>
+      </div>
+      <div>
+        <dt>最寄り駅</dt>
+        <dd><span lang="en">JR</span>北陸本線「大聖寺駅」より徒歩 約<strong>10分</strong>（約 800m）</dd>
+      </div>
+      <div>
+        <dt>車</dt>
+        <dd>北陸自動車道「加賀<span lang="en">IC</span>」より約<strong>10分</strong></dd>
+      </div>
+      <div>
+        <dt>バス</dt>
+        <dd>加賀温泉バス「大聖寺」停留所付近<br><small style="color:var(--muted)">※路線・本数は加賀温泉バス公式で要確認</small></dd>
+      </div>
+      <div>
+        <dt>申込方法</dt>
+        <dd>貸切利用は <strong>2営業日前まで</strong> にWEB予約（logoform.jp）または電話予約</dd>
+      </div>
+      <div>
+        <dt>営業時間</dt>
+        <dd>平日 8:30〜17:15（土日祝の利用は要事前相談）</dd>
+      </div>
+    </dl>
+
+    <h3 style="font-size:14px;margin:20px 0 8px;color:var(--muted);letter-spacing:0.04em">地図</h3>
+    <div style="position:relative;width:100%;padding-bottom:50%;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#f3f4f6">
+      <iframe
+        src="https://www.google.com/maps?q=%E7%9F%B3%E5%B7%9D%E7%9C%8C%E5%8A%A0%E8%B3%80%E5%B8%82%E5%A4%A7%E8%81%96%E5%AF%BA%E5%85%AB%E9%96%93%E9%81%9365&output=embed"
+        style="position:absolute;inset:0;width:100%;height:100%;border:0"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="加賀イノベーションセンター 地図"></iframe>
+    </div>
+    <p style="text-align:right;margin-top:6px;font-size:12px"><a href="https://www.google.com/maps/search/?api=1&query=%E7%9F%B3%E5%B7%9D%E7%9C%8C%E5%8A%A0%E8%B3%80%E5%B8%82%E5%A4%A7%E8%81%96%E5%AF%BA%E5%85%AB%E9%96%93%E9%81%9365" target="_blank" rel="noopener">大きな地図で開く →</a></p>
+
+    <h3 style="font-size:14px;margin:20px 0 8px;color:var(--muted);letter-spacing:0.04em">駐車場</h3>
+    <table class="spaces">
+      <thead>
+        <tr><th>項目</th><th>内容</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>施設駐車場</td><td>センター敷地内に駐車スペースあり（台数は要確認）</td></tr>
+        <tr><td>近隣駐車場</td><td>大聖寺市街地に複数のコインパーキング／公共駐車場あり</td></tr>
+        <tr><td>料金</td><td>市公共施設としての扱い：原則無料想定（最終要確認）</td></tr>
+        <tr><td>大型車・搬入</td><td>備品搬入用の一時駐車スペース確保は事前申請にて対応可</td></tr>
+      </tbody>
+    </table>
+    <div class="callout">
+      <strong>※駐車場詳細は公式サイトに明記されていません。</strong>想定参加54名（うち多数が車利用見込み）に対する収容台数、当日の利用条件、近隣コインパーキングとの併用可否について、<strong>7月の事業審議までに加賀市産業部デジタル推進課（0761-72-7833）へ確認</strong>し、確定情報をこのページに更新します。
+    </div>
+
+    <p style="margin-top:14px;color:var(--muted);font-size:13px">※ 実施日 2026年8月30日（土）の利用可否は、7月の事業審議までに加賀市産業部デジタル推進課（0761-72-7833）に最終確認します。</p>
+  </div>
+</section>
+
+<!-- 想定レイアウト -->
+<section id="layout">
+  <div class="sec-head">
+    <span class="badge"></span>
+    <h2>想定レイアウト（会場レイアウト図）</h2>
+    <span class="tag">Floor Layout</span>
+  </div>
+  <div class="sec-body">
+    <p>当日は <strong>オープンスペース</strong>（メインワーク）／<strong>カンファレンスホール</strong>（開会・発表・閉会）／<strong>クリエイタースタジオ</strong>（運営控室）／屋外スペース（懇親・<span lang="en">BBQ</span>）を組み合わせて使用します。グループ編成は<strong>4〜6名 × 5〜7班</strong>を想定し、メイン会場内に並行配置します。</p>
+    <div class="floor-wrap">
+      <div class="floor" role="img" aria-label="会場レイアウト図">
+        <div class="zone stage">
+          <strong>① ステージ／演台</strong>
+          <small>開会・趣旨説明・グループ発表・閉会</small>
+        </div>
+        <div class="zone reception">
+          <strong>② 受付</strong>
+          <small>名簿確認<br>カードキット配布</small>
+        </div>
+        <div class="zone tables">
+          <strong>③ グループワークエリア</strong>
+          <small>4〜6名 × 5〜7班</small>
+          <div class="group-grid">
+            <div class="group"><span class="num">G1</span>4〜6名</div>
+            <div class="group"><span class="num">G2</span>4〜6名</div>
+            <div class="group"><span class="num">G3</span>4〜6名</div>
+            <div class="group"><span class="num">G4</span>4〜6名</div>
+            <div class="group"><span class="num">G5</span>4〜6名</div>
+            <div class="group"><span class="num">G6</span>4〜6名</div>
+          </div>
+        </div>
+        <div class="zone ops">
+          <strong>④ 運営控室</strong>
+          <small>クリエイタースタジオ<br>備品・印刷予備</small>
+        </div>
+        <div class="zone bbq">
+          <strong>⑤ 懇親・BBQエリア（屋外）</strong>
+          <small>事業後の懇親／頼れる仲間カードの実体験</small>
+        </div>
+      </div>
+      <div class="legend">
+        <span><i class="l-stage"></i> ステージ／演台</span>
+        <span><i class="l-reception"></i> 受付</span>
+        <span><i class="l-tables"></i> グループワーク</span>
+        <span><i class="l-ops"></i> 運営控室</span>
+        <span><i class="l-bbq"></i> 懇親・BBQ</span>
+      </div>
+    </div>
+
+    <p style="margin-top:18px"><strong>ゾーニングのポイント</strong></p>
+    <ul style="font-size:14px;padding-left:20px;margin:0">
+      <li><strong>① ステージ／演台</strong>：理事長・委員長挨拶、趣旨説明、グループ発表に使用。背後にディスプレイを設置。</li>
+      <li><strong>② 受付</strong>：会場入口に配置。名簿確認・名札配布・カードキット（頼れる仲間／公益ミッション／ハプニング）の各テーブルへの配布。</li>
+      <li><strong>③ グループワークエリア</strong>：メインスペース。1テーブル4〜6名、5〜7班分のアイランド型配置。各テーブルにカードキット1セット＋付箋・ペン・模造紙を準備。</li>
+      <li><strong>④ 運営控室</strong>：クリエイタースタジオを利用。備品予備・追加印刷・ファシリ間連絡用。</li>
+      <li><strong>⑤ 懇親・BBQエリア</strong>：屋外スペースを活用。事業内容で得た学びを「頼れる仲間」と実体験する場として接続。</li>
+    </ul>
+
+    <p style="margin-top:18px"><strong>動線設計</strong></p>
+    <ol style="font-size:14px;padding-left:20px;margin:0">
+      <li>受付（②）→ カンファレンスホール（①ステージで開会）</li>
+      <li>オープンスペース（③グループワーク：カードゲーム1周目・2周目・ハプニング投入）</li>
+      <li>カンファレンスホール（①ステージでグループ発表・ふりかえり・閉会）</li>
+      <li>屋外（⑤BBQ・懇親）</li>
+    </ol>
+
+    <div class="callout">
+      ※ 本レイアウトは想定図です。実際の家具配置・人数・動線は、7月の事業審議で会場下見を行ったうえで確定します。確定版は審議対象資料 <strong>11）会場レイアウト図</strong> として別途整備します。
+    </div>
+  </div>
+</section>
+
+<section class="related-docs" style="margin-top:24px;background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:20px 22px">
+  <h2 style="margin:0 0 12px;font-size:12px;color:#6b7280;letter-spacing:0.06em;text-transform:uppercase">📚 関連審議資料・参考資料</h2>
+  <p style="margin:0 0 12px;font-size:12.5px;color:#374151;line-height:1.95"><strong style="color:#1f6feb">審議対象資料</strong>：
+    <a href="事業フロー.htm">1) 事業フロー</a>　／　2) 事業計画収支予算書　／　
+    <a href="当日実施要項.htm">3) 当日実施要項</a>　／　4) 当日役割分担表　／　
+    <a href="KAGA_JC_GATHERING_仕様書.htm">5) KAGA JC GATHERING QUEST 実施要項</a>　／　6) KAGA JC GATHERING QUEST 手段選定理由書　／　
+    <a href="ゲーム進行マニュアル.htm">7) ゲーム進行マニュアル</a>　／　
+    <a href="../参考資料/テーブルゲームマスター進行台本.htm">8) テーブルゲームマスター進行台本</a>　／　
+    <a href="../参考資料/正副メンター役割確認シート.htm">9) 正副メンター役割確認シート</a>　／　
+    <a href="カード一覧.htm">10) カードサンプル一覧</a>　／　
+    <a href="カード一覧.htm#mission">11) ミッションカード一覧</a>　／　
+    <a href="カード一覧.htm#hurdle">12) ハードルカード一覧</a>　／　
+    <a href="ふりかえりシート.htm">13) ふりかえりシート</a>　／　14) グループ発表シート　／　
+    <a href="会場選定理由書.htm#layout">15) 会場レイアウト・安全管理資料</a>　／　16) 表彰品・配布物管理表　／　
+    <a href="個人情報・プライバシー配慮に関する運営ルール.htm">17) 個人情報・プライバシー配慮に関する運営ルール</a>
+  </p>
+  <p style="margin:0;font-size:12.5px;color:#374151;line-height:1.95"><strong style="color:#2da44e">参考資料</strong>：
+    1) アカデミー事業後アンケート ／ 会員開発委員会方針　／　2) 加賀LOMアカデミー事業 議案参考資料　／　3) 加賀JC2026年度 理事長所信　／　4) RNCアンケート評価法　／　5) 公開議案・他LOM事例調査資料　／　6) JCプログラム公式資料　／　7) ビジネスゲーム導入事例　／　8) ABC手法比較資料　／　9) KAGA JC GATHERING QUEST 図説資料　／　
+    <a href="事業フロー.htm">10) カードゲーム進行フロー図</a>　／　11) 学術・行動経済学的根拠メモ　／　12) 事前アンケート集計結果　／　13) 簡易ヒアリング要約　／　14) 加賀JC出席状況確認資料　／　15) 役割分担確認資料　／　16) 鎌田長明「JC論：議案の書き方」シリーズ　／　17) 大垣JC・高槻JC 議案作成マニュアル
+  </p>
+  <p style="margin:14px 0 0;font-size:10.5px;color:#9ca3af;text-align:right">※ リンク付き項目はページ作成済みの資料</p>
+</section>
+
+</main>
+
+
+<footer class="rel-footer">
+  <p class="rf-label">FOR STAFF — 関連資料ナビゲーション</p>
+  <ul>
+    <li><a href="../gian.htm">議案本文</a></li>
+  </ul>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>ハードルカード一覧 — KAGA JC GATHERING QUEST</title>
+<link rel="stylesheet" href="../shared.css">
+<style>
+  :root {
+    --bg: #f6f7f9;
+    --card: #ffffff;
+    --text: #1f2937;
+    --muted: #6b7280;
+    --line: #e5e7eb;
+    --c2: #bf8700;
+    --hover: #f3f4f6;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    margin: 0;
+    line-height: 1.7;
+  }
+  header {
+    background: linear-gradient(135deg, #6b4900 0%, #bf8700 100%);
+    color: #fff;
+    padding: 40px 24px 32px;
+    text-align: center;
+  }
+  header .eyebrow {
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    color: #fef3c7;
+    margin: 0 0 8px;
+    text-transform: uppercase;
+  }
+  header h1 { margin: 0 0 4px; font-size: 26px; font-weight: 700; }
+  header .subtitle { color: #fde68a; font-size: 13px; margin: 0; }
+
+  main { max-width: 980px; margin: 28px auto; padding: 0 16px 64px; }
+
+  .links {
+  position: sticky;
+  top: 8px;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0,0,0,.08);
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 14px 18px;
+    margin-bottom: 24px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .links span.label {
+    font-size: 11px; color: var(--muted); letter-spacing: 0.06em;
+    text-transform: uppercase; align-self: center; margin-right: 6px;
+  }
+  .links a {
+    background: #f3f4f6; color: var(--text);
+    padding: 7px 12px; border-radius: 6px;
+    font-size: 12.5px; text-decoration: none;
+    border: 1px solid var(--line);
+  }
+  .links a:hover { background: #e5e7eb; }
+  .links a.current { background: #fef3c7; border-color: var(--c2); color: #6b4900; }
+
+  .intro {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 22px 24px;
+    margin-bottom: 24px;
+  }
+  .intro h2 {
+    margin: 0 0 8px; font-size: 13px;
+    color: var(--muted); letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .intro p { margin: 0 0 8px; font-size: 14.5px; }
+  .intro p:last-child { margin-bottom: 0; }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 16px;
+  }
+  .hcard {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-left: 4px solid var(--c2);
+    border-radius: 10px;
+    padding: 16px 18px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+  }
+  .hcard .num {
+    display: inline-block;
+    background: var(--c2);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 2px 10px;
+    border-radius: 999px;
+    margin-bottom: 6px;
+  }
+  .hcard h3 {
+    margin: 0 0 6px;
+    font-size: 15px;
+    font-weight: 700;
+  }
+  .hcard .desc {
+    color: #374151;
+    font-size: 13px;
+    margin: 0 0 8px;
+  }
+  .hcard .effect {
+    border-top: 1px solid var(--line);
+    padding-top: 8px;
+    font-size: 12px;
+    color: var(--muted);
+  }
+  .hcard .effect strong {
+    color: #6b4900;
+    font-weight: 700;
+    margin-right: 4px;
+  }
+
+  footer {
+    text-align: center; color: var(--muted);
+    font-size: 12px; padding: 32px 16px 48px;
+  }
+  .back {
+    display: inline-block; margin-top: 12px;
+    padding: 8px 16px; background: var(--card);
+    border: 1px solid var(--line); border-radius: 8px;
+    text-decoration: none; color: var(--text); font-size: 13px;
+  }
+  .back:hover { background: var(--hover); }
+</style>
+</head>
+<body>
+<div class="nav">
+  <a class="nav-brand" href="../gian.htm">KAGA JC <span>2026</span></a>
+  <a href="../資料一覧.htm">資料一覧</a>
+  <a href="../想定問答集.htm">想定問答集</a>
+  <a href="コンプライアンス審査ガイド.htm">コンプライアンス</a>
+  <a href="../改善ロードマップ.htm">改善ロードマップ</a>
+  <div class="nav-dd">
+    <button class="nav-dd-btn">実行タスク ▾</button>
+    <div class="nav-dd-menu">
+      <a href="../委員長の実行アクション.htm">委員長の実行アクション</a>
+      <a href="../室長確認依頼項目.htm">室長確認依頼項目</a>
+      <a href="../改善ロードマップ.htm">改善ロードマップ</a>
+    </div>
+  </div>
+  <button class="pdf-btn" onclick="window.print()">📄 PDFで保存</button>
+</div>
+
+<header>
+  <p class="eyebrow">HURDLE CARDS</p>
+  <h1>ハードルカード一覧</h1>
+  <p class="subtitle">KAGA JC GATHERING QUEST ／ 制約条件 ／ 8種</p>
+</header>
+
+<main>
+
+<div class="links">
+  <span class="label">関連ページ</span>
+  <a href="../審議対象資料/KAGA_JC_GATHERING_仕様書.htm">📘 仕様書</a>
+  <a href="ミッションカード一覧.htm">
+  <a href="../資料一覧.htm">資料一覧</a>📋 ミッションカード一覧</a>
+  <a class="current">⚠️ ハードルカード一覧</a>
+  <a href="../審議対象資料/カード一覧.htm">🎴 カードサンプル一覧</a>
+  <a href="../審議対象資料/ふりかえりシート.htm">📝 ふりかえりシート</a>
+</div>
+
+<div class="intro">
+  <h2>使い方</h2>
+  <p>ハードルカードは<a href="ミッションカード一覧.htm">ミッションカード</a>と組み合わせて使用し、事業実施時に起こり得る「制約条件」を加える役割を持ちます。同じミッションでも、ハードルが変われば必要な役割や頼れる相手が変わります。</p>
+  <p>2周目チャレンジでは、ハードルカードを<strong>もう1枚追加</strong>するか、<strong>別のハードル</strong>に差し替えることで、グループの設計力を鍛えます。</p>
+</div>
+
+<div class="grid">
+
+  <div class="hcard">
+    <span class="num">H01</span>
+    <h3>予算少なめ</h3>
+    <p class="desc">通常の半額〜2/3で実現する必要がある状況。コスト最適化と協賛獲得が鍵。</p>
+    <p class="effect"><strong>影響</strong>協賛獲得・地域資源活用・DIY設営の発想を促す</p>
+  </div>
+
+  <div class="hcard">
+    <span class="num">H02</span>
+    <h3>初参加メンバーが多い</h3>
+    <p class="desc">参加者の半数以上が初参加。役割理解・運営理解が浅い前提でプログラム設計する必要がある。</p>
+    <p class="effect"><strong>影響</strong>事前説明・小さな役割設計・メンター配置が必要</p>
+  </div>
+
+  <div class="hcard">
+    <span class="num">H03</span>
+    <h3>家族連れ参加可</h3>
+    <p class="desc">参加者の家族（配偶者・子ども）の参加を想定。安全管理・滞在環境の設計が追加で必要。</p>
+    <p class="effect"><strong>影響</strong>安全管理・キッズスペース・家族向け広報</p>
+  </div>
+
+  <div class="hcard">
+    <span class="num">H04</span>
+    <h3>地域資源を活用する</h3>
+    <p class="desc">加賀の温泉・特産品・観光地・伝統工芸など、地域資源を必ず組み込む条件。</p>
+    <p class="effect"><strong>影響</strong>地域パートナーカードの活用・対外調整が中心に</p>
+  </div>
+
+  <div class="hcard">
+    <span class="num">H05</span>
+    <h3>役割分担を明確にする</h3>
+    <p class="desc">事業に関わるすべての役割を文書化・可視化し、誰が何を担うかを明示する条件。</p>
+    <p class="effect"><strong>影響</strong>ロールカードの活用・委員長への負担集中を回避</p>
+  </div>
+
+  <div class="hcard">
+    <span class="num">H06</span>
+    <h3>事業後の広報が必要</h3>
+    <p class="desc">事業後にSNS・地域メディア・LOM内報告での発信が必要。記録・撮影・取材体制が前提。</p>
+    <p class="effect"><strong>影響</strong>広報担当の早期アサイン・撮影許諾の取得</p>
+  </div>
+
+  <div class="hcard">
+    <span class="num">H07</span>
+    <h3>雨天対応が必要</h3>
+    <p class="desc">屋外プログラム想定だが雨天の場合の代替案も含めて設計する条件。</p>
+    <p class="effect"><strong>影響</strong>会場二重押さえ・備品調達・判断基準の事前合意</p>
+  </div>
+
+  <div class="hcard">
+    <span class="num">H08</span>
+    <h3>拡大対象者との接点をつくる</h3>
+    <p class="desc">事業の中で、加賀JC外の地域人財（拡大対象者）と接点を持つ仕掛けを必ず組み込む条件。</p>
+    <p class="effect"><strong>影響</strong>地域パートナーカード活用・拡大委員会との連携</p>
+  </div>
+
+</div>
+
+<section class="related-docs" style="margin-top:24px;background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:20px 22px">
+  <h2 style="margin:0 0 12px;font-size:12px;color:#6b7280;letter-spacing:0.06em;text-transform:uppercase">📚 関連審議資料・参考資料</h2>
+  <p style="margin:0 0 12px;font-size:12.5px;color:#374151;line-height:1.95"><strong style="color:#1f6feb">審議対象資料</strong>：
+    <a href="../審議対象資料/事業フロー.htm">1) 事業フロー</a>　／　2) 事業計画収支予算書　／　
+    <a href="../審議対象資料/当日実施要項.htm">3) 当日実施要項</a>　／　4) 当日役割分担表　／　
+    <a href="../審議対象資料/KAGA_JC_GATHERING_仕様書.htm">5) KAGA JC GATHERING QUEST 実施要項</a>　／　6) KAGA JC GATHERING QUEST 手段選定理由書　／　
+    <a href="../審議対象資料/ゲーム進行マニュアル.htm">7) ゲーム進行マニュアル</a>　／　
+    <a href="テーブルゲームマスター進行台本.htm">8) テーブルゲームマスター進行台本</a>　／　
+    <a href="正副メンター役割確認シート.htm">9) 正副メンター役割確認シート</a>　／　
+    <a href="../審議対象資料/カード一覧.htm">10) カードサンプル一覧</a>　／　
+    <a href="ミッションカード一覧.htm">11) ミッションカード一覧</a>　／　
+    <a href="ハードルカード一覧.htm">12) ハードルカード一覧</a>　／　
+    <a href="../審議対象資料/ふりかえりシート.htm">13) ふりかえりシート</a>　／　14) グループ発表シート　／　
+    <a href="../審議対象資料/会場選定理由書.htm#layout">15) 会場レイアウト・安全管理資料</a>　／　16) 表彰品・配布物管理表　／　
+    <a href="../審議対象資料/個人情報・プライバシー配慮に関する運営ルール.htm">17) 個人情報・プライバシー配慮に関する運営ルール</a>
+  </p>
+  <p style="margin:0;font-size:12.5px;color:#374151;line-height:1.95"><strong style="color:#2da44e">参考資料</strong>：
+    1) アカデミー事業後アンケート ／ 会員開発委員会方針　／　2) 加賀LOMアカデミー事業 議案参考資料　／　3) 加賀JC2026年度 理事長所信　／　4) RNCアンケート評価法　／　5) 公開議案・他LOM事例調査資料　／　6) JCプログラム公式資料　／　7) ビジネスゲーム導入事例　／　8) ABC手法比較資料　／　9) KAGA JC GATHERING QUEST 図説資料　／　
+    <a href="../審議対象資料/事業フロー.htm">10) カードゲーム進行フロー図</a>　／　11) 学術・行動経済学的根拠メモ　／　12) 事前アンケート集計結果　／　13) 簡易ヒアリング要約　／　14) 加賀JC出席状況確認資料　／　15) 役割分担確認資料　／　16) 鎌田長明「JC論：議案の書き方」シリーズ　／　17) 大垣JC・高槻JC 議案作成マニュアル
+  </p>
+  <p style="margin:14px 0 0;font-size:10.5px;color:#9ca3af;text-align:right">※ リンク付き項目はページ作成済みの資料</p>
+</section>
+
+</main>
+
+
+<footer class="rel-footer">
+  <p class="rf-label">FOR STAFF — 関連資料ナビゲーション</p>
+  <ul>
+    <li><a href="../gian.htm">議案本文</a></li>
+  </ul>
+</footer>
+
+</body>
+</html>

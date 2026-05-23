@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>KAGA JC GATHERING QUEST 実施要項</title>
+<link rel="stylesheet" href="../shared.css">
+<style>
+  :root {
+    --bg: #f6f7f9;
+    --card: #ffffff;
+    --text: #1f2937;
+    --muted: #6b7280;
+    --c1: #d8345f;   /* ミッション */
+    --c2: #bf8700;   /* ハードル */
+    --c3: #1f6feb;   /* JCメンバー */
+    --c4: #2da44e;   /* 地域パートナー */
+    --c5: #8957e5;   /* ロール */
+    --line: #e5e7eb;
+    --hover: #f3f4f6;
+    --accent: #0a4b7a;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    margin: 0;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+  }
+  header {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    color: #fff;
+    padding: 48px 24px 40px;
+    text-align: center;
+  }
+  header .eyebrow {
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    color: #94a3b8;
+    margin: 0 0 8px;
+    text-transform: uppercase;
+  }
+  header h1 {
+    margin: 0 0 8px;
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+  }
+  header .subtitle {
+    color: #cbd5e1;
+    font-size: 14px;
+    margin: 0;
+  }
+  header .meta {
+    margin-top: 18px;
+    font-size: 12px;
+    color: #94a3b8;
+  }
+  main {
+    max-width: 1000px;
+    margin: 32px auto;
+    padding: 0 16px 64px;
+  }
+
+  .overview {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 24px 28px;
+    margin-bottom: 24px;
+  }
+  .overview h2 {
+    margin: 0 0 8px;
+    font-size: 13px;
+    color: var(--muted);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .overview p { margin: 0 0 10px; font-size: 14.5px; }
+  .overview p:last-child { margin-bottom: 0; }
+
+  /* TOC */
+  .toc {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 18px 24px;
+    margin-bottom: 28px;
+  }
+  .toc-title {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--muted);
+    letter-spacing: 0.06em;
+    margin: 0 0 10px;
+    text-transform: uppercase;
+  }
+  .toc ul {
+    list-style: none; margin: 0; padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 6px 16px;
+  }
+  .toc a {
+    color: var(--text);
+    text-decoration: none;
+    font-size: 13.5px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 4px 0;
+  }
+  .toc a:hover { color: #1f6feb; }
+  .toc .dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    display: inline-block;
+  }
+  [data-c="c1"] .dot { background: var(--c1); }
+  [data-c="c2"] .dot { background: var(--c2); }
+  [data-c="c3"] .dot { background: var(--c3); }
+  [data-c="c4"] .dot { background: var(--c4); }
+  [data-c="c5"] .dot { background: var(--c5); }
+  [data-c="flow"] .dot { background: #57606a; }
+  [data-c="role"] .dot { background: var(--accent); }
+  [data-c="kit"] .dot { background: #94a3b8; }
+  [data-c="ops"] .dot { background: #475569; }
+
+  /* Linked pages */
+  .links {
+  position: sticky;
+  top: 8px;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0,0,0,.08);
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 16px 20px;
+    margin-bottom: 28px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .links span.label {
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    align-self: center;
+    margin-right: 6px;
+  }
+  .links a {
+    background: #f3f4f6;
+    color: var(--text);
+    padding: 7px 12px;
+    border-radius: 6px;
+    font-size: 12.5px;
+    text-decoration: none;
+    border: 1px solid var(--line);
+  }
+  .links a:hover { background: #e5e7eb; }
+
+  section.card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    margin-bottom: 24px;
+    overflow: hidden;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+  }
+  .card-head {
+    padding: 18px 24px;
+    border-bottom: 1px solid var(--line);
+    background: #fafbfc;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .card-head .badge {
+    display: inline-block;
+    width: 6px; height: 28px;
+    border-radius: 3px;
+  }
+  .card-head h2 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+  }
+  .card-head .tag {
+    margin-left: auto;
+    font-size: 11px;
+    color: var(--muted);
+    background: #eef0f3;
+    padding: 3px 10px;
+    border-radius: 999px;
+  }
+  .card-body { padding: 20px 24px; }
+  .card-body p { margin: 0 0 12px; font-size: 14px; }
+  .card-body p:last-child { margin-bottom: 0; }
+  .card-body .label {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--muted);
+    background: #f3f4f6;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-right: 8px;
+    vertical-align: middle;
+  }
+  .card-body ul {
+    margin: 8px 0 12px 4px;
+    padding-left: 18px;
+    font-size: 14px;
+  }
+  .card-body ul li { margin-bottom: 4px; }
+  .card-body table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    margin: 8px 0 12px;
+  }
+  .card-body table th, .card-body table td {
+    border: 1px solid var(--line);
+    padding: 8px 12px;
+    text-align: left;
+  }
+  .card-body table th {
+    background: #f6f8fa;
+    font-weight: 600;
+    color: var(--muted);
+  }
+
+  #c-c1 .badge { background: var(--c1); }
+  #c-c2 .badge { background: var(--c2); }
+  #c-c3 .badge { background: var(--c3); }
+  #c-c4 .badge { background: var(--c4); }
+  #c-c5 .badge { background: var(--c5); }
+  #c-flow .badge { background: #57606a; }
+  #c-role .badge { background: var(--accent); }
+  #c-kit .badge { background: #94a3b8; }
+  #c-ops .badge { background: #475569; }
+
+  .pill {
+    display: inline-block;
+    background: #f3f4f6;
+    color: var(--text);
+    border-radius: 999px;
+    padding: 2px 10px;
+    font-size: 12px;
+    margin-right: 4px;
+    margin-bottom: 4px;
+  }
+  .more-link {
+    display: inline-block;
+    margin-top: 8px;
+    font-size: 13px;
+    color: #1f6feb;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  .more-link:hover { text-decoration: underline; }
+
+  footer {
+    text-align: center;
+    color: var(--muted);
+    font-size: 12px;
+    padding: 32px 16px 48px;
+  }
+  .back {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 8px 16px;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    text-decoration: none;
+    color: var(--text);
+    font-size: 13px;
+  }
+  .back:hover { background: var(--hover); }
+
+  @media (max-width: 700px) {
+    header h1 { font-size: 22px; }
+    .toc ul { grid-template-columns: 1fr; }
+    .card-head { padding: 14px 16px; }
+    .card-body { padding: 16px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="nav">
+  <a class="nav-brand" href="../gian.htm">KAGA JC <span>2026</span></a>
+  <a href="../資料一覧.htm">資料一覧</a>
+  <a href="../想定問答集.htm">想定問答集</a>
+  <a href="../参考資料/コンプライアンス審査ガイド.htm">コンプライアンス</a>
+  <a href="../改善ロードマップ.htm">改善ロードマップ</a>
+  <div class="nav-dd">
+    <button class="nav-dd-btn">実行タスク ▾</button>
+    <div class="nav-dd-menu">
+      <a href="../委員長の実行アクション.htm">委員長の実行アクション</a>
+      <a href="../室長確認依頼項目.htm">室長確認依頼項目</a>
+      <a href="../改善ロードマップ.htm">改善ロードマップ</a>
+    </div>
+  </div>
+  <button class="pdf-btn" onclick="window.print()">📄 PDFで保存</button>
+</div>
+
+<header>
+  <p class="eyebrow">審議対象資料 4</p>
+  <h1>KAGA JC GATHERING QUEST</h1>
+  <p class="subtitle">実施要項 ／ 5カード × 7ステップ × 当日役割設計</p>
+  <div class="meta">会員開発委員会アカデミー事業 ／ 仕様書 ver.2</div>
+</header>
+
+<main>
+
+<!-- Overview -->
+<div class="overview">
+  <h2>OVERVIEW</h2>
+  <p>「<strong>KAGA JC GATHERING QUEST（仮）</strong>」は、加賀JCメンバーの仕事や強み、地域での役割をカード化し、公益事業ミッションの実現に向けて誰の力をどう組み合わせるかを考える参加型カードワークです。レクリエーションではなく、<strong>相互理解／役割認識／共助の精神／組織への帰属意識／JC活動への主体的な参加意欲</strong>を高めるためのアカデミー研修教材として設計します。</p>
+  <p>本仕様書は議案本文に対応する詳細実施要項です。ミッションカード／ハードルカード／カードサンプルの個別ページからも本書を相互参照できます。</p>
+</div>
+
+<!-- Linked Sub-pages -->
+<div class="links">
+  <span class="label">関連ページ</span>
+  <a href="カード一覧.htm#mission">📋 ミッションカード一覧</a>
+  <a href="カード一覧.htm#hurdle">⚠️ ハードルカード一覧</a>
+  <a href="カード一覧.htm">🎴 カードサンプル一覧</a>
+  <a href="ふりかえりシート.htm">📝 ふりかえりシート</a>
+  <a href="../参考資料/ペルソナ.htm">👥 ペルソナ</a>
+  <a href="会場選定理由書.htm">🏢 会場選定理由書</a>
+  <a href="../想定問答集.htm">❓ 想定問答集</a>
+</div>
+
+<!-- TOC -->
+<nav class="toc">
+  <p class="toc-title">構成</p>
+  <ul>
+    <li data-c="c1"><a href="#c-c1"><span class="dot"></span>① ミッションカード</a></li>
+    <li data-c="c2"><a href="#c-c2"><span class="dot"></span>② ハードルカード</a></li>
+    <li data-c="c3"><a href="#c-c3"><span class="dot"></span>③ JCメンバーカード</a></li>
+    <li data-c="c4"><a href="#c-c4"><span class="dot"></span>④ 地域パートナーカード</a></li>
+    <li data-c="c5"><a href="#c-c5"><span class="dot"></span>⑤ ロールカード</a></li>
+    <li data-c="flow"><a href="#c-flow"><span class="dot"></span>ゲームの進行（7ステップ）</a></li>
+    <li data-c="role"><a href="#c-role"><span class="dot"></span>当日の役割設計</a></li>
+    <li data-c="kit"><a href="#c-kit"><span class="dot"></span>キット仕様（DIY）</a></li>
+    <li data-c="ops"><a href="#c-ops"><span class="dot"></span>運営・プライバシー配慮</a></li>
+  </ul>
+</nav>
+
+<!-- ① ミッションカード -->
+<section class="card" id="c-c1">
+  <div class="card-head">
+    <span class="badge"></span>
+    <h2>① ミッションカード</h2>
+    <span class="tag">Public Mission</span>
+  </div>
+  <div class="card-body">
+    <p>加賀JCやJCIでよく行う公益事業テーマを扱う題材カード。「事業を考える起点」として使用します。</p>
+    <p><span class="label">テーマ例</span></p>
+    <p>
+      <span class="pill">防災事業</span>
+      <span class="pill">青少年育成事業</span>
+      <span class="pill">家族向け例会</span>
+      <span class="pill">地域交流事業</span>
+      <span class="pill">地域清掃活動</span>
+      <span class="pill">まちづくり事業</span>
+      <span class="pill">会員交流事業</span>
+      <span class="pill">地域資源活用事業</span>
+      <span class="pill">拡大につながる地域連携事業</span>
+    </p>
+    <a class="more-link" href="カード一覧.htm#mission">→ ミッションカード一覧（詳細）</a>
+  </div>
+</section>
+
+<!-- ② ハードルカード -->
+<section class="card" id="c-c2">
+  <div class="card-head">
+    <span class="badge"></span>
+    <h2>② ハードルカード</h2>
+    <span class="tag">Constraints</span>
+  </div>
+  <div class="card-body">
+    <p>事業実施時に起こり得る制約条件を扱うカード。ミッション実現に「現実的な解像度」を加える役割を持ちます。</p>
+    <p><span class="label">条件例</span></p>
+    <p>
+      <span class="pill">予算少なめ</span>
+      <span class="pill">初参加メンバーが多い</span>
+      <span class="pill">家族連れ参加可</span>
+      <span class="pill">地域資源を活用する</span>
+      <span class="pill">役割分担を明確にする</span>
+      <span class="pill">事業後の広報が必要</span>
+      <span class="pill">雨天対応が必要</span>
+      <span class="pill">拡大対象者との接点をつくる</span>
+    </p>
+    <a class="more-link" href="カード一覧.htm#hurdle">→ ハードルカード一覧（詳細）</a>
+  </div>
+</section>
+
+<!-- ③ JCメンバーカード -->
+<section class="card" id="c-c3">
+  <div class="card-head">
+    <span class="badge"></span>
+    <h2>③ JCメンバーカード</h2>
+    <span class="tag">Members</span>
+  </div>
+  <div class="card-body">
+    <p>会員の仕事・強み・頼れる領域を可視化する教材カード。「どのような場面で頼り合えるか」を理解する起点です。</p>
+    <p><span class="label">記載項目</span>氏名／仕事・事業領域／頼れること／仕事へのこだわり／JCで活かせる場面／相談するときのポイント</p>
+    <a class="more-link" href="カード一覧.htm#jc-member">→ JCメンバーカード サンプル</a>
+  </div>
+</section>
+
+<!-- ④ 地域パートナーカード -->
+<section class="card" id="c-c4">
+  <div class="card-head">
+    <span class="badge"></span>
+    <h2>④ 地域パートナーカード</h2>
+    <span class="tag">Local Partners</span>
+  </div>
+  <div class="card-body">
+    <p>加賀地域の事業者・地域資源・拡大対象者の特徴や強みを整理する教材カード。地域接続力と拡大視点を養います。</p>
+    <p><span class="label">扱う対象</span>地域事業者／地域資源（観光・特産・施設等）／拡大対象者</p>
+    <p style="color:var(--muted);font-size:12px">※本人または事業者の承諾を得た情報のみを扱う。私生活・家庭事情・趣味・嗜好は扱わない。</p>
+    <a class="more-link" href="カード一覧.htm#partner">→ 地域パートナーカード サンプル</a>
+  </div>
+</section>
+
+<!-- ⑤ ロールカード -->
+<section class="card" id="c-c5">
+  <div class="card-head">
+    <span class="badge"></span>
+    <h2>⑤ ロールカード</h2>
+    <span class="tag">Roles</span>
+  </div>
+  <div class="card-body">
+    <p>公益事業に必要な役割を整理するカード。「事業を成立させるための機能セット」を可視化します。</p>
+    <p>
+      <span class="pill">委員長</span>
+      <span class="pill">副委員長</span>
+      <span class="pill">運営幹事</span>
+      <span class="pill">広報</span>
+      <span class="pill">設営</span>
+      <span class="pill">飲食</span>
+      <span class="pill">対外調整</span>
+      <span class="pill">安全管理</span>
+    </p>
+    <a class="more-link" href="カード一覧.htm#role">→ ロールカード サンプル</a>
+  </div>
+</section>
+
+<!-- ゲームの進行 -->
+<section class="card" id="c-flow">
+  <div class="card-head">
+    <span class="badge"></span>
+    <h2>ゲームの進行（7ステップ）</h2>
+    <span class="tag">Game Flow</span>
+  </div>
+  <div class="card-body">
+    <ol style="font-size:14px;padding-left:20px;margin:0">
+      <li><strong>ミッションカードを選ぶ</strong>：各グループで公益事業テーマを1枚選択。</li>
+      <li><strong>カードを引く</strong>：JCメンバーカード3枚＋地域パートナーカード3枚＝計6枚を引く。</li>
+      <li><strong>役割を確認する</strong>：各カードを読み合わせ、機能・実働・動員・広報・調整・設営・飲食・安全管理の役割を確認。</li>
+      <li><strong>実現プロセスを考える</strong>：自由な組み合わせで「企画→準備→実施→広報→事後フォロー」を設計。</li>
+      <li><strong>2周目チャレンジ</strong>：1周目で多用された人物カードを「委員長・副委員長・運営幹事になったため使用できない」想定とし、別の組み合わせで再挑戦。一部メンバーへの負担集中を疑似体験。</li>
+      <li><strong>グループ発表</strong>：選んだミッション／活用カード／役割分担／1・2周目の工夫を共有。</li>
+      <li><strong>ふりかえり</strong>：「自分が委員長／副委員長／運営幹事だったらどうするか」「今後どのようにメンバーに頼れるか」「自分は何で貢献できるか」を言語化（<a href="ふりかえりシート.htm">ふりかえりシート</a>に記入）。</li>
+    </ol>
+  </div>
+</section>
+
+<!-- 当日の役割設計 -->
+<section class="card" id="c-role">
+  <div class="card-head">
+    <span class="badge"></span>
+    <h2>当日の役割設計</h2>
+    <span class="tag">See 審議対象資料6</span>
+  </div>
+  <div class="card-body">
+    <p>当日は<b>運営本部（会員開発委員会）／テーブルゲームマスター（参加委員長）／メンター（正副メンバー）</b>の3層で運営します。</p>
+    <p>担当範囲・問いかけ例・NG行動・配置イメージなど詳細は<b>審議対象資料7：当日役割分担表</b>に集約しています。</p>
+    <p style="margin-top:8px"><a href="当日役割分担表.htm" style="display:inline-block;padding:8px 16px;background:#0a4b7a;color:#fff;border-radius:6px;text-decoration:none;font-size:13.5px">→ 審議対象資料7：当日役割分担表</a> <a href="../参考資料/テーブルゲームマスター進行台本.htm" style="margin-left:8px;font-size:12.5px;color:#1f6feb">参考9：GM進行台本</a> <a href="../参考資料/正副メンター役割確認シート.htm" style="margin-left:8px;font-size:12.5px;color:#1f6feb">参考10：メンター役割確認</a></p>
+  </div>
+</section>
+
+<!-- キット仕様 -->
+<section class="card" id="c-kit">
+  <div class="card-head">
+    <span class="badge"></span>
+    <h2>キット仕様（DIY）</h2>
+    <span class="tag">Reusable Kit</span>
+  </div>
+  <div class="card-body">
+    <p>A4カラー用紙印刷＋ダンボール型紙等で誰でも再現できるキットとして整備します。運営継承・他LOM展開を可能にする設計です。</p>
+    <table>
+      <thead>
+        <tr><th>パーツ</th><th>材料・方法</th><th>備考</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>カード本体（5種）</td><td>A4カラー用紙にカード4〜6面付けで印刷／カット</td><td>5カラー（種類別カラーコード）で識別</td></tr>
+        <tr><td>カード台紙</td><td>ダンボール型紙に貼付、または厚紙ラミネート</td><td>耐久性・再利用性を確保</td></tr>
+        <tr><td>カードホルダー</td><td>市販カードスタンドまたは段ボール製スタンド</td><td>グループテーブル毎に1セット配置</td></tr>
+        <tr><td>ワーク備品</td><td>付箋／太字ペン／シール／模造紙</td><td>グループ発表用</td></tr>
+        <tr><td>収納</td><td>A4サイズ書類ケース×グループ数</td><td>キット単位で持ち運び・保管可能</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- 運営・プライバシー -->
+<section class="card" id="c-ops">
+  <div class="card-head">
+    <span class="badge"></span>
+    <h2>運営・プライバシー配慮</h2>
+    <span class="tag">Governance</span>
+  </div>
+  <div class="card-body">
+    <p><strong>自己開示の範囲</strong>：個人の私生活や家庭事情、趣味、性癖などのプライバシーには踏み込みません。扱う情報は、青年経済人としての仕事観・仕事へのこだわり・地域での役割・JC活動で活かせる強み・仲間に頼ってほしいことに限定します。</p>
+    <p><strong>カード作成時の承諾取得</strong>：加賀JCメンバー・地域事業者・拡大対象者については、本人または事業者の承諾を得た範囲の情報のみカード化する。書面または電子フォームで承諾を取得し、変更要望はいつでも反映できる運用とする。</p>
+    <p><strong>事業後の広報配慮</strong>：個人カードの詳細や事業者情報は公開せず、事業趣旨や学びの内容を中心に発信する。</p>
+    <p><strong>配布物の扱い</strong>：参加者全員への配布物は「景品」ではなく、共助アクションキット／研修教材／公益事業啓発品／地域資源理解促進品として扱う。表彰品は抽選景品ではなく、共助行動や地域資源活用の提案を称えるものとする。</p>
+    <p><strong>キット二次利用</strong>：他LOMへの展開時は、加賀JC会員以外の情報を含むカードを除外し、テンプレートのみ提供する。</p>
+  </div>
+</section>
+
+<section class="related-docs" style="margin-top:24px;background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:20px 22px">
+  <h2 style="margin:0 0 12px;font-size:12px;color:#6b7280;letter-spacing:0.06em;text-transform:uppercase">📚 関連審議資料・参考資料</h2>
+  <p style="margin:0 0 12px;font-size:12.5px;color:#374151;line-height:1.95"><strong style="color:#1f6feb">審議対象資料</strong>：
+    <a href="事業フロー.htm">1) 事業フロー</a>　／　2) 事業計画収支予算書　／　
+    <a href="当日実施要項.htm">3) 当日実施要項</a>　／　4) 当日役割分担表　／　
+    <a href="KAGA_JC_GATHERING_仕様書.htm">5) KAGA JC GATHERING QUEST 実施要項</a>　／　6) KAGA JC GATHERING QUEST 手段選定理由書　／　
+    <a href="ゲーム進行マニュアル.htm">7) ゲーム進行マニュアル</a>　／　
+    <a href="../参考資料/テーブルゲームマスター進行台本.htm">8) テーブルゲームマスター進行台本</a>　／　
+    <a href="../参考資料/正副メンター役割確認シート.htm">9) 正副メンター役割確認シート</a>　／　
+    <a href="カード一覧.htm">10) カードサンプル一覧</a>　／　
+    <a href="カード一覧.htm#mission">11) ミッションカード一覧</a>　／　
+    <a href="カード一覧.htm#hurdle">12) ハードルカード一覧</a>　／　
+    <a href="ふりかえりシート.htm">13) ふりかえりシート</a>　／　14) グループ発表シート　／　
+    <a href="会場選定理由書.htm#layout">15) 会場レイアウト・安全管理資料</a>　／　16) 表彰品・配布物管理表　／　
+    <a href="個人情報・プライバシー配慮に関する運営ルール.htm">17) 個人情報・プライバシー配慮に関する運営ルール</a>
+  </p>
+  <p style="margin:0;font-size:12.5px;color:#374151;line-height:1.95"><strong style="color:#2da44e">参考資料</strong>：
+    1) アカデミー事業後アンケート ／ 会員開発委員会方針　／　2) 加賀LOMアカデミー事業 議案参考資料　／　3) 加賀JC2026年度 理事長所信　／　4) RNCアンケート評価法　／　5) 公開議案・他LOM事例調査資料　／　6) JCプログラム公式資料　／　7) ビジネスゲーム導入事例　／　8) ABC手法比較資料　／　9) KAGA JC GATHERING QUEST 図説資料　／　
+    <a href="事業フロー.htm">10) カードゲーム進行フロー図</a>　／　11) 学術・行動経済学的根拠メモ　／　12) 事前アンケート集計結果　／　13) 簡易ヒアリング要約　／　14) 加賀JC出席状況確認資料　／　15) 役割分担確認資料　／　16) 鎌田長明「JC論：議案の書き方」シリーズ　／　17) 大垣JC・高槻JC 議案作成マニュアル
+  </p>
+  <p style="margin:14px 0 0;font-size:10.5px;color:#9ca3af;text-align:right">※ リンク付き項目はページ作成済みの資料</p>
+</section>
+
+</main>
+
+
+<footer class="rel-footer">
+  <p class="rf-label">FOR STAFF — 関連資料ナビゲーション</p>
+  <ul>
+    <li><a href="../gian.htm">議案本文</a></li>
+  </ul>
+</footer>
+
+</body>
+</html>
