@@ -30,11 +30,22 @@ jobs:
           node-version: '24'
           cache: 'npm'
 
-      # ── 3. 依存パッケージインストール（Puppeteer 同梱 Chromium も含む）──
+      # ── 3. 日本語フォントインストール ────────────────────────────────────
+      - name: Install Japanese fonts
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends \
+            fonts-noto-cjk \
+            fonts-ipafont-gothic \
+            fonts-ipafont-mincho \
+            fonts-ipaexfont
+          fc-cache -fv
+
+      # ── 4. 依存パッケージインストール（Puppeteer 同梱 Chromium も含む）──
       - name: Install dependencies
         run: npm ci
 
-      # ── 4. ローカルサーバー起動（reference/ をルートとして配信）─────────
+      # ── 5. ローカルサーバー起動（reference/ をルートとして配信）─────────
       - name: Start local server
         run: npx serve reference -p 8080 --no-clipboard &
 
@@ -46,11 +57,11 @@ jobs:
             sleep 1
           done
 
-      # ── 5. PDF 生成 ────────────────────────────────────────────────────
+      # ── 6. PDF 生成 ────────────────────────────────────────────────────
       - name: Generate PDFs
         run: node scripts/generate-pdfs.js
 
-      # ── 6. 生成した PDF をリポジトリにコミット & プッシュ ───────────────
+      # ── 7. 生成した PDF をリポジトリにコミット & プッシュ ───────────────
       - name: Commit generated PDFs
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
