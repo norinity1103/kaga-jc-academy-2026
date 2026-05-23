@@ -1,0 +1,1852 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>事業計画収支予算書 — 会員開発委員会アカデミー事業</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: "ＭＳ 明朝", "MS Mincho", serif; font-size: 9pt;
+       background: #f4f4f4; color: #111; }
+.g-nav { background: #1e293b; color: #e2e8f0; padding: 8px 16px;
+          display: flex; align-items: center; gap: 16px; font-size: 13px;
+          font-family: -apple-system, BlinkMacSystemFont, sans-serif; }
+.g-nav a { color: #93c5fd; text-decoration: none; }
+.g-nav a:hover { text-decoration: underline; }
+.g-nav .brand { font-weight: 700; color: #fff; margin-right: 8px; font-size: 14px; }
+
+.tab-bar { background: #334155; padding: 8px 16px 0; display: flex; gap: 2px;
+            overflow-x: auto; font-family: -apple-system, BlinkMacSystemFont, sans-serif; }
+.tab { padding: 6px 16px; background: #475569; color: #cbd5e1; border: none;
+        border-radius: 4px 4px 0 0; cursor: pointer; font-size: 12px;
+        white-space: nowrap; transition: background .15s; }
+.tab:hover { background: #64748b; }
+.tab.active { background: #fff; color: #0f172a; font-weight: 600; }
+
+.sheet-wrap { padding: 16px; overflow-x: auto; }
+.sheet { background: white; padding: 8px; border: 1px solid #ccc;
+           min-width: 700px; }
+table { border-collapse: collapse; font-size: 9pt; font-family: "ＭＳ 明朝", "MS Mincho", serif; }
+td, th { border: 0.5pt solid #aaa; padding: 2px 4px;
+           min-width: 18px; vertical-align: middle; white-space: pre-wrap; }
+th { background: #f0f0f0; font-weight: bold; }
+.footer { text-align: center; padding: 12px; color: #94a3b8; font-size: 11px;
+           font-family: sans-serif; }
+</style>
+</head>
+<body>
+
+<div class="g-nav">
+  <a class="brand" href="../gian.htm">KAGA JC <span style="font-weight:400;font-size:11px">2026</span></a>
+  <a href="../資料一覧.htm">資料一覧</a>
+  <a href="../想定問答集.htm">想定問答集</a>
+  <a href="../参考資料/コンプライアンス審査ガイド.htm">コンプライアンス</a>
+  <a href="../改善ロードマップ.htm">改善ロードマップ</a>
+  <span style="color:#94a3b8;font-size:11px">｜ 事業計画収支予算書（様式2・3・4）</span>
+</div>
+
+<div class="tab-bar">
+<button class="tab active" onclick="showTab(0)">注意事項</button>
+<button class="tab" onclick="showTab(1)">収支予算書(様式2)</button>
+<button class="tab" onclick="showTab(2)">収益・費用明細書(様式3)</button>
+<button class="tab" onclick="showTab(3)">見積企業一覧表(様式4)</button>
+</div>
+
+<div class="sheet-wrap">
+
+<div id="sheet0" class="sheet" style="display:block">
+  <table>
+    <tbody>
+<tr>
+  <th colspan="3" style="font-weight:bold; font-size:18.0pt; text-align:center; vertical-align:middle">2025年度　財政予算様式フォ-ム</th>
+  <th style="font-size:11.0pt; vertical-align:middle"></th>
+  <th style="font-size:11.0pt; vertical-align:middle"></th>
+  <th style="font-size:11.0pt; vertical-align:middle"></th>
+</tr>
+<tr>
+  <th style="font-size:11.0pt; vertical-align:middle"></th>
+  <th style="font-size:11.0pt; vertical-align:middle"></th>
+  <th style="font-size:11.0pt; vertical-align:middle"></th>
+  <th style="font-size:11.0pt; vertical-align:middle"></th>
+  <th style="font-size:11.0pt; vertical-align:middle"></th>
+  <th style="font-size:11.0pt; vertical-align:middle"></th>
+</tr>
+<tr>
+  <td colspan="2" style="font-size:11.0pt; text-align:left; vertical-align:middle; white-space:pre-wrap">事業会計関連様式</td>
+  <td colspan="2" style="font-size:9.0pt; text-align:left; vertical-align:middle; white-space:pre-wrap"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-weight:bold; font-size:11.0pt; vertical-align:top"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; text-align:left; vertical-align:middle">様式1</td>
+  <td style="font-size:11.0pt; text-align:left; vertical-align:middle; white-space:pre-wrap">注意事項</td>
+  <td colspan="2" style="font-size:11.0pt; text-align:left; vertical-align:middle; white-space:pre-wrap"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; text-align:left; vertical-align:middle">様式2</td>
+  <td style="font-size:11.0pt; text-align:left; vertical-align:middle; white-space:pre-wrap">収支予算書</td>
+  <td colspan="2" style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">※必ず別記「勘定科目」を遵守して下さい。
+※予備費は全ての事業につき、事業予算の3%以内として下さい。</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; text-align:left; vertical-align:middle">様式3</td>
+  <td style="font-size:11.0pt; text-align:left; vertical-align:middle; white-space:pre-wrap">収益費用明細書</td>
+  <td colspan="2" style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">※見積№と一致しているか確認して、見積書にリンクさせて下さい。
+※摘要は何をいくつ使うのか具体的に記入。（数量の根拠が必要）</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; text-align:left; vertical-align:middle">様式4</td>
+  <td style="font-size:11.0pt; text-align:left; vertical-align:middle; white-space:pre-wrap">見積（請求）企業一覧表</td>
+  <td colspan="2" style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">見積NO.から見積書にリンクさせてください。</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-weight:bold; font-size:8.25pt; text-align:left; vertical-align:middle"></td>
+  <td style="font-weight:bold; font-size:9.0pt; text-align:left; vertical-align:middle; white-space:pre-wrap"></td>
+  <td style="font-weight:bold; font-size:9.0pt; vertical-align:middle; white-space:pre-wrap"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td colspan="3" style="font-weight:bold; font-size:18.0pt; text-align:center; vertical-align:middle; white-space:pre-wrap">2025年度　勘定科目一覧　　　　　</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; vertical-align:middle">【収益の部】</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle; white-space:pre-wrap">科目</td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle; white-space:pre-wrap">細　目</td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle; white-space:pre-wrap">勘定科目の内容説明</td>
+  <td style="font-size:11.0pt; vertical-align:middle">消費税等課税区分</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">登録料収益</td>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap"></td>
+  <td style="font-size:11.0pt; text-align:left; vertical-align:middle; white-space:pre-wrap">事業参加者の会費　（注１</td>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">課税収益</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">寄付金収益</td>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap"></td>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">企業・団体・個人からの事業に対する寄付金</td>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">特定収益</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td rowspan="3" style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">補助金</td>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">国庫補助金</td>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">国から事業に対する補助金</td>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">特定収益</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">地方公共団体補助金</td>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">地方公共団体から事業に対する補助金</td>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">特定収益</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">民間補助金</td>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">団体から事業に対する補助金</td>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">特定収益</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td rowspan="3" style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">助成金</td>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">国庫助成金</td>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">国より支出される事業委託金</td>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">特定収益（注２</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">地方公共団体助成金</td>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">地方公共団体より支出される事業委託金</td>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">特定収益（注２</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">民間助成金</td>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">団体より支出される事業委託金</td>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">特定収益（注２</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">広告料収益</td>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap"></td>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">新聞、プログラム等に掲載する広告協賛金</td>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">課税収益</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">販売収益</td>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap"></td>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">物品等の販売による収入</td>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">課税収益</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">事業繰入金</td>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap"></td>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">一般会計の事業費からの繰入金</td>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">その他収益</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">雑収益</td>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap"></td>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">預金利息</td>
+  <td style="font-size:11.0pt; vertical-align:middle">非課税収益（注３</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; vertical-align:middle">【費用の部】</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle; white-space:pre-wrap">科目</td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle; white-space:pre-wrap">細　目</td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle; white-space:pre-wrap">勘定科目の内容説明</td>
+  <td style="font-size:11.0pt; vertical-align:middle">消費税等課税区分</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td rowspan="6" style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">会場設営費</td>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">会場費</td>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">事業、大会等の会場使用料</td>
+  <td style="font-size:11.0pt; vertical-align:middle">課税支出</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">設営費</td>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">会場の舞台装置及び関連設備の費用</td>
+  <td style="font-size:11.0pt; vertical-align:middle">課税支出</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">レンタル料</td>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">機材等のレンタル料</td>
+  <td style="font-size:11.0pt; vertical-align:middle">課税支出</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">運送費</td>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">機材等の運搬料</td>
+  <td style="font-size:11.0pt; vertical-align:middle">課税支出</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">人件費</td>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">会場設営に関わる業者人件費</td>
+  <td style="font-size:11.0pt; vertical-align:middle">非課税その他 （注５</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">食事代</td>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">会場設営に関わるボランティア等の食事代</td>
+  <td style="font-size:11.0pt; vertical-align:middle">課税支出</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td rowspan="6" style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">企画・演出費</td>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">企画費</td>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">事業、大会等の企画費</td>
+  <td style="font-size:11.0pt; vertical-align:middle">課税支出</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">演出費</td>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">事業、大会等の演出費</td>
+  <td style="font-size:11.0pt; vertical-align:middle">課税支出</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">人件費</td>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">アルバイト、通訳、アドバイザ-等の人件費</td>
+  <td style="font-size:11.0pt; vertical-align:middle">課税支出（注５</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">旅費交通費</td>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">企画・演出に伴う旅費交通費</td>
+  <td style="font-size:11.0pt; vertical-align:middle">課税支出</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">消耗品費</td>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">企画・演出に伴う消耗品費</td>
+  <td style="font-size:11.0pt; vertical-align:middle">課税支出</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">食事代</td>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">企画・演出に伴うボランティア等の食事代</td>
+  <td style="font-size:11.0pt; vertical-align:middle">課税支出（注 １０</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td rowspan="11" style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">本部団関係費</td>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">会場費</td>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">本部団の会場使用料</td>
+  <td style="font-size:11.0pt; vertical-align:middle">課税支出</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">設営費</td>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">本部団の設営機材等の費用</td>
+  <td style="font-size:11.0pt; vertical-align:middle">課税支出</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">レンタル料</td>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">本部団の機材等のレンタル料</td>
+  <td style="font-size:10.0pt; vertical-align:middle; white-space:pre-wrap">課税支出</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">運送費</td>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">本部団機材の運搬費</td>
+  <td style="font-size:10.0pt; vertical-align:middle; white-space:pre-wrap">課税支出</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">人件費</td>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">事務職員、医師・看護婦等の給与及び謝礼金</td>
+  <td style="font-size:10.0pt; vertical-align:middle; white-space:pre-wrap">非課税その他（注５</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">旅費交通費</td>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">本部団運営に伴う旅費交通費</td>
+  <td style="font-size:10.0pt; vertical-align:middle; white-space:pre-wrap">課税支出（注６</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">保険料</td>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">本部団運営に伴う保険料</td>
+  <td style="font-size:10.0pt; vertical-align:middle; white-space:pre-wrap">非課税その他</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">食事代</td>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">本部団におけるボランティア等の食事代</td>
+  <td style="font-size:10.0pt; vertical-align:middle; white-space:pre-wrap">課税支出（注１０</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">通信費</td>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">本部団における通信費</td>
+  <td style="font-size:10.0pt; vertical-align:middle; white-space:pre-wrap">課税支出（注７</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">消耗品費</td>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">本部団における事務消耗品費</td>
+  <td style="font-size:10.0pt; vertical-align:middle; white-space:pre-wrap">課税支出</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">渉外費</td>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">渉外活動に関する記念品及び役員等の接遇に関する費用</td>
+  <td style="font-size:10.0pt; vertical-align:middle; white-space:pre-wrap">課税支出</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td rowspan="6" style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">講師関係費</td>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">諸謝金</td>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">講師等に支払った支払金で源泉徴収税を含む費用。記念品との併用不可</td>
+  <td style="font-size:10.0pt; vertical-align:middle; white-space:pre-wrap">課税支出</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">記念品代</td>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">講師等に謝礼として渡した記念品（土産）</td>
+  <td style="font-size:10.0pt; vertical-align:middle; white-space:pre-wrap">課税支出（注８</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">交通費</td>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">講師等に支払った交通費</td>
+  <td rowspan="2" style="font-size:10.0pt; text-align:left; vertical-align:middle; white-space:pre-wrap">課税支出</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">宿泊費</td>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">講師等に支払った宿泊費</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">保険料</td>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">講師等に伴う保険料</td>
+  <td style="font-size:10.0pt; vertical-align:middle; white-space:pre-wrap">非課税その他</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">食事代</td>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">講師等に対する飲食費用</td>
+  <td style="font-size:10.0pt; vertical-align:middle; white-space:pre-wrap">課税支出（注１０</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td rowspan="8" style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">広報費</td>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">会場費</td>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">広報活動を行うための会場使用料</td>
+  <td style="font-size:10.0pt; vertical-align:middle; white-space:pre-wrap">課税支出</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">設営費</td>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">広報活動を行うための設営機材等の費用</td>
+  <td style="font-size:10.0pt; vertical-align:middle; white-space:pre-wrap">課税支出</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">レンタル料</td>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">広報活動を行うための機材等のレンタル料</td>
+  <td style="font-size:10.0pt; vertical-align:middle; white-space:pre-wrap">課税支出</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">運営費</td>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">広報活動に関する企画費用・人件費</td>
+  <td style="font-size:10.0pt; vertical-align:middle; white-space:pre-wrap">課税支出</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">作成費</td>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">招待状・案内状・ポスタ-・チラシ・広報ビデオ等の作成印刷費</td>
+  <td style="font-size:10.0pt; vertical-align:middle; white-space:pre-wrap">課税支出</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">ＰＲ費</td>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">新聞・雑誌等の掲載料、および看板等の事業広報のための費用</td>
+  <td style="font-size:10.0pt; vertical-align:middle; white-space:pre-wrap">課税支出</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">通信費</td>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">招待状・案内状等の送付費用</td>
+  <td style="font-size:10.0pt; vertical-align:middle; white-space:pre-wrap">課税支出（注７</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">消耗品費</td>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">封筒代等広報に関する消耗品</td>
+  <td style="font-size:10.0pt; vertical-align:middle; white-space:pre-wrap">課税支出</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td rowspan="5" style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">資料作成費</td>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">資料費</td>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">資料に使用のため購入した資料費用</td>
+  <td style="font-size:10.0pt; vertical-align:middle; white-space:pre-wrap">課税支出</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">作成費</td>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">ビデオ・イラスト・当日配布資料・アンケ-ト等の作成印刷費用</td>
+  <td style="font-size:10.0pt; vertical-align:middle; white-space:pre-wrap">課税支出</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">レンタル料</td>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">資料作成に関する機材レンタル料</td>
+  <td style="font-size:10.0pt; vertical-align:middle; white-space:pre-wrap">課税支出</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">通信費</td>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">資料の事前の送付費用・運搬費用</td>
+  <td style="font-size:10.0pt; vertical-align:middle; white-space:pre-wrap">課税支出（注７</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">消耗品費</td>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">テ-プ・フィルム等資料作成の消耗品</td>
+  <td style="font-size:10.0pt; vertical-align:middle; white-space:pre-wrap">課税支出</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td rowspan="4" style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">報告書作成費</td>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">作成費</td>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">報告書・ビデオ等の作成・印刷費（写真・翻訳料・デザイン料等含む）</td>
+  <td style="font-size:10.0pt; vertical-align:middle; white-space:pre-wrap">課税支出</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">レンタル料</td>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">報告書作成に関する機材レンタル料</td>
+  <td style="font-size:10.0pt; vertical-align:middle; white-space:pre-wrap">課税支出</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">通信費</td>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">報告書等の送付費用・運搬費用</td>
+  <td style="font-size:10.0pt; vertical-align:middle; white-space:pre-wrap">課税支出（注７</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">消耗品費</td>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">テ-プ・フィルム等報告書作成の消耗品</td>
+  <td style="font-size:10.0pt; vertical-align:middle; white-space:pre-wrap">課税支出</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td rowspan="2" style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">渉外費</td>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">役員渉外費</td>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">対外役員等の接遇に関する費用</td>
+  <td style="font-size:10.0pt; vertical-align:middle; white-space:pre-wrap">非課税その他（注９</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">記念品代</td>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">渉外活動に関する記念品（土産代も含む）</td>
+  <td style="font-size:10.0pt; vertical-align:middle; white-space:pre-wrap">課税支出（注９</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td rowspan="3" style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">旅費交通費</td>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">交通費</td>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">事業・セミナ-等を行うために要した交通費</td>
+  <td style="font-size:10.0pt; vertical-align:middle; white-space:pre-wrap">課税支出（注６</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">宿泊費</td>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">事業・セミナ-等に行うために要した宿泊費</td>
+  <td style="font-size:10.0pt; vertical-align:middle; white-space:pre-wrap">課税支出（注６</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">旅費</td>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">事業・セミナ-等に行うために要した旅費</td>
+  <td style="font-size:10.0pt; vertical-align:middle; white-space:pre-wrap">課税支出（注６</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td colspan="2" style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">参加記念品費</td>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">事業参加者に渡す記念品</td>
+  <td style="font-size:10.0pt; vertical-align:middle; white-space:pre-wrap">課税支出（注８</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td colspan="2" style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">保険料</td>
+  <td style="font-size:11.0pt; text-align:left; vertical-align:middle; white-space:pre-wrap">事業に関わる損害保険料等</td>
+  <td style="font-size:10.0pt; vertical-align:middle; white-space:pre-wrap">非課税その他</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td colspan="2" style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">通信費</td>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">上記以外の通信費</td>
+  <td style="font-size:10.0pt; vertical-align:middle; white-space:pre-wrap">課税支出（注７</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td colspan="2" style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">雑費</td>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">性質上他の勘定科目に含まれないもの　振込手数料等</td>
+  <td style="font-size:10.0pt; vertical-align:middle; white-space:pre-wrap">内容によって判定</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td colspan="2" style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">予備費</td>
+  <td style="font-size:11.0pt; text-align:left; vertical-align:middle; white-space:pre-wrap">全ての事業につき総予算の3%以内としてください。</td>
+  <td style="font-size:10.0pt; vertical-align:middle; white-space:pre-wrap"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-weight:bold; font-size:9.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:10.0pt; vertical-align:middle">注１）コンファレンス、地区大会、全国大会他、純粋に会議・セミナーの登録料は「登録料収益」。</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:10.0pt; vertical-align:middle">注２） 原則として公益事業に支出してください。使用用途によって課税収益となる場合がありますので財政特別理事に相談下さい。</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:10.0pt; vertical-align:middle">注３） 受取利息は｢非課税収益｣、その他の雑収益は内容によって区分</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:10.0pt; vertical-align:middle">注４） 寄付金：企業からの協賛金など、企業・団体・個人などから事業などに対して無償で給付される</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:10.0pt; vertical-align:middle">　　　金銭補助金：政府や団体などに申請し、審査を通過することで交付される金銭的な給付</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:10.0pt; vertical-align:middle">　　　助成金：政府や団体などから資格要件を満たしていれば交付される金銭的な給付</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:10.0pt; vertical-align:middle">注５）   アルバイト等給与に該当するもの。人材派遣会社等に支払うものは｢課税支出｣</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:10.0pt; vertical-align:middle"> 注６）海外渡航費、海外での宿泊費等は｢非課税その他｣</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:10.0pt; vertical-align:middle">注７）国際電信電話、国際郵便は｢非課税その他｣</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:10.0pt; vertical-align:middle">注８）商品券等物品切手を渡す場合は｢非課税その他｣</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; vertical-align:middle">注９）金銭をそのまま渡す場合。物品等の場合は、その都度判定する</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:10.0pt; vertical-align:middle">注１０）食事代の中に軽減税率対象分がある場合は注意して下さい。</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:10.0pt; vertical-align:middle">注１１）公認会計士への報酬は事業費には計上せず、管理費で監査に対する報酬を支払う報告議案を別途上程してください。</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:10.0pt; vertical-align:middle">注１２）細目がない科目（参加記念品費・保険料・通信費・雑費・予備費等）について、様式４の細目欄は空欄としてく ださい。</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; vertical-align:middle">注１３）上記 注６）、注７）以外に海外で行う事業は国内の業者へ委託する場合もほぼ「非課税その他」の区分となるため、</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; vertical-align:middle">　　　　財政特別理事において都度判定する。</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+    </tbody>
+  </table>
+</div>
+
+<div id="sheet1" class="sheet" style="display:none">
+  <table>
+    <tbody>
+<tr>
+  <th style="font-size:18.0pt; vertical-align:middle"></th>
+  <th style="font-size:11.0pt; vertical-align:middle"></th>
+  <th style="font-size:11.0pt; vertical-align:middle"></th>
+  <th style="font-size:11.0pt; vertical-align:middle"></th>
+  <th style="font-size:11.0pt; vertical-align:middle"></th>
+  <th style="font-size:11.0pt; text-align:right; vertical-align:middle">[様式2]</th>
+  <th style="font-size:11.0pt; vertical-align:middle"></th>
+</tr>
+<tr>
+  <th colspan="6" style="font-size:12.0pt; text-align:center; vertical-align:middle">事　業　計　画　収　支　予　算　書</th>
+  <th style="font-size:11.0pt; vertical-align:middle"></th>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:12.0pt; vertical-align:middle"></td>
+  <td style="font-size:12.0pt; vertical-align:middle"></td>
+  <td style="font-size:12.0pt; vertical-align:middle"></td>
+  <td style="font-size:12.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td colspan="4" style="font-size:12.0pt; text-align:left; vertical-align:middle">事業名称：</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; text-align:right; vertical-align:middle">（単位　：　円）</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle">項　　　　目</td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle">予　算　額</td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle">前年度予算額</td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle">前年度決算額</td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle">摘　　要</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle">（収　益　の　部）</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle">1</td>
+  <td style="font-size:11.0pt; vertical-align:middle">登 録 料 収 益</td>
+  <td style="font-size:11.0pt; vertical-align:middle">0</td>
+  <td style="font-size:11.0pt; vertical-align:middle">0</td>
+  <td style="font-size:11.0pt; vertical-align:middle">0</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle">2</td>
+  <td style="font-size:11.0pt; vertical-align:middle">寄 付 金 収 益</td>
+  <td style="font-size:11.0pt; vertical-align:middle">0</td>
+  <td style="font-size:11.0pt; vertical-align:middle">0</td>
+  <td style="font-size:11.0pt; vertical-align:middle">0</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle">3</td>
+  <td style="font-size:11.0pt; vertical-align:middle">補 助 金</td>
+  <td style="font-size:11.0pt; vertical-align:middle">0</td>
+  <td style="font-size:11.0pt; vertical-align:middle">0</td>
+  <td style="font-size:11.0pt; vertical-align:middle">0</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle">4</td>
+  <td style="font-size:11.0pt; vertical-align:middle">助 成 金</td>
+  <td style="font-size:11.0pt; vertical-align:middle">0</td>
+  <td style="font-size:11.0pt; vertical-align:middle">0</td>
+  <td style="font-size:11.0pt; vertical-align:middle">0</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle">5</td>
+  <td style="font-size:11.0pt; vertical-align:middle">広 告 料 収 益</td>
+  <td style="font-size:11.0pt; vertical-align:middle">0</td>
+  <td style="font-size:11.0pt; vertical-align:middle">0</td>
+  <td style="font-size:11.0pt; vertical-align:middle">0</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle">6</td>
+  <td style="font-size:11.0pt; vertical-align:middle">販　売　収　益</td>
+  <td style="font-size:11.0pt; vertical-align:middle">0</td>
+  <td style="font-size:11.0pt; vertical-align:middle">0</td>
+  <td style="font-size:11.0pt; vertical-align:middle">0</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle">7</td>
+  <td style="font-size:11.0pt; vertical-align:middle">事　業　繰　入　金</td>
+  <td style="font-size:11.0pt; vertical-align:middle">0</td>
+  <td style="font-size:11.0pt; vertical-align:middle">0</td>
+  <td style="font-size:11.0pt; vertical-align:middle">0</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle">8</td>
+  <td style="font-size:11.0pt; vertical-align:middle">雑　　収　　益</td>
+  <td style="font-size:11.0pt; vertical-align:middle">0</td>
+  <td style="font-size:11.0pt; vertical-align:middle">0</td>
+  <td style="font-size:11.0pt; vertical-align:middle">0</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle">収益計</td>
+  <td style="font-size:11.0pt; vertical-align:middle">0</td>
+  <td style="font-size:11.0pt; vertical-align:middle">0</td>
+  <td style="font-size:11.0pt; vertical-align:middle">0</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle">（費用の部）</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle">1</td>
+  <td style="font-size:11.0pt; vertical-align:middle">会場設営費</td>
+  <td style="font-size:11.0pt; vertical-align:middle">0</td>
+  <td style="font-size:11.0pt; vertical-align:middle">0</td>
+  <td style="font-size:11.0pt; vertical-align:middle">0</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle">2</td>
+  <td style="font-size:11.0pt; vertical-align:middle">企画・演出費</td>
+  <td style="font-size:11.0pt; vertical-align:middle">0</td>
+  <td style="font-size:11.0pt; vertical-align:middle">0</td>
+  <td style="font-size:11.0pt; vertical-align:middle">0</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle">3</td>
+  <td style="font-size:11.0pt; vertical-align:middle">本部団関係費</td>
+  <td style="font-size:11.0pt; vertical-align:middle">0</td>
+  <td style="font-size:11.0pt; vertical-align:middle">0</td>
+  <td style="font-size:11.0pt; vertical-align:middle">0</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle">4</td>
+  <td style="font-size:11.0pt; vertical-align:middle">講師関係費</td>
+  <td style="font-size:11.0pt; vertical-align:middle">0</td>
+  <td style="font-size:11.0pt; vertical-align:middle">0</td>
+  <td style="font-size:11.0pt; vertical-align:middle">0</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle">5</td>
+  <td style="font-size:11.0pt; vertical-align:middle">広報費</td>
+  <td style="font-size:11.0pt; vertical-align:middle">0</td>
+  <td style="font-size:11.0pt; vertical-align:middle">0</td>
+  <td style="font-size:11.0pt; vertical-align:middle">0</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle">6</td>
+  <td style="font-size:11.0pt; vertical-align:middle">資料作成費</td>
+  <td style="font-size:11.0pt; vertical-align:middle">0</td>
+  <td style="font-size:11.0pt; vertical-align:middle">0</td>
+  <td style="font-size:11.0pt; vertical-align:middle">0</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle">7</td>
+  <td style="font-size:11.0pt; vertical-align:middle">報告書作成費</td>
+  <td style="font-size:11.0pt; vertical-align:middle">0</td>
+  <td style="font-size:11.0pt; vertical-align:middle">0</td>
+  <td style="font-size:11.0pt; vertical-align:middle">0</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle">8</td>
+  <td style="font-size:11.0pt; vertical-align:middle">渉外費</td>
+  <td style="font-size:11.0pt; vertical-align:middle">0</td>
+  <td style="font-size:11.0pt; vertical-align:middle">0</td>
+  <td style="font-size:11.0pt; vertical-align:middle">0</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle">9</td>
+  <td style="font-size:11.0pt; vertical-align:middle">旅費交通費</td>
+  <td style="font-size:11.0pt; vertical-align:middle">0</td>
+  <td style="font-size:11.0pt; vertical-align:middle">0</td>
+  <td style="font-size:11.0pt; vertical-align:middle">0</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle">10</td>
+  <td style="font-size:11.0pt; vertical-align:middle">参加記念品費</td>
+  <td style="font-size:11.0pt; vertical-align:middle">0</td>
+  <td style="font-size:11.0pt; vertical-align:middle">0</td>
+  <td style="font-size:11.0pt; vertical-align:middle">0</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle">11</td>
+  <td style="font-size:11.0pt; vertical-align:middle">保険料</td>
+  <td style="font-size:11.0pt; vertical-align:middle">0</td>
+  <td style="font-size:11.0pt; vertical-align:middle">0</td>
+  <td style="font-size:11.0pt; vertical-align:middle">0</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle">12</td>
+  <td style="font-size:11.0pt; vertical-align:middle">通信費</td>
+  <td style="font-size:11.0pt; vertical-align:middle">0</td>
+  <td style="font-size:11.0pt; vertical-align:middle">0</td>
+  <td style="font-size:11.0pt; vertical-align:middle">0</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle">13</td>
+  <td style="font-size:11.0pt; vertical-align:middle">雑費</td>
+  <td style="font-size:11.0pt; vertical-align:middle">0</td>
+  <td style="font-size:11.0pt; vertical-align:middle">0</td>
+  <td style="font-size:11.0pt; vertical-align:middle">0</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle">14</td>
+  <td style="font-size:11.0pt; vertical-align:middle">予備費</td>
+  <td style="font-size:11.0pt; vertical-align:middle">0</td>
+  <td style="font-size:11.0pt; vertical-align:middle">0</td>
+  <td style="font-size:11.0pt; vertical-align:middle">0</td>
+  <td style="font-size:11.0pt; vertical-align:middle">0</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle">支出計</td>
+  <td style="font-size:11.0pt; vertical-align:middle">0</td>
+  <td style="font-size:11.0pt; vertical-align:middle">0</td>
+  <td style="font-size:11.0pt; vertical-align:middle">0</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle">収支差額</td>
+  <td style="font-size:11.0pt; vertical-align:middle">0</td>
+  <td style="font-size:11.0pt; vertical-align:middle">0</td>
+  <td style="font-size:11.0pt; vertical-align:middle">0</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+    </tbody>
+  </table>
+</div>
+
+<div id="sheet2" class="sheet" style="display:none">
+  <table>
+    <tbody>
+<tr>
+  <th style="font-size:18.0pt; vertical-align:middle"></th>
+  <th style="font-size:11.0pt; vertical-align:middle"></th>
+  <th style="font-size:11.0pt; vertical-align:middle"></th>
+  <th colspan="5" style="font-size:11.0pt; text-align:right; vertical-align:middle">[様式3]</th>
+  <th style="font-size:11.0pt; vertical-align:middle"></th>
+</tr>
+<tr>
+  <th style="font-size:11.0pt; vertical-align:middle"></th>
+  <th colspan="6" style="font-size:11.0pt; text-align:left; vertical-align:middle">事業名称：</th>
+  <th style="font-size:11.0pt; text-align:right; vertical-align:middle"></th>
+  <th style="font-size:11.0pt; vertical-align:middle"></th>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; text-align:right; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; text-align:right; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; text-align:right; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; text-align:right; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; text-align:right; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td colspan="4" style="font-size:11.0pt; text-align:center; vertical-align:middle">（　収　益　明　細　書　）</td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; text-align:right; vertical-align:middle">（単位：円）</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td colspan="4" style="font-size:11.0pt; text-align:center; vertical-align:middle">科　　　　　目</td>
+  <td colspan="2" style="font-size:11.0pt; text-align:center; vertical-align:middle">摘　　　　　　　　　要</td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle">金　　　額</td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle">No</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; text-align:right; vertical-align:middle">(</td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle">1</td>
+  <td style="font-size:11.0pt; vertical-align:middle">)</td>
+  <td style="font-size:11.0pt; vertical-align:middle">登 録 料 収 益</td>
+  <td colspan="2" style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle">0</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; text-align:right; vertical-align:middle">(</td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle">)</td>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">括弧内に様式2の項目番号を入れてください</td>
+  <td colspan="2" style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle">0</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; text-align:right; vertical-align:middle">(</td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle">)</td>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">括弧内に様式2の項目番号を入れてください</td>
+  <td colspan="2" style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle">0</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; text-align:right; vertical-align:middle">(</td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle">)</td>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">括弧内に様式2の項目番号を入れてください</td>
+  <td colspan="2" style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle">0</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td colspan="6" style="font-size:11.0pt; text-align:center; vertical-align:middle">　　　　　　　　　　　　　　　　　　　　　　合　　　　　　　計</td>
+  <td style="font-size:11.0pt; vertical-align:middle">0</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td colspan="5" style="font-size:11.0pt; text-align:right; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td colspan="4" style="font-size:11.0pt; text-align:center; vertical-align:middle">（　費　用　明　細　書　）</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; text-align:right; vertical-align:middle">（単位：円）</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td colspan="4" style="font-size:11.0pt; text-align:center; vertical-align:middle">科　　　　　目</td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle">細　　　目</td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle">摘　　　　要</td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle">金　　　額</td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle">No</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; text-align:right; vertical-align:middle">(</td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle">1</td>
+  <td style="font-size:11.0pt; vertical-align:middle">)</td>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">会場設営費</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle">0</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle">会場設営費</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle">0</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle">会場設営費</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle">0</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle">会場設営費</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle">　小　　　　計</td>
+  <td style="font-size:11.0pt; vertical-align:middle">0</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; text-align:right; vertical-align:middle">(</td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle">)</td>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">括弧内に様式2の項目番号を入れてください</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle">0</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle">括弧内に様式2の項目番号を入れてください</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle">0</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle">括弧内に様式2の項目番号を入れてください</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle">0</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle">括弧内に様式2の項目番号を入れてください</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle">　小　　　　計</td>
+  <td style="font-size:11.0pt; vertical-align:middle">0</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; text-align:right; vertical-align:middle">(</td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle">)</td>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">括弧内に様式2の項目番号を入れてください</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle">0</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle">括弧内に様式2の項目番号を入れてください</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle">0</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle">括弧内に様式2の項目番号を入れてください</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle">0</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle">括弧内に様式2の項目番号を入れてください</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle">　小　　　　計</td>
+  <td style="font-size:11.0pt; vertical-align:middle">0</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; text-align:right; vertical-align:middle">(</td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle">)</td>
+  <td style="font-size:11.0pt; vertical-align:middle; white-space:pre-wrap">括弧内に様式2の項目番号を入れてください</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle">0</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle">括弧内に様式2の項目番号を入れてください</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle">0</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle">括弧内に様式2の項目番号を入れてください</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle">0</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle">括弧内に様式2の項目番号を入れてください</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle">　小　　　　計</td>
+  <td style="font-size:11.0pt; vertical-align:middle">0</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; text-align:right; vertical-align:middle">(</td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle">14</td>
+  <td style="font-size:11.0pt; vertical-align:middle">)</td>
+  <td style="font-size:11.0pt; vertical-align:middle">予備費</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle">0</td>
+  <td style="font-size:11.0pt; vertical-align:middle">0</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle">予備費</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle">　小　　　　計</td>
+  <td style="font-size:11.0pt; vertical-align:middle">0</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle">　合　　　　計</td>
+  <td style="font-size:11.0pt; vertical-align:middle">0</td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; vertical-align:middle"></td>
+</tr>
+    </tbody>
+  </table>
+</div>
+
+<div id="sheet3" class="sheet" style="display:none">
+  <table>
+    <tbody>
+<tr>
+  <th style="font-size:18.0pt; text-align:center; vertical-align:middle"></th>
+  <th style="font-size:11.0pt; text-align:center; vertical-align:middle"></th>
+  <th style="font-size:11.0pt; text-align:center; vertical-align:middle"></th>
+  <th style="font-size:11.0pt; text-align:center; vertical-align:middle"></th>
+  <th style="font-size:11.0pt; text-align:center; vertical-align:middle"></th>
+  <th style="font-size:11.0pt; text-align:center; vertical-align:middle">〔様式4〕</th>
+</tr>
+<tr>
+  <th colspan="6" style="font-size:14.0pt; text-align:center; vertical-align:middle">見積企業一覧表</th>
+</tr>
+<tr>
+  <td colspan="6" style="font-size:11.0pt; text-align:center; vertical-align:middle">（　事業名称　：　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　）</td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td colspan="5" style="font-size:11.0pt; text-align:center; vertical-align:middle">採　　用　　企　　業</td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle; white-space:pre-wrap">見積№</td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle">企　業　名</td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle">支払内容（科目・細目）</td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle">金  額</td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle">有効期限</td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; text-align:right; vertical-align:middle; white-space:pre-wrap">0</td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; text-align:right; vertical-align:middle; white-space:pre-wrap">0</td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; text-align:right; vertical-align:middle; white-space:pre-wrap">0</td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; text-align:right; vertical-align:middle; white-space:pre-wrap">0</td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; text-align:right; vertical-align:middle; white-space:pre-wrap">0</td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; text-align:right; vertical-align:middle; white-space:pre-wrap">0</td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; text-align:right; vertical-align:middle; white-space:pre-wrap">0</td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; text-align:right; vertical-align:middle; white-space:pre-wrap">0</td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; text-align:right; vertical-align:middle; white-space:pre-wrap">0</td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; text-align:right; vertical-align:middle; white-space:pre-wrap">0</td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; text-align:right; vertical-align:middle; white-space:pre-wrap">0</td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; text-align:right; vertical-align:middle; white-space:pre-wrap">0</td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td colspan="2" style="font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle">合計金額</td>
+  <td style="font-size:11.0pt; text-align:right; vertical-align:middle">0</td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td colspan="3" style="font-size:11.0pt; text-align:left; vertical-align:middle">※不要な行は削除すること</td>
+  <td style="font-size:11.0pt; text-align:right; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td colspan="6" style="font-size:11.0pt; text-align:left; vertical-align:middle">※支払先が個人の場合は個人名を企業名欄に記載し、金額欄は源泉税込みの金額を記載すること</td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; text-align:left; vertical-align:middle">※見積書へ見積No.をまたは請求書へ請求No.を記載すること</td>
+  <td style="font-weight:bold; font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+  <td style="font-weight:bold; font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+  <td style="font-weight:bold; font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+  <td style="font-weight:bold; font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+  <td style="font-weight:bold; font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td colspan="3" style="font-size:11.0pt; text-align:left; vertical-align:middle"></td>
+  <td style="font-weight:bold; font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+  <td style="font-weight:bold; font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+  <td style="font-weight:bold; font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td colspan="6" style="font-weight:bold; font-size:12.0pt; text-align:left; vertical-align:middle">※採用企業合計＋振込手数料＋予備費＝事業費合計になることを確認下さい。</td>
+</tr>
+<tr>
+  <td style="font-weight:bold; font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle; white-space:pre-wrap">見積№</td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle">振込口座名義</td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle">支払銀行・支店名</td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle">口座番号</td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle">振込手数料</td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle">（普・当）</td>
+  <td style="font-size:11.0pt; text-align:right; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle">（普・当）</td>
+  <td style="font-size:11.0pt; text-align:right; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle">（普・当）</td>
+  <td style="font-size:11.0pt; text-align:right; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle">（普・当）</td>
+  <td style="font-size:11.0pt; text-align:right; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle">（普・当）</td>
+  <td style="font-size:11.0pt; text-align:right; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle">（普・当）</td>
+  <td style="font-size:11.0pt; text-align:right; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle">（普・当）</td>
+  <td style="font-size:11.0pt; text-align:right; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle">合計金額</td>
+  <td style="font-size:11.0pt; text-align:right; vertical-align:middle">0</td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td colspan="3" style="font-size:11.0pt; text-align:left; vertical-align:middle">※不要な行は削除すること</td>
+  <td style="font-size:11.0pt; text-align:right; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+</tr>
+<tr>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; text-align:right; vertical-align:middle"></td>
+  <td style="font-size:11.0pt; text-align:center; vertical-align:middle"></td>
+</tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+<div class="footer">
+  加賀青年会議所 2026年度 会員開発委員会アカデミー事業 — 事業予算資料
+  <span style="display:none" id="tab-count">4</span>
+</div>
+
+<script>
+function showTab(idx) {
+  var tabs = document.querySelectorAll('.tab');
+  var sheets = document.querySelectorAll('.sheet');
+  tabs.forEach(function(t, i) {
+    t.classList.toggle('active', i === idx);
+  });
+  sheets.forEach(function(s, i) {
+    s.style.display = i === idx ? 'block' : 'none';
+  });
+}
+</script>
+</body>
+</html>
