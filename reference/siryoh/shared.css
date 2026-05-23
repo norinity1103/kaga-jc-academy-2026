@@ -150,6 +150,29 @@ header .meta {
   margin-right:   12px;
 }
 .nav a:hover { text-decoration: underline; }
+
+/* — PDF download button — */
+.pdf-btn {
+  margin-left:    auto;
+  display:        inline-flex;
+  align-items:    center;
+  gap:            5px;
+  padding:        5px 13px;
+  background:     var(--c1);
+  color:          #fff;
+  border:         none;
+  border-radius:  var(--r-sm);
+  font-size:      12px;
+  font-family:    inherit;
+  font-weight:    600;
+  cursor:         pointer;
+  white-space:    nowrap;
+  letter-spacing: .02em;
+  transition:     background .15s;
+}
+.pdf-btn:hover  { background: #b91c3c; }
+.pdf-btn:active { background: #9f1239; }
+
 .links {
   /* — Layout — */
   display:        flex;
@@ -835,7 +858,7 @@ footer {
    § 18.  Print
    ───────────────────────────────────────────────────────── */
 @media print {
-  .links, .toolbar { display: none; }
+  .nav, .pdf-btn, .links, .toolbar { display: none; }
   footer { display: none; }
   body   { background: #fff; color: #000; }
   main   { padding: 0; margin: 0; max-width: none; }
