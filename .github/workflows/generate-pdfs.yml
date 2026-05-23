@@ -55,7 +55,8 @@ jobs:
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git add reference/pdf/
+          git add 'reference/siryoh/shingi/*.pdf' 'reference/siryoh/sankoh/*.pdf' 'reference/siryoh/想定問答集.pdf' 2>/dev/null || true
+          git add reference/siryoh/
           git diff --staged --quiet \
             && echo "変更なし — コミットをスキップ" \
             || git commit -m "chore: PDFを自動生成 [skip ci]"
