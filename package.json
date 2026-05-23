@@ -7,6 +7,9 @@
     "generate-pdfs": "node scripts/generate-pdfs.js",
     "serve": "serve reference -p 8080 --no-clipboard"
   },
+  "engines": {
+    "node": ">=24"
+  },
   "dependencies": {
     "puppeteer": "^22.0.0",
     "serve": "^14.0.0"
