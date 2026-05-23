@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>コンプライアンス様式（受付表・チェックシート）— 会員開発委員会アカデミー事業</title>
+<link rel="stylesheet" href="../shared.css">
+<style>
+/* ── Tab UI ── */
+.wb-tabs {
+  display: flex;
+  gap: 0;
+  border-bottom: 2px solid #e5e7eb;
+  margin-bottom: 0;
+  background: #f6f7f9;
+  padding: 16px 16px 0;
+  position: sticky;
+  top: 48px;
+  z-index: 100;
+}
+.wb-tab {
+  padding: 9px 24px 10px;
+  font-size: 13.5px;
+  font-weight: 600;
+  border: 1px solid #e5e7eb;
+  border-bottom: none;
+  border-radius: 8px 8px 0 0;
+  background: #eef0f3;
+  color: #6b7280;
+  cursor: pointer;
+  margin-right: 4px;
+  transition: background 0.12s, color 0.12s;
+  font-family: inherit;
+  line-height: 1.4;
+}
+.wb-tab.active {
+  background: #fff;
+  color: #0f172a;
+  border-color: #e5e7eb;
+  border-bottom: 2px solid #fff;
+  margin-bottom: -2px;
+  z-index: 1;
+}
+.wb-tab:hover:not(.active) { background: #e5e7eb; }
+
+/* ── Tab Panels ── */
+.wb-panel { display: none; }
+.wb-panel.active { display: block; }
+
+/* ── Form header table ── */
+.form-header-tbl {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13.5px;
+  margin-bottom: 24px;
+}
+.form-header-tbl th,
+.form-header-tbl td {
+  border: 1px solid #d1d5db;
+  padding: 8px 12px;
+  vertical-align: top;
+}
+.form-header-tbl th {
+  background: #f6f8fa;
+  color: #374151;
+  font-weight: 600;
+  width: 160px;
+  white-space: nowrap;
+}
+.form-header-tbl td {
+  background: #fff;
+  color: #1f2937;
+}
+.form-header-tbl .filled {
+  font-weight: 500;
+}
+.form-header-tbl .blank {
+  min-height: 22px;
+  display: block;
+  border-bottom: 1px solid #cbd5e1;
+  min-width: 140px;
+}
+
+/* ── Check item rows ── */
+.chk-section {
+  margin-bottom: 28px;
+}
+.chk-section-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #0f172a;
+  border-left: 4px solid #2da44e;
+  padding: 6px 10px;
+  background: #f0fdf4;
+  border-radius: 0 6px 6px 0;
+  margin-bottom: 12px;
+}
+.chk-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 8px 10px;
+  border-radius: 6px;
+  margin-bottom: 6px;
+  font-size: 13.5px;
+  line-height: 1.65;
+}
+.chk-item.checked {
+  background: #ecfdf5;
+  border: 1px solid #86efac;
+}
+.chk-item.unchecked {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  color: #9ca3af;
+}
+.chk-mark {
+  font-size: 16px;
+  flex-shrink: 0;
+  margin-top: 1px;
+  line-height: 1.4;
+}
+.chk-item.checked .chk-mark { color: #16a34a; }
+.chk-item.unchecked .chk-mark { color: #d1d5db; }
+.chk-note {
+  font-size: 12px;
+  color: #6b7280;
+  margin-top: 3px;
+  display: block;
+}
+.chk-note.docs {
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  color: #1e40af;
+  border-radius: 4px;
+  padding: 2px 8px;
+  display: inline-block;
+  margin-top: 4px;
+}
+
+/* ── Staff input area ── */
+.staff-area {
+  background: #fafbfc;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 18px 22px;
+  margin-top: 24px;
+}
+.staff-area h3 {
+  font-size: 13px;
+  font-weight: 700;
+  color: #6b7280;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  margin: 0 0 14px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #e5e7eb;
+}
+.staff-grid {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 10px 12px;
+  align-items: start;
+  font-size: 13.5px;
+}
+.staff-grid .lbl { color: #6b7280; font-weight: 600; padding-top: 4px; }
+.staff-grid .inp-line {
+  border-bottom: 1px solid #cbd5e1;
+  min-height: 26px;
+  width: 100%;
+}
+.staff-grid .inp-box {
+  border: 1px solid #cbd5e1;
+  border-radius: 4px;
+  min-height: 56px;
+  width: 100%;
+  padding: 4px 6px;
+}
+
+/* ── Q&A flow (checksheet) ── */
+.qa-section {
+  margin-bottom: 28px;
+}
+.qa-section-title {
+  font-size: 14px;
+  font-weight: 700;
+  background: #0f172a;
+  color: #fff;
+  padding: 7px 14px;
+  border-radius: 6px;
+  margin-bottom: 12px;
+}
+.qa-block {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+.qa-question {
+  background: #f6f8fa;
+  border-bottom: 1px solid #e5e7eb;
+  padding: 9px 14px;
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #0f172a;
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+.qa-qnum {
+  background: #2da44e;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 1px 9px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+.qa-options { padding: 10px 14px; display: flex; flex-direction: column; gap: 6px; }
+.qa-opt {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  font-size: 13px;
+  padding: 7px 10px;
+  border-radius: 6px;
+  line-height: 1.6;
+}
+.qa-opt.selected {
+  background: #ecfdf5;
+  border: 1px solid #86efac;
+}
+.qa-opt.unselected {
+  background: #fff;
+  border: 1px solid #f0f0f0;
+  color: #9ca3af;
+}
+.qa-opt-mark {
+  font-size: 15px;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+.qa-opt.selected .qa-opt-mark { color: #16a34a; }
+.qa-opt.unselected .qa-opt-mark { color: #d1d5db; }
+.qa-opt-label {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  background: #374151;
+  color: #fff;
+  border-radius: 3px;
+  padding: 0 5px;
+  margin-right: 4px;
+  flex-shrink: 0;
+}
+.qa-opt.selected .qa-opt-label { background: #15803d; }
+.qa-note {
+  font-size: 11.5px;
+  color: #6b7280;
+  margin-top: 3px;
+  display: block;
+}
+.qa-skip {
+  padding: 6px 14px 10px;
+  font-size: 12px;
+  color: #9ca3af;
+  font-style: italic;
+}
+.qa-arrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  color: #2da44e;
+  font-weight: 700;
+  background: #f0fdf4;
+  border-radius: 4px;
+  padding: 1px 7px;
+  margin-left: 6px;
+  white-space: nowrap;
+}
+
+/* ── Print ── */
+@media print {
+  @page { size: A4 portrait; margin: 12mm 14mm; }
+  .nav, .pdf-btn, .wb-tabs { display: none !important; }
+  footer { display: none !important; }
+  body { background: #fff; }
+  main { padding: 0; margin: 0; max-width: none; }
+  .wb-panel { display: block !important; }
+  .wb-panel + .wb-panel { page-break-before: always; }
+  .card, .chk-section, .qa-block { page-break-inside: avoid; }
+  .chk-item.unchecked { color: #1f2937; }
+  .qa-opt.unselected { color: #1f2937; }
+  header { background: #fff !important; color: #1f2937 !important; padding: 20px 0 14px; }
+  header .eyebrow, header .subtitle, header .meta { color: #6b7280 !important; }
+}
+
+/* ── misc ── */
+.form-title-bar {
+  background: linear-gradient(90deg, #1e293b, #0f4c81);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 700;
+  padding: 12px 20px;
+  border-radius: 8px 8px 0 0;
+  letter-spacing: .04em;
+}
+.form-subtitle-bar {
+  background: #dbeafe;
+  color: #1e40af;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 20px;
+  border-bottom: 1px solid #bfdbfe;
+  letter-spacing: .02em;
+}
+.form-body {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-top: none;
+  border-radius: 0 0 8px 8px;
+  padding: 20px 22px;
+  margin-bottom: 24px;
+}
+</style>
+</head>
+<body>
+
+<!-- ── Navigation ── -->
+<div class="nav">
+  <a class="nav-brand" href="../gian.htm">KAGA JC <span>2026</span></a>
+  <a href="../資料一覧.htm">資料一覧</a>
+  <a href="../想定問答集.htm">想定問答集</a>
+  <a href="コンプライアンス審査ガイド.htm">コンプライアンス</a>
+  <a href="../改善ロードマップ.htm">改善ロードマップ</a>
+  <div class="nav-dd">
+    <button class="nav-dd-btn">実行タスク ▾</button>
+    <div class="nav-dd-menu">
+      <a href="../委員長の実行アクション.htm">委員長の実行アクション</a>
+      <a href="../室長確認依頼項目.htm">室長確認依頼項目</a>
+      <a href="../改善ロードマップ.htm">改善ロードマップ</a>
+    </div>
+  </div>
+  <button class="pdf-btn" onclick="window.print()">📄 PDFで保存</button>
+</div>
+
+<!-- ── Header ── -->
+<header style="background: linear-gradient(135deg,#0f172a,#1e293b); color:#fff; padding:40px 24px 32px; text-align:center;">
+  <p class="eyebrow" style="font-size:11px; letter-spacing:.16em; color:#94a3b8; margin:0 0 8px; text-transform:uppercase;">JCI 公式コンプライアンス様式 — 充填済み</p>
+  <h1 style="margin:0 0 6px; font-size:26px; font-weight:700;">コンプライアンス様式</h1>
+  <p class="subtitle" style="color:#cbd5e1; font-size:14px; margin:0;">様式1 受付表 ／ 様式3 チェックシート</p>
+  <p class="meta" style="margin-top:14px; font-size:12px; color:#94a3b8;">2026年度 会員開発委員会アカデミー事業 ／ 議案ファイル名: 722-22K-0426K</p>
+</header>
+
+<!-- ── Tab Bar ── -->
+<div class="wb-tabs" id="wbTabs">
+  <button class="wb-tab active" onclick="switchTab('tab1', this)">様式1　受付表</button>
+  <button class="wb-tab" onclick="switchTab('tab2', this)">様式3　チェックシート</button>
+</div>
+
+<main>
+
+<!-- ════════════════════════════════════════
+     PANEL 1: 様式1 受付表
+     ════════════════════════════════════════ -->
+<div class="wb-panel active" id="tab1">
+
+  <div class="form-title-bar">規則様式1　コンプライアンス受付表</div>
+  <div class="form-subtitle-bar">doc_692e39bbba14a095835.xlsx — 様式1 / 全議案提出必須</div>
+  <div class="form-body">
+
+    <!-- ヘッダー情報 -->
+    <table class="form-header-tbl">
+      <tr>
+        <th>議案ファイル名</th>
+        <td><span class="filled">722-22K-0426K</span></td>
+        <th>議長・委員長確認日</th>
+        <td><span class="filled">2026年5月24日</span></td>
+      </tr>
+      <tr>
+        <th>事業名</th>
+        <td colspan="3"><span class="filled">会員開発委員会アカデミー事業</span></td>
+      </tr>
+      <tr>
+        <th>会議・委員会名</th>
+        <td><span class="filled">会員開発委員会</span></td>
+        <th>委員長名・役職</th>
+        <td><span class="filled">藤澤祐希　委員長</span></td>
+      </tr>
+      <tr>
+        <th>提出者・役職</th>
+        <td><span class="filled">中谷一世　室長</span></td>
+        <th>提出者連絡先</th>
+        <td><span class="blank"></span></td>
+      </tr>
+      <tr>
+        <th>会員会議所会議承認予定日</th>
+        <td colspan="3"><span class="filled">2026年5月24日</span></td>
+      </tr>
+    </table>
+
+    <!-- ① 著作物の利用方法 -->
+    <div class="chk-section">
+      <div class="chk-section-title">① 著作物の利用方法（該当するものすべてに☑）</div>
+
+      <div class="chk-item checked">
+        <span class="chk-mark">☑</span>
+        <div>
+          <strong>製作会社等に映像・ポスター等の作成を依頼する場合</strong>
+          <span class="chk-note">→ BASEYARZ株式会社へのカードデザイン・印刷委託</span>
+          <span class="chk-note docs">提出書類: [様式5] 映像・ポスター等作成依頼承諾書</span>
+        </div>
+      </div>
+
+      <div class="chk-item unchecked">
+        <span class="chk-mark">□</span>
+        <div>講師等が出演し、写真・資料などを利用する場合</div>
+      </div>
+
+      <div class="chk-item unchecked">
+        <span class="chk-mark">□</span>
+        <div>著作物利用を著作者から直接許諾を得る、または著作権団体を通じて利用する場合</div>
+      </div>
+
+      <div class="chk-item checked">
+        <span class="chk-mark">☑</span>
+        <div>
+          <strong>著作物の例外的な無断利用をする場合</strong>
+          <div style="margin-top:8px; margin-left:4px;">
+            <div class="chk-item checked" style="margin-bottom:4px;">
+              <span class="chk-mark">☑</span>
+              <div>
+                <strong>引用（著作権法第32条）</strong>
+                <span class="chk-note">→ 加賀市公式サイト フロアガイド画像・テキスト引用（出所表記あり）</span>
+                <span class="chk-note docs">提出書類: [様式8] 著作物の引用における出所表記の確認及び報告書</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="chk-item unchecked">
+        <span class="chk-mark">□</span>
+        <div>その他</div>
+      </div>
+
+      <div class="chk-item unchecked">
+        <span class="chk-mark">□</span>
+        <div>著作権の保護を受ける他人の著作物を利用しない</div>
+      </div>
+    </div>
+
+    <!-- ② 提出書類 -->
+    <div class="chk-section">
+      <div class="chk-section-title">② 提出書類（該当するものすべてに☑）</div>
+
+      <div class="chk-item checked">
+        <span class="chk-mark">☑</span>
+        <div>[様式1] 受付表 <span class="chk-note">フォルダ格納</span></div>
+      </div>
+
+      <div class="chk-item checked">
+        <span class="chk-mark">☑</span>
+        <div>[様式3] コンプライアンスチェックシート <span class="chk-note">フォルダ格納</span></div>
+      </div>
+
+      <div class="chk-item checked">
+        <span class="chk-mark">☑</span>
+        <div>
+          [様式5] 映像・ポスター等作成依頼承諾書 <span class="chk-note">原本提出</span>
+          <span class="chk-note docs">【契約数 1件】BASEYARZ株式会社 / カードデザイン・印刷委託</span>
+        </div>
+      </div>
+
+      <div class="chk-item unchecked">
+        <span class="chk-mark">□</span>
+        <div>[様式6] 講師等出演依頼承諾書</div>
+      </div>
+
+      <div class="chk-item unchecked">
+        <span class="chk-mark">□</span>
+        <div>[様式7] 著作物利用等に関する承諾書</div>
+      </div>
+
+      <div class="chk-item checked">
+        <span class="chk-mark">☑</span>
+        <div>
+          [様式8] 著作物の引用における出所表記の確認及び報告書 <span class="chk-note">フォルダ格納</span>
+          <span class="chk-note docs">【引用数 1件】加賀市公式サイト フロアガイド画像・テキスト</span>
+        </div>
+      </div>
+
+      <div class="chk-item unchecked">
+        <span class="chk-mark">□</span>
+        <div>[様式9] 取材依頼承諾書 または [様式10] 肖像の使用に係る承諾書</div>
+      </div>
+
+      <div class="chk-item unchecked">
+        <span class="chk-mark">□</span>
+        <div>他団体に対して承諾予定の契約書</div>
+      </div>
+
+      <div class="chk-item unchecked">
+        <span class="chk-mark">□</span>
+        <div>その他</div>
+      </div>
+    </div>
+
+    <!-- スタッフ記入欄 -->
+    <div class="staff-area">
+      <h3>規則審査会議 確認欄（スタッフ記入）</h3>
+      <div class="staff-grid">
+        <div class="lbl">所見</div>
+        <div class="inp-box"></div>
+
+        <div class="lbl">後日提出事項</div>
+        <div class="inp-box"></div>
+
+        <div class="lbl">確認日</div>
+        <div class="inp-line"></div>
+
+        <div class="lbl">確認印</div>
+        <div class="inp-line"></div>
+
+        <div class="lbl">担当者氏名</div>
+        <div class="inp-line"></div>
+
+        <div class="lbl">コンプライアンス確認番号</div>
+        <div class="inp-line"></div>
+      </div>
+    </div>
+
+  </div><!-- /form-body -->
+</div><!-- /tab1 -->
+
+
+<!-- ════════════════════════════════════════
+     PANEL 2: 様式3 チェックシート
+     ════════════════════════════════════════ -->
+<div class="wb-panel" id="tab2">
+
+  <div class="form-title-bar">規則様式3　コンプライアンスチェックシート</div>
+  <div class="form-subtitle-bar">doc_692e39bbba14a095835.xlsx — 様式3 / 著作物利用がある場合に必須</div>
+  <div class="form-body">
+
+    <!-- ヘッダー情報 -->
+    <table class="form-header-tbl" style="margin-bottom:28px;">
+      <tr>
+        <th>確認日</th>
+        <td><span class="filled">2026年5月24日</span></td>
+        <th>議案ファイル名</th>
+        <td><span class="filled">722-22K-0426K</span></td>
+      </tr>
+      <tr>
+        <th>事業名</th>
+        <td colspan="3"><span class="filled">会員開発委員会アカデミー事業</span></td>
+      </tr>
+      <tr>
+        <th>会議・委員会</th>
+        <td><span class="filled">会員開発委員会</span></td>
+        <th>議案作成者</th>
+        <td><span class="filled">中谷一世　室長</span></td>
+      </tr>
+    </table>
+
+    <!-- セクション A: 資料の作成について -->
+    <div class="qa-section">
+      <div class="qa-section-title">▌ 資料の作成について（Q1〜Q5：全問回答）</div>
+
+      <!-- Q1 -->
+      <div class="qa-block">
+        <div class="qa-question">
+          <span class="qa-qnum">Q1</span>
+          受付表は全議案に必要です。ご用意できていますか？
+        </div>
+        <div class="qa-options">
+          <div class="qa-opt selected">
+            <span class="qa-opt-mark">✅</span>
+            <div>
+              <span class="qa-opt-label">はい</span>
+              様式1 受付表 作成済み
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Q2 -->
+      <div class="qa-block">
+        <div class="qa-question">
+          <span class="qa-qnum">Q2</span>
+          著作物の使用がありますか？（複数回答可）
+        </div>
+        <div class="qa-options">
+          <div class="qa-opt selected">
+            <span class="qa-opt-mark">✅</span>
+            <div>
+              <span class="qa-opt-label">A</span>
+              ポスター・チラシ・映像等を使用します
+              <span class="qa-arrow">→ Q6へ</span>
+              <span class="qa-note">カード制作（BASEYARZ株式会社委託）</span>
+            </div>
+          </div>
+          <div class="qa-opt unselected">
+            <span class="qa-opt-mark">○</span>
+            <div><span class="qa-opt-label">B</span> 講師・演者が出演します</div>
+          </div>
+          <div class="qa-opt unselected">
+            <span class="qa-opt-mark">○</span>
+            <div><span class="qa-opt-label">C</span> パワーポイント・配布資料を使用します（フリー素材のみ利用）</div>
+          </div>
+          <div class="qa-opt selected">
+            <span class="qa-opt-mark">✅</span>
+            <div>
+              <span class="qa-opt-label">D</span>
+              フリー素材・著作権法32条に基づく引用を行って著作物を使用します
+              <span class="qa-arrow">→ 様式8提出</span>
+              <span class="qa-note">加賀市公式サイト フロアガイド画像・テキスト引用（出所表記あり）</span>
+            </div>
+          </div>
+          <div class="qa-opt unselected">
+            <span class="qa-opt-mark">○</span>
+            <div><span class="qa-opt-label">E</span> 音楽を使用します</div>
+          </div>
+          <div class="qa-opt unselected">
+            <span class="qa-opt-mark">○</span>
+            <div><span class="qa-opt-label">F</span> 著作権の保護を受ける他人の著作物を利用しない</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Q3 -->
+      <div class="qa-block">
+        <div class="qa-question">
+          <span class="qa-qnum">Q3</span>
+          各種承諾書の注意点を確認してください
+        </div>
+        <div class="qa-options">
+          <div class="qa-opt selected">
+            <span class="qa-opt-mark">✅</span>
+            <div>
+              <span class="qa-opt-label">A</span>
+              [様式5] 映像・ポスター等作成依頼承諾書「kisoku」フォルダに格納し原本を1部提出
+              <span class="qa-note">BASEYARZ株式会社 / カードデザイン・印刷委託 【1件】</span>
+            </div>
+          </div>
+          <div class="qa-opt unselected">
+            <span class="qa-opt-mark">○</span>
+            <div><span class="qa-opt-label">B</span> [様式6] 講師等出演依頼承諾書「kisoku」フォルダに格納し原本を1部提出</div>
+          </div>
+          <div class="qa-opt unselected">
+            <span class="qa-opt-mark">○</span>
+            <div><span class="qa-opt-label">C</span> [様式7] 著作物利用等に関する承諾書「kisoku」フォルダに格納し原本を1部提出</div>
+          </div>
+          <div class="qa-opt selected">
+            <span class="qa-opt-mark">✅</span>
+            <div>
+              <span class="qa-opt-label">D</span>
+              [様式8] 著作物の引用における出所表記の確認及び報告書「kisoku」フォルダに格納
+              <span class="qa-note">加賀市公式サイト フロアガイド 引用【1件】</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Q4 -->
+      <div class="qa-block">
+        <div class="qa-question">
+          <span class="qa-qnum">Q4</span>
+          映像・動画を使用しますか？
+        </div>
+        <div class="qa-options">
+          <div class="qa-opt unselected">
+            <span class="qa-opt-mark">○</span>
+            <div><span class="qa-opt-label">A</span> JCIまたは日本JC制作の映像・動画を使用します</div>
+          </div>
+          <div class="qa-opt unselected">
+            <span class="qa-opt-mark">○</span>
+            <div><span class="qa-opt-label">B</span> JCI・日本JC以外の映像・動画を使用します</div>
+          </div>
+          <div class="qa-opt selected">
+            <span class="qa-opt-mark">✅</span>
+            <div>
+              <span class="qa-opt-label">C</span>
+              映像・動画の使用はありません
+              <span class="qa-arrow">→ Q5へ</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Q5 -->
+      <div class="qa-block">
+        <div class="qa-question">
+          <span class="qa-qnum">Q5</span>
+          JCマークを使用する場合、以下を確認してください
+        </div>
+        <div class="qa-options">
+          <div class="qa-opt unselected">
+            <span class="qa-opt-mark">○</span>
+            <div><span class="qa-opt-label">A</span>〜<span class="qa-opt-label">D</span> JCマーク使用に関する各確認事項</div>
+          </div>
+          <div class="qa-opt selected">
+            <span class="qa-opt-mark">✅</span>
+            <div>
+              <span class="qa-opt-label">E</span>
+              JCマークの使用はありません
+              <span class="qa-note">→ 本項目の確認不要</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- セクション B: ポスター・チラシ・映像等 -->
+    <div class="qa-section">
+      <div class="qa-section-title">▌ ポスター・チラシ・映像等の使用について</div>
+
+      <!-- Q6 -->
+      <div class="qa-block">
+        <div class="qa-question">
+          <span class="qa-qnum">Q6</span>
+          外部業者に委託しますか？
+        </div>
+        <div class="qa-options">
+          <div class="qa-opt selected">
+            <span class="qa-opt-mark">✅</span>
+            <div>
+              <span class="qa-opt-label">A</span>
+              外部業者に委託します
+              <span class="qa-arrow">→ Q7へ</span>
+              <span class="qa-note">BASEYARZ株式会社にカードデザイン・印刷を委託</span>
+            </div>
+          </div>
+          <div class="qa-opt unselected">
+            <span class="qa-opt-mark">○</span>
+            <div><span class="qa-opt-label">B</span> 自分たちで作成します</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Q7 -->
+      <div class="qa-block">
+        <div class="qa-question">
+          <span class="qa-qnum">Q7</span>
+          イラスト・写真・動画・プロフィール等のデータは誰が準備しますか？
+        </div>
+        <div class="qa-options">
+          <div class="qa-opt selected">
+            <span class="qa-opt-mark">✅</span>
+            <div>
+              <span class="qa-opt-label">A</span>
+              外部業者が画像等のデータを準備します
+              <span class="qa-note">→ [様式5] 映像・ポスター等作成依頼承諾書を記載し、依頼先に許可を得て提出</span>
+            </div>
+          </div>
+          <div class="qa-opt unselected">
+            <span class="qa-opt-mark">○</span>
+            <div><span class="qa-opt-label">B</span> こちらで素材を提供します</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- セクション C: パワーポイント・配布資料等 -->
+    <div class="qa-section">
+      <div class="qa-section-title">▌ パワーポイントや配布資料等の使用について</div>
+
+      <!-- Q12 -->
+      <div class="qa-block">
+        <div class="qa-question">
+          <span class="qa-qnum">Q12</span>
+          外部協力者の写真やプロフィール等の掲載、著作物の引用等はありますか？
+        </div>
+        <div class="qa-options">
+          <div class="qa-opt unselected">
+            <span class="qa-opt-mark">○</span>
+            <div><span class="qa-opt-label">A</span> 写真・プロフィールの掲載があります</div>
+          </div>
+          <div class="qa-opt selected">
+            <span class="qa-opt-mark">✅</span>
+            <div>
+              <span class="qa-opt-label">B</span>
+              情報・文章等の引用、転載があります
+              <span class="qa-arrow">→ Q13へ</span>
+              <span class="qa-note">出所表記あり ／ 加賀市公式サイト フロアガイド画像・テキスト</span>
+            </div>
+          </div>
+          <div class="qa-opt unselected">
+            <span class="qa-opt-mark">○</span>
+            <div><span class="qa-opt-label">C</span> 掲載・引用等はありません</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Q13 -->
+      <div class="qa-block">
+        <div class="qa-question">
+          <span class="qa-qnum">Q13</span>
+          引用される側の著作物は公表されているものですか？
+        </div>
+        <div class="qa-options">
+          <div class="qa-opt selected">
+            <span class="qa-opt-mark">✅</span>
+            <div>
+              <span class="qa-opt-label">A</span>
+              公表されています
+              <span class="qa-arrow">→ Q14へ</span>
+              <span class="qa-note">加賀市公式Webサイト — 一般公開済みコンテンツ</span>
+            </div>
+          </div>
+          <div class="qa-opt unselected">
+            <span class="qa-opt-mark">○</span>
+            <div><span class="qa-opt-label">B</span> 公表されていません（→ 引用不可）</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Q14 -->
+      <div class="qa-block">
+        <div class="qa-question">
+          <span class="qa-qnum">Q14</span>
+          引用される側の著作物は附従的なものですか？（引用が主、被引用が従の関係）
+        </div>
+        <div class="qa-options">
+          <div class="qa-opt selected">
+            <span class="qa-opt-mark">✅</span>
+            <div>
+              <span class="qa-opt-label">A</span>
+              附従的なものです
+              <span class="qa-arrow">→ Q15へ</span>
+              <span class="qa-note">フロアガイド画像・テキストは本文説明の補足として附従的に使用</span>
+            </div>
+          </div>
+          <div class="qa-opt unselected">
+            <span class="qa-opt-mark">○</span>
+            <div><span class="qa-opt-label">B</span> 附従的ではありません（→ 引用要件未充足の可能性あり）</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Q15 -->
+      <div class="qa-block">
+        <div class="qa-question">
+          <span class="qa-qnum">Q15</span>
+          引用の客観的必要性はありますか？
+        </div>
+        <div class="qa-options">
+          <div class="qa-opt selected">
+            <span class="qa-opt-mark">✅</span>
+            <div>
+              <span class="qa-opt-label">A</span>
+              客観的必要性があります
+              <span class="qa-note">→ [様式8] を記載し、引用部分を明確に区分して出所を明示した上で引用</span>
+              <span class="qa-note" style="color:#15803d; font-weight:600;">✔ 著作権法第32条の要件を充足 — 引用適法と判断</span>
+            </div>
+          </div>
+          <div class="qa-opt unselected">
+            <span class="qa-opt-mark">○</span>
+            <div><span class="qa-opt-label">B</span> 客観的必要性がありません（→ 引用不可）</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- セクション D: 講師・演者（スキップ） -->
+    <div class="qa-section">
+      <div class="qa-section-title">▌ 講師・演者の出演について（Q9〜Q11）</div>
+      <div class="qa-block">
+        <div class="qa-skip">本事業は外部講師・演者の出演を伴わないため、Q9〜Q11はスキップ。</div>
+      </div>
+    </div>
+
+    <!-- セクション E: 音楽（スキップ） -->
+    <div class="qa-section">
+      <div class="qa-section-title">▌ 音楽の使用について（Q16〜）</div>
+      <div class="qa-block">
+        <div class="qa-skip">本事業は音楽の使用を伴わないため、Q16以降はスキップ。</div>
+      </div>
+    </div>
+
+    <!-- 最終確認サマリ -->
+    <div class="staff-area" style="border-color:#86efac; background:#f0fdf4;">
+      <h3 style="color:#15803d; border-color:#86efac;">チェックシート確認サマリ</h3>
+      <table class="form-header-tbl" style="margin-bottom:0;">
+        <tr>
+          <th style="width:200px;">提出書類</th>
+          <th>内容</th>
+          <th style="width:120px;">状態</th>
+        </tr>
+        <tr>
+          <td>[様式1] 受付表</td>
+          <td>フォルダ格納</td>
+          <td><span style="color:#15803d; font-weight:700;">✔ 完了</span></td>
+        </tr>
+        <tr>
+          <td>[様式3] チェックシート</td>
+          <td>フォルダ格納</td>
+          <td><span style="color:#15803d; font-weight:700;">✔ 完了</span></td>
+        </tr>
+        <tr>
+          <td>[様式5] 作成依頼承諾書</td>
+          <td>BASEYARZ株式会社 / カードデザイン・印刷委託 【1件】/ 原本提出</td>
+          <td><span style="color:#92400e; font-weight:700;">⚠ 原本要提出</span></td>
+        </tr>
+        <tr>
+          <td>[様式8] 引用出所表記報告書</td>
+          <td>加賀市公式サイト フロアガイド引用 【1件】/ フォルダ格納</td>
+          <td><span style="color:#15803d; font-weight:700;">✔ 完了</span></td>
+        </tr>
+      </table>
+    </div>
+
+  </div><!-- /form-body -->
+</div><!-- /tab2 -->
+
+</main>
+
+<!-- ── Footer ── -->
+<footer class="rel-footer">
+  <p class="rf-label">FOR STAFF — 関連資料ナビゲーション</p>
+  <ul>
+    <li><a href="../gian.htm">議案本文</a></li>
+    <li><a href="コンプライアンス審査ガイド.htm">コンプライアンス審査ガイド</a></li>
+    <li><a href="コンプライアンス受付表.htm">コンプライアンス受付表（既存）</a></li>
+    <li><a href="コンプライアンスチェックシート.htm">コンプライアンスチェックシート（既存）</a></li>
+  </ul>
+</footer>
+
+<script>
+function switchTab(panelId, btn) {
+  // Hide all panels
+  document.querySelectorAll('.wb-panel').forEach(function(p) {
+    p.classList.remove('active');
+  });
+  // Deactivate all tabs
+  document.querySelectorAll('.wb-tab').forEach(function(t) {
+    t.classList.remove('active');
+  });
+  // Show target
+  document.getElementById(panelId).classList.add('active');
+  btn.classList.add('active');
+}
+</script>
+</body>
+</html>

@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<title>役割傾向チェック設計資料 — KAGA JC GATHERING QUEST</title>
+<title>JCメンバーカード作成手順 — KAGA JC GATHERING QUEST</title>
 <link rel="stylesheet" href="../shared.css">
 <style>
   :root {
@@ -188,17 +188,28 @@
     font-weight: 600;
   }
 
+  .ok-ng-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin: 12px 0;
+  }
+  .ok-box, .ng-box {
+    padding: 14px 16px;
+    border-radius: 8px;
+  }
+  .ok-box { background: #ecfdf5; border: 1px solid #86efac; }
+  .ng-box { background: #fef2f2; border: 1px solid #fca5a5; }
+  .ok-box h3 { margin: 0 0 8px; font-size: 13.5px; font-weight: 700; color: #14532d; }
+  .ng-box h3 { margin: 0 0 8px; font-size: 13.5px; font-weight: 700; color: #7f1d1d; }
+  .ok-box ul, .ng-box ul { margin: 0; padding-left: 18px; font-size: 13px; }
+  .ok-box ul li { color: #14532d; margin-bottom: 3px; }
+  .ng-box ul li { color: #7f1d1d; margin-bottom: 3px; }
+
   footer {
     text-align: center; color: var(--muted);
     font-size: 12px; padding: 32px 16px 48px;
   }
-  .back {
-    display: inline-block; margin-top: 12px;
-    padding: 8px 16px; background: var(--card);
-    border: 1px solid var(--line); border-radius: 8px;
-    text-decoration: none; color: var(--text); font-size: 13px;
-  }
-  .back:hover { background: var(--hover); }
 
   @media print {
     @page { size: A4 portrait; margin: 12mm 14mm; }
@@ -208,6 +219,7 @@
     header { background: #fff !important; color: var(--text) !important; padding: 24px 0 16px; }
     header .eyebrow, header .subtitle { color: var(--muted); }
     main { padding: 0; }
+    .ok-ng-grid { grid-template-columns: 1fr 1fr; }
   }
 </style>
 </head>
@@ -230,16 +242,16 @@
 </div>
 
 <div class="toolbar">
-  <span class="label">事前アンケート・カード作成・役割傾向チェック設計 一体資料</span>
+  <span class="label">JCメンバーカード作成手順 ／ 事前アンケート・本人確認・プライバシー配慮</span>
   <a href="../gian.htm">← 議案本文</a>
   <a href="../資料一覧.htm">資料一覧</a>
   <button class="pdf-btn" onclick="window.print()">📄 PDFで保存</button>
 </div>
 
 <header>
-  <p class="eyebrow">ROLE TENDENCY CHECK DESIGN</p>
-  <h1>役割傾向チェック設計資料</h1>
-  <p class="subtitle">事前アンケート設問案 ／ 依頼文 ／ フォーム冒頭文 ／ カード作成フロー</p>
+  <p class="eyebrow">JC MEMBER CARD CREATION GUIDE</p>
+  <h1>JCメンバーカード作成手順</h1>
+  <p class="subtitle">事前アンケート ／ 強みの言語化 ／ 本人確認フロー ／ プライバシー配慮</p>
 </header>
 
 <main>
@@ -248,40 +260,65 @@
   <span class="label">関連ページ</span>
   <a href="../審議対象資料/KAGA_JC_GATHERING_仕様書.htm">📘 仕様書</a>
   <a href="../審議対象資料/カード一覧.htm">🎴 カードサンプル一覧</a>
-  <a class="current">🧩 役割傾向チェック設計</a>
-  </div>
-
-<div class="alert">
-  <strong>位置づけの確認</strong>：本資料で扱う「役割傾向チェック」は<strong>性格診断・能力評価・タイプ判定ではありません</strong>。当日ワーク（KAGA JC GATHERING QUEST）で「誰に何を頼れるか」「自分はどんな場面で力になれるか」を知るための、<strong>相互理解と役割発見の補助情報</strong>として使用します。
+  <a href="../審議対象資料/ゲーム進行マニュアル.htm#privacy">🔒 プライバシー配慮ルール</a>
+  <a class="current">🪪 JCメンバーカード作成手順</a>
 </div>
 
-<!-- 1. 基本方針 -->
+<div class="alert">
+  <strong>位置づけの確認</strong>：本資料で扱うアンケートは<strong>性格診断・能力評価・タイプ判定ではありません</strong>。当日ワーク（KAGA JC GATHERING QUEST）で「誰に何を頼れるか」「自分はどんな場面で力になれるか」を参加者全員が知るための、<strong>相互理解と役割発見の補助情報</strong>としてカード化します。
+</div>
+
+<!-- 1. カードの目的と掲載内容の範囲 -->
 <section class="block">
-  <div class="block-head"><div class="num">1</div><h2>基本方針</h2></div>
+  <div class="block-head"><div class="num">1</div><h2>カードの目的と掲載内容の範囲</h2></div>
   <div class="block-body">
-    <p>JCメンバーカード作成にあたっては、事前アンケートおよび必要に応じた委員長・会員開発委員会による簡易ヒアリングを実施し、本人の仕事、強み、JC活動で活かせる役割を整理します。</p>
-    <p>自己申告だけでは自身の特性や強みを言語化しにくい場合があるため、簡易的な「役割傾向チェック」を実施します。これは<strong>性格診断や能力評価ではなく</strong>、当日ワークにおいて相互理解と役割発見を促すための補助情報として使用します。</p>
-    <p>結果は<strong>「あなたは〇〇タイプ」と断定しない</strong>ことを徹底します。カード上では以下のような柔らかい表現に変換します。</p>
-    <ul>
-      <li>得意が出やすい場面：調整・支援・場づくり</li>
-      <li>頼ってほしいこと：段取り整理、当日のフォロー、会場導線の確認</li>
-      <li>JCで活かせる強み：広報発信、参加者への声かけ、関係者調整</li>
-    </ul>
+    <p>JCメンバーカードは、当日ワークにおいて参加者が互いの仕事観・強み・地域での役割を一目で知れるようにするための教材カードです。</p>
+    <p>掲載内容は<strong>本人の承諾を得た情報のみ</strong>とし、以下の範囲に限定します。</p>
+
+    <div class="ok-ng-grid">
+      <div class="ok-box">
+        <h3>✅ カードに掲載する情報</h3>
+        <ul>
+          <li>仕事へのこだわり・専門領域</li>
+          <li>青年経済人としての価値観</li>
+          <li>地域での役割・ネットワーク</li>
+          <li>JCで活かせる強み</li>
+          <li>仲間に頼ってほしいこと</li>
+          <li>仲間の力になれること</li>
+          <li>得意が出やすい場面（役割傾向）</li>
+          <li>事業運営で貢献できる役割</li>
+        </ul>
+      </div>
+      <div class="ng-box">
+        <h3>❌ 掲載しない情報</h3>
+        <ul>
+          <li>私生活の深掘り・家庭事情</li>
+          <li>収入・資産・取引先情報</li>
+          <li>健康・病歴・身体情報</li>
+          <li>恋愛・趣味・性癖</li>
+          <li>思想信条・政治・宗教</li>
+          <li>本人の承諾を得ていない情報</li>
+          <li>個人の優劣・序列につながる表現</li>
+        </ul>
+      </div>
+    </div>
+
+    <p>カード上での表現は「あなたは〇〇タイプ」と断定する形ではなく、<strong>「得意が出やすい場面」「頼ってほしいこと」</strong>のように柔らかく記述します。</p>
   </div>
 </section>
 
 <!-- 2. カード作成フロー -->
 <section class="block">
-  <div class="block-head"><div class="num">2</div><h2>メンバーカード作成フロー</h2></div>
+  <div class="block-head"><div class="num">2</div><h2>カード作成フロー</h2></div>
   <div class="block-body">
     <ol class="flow-list">
       <li>事前アンケート（Googleフォーム）を全会員に配信・回答収集</li>
       <li>委員長・会員開発委員会で仮カードを作成（仕事・強み・役割傾向の言葉に変換）</li>
-      <li>必要に応じて本人へ簡易ヒアリングを実施（5〜10分／対面または電話）</li>
-      <li>本人確認シートを送付し、掲載内容を本人に提示</li>
+      <li>必要に応じて本人へ簡易ヒアリングを実施（5〜10分 ／ 対面または電話）</li>
+      <li>本人確認シートを送付し、掲載予定の内容を本人に提示</li>
       <li>本人が修正・削除を申し出られる期間を設ける（1週間程度）</li>
       <li>本人が承諾した内容のみを当日カードとして使用</li>
-      <li>事業後は外部公開せず、回収・保管・削除ルールに従う（を参照）</li>
+      <li>事業終了後は外部公開せず、回収・保管・削除ルールに従う（<a href="ゲーム進行マニュアル.htm#privacy">プライバシー配慮ルール</a>を参照）</li>
     </ol>
   </div>
 </section>
@@ -310,27 +347,27 @@
   </div>
 </section>
 
-<!-- 4. 役割傾向変換マップ -->
+<!-- 4. 強みの言語化マップ -->
 <section class="block">
-  <div class="block-head"><div class="num">4</div><h2>回答傾向 → カード上の表現 変換マップ</h2></div>
+  <div class="block-head"><div class="num">4</div><h2>回答傾向 → カード表現 変換マップ</h2></div>
   <div class="block-body">
-    <p>アンケート回答から、以下のようにカード上の柔らかい表現に変換します。<strong>診断・評価ではなく「得意が出やすい場面」</strong>として記述します。</p>
+    <p>アンケート回答から、以下のようにカード上の柔らかい表現に変換します。<strong>「得意が出やすい場面」</strong>として記述し、診断・評価としては扱いません。</p>
     <table class="maptable">
       <thead>
-        <tr><th>回答傾向（高スコア項目）</th><th>カード上の表現例</th></tr>
+        <tr><th>回答傾向（高スコア項目）</th><th>カード表現例</th><th>得意が出やすい場面</th></tr>
       </thead>
       <tbody>
-        <tr><td>Q1：アイデアを出すことが得意</td><td>企画力・アイデア創出</td></tr>
-        <tr><td>Q2：意見整理が得意</td><td>調整力・整理力</td></tr>
-        <tr><td>Q3：手を動かして進めることが得意</td><td>実行力・運営力</td></tr>
-        <tr><td>Q4：人を誘うことが得意</td><td>巻き込み力・動員力</td></tr>
-        <tr><td>Q5：困っている人を支えることが得意</td><td>支援力・フォロー力</td></tr>
-        <tr><td>Q6：発信が得意</td><td>発信力・広報力</td></tr>
-        <tr><td>Q7：抜け漏れに気づきやすい</td><td>安全管理力・確認力</td></tr>
-        <tr><td>Q8：雰囲気づくりが得意</td><td>場づくり力・対話促進</td></tr>
+        <tr><td>Q1：アイデアを出すことが得意</td><td>企画力・アイデア創出</td><td>事業の企画・コンセプト設計</td></tr>
+        <tr><td>Q2：意見整理が得意</td><td>調整力・整理力</td><td>関係者調整・スケジュール管理</td></tr>
+        <tr><td>Q3：実働で動くことが得意</td><td>実行力・運営力</td><td>当日設営・現場での実働</td></tr>
+        <tr><td>Q4：人を誘うことが得意</td><td>巻き込み力・動員力</td><td>参加呼びかけ・拡大対象へのアプローチ</td></tr>
+        <tr><td>Q5：困っている人を支えることが得意</td><td>支援力・フォロー力</td><td>メンバーへの気づき・フォローアップ</td></tr>
+        <tr><td>Q6：発信が得意</td><td>発信力・広報力</td><td>SNS・告知・事業後レポート</td></tr>
+        <tr><td>Q7：抜け漏れに気づきやすい</td><td>安全管理力・確認力</td><td>チェックリスト管理・リスク洗い出し</td></tr>
+        <tr><td>Q8：雰囲気づくりが得意</td><td>場づくり力・対話促進</td><td>アイスブレイク・グループ内の対話促進</td></tr>
       </tbody>
     </table>
-    <p style="margin-top:12px"><strong>8つの役割傾向</strong>：</p>
+    <p style="margin-top:12px"><strong>8つの役割傾向タグ</strong>：</p>
     <p>
       <span class="pill">企画力</span>
       <span class="pill">調整力</span>
@@ -352,7 +389,7 @@
     <p style="font-size:12.5px;color:var(--muted);margin-bottom:8px">委員会連絡・グループLINE・例会案内に添えて配信します。</p>
     <div class="doc-text">【アカデミー事業 事前アンケートのお願い】
 
-会員開発委員会アカデミー事業では、メンバー同士が「誰に何を頼れるか」「自分はどんな場面で力になれるか」を知るために、当日使用する「KAGA JC GATHERING QUEST（仮）」のカードを作成します。
+会員開発委員会アカデミー事業では、メンバー同士が「誰に何を頼れるか」「自分はどんな場面で力になれるか」を知るために、当日使用する「KAGA JC GATHERING QUEST」のカードを作成します。
 
 今回のアンケートは、個人を評価したり、性格を決めつけたりするものではありません。
 
@@ -383,7 +420,7 @@
     <p style="font-size:12.5px;color:var(--muted);margin-bottom:8px">アンケートフォームの最上部に表示します。</p>
     <div class="doc-text">本アンケートは、会員開発委員会アカデミー事業において、メンバー同士の相互理解、役割認識、共助の精神を高めるために実施します。
 
-回答内容は、当日使用する「KAGA JC GATHERING QUEST（仮）」のカード作成および事業運営の参考として使用します。
+回答内容は、当日使用する「KAGA JC GATHERING QUEST」のカード作成および事業運営の参考として使用します。
 
 個人を評価したり、性格を断定したり、役職選定や人事評価に使用するものではありません。
 
@@ -405,25 +442,27 @@
       <li>本人の承諾が得られない項目は<strong>カードに掲載しない</strong></li>
       <li>承諾期限後の修正依頼にも、可能な限り対応する</li>
     </ul>
-    <p style="font-size:12.5px;color:var(--muted)">※ 詳細運用はを参照。</p>
+    <p style="font-size:12.5px;color:var(--muted)">▶ 事業後の保管・廃棄ルールは<a href="ゲーム進行マニュアル.htm#privacy">ゲーム進行マニュアル「プライバシー配慮」</a>を参照。</p>
   </div>
 </section>
 
-<!-- 8. 用語の取り扱い -->
+<!-- 8. カード記述の表現ガイドライン -->
 <section class="block">
-  <div class="block-head"><div class="num">8</div><h2>用語の取り扱い（避ける／使う表現）</h2></div>
+  <div class="block-head"><div class="num">8</div><h2>カード記述の表現ガイドライン（避ける／使う表現）</h2></div>
   <div class="block-body">
-    <p><strong>避ける表現</strong>：性格診断／適性診断／評価／ランク付け／タイプ判定／あなたは〇〇タイプ／能力値／優劣／人格分析</p>
-    <p><strong>使う表現</strong>：役割傾向チェック／チーム貢献スタイルチェック／強みの使い方チェック／頼られ方・頼り方チェック／公益事業で活きる役割傾向／得意が出やすい場面／JC活動で活かせる強み</p>
+    <p><strong>避ける表現（使用禁止）</strong>：性格診断／適性評価／タイプ判定／あなたは〇〇タイプ／能力値／優劣比較／人格分析／低アクティブ／参加率が低い等、当事者を名指しする表現</p>
+    <p><strong>推奨する表現</strong>：得意が出やすい場面／JC活動で活かせる強み／頼ってほしいこと／仲間の力になれること／仕事へのこだわり／青年経済人としての価値観</p>
+    <p><strong>役割傾向タグの付け方</strong>：「Q1・Q4高スコア → 企画力・巻き込み力が得意な場面として反映」のように、アンケート回答を直接転記するのではなく<strong>行動できる強みの言葉</strong>に変換してカード化します。</p>
   </div>
 </section>
 
-<!-- 9. コンプライアンス -->
+<!-- 9. コンプライアンス確認 -->
 <section class="block">
-  <div class="block-head"><div class="num">9</div><h2>外部診断ツールの取扱い</h2></div>
+  <div class="block-head"><div class="num">9</div><h2>コンプライアンス確認</h2></div>
   <div class="block-body">
-    <p>本事業で使用する役割傾向チェックは、<strong>既存の有料診断や商標登録された診断ツールの設問・結果表示をそのまま使用するものではありません</strong>。あくまで、会員開発委員会が独自に作成する簡易的な自己理解・役割発見のためのチェックとして実施します。</p>
+    <p>本事業で使用する役割傾向チェックは、<strong>既存の有料診断や商標登録された診断ツールの設問・結果表示をそのまま使用するものではありません</strong>。会員開発委員会が独自に作成する簡易的な自己理解・役割発見のためのチェックとして実施します。</p>
     <p>外部の診断ツールや著作物を使用する場合は、利用規約、引用可否、著作権、商標、コンプライアンス確認の要否を事前に確認します。</p>
+    <p>▶ <a href="コンプライアンス審査ガイド.htm">コンプライアンス審査ガイド</a> ／ <a href="コンプライアンス受付表.htm">コンプライアンス受付表</a> ／ <a href="コンプライアンスチェックシート.htm">コンプライアンスチェックシート</a></p>
   </div>
 </section>
 
@@ -433,6 +472,9 @@
   <p class="rf-label">FOR STAFF — 関連資料ナビゲーション</p>
   <ul>
     <li><a href="../gian.htm">議案本文</a></li>
+    <li><a href="../審議対象資料/KAGA_JC_GATHERING_仕様書.htm">仕様書</a></li>
+    <li><a href="../審議対象資料/ゲーム進行マニュアル.htm#privacy">プライバシー配慮ルール</a></li>
+    <li><a href="../審議対象資料/カード一覧.htm">カードサンプル一覧</a></li>
   </ul>
 </footer>
 
