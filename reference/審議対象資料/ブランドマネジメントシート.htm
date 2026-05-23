@@ -120,6 +120,11 @@
     .matrix-grid { grid-template-columns:1fr; }
     .persona-cards { grid-template-columns:1fr; }
   }
+  table.tbl { width:100%; border-collapse:collapse; margin:10px 0 16px; font-size:13.5px; }
+  table.tbl th, table.tbl td { border:1px solid #e5e7eb; padding:8px 10px; text-align:left; vertical-align:top; }
+  table.tbl th { background:#f3f4f6; font-weight:600; }
+  .card h4 { margin:14px 0 6px; font-size:14px; color:#374151; }
+
   @media print {
     @page { size: A4 portrait; margin: 12mm 14mm; }
     body { background:#fff; }
@@ -159,6 +164,8 @@
 <div class="anchor-nav">
   <a href="#brand">1. ブランドマネジメントシート</a>
   <a href="#positioning">2. ポジショニングマップ</a>
+  <a href="#selection">3. 手段選定理由書</a>
+  <a href="#kgi">4. コアターゲット KGI</a>
 </div>
 
 <!-- ===== Section 1: ブランドマネジメントシート ===== -->
@@ -468,6 +475,76 @@
         <td><strong>○</strong></td>
         <td><strong>✅ 採用</strong></td>
       </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ===== Section 3: 手段選定理由書 ===== -->
+<div class="card" id="selection">
+  <h2>手段選定理由書 — 代替案比較・選定根拠・リスク対処</h2>
+  <p><b>結論：</b>本事業の手段として、カードワーク型ビジネスゲーム「KAGA JC GATHERING（仮）」を選定する。(1) 相互理解・役割発見・共助意識の3軸を同時に扱える唯一の手法であること、(2) ビジネスゲーム研究所事例での実証成果、(3) 加賀LOM規模（参加者54名）と120分制約への最適スケール適合、の3点が根拠。</p>
+
+  <h3>代替案との比較（A〜F）</h3>
+  <table class="tbl">
+    <thead><tr><th>案</th><th>長所</th><th>短所</th><th>不採用理由</th></tr></thead>
+    <tbody>
+      <tr><td>A. 講演・セミナー型</td><td>権威性・準備工数小</td><td>一方向／既存会員の主体性が引き出せない</td><td>「主体性発火」というKGIに対し効果が薄い</td></tr>
+      <tr><td>B. 公式JCゲーム導入</td><td>承認を得やすい・教材完成</td><td>加賀LOM固有の公益事業テーマと接続しにくい</td><td>「JC活動への接続」が弱く、学びが汎用論で終わる</td></tr>
+      <tr><td>C. ワークショップ（付箋・KJ法）</td><td>低コスト・自由度高い</td><td>盛り上がりに偏差／発言の偏りが起きやすい</td><td>「一部メンバーへの偏り」を再生産するリスク</td></tr>
+      <tr><td>D. 非日常体験（合宿・修行）</td><td>結束効果が強い・記憶残存</td><td>家庭事情の多様化で参加ハードルが高い／コスト大</td><td>加賀LOMの規模・予算に対しオーバースペック</td></tr>
+      <tr><td>E. 模擬理事会型</td><td>議案構築力が身につく</td><td>入会歴の浅い層には負荷大</td><td>コアターゲット（参加率の低い層）に届かない</td></tr>
+      <tr><td><b>F. カードワーク型ビジネスゲーム（本案）</b></td><td><b>相互理解・役割発見・共助の3軸を同時に扱える／120分に収まる／全員参加</b></td><td>カード教材の制作工数</td><td>—（採用）</td></tr>
+    </tbody>
+  </table>
+
+  <h3>選定根拠の詳細</h3>
+  <h4>(1) 目的との適合性</h4>
+  <ul>
+    <li>カード化により仕事・強み・地域での役割が<b>可視化</b> → 相互理解</li>
+    <li>公益事業ミッション達成のためのロール割当て → <b>役割発見</b></li>
+    <li>2周目で多用カードを封印する制約 → <b>負担集中の疑似体験</b> → 共助意識</li>
+  </ul>
+  <h4>(2) 実証根拠</h4>
+  <p>ビジネスゲーム研究所のJC例会導入事例で、「新入会員1年以内離脱率ゼロ」「ゲーム内リーダー体験→自信→委員会で立候補」「異業種間の距離縮小→事業提携発展」等の成果が報告されている（<a href="../参考資料/ビジネスゲーム導入事例.htm">参考資料：ビジネスゲーム導入事例</a>参照）。</p>
+  <h4>(3) スケール適合性</h4>
+  <table class="tbl">
+    <thead><tr><th>条件</th><th>本手段の対応</th></tr></thead>
+    <tbody>
+      <tr><td>参加者54名</td><td>7名×8グループに分割。テーブルゲームマスターを各グループ1名配置</td></tr>
+      <tr><td>所要120分</td><td>ビジネスゲーム研究所標準テンプレを120分版に拡張</td></tr>
+      <tr><td>予算23万円</td><td>カード教材45千円＋会場35千円＋進行40千円 等で収まる</td></tr>
+      <tr><td>運営本部のリソース</td><td>会員開発委員会＋参加委員長GM＋正副メンターの3層で実現</td></tr>
+    </tbody>
+  </table>
+
+  <h3>想定リスクと対処</h3>
+  <table class="tbl">
+    <thead><tr><th>リスク</th><th>対処</th></tr></thead>
+    <tbody>
+      <tr><td>カード制作が間に合わない</td><td>事前アンケート→ヒアリング→カード化のスケジュールを逆算し、本人確認2週間前完了をマイルストーン化</td></tr>
+      <tr><td>盛り上がりに偏差が出る</td><td>テーブルゲームマスター進行台本で問いかけを標準化</td></tr>
+      <tr><td>メンターが審査員化する</td><td>正副メンター役割確認シートでNG行動を明示</td></tr>
+      <tr><td>自己開示の踏み込みすぎ</td><td>仕事観・地域での役割・JCで活かせる強みに限定（プライバシー運営ルール参照）</td></tr>
+      <tr><td>2周目チャレンジが負担感だけで終わる</td><td>ふりかえりで「制約があったからこそ見えた他者の貢献」を必ず言語化させる</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ===== Section 4: コアターゲット KGI ===== -->
+<div class="card" id="kgi">
+  <h2>コアターゲットに対する達成指標（KGI）</h2>
+  <p class="muted" style="margin-bottom:12px;">ペルソナA・B（コアターゲット）に対し、本事業の成否を判断するKGIを設定する。</p>
+  <table class="tbl">
+    <thead>
+      <tr><th>対象</th><th>指標</th><th>目標値</th></tr>
+    </thead>
+    <tbody>
+      <tr><td rowspan="2">ペルソナA（入会歴浅）</td><td>事業への参加</td><td>該当者の <b>80%以上</b> が参加</td></tr>
+      <tr><td>事業後アンケート「自分の役割を考えられた」</td><td><b>70%以上</b></td></tr>
+      <tr><td rowspan="2">ペルソナB（低アクティブ）</td><td>事業への参加</td><td>該当者の <b>60%以上</b> が参加</td></tr>
+      <tr><td>事業後3ヶ月の例会出席率変化</td><td>事業前比 <b>+15pt 以上</b></td></tr>
+      <tr><td>全体</td><td>事業後アンケート「仲間を支える意識が高まった」</td><td><b>80%以上</b></td></tr>
+      <tr><td>全体</td><td>自由記述に「具体的に頼りたい人／引き受けたい役割」が記載</td><td><b>70%以上</b></td></tr>
     </tbody>
   </table>
 </div>
