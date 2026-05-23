@@ -151,6 +151,43 @@ header .meta {
 }
 .nav a:hover { text-decoration: underline; }
 
+/* — Brand/logo in nav — */
+.nav-brand {
+  font-weight:    700;
+  font-size:      13px;
+  color:          #0f172a !important;
+  letter-spacing: .05em;
+  margin-right:   18px !important;
+  white-space:    nowrap;
+  display:        inline-flex;
+  align-items:    center;
+  gap:            4px;
+}
+.nav-brand::before {
+  content:        '';
+  display:        inline-block;
+  width:          6px;
+  height:         6px;
+  border-radius:  50%;
+  background:     var(--c1);
+  margin-right:   6px;
+}
+.nav-brand span {
+  font-weight:    400;
+  color:          var(--muted);
+  font-size:      11px;
+}
+/* — Divider between brand and links — */
+.nav-brand + a::before {
+  content:        '';
+  display:        inline-block;
+  width:          1px;
+  height:         12px;
+  background:     var(--line-md);
+  margin-right:   16px;
+  vertical-align: middle;
+}
+
 /* — PDF download button — */
 .pdf-btn {
   margin-left:    auto;
