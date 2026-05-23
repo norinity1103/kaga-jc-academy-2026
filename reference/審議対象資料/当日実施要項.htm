@@ -153,6 +153,28 @@
   }
   .role-box a:hover { text-decoration: underline; }
 
+  table.tbl {
+    width: 100%; border-collapse: collapse; margin: 10px 0 16px; font-size: 13.5px;
+  }
+  table.tbl th, table.tbl td {
+    border: 1px solid var(--line); padding: 8px 10px; text-align: left; vertical-align: top;
+  }
+  table.tbl th { background: #f6f8fa; font-weight: 600; color: var(--muted); }
+  .role-sub {
+    font-size: 15px; margin: 18px 0 8px; color: var(--accent);
+    border-left: 3px solid var(--accent); padding-left: 8px; font-weight: 700;
+  }
+  .role-note {
+    background: #f8fafc; border: 1px solid var(--line); border-radius: 6px;
+    padding: 10px 14px; margin: 4px 0 12px; font-size: 13px; color: var(--muted);
+  }
+  .rule-list { list-style: none; padding: 0; margin: 0; }
+  .rule-list li {
+    padding: 8px 0 8px 16px; border-bottom: 1px solid var(--line);
+    font-size: 14px; position: relative;
+  }
+  .rule-list li::before { content: "—"; position: absolute; left: 0; color: var(--accent); }
+  .rule-list li:last-child { border-bottom: none; }
   .checklist {
     list-style: none;
     padding: 0; margin: 0;
@@ -259,11 +281,64 @@
   </div>
 </section>
 
-<section>
-  <div class="sec-head"><span class="badge"></span><h2>当日の役割設計（概要）</h2></div>
+<section id="roles">
+  <div class="sec-head"><span class="badge"></span><h2>当日の役割設計</h2></div>
   <div class="sec-body">
-    <p>当日は<b>運営本部 ／ テーブルゲームマスター ／ メンター</b> の3層で運営します。担当・人数・配置・役割境界などの<b>詳細は審議対象資料7</b>を参照してください。</p>
-    <p style="margin-top:8px"><a href="当日役割分担表.htm" style="display:inline-block;padding:8px 16px;background:#0a4b7a;color:#fff;border-radius:6px;text-decoration:none;font-size:13.5px">→ 審議対象資料7：当日役割分担表を見る</a></p>
+    <p>当日は<b>運営本部 ／ テーブルゲームマスター（GM）／ メンター</b> の3層で運営します。それぞれの役割を明確に分け、責任範囲を重複させません。</p>
+
+    <p class="role-sub">① 運営本部（会員開発委員会メンバー）</p>
+    <table class="tbl">
+      <thead><tr><th>担当</th><th>役割</th><th>具体業務</th></tr></thead>
+      <tbody>
+        <tr><td>本部長</td><td>全体統括・進行責任</td><td>タイムキープ／緊急対応／理事長・委員長との連携</td></tr>
+        <tr><td>進行担当</td><td>司会・開閉会</td><td>趣旨説明／ルール説明／グループ発表進行／講評呼び込み</td></tr>
+        <tr><td>カード管理</td><td>教材管理</td><td>カードの配布・回収／追加配布／2周目セットアップ</td></tr>
+        <tr><td>記録担当</td><td>記録・撮影</td><td>各グループのワーク様子撮影／発表内容のメモ／ふりかえり記録</td></tr>
+        <tr><td>受付・誘導</td><td>来場対応</td><td>受付／座席誘導／配布物配布／遅刻者対応</td></tr>
+        <tr><td>会場・備品</td><td>環境整備</td><td>レイアウト設営／音響・プロジェクター／飲食設営／撤収</td></tr>
+        <tr><td>安全管理</td><td>リスク対応</td><td>体調不良対応／プライバシー逸脱の即時抑止／救急連絡</td></tr>
+      </tbody>
+    </table>
+
+    <p class="role-sub">② テーブルゲームマスター（GM）／各グループ1名</p>
+    <p>参加委員長クラスが担当。<b>進行役であって審査員ではない</b>。問いかけによってグループの思考を支える。</p>
+    <ul style="font-size:14px;padding-left:20px;margin:0 0 8px">
+      <li>各STEPの進行とタイムキープ</li>
+      <li>沈黙の打開（「○○さんはこのミッションをどう見ますか？」）</li>
+      <li>発言が偏った時の介入（「まだ発言していない方の視点も聞いてみましょう」）</li>
+      <li>2周目チャレンジの制約説明と動機付け</li>
+      <li>グループ発表の代表選出サポート</li>
+    </ul>
+    <p class="role-note">▶ 問いかけ例の詳細は <a href="../参考資料/テーブルゲームマスター進行台本.htm">参考資料：ゲームマスター進行台本</a> を参照。</p>
+
+    <p class="role-sub">③ メンター（正副メンバー）</p>
+    <p><b>審査員ではなく、巡回・助言・JC活動への接続講評</b>を担う。</p>
+    <ul style="font-size:14px;padding-left:20px;margin:0 0 8px">
+      <li>全グループを巡回し、各グループの議論を観察</li>
+      <li>必要に応じて経験談・所信観点での補足</li>
+      <li>グループ発表後の講評で<b>「今日の学びを次の事業・委員会活動でどう活かすか」</b>を接続</li>
+      <li>個人カードの記載内容には踏み込まない／プライバシーを尊重</li>
+    </ul>
+    <p class="role-note">▶ NG行動・講評方針の詳細は <a href="../参考資料/正副メンター役割確認シート.htm">参考資料：正副メンター役割確認シート</a> を参照。</p>
+
+    <p class="role-sub">配置イメージ（54名 / 6グループ想定）</p>
+    <table class="tbl">
+      <thead><tr><th>役割</th><th>人数</th><th>備考</th></tr></thead>
+      <tbody>
+        <tr><td>参加者</td><td>54名</td><td>各グループ 9名 × 6グループ</td></tr>
+        <tr><td>GM</td><td>6名</td><td>各グループに1名（参加委員長クラス）</td></tr>
+        <tr><td>メンター</td><td>3〜5名</td><td>正副メンバー、巡回担当</td></tr>
+        <tr><td>運営本部</td><td>会員開発委員会 全員</td><td>本部席に集約／必要時にフロアへ</td></tr>
+      </tbody>
+    </table>
+
+    <p class="role-sub">役割境界のルール</p>
+    <ul class="rule-list">
+      <li>GMは<b>答えを出さない</b>。問いかけで参加者に考えさせる。</li>
+      <li>メンターは<b>採点しない</b>。良し悪しの判定ではなく、JC活動への接続を語る。</li>
+      <li>運営本部は<b>議論に介入しない</b>。タイム・カード・記録・安全に専念。</li>
+      <li>プライバシー逸脱が起きた場合、<b>運営本部の安全管理担当が即時抑止</b>する。</li>
+    </ul>
   </div>
 </section>
 
@@ -296,7 +371,7 @@
   <h2 style="margin:0 0 12px;font-size:12px;color:#6b7280;letter-spacing:0.06em;text-transform:uppercase">📚 関連審議資料・参考資料</h2>
   <p style="margin:0 0 12px;font-size:12.5px;color:#374151;line-height:1.95"><strong style="color:#1f6feb">審議対象資料</strong>：
     <a href="事業フロー.htm">1) 事業フロー</a>　／　2) 事業計画収支予算書　／　
-    <a href="当日実施要項.htm">3) 当日実施要項</a>　／　4) 当日役割分担表　／　
+    <a href="当日実施要項.htm">3) 当日実施要項</a>　／　
     <a href="KAGA_JC_GATHERING_仕様書.htm">5) KAGA JC GATHERING QUEST 実施要項</a>　／　6) KAGA JC GATHERING QUEST 手段選定理由書　／　
     <a href="ゲーム進行マニュアル.htm">7) ゲーム進行マニュアル</a>　／　
     <a href="../参考資料/テーブルゲームマスター進行台本.htm">8) テーブルゲームマスター進行台本</a>　／　
