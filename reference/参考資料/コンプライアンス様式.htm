@@ -281,14 +281,14 @@
 
 /* ── Print ── */
 @media print {
-  @page { size: A4 portrait; margin: 12mm 14mm; }
+  @page { size: A4 portrait; margin: 8mm 10mm; }
   .nav, .pdf-btn, .wb-tabs { display: none !important; }
   footer { display: none !important; }
   body { background: #fff; }
   main { padding: 0; margin: 0; max-width: none; }
   .wb-panel { display: block !important; }
   .wb-panel + .wb-panel { page-break-before: always; }
-  .card, .chk-section, .qa-block { page-break-inside: avoid; }
+  .qa-block { page-break-inside: avoid; }
   .chk-item.unchecked { color: #1f2937; }
   .qa-opt.unselected { color: #1f2937; }
   header .eyebrow, header .subtitle,

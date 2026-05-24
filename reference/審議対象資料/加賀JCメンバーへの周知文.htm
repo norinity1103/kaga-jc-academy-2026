@@ -48,10 +48,10 @@
   .notice .section-title { font-weight:700; color:#0f172a; margin:24px 0 8px; font-size:15.5px; padding-left:8px; border-left:3px solid #d8345f; }
   .badge-attention { display:inline-block; background:#fef3c7; color:#92400e; border:1px solid #fcd34d; border-radius:4px; padding:1px 8px; font-size:11.5px; margin-right:6px; }
   @media print {
-    @page { size: A4 portrait; margin: 18mm 18mm; }
+    @page { size: A4 portrait; margin: 10mm 12mm; }
     body { background:#fff; }
     .nav { display:none; }
-    .card, .notice { page-break-inside: avoid; box-shadow:none; }
+    .card, .notice { box-shadow:none; } .notice { page-break-inside: avoid; }
     header .eyebrow, header .subtitle,
   }
 </style>

@@ -1425,18 +1425,34 @@ footer.rel-footer .rf-pages a.current {
   header .page-subtitle { color: #333 !important; }
   header .meta { color: #555 !important; font-size: 9pt !important; }
 
-  /* — Cards & containers — */
-  .card, section.card, .doc-section, .form-sheet, .card-section {
+  /* — Cards & containers —
+     ⚠️ 大きいコンテナに page-break-inside:avoid を当てると改ページ位置が
+     大幅に前倒しになって白紙余白が増えるため、大型カードは自然分割を許可。
+     代わりに小さい単位（callout・table row・figure・段落のセット）に
+     break-avoid を絞って当てる。 */
+  .card, section.card, .doc-section, .card-section {
+    break-inside: auto;
+    page-break-inside: auto;
+    margin-bottom: 6mm !important;
+  }
+  .form-sheet { break-inside: avoid; page-break-inside: avoid; } /* フォーム類は維持 */
+  .sec-head, .card-head { background: #f5f5f5 !important; break-after: avoid; page-break-after: avoid; }
+
+  /* — 小要素は分割回避 — */
+  .callout, .note-box, figure, blockquote,
+  .persona-card, .game-card, .matrix-cell, .strategy-card, .mcard, .hcard,
+  .step, .scene, .role-box, .qa-item, .doc-item {
     break-inside: avoid;
     page-break-inside: avoid;
   }
-  .sec-head, .card-head { background: #f5f5f5 !important; }
+  tr, li { break-inside: avoid; page-break-inside: avoid; }
 
   /* — Tables — */
   .doc-table, .tbl { border-collapse: collapse !important; }
   .doc-table th, .doc-table td,
   .tbl th, .tbl td { border: 1px solid #aaa !important; }
   .doc-table tr:nth-child(even) td { background: #f5f5f5 !important; }
+  thead { display: table-header-group; } /* 改ページ時にヘッダ再表示 */
 
   /* — Callouts — */
   .callout { background: #fff !important; border: 1px solid #999 !important; }
@@ -1445,7 +1461,19 @@ footer.rel-footer .rf-pages a.current {
   /* — Typography — */
   h2 { break-after: avoid; page-break-after: avoid; }
   h3 { break-after: avoid; page-break-after: avoid; }
+  /* h2/h3は単独で行末に残らないよう */
+  p + h2, p + h3, ul + h2, ul + h3, table + h2, table + h3 {
+    break-before: auto; page-break-before: auto;
+  }
+
+  /* — Spacing 圧縮 — */
+  .card-body, .sec-body { padding: 8px 12px !important; }
+  .card-head, .sec-head { padding: 8px 12px !important; }
+  section + section, .card + .card { margin-top: 0 !important; }
 
   /* — Links — */
   a { color: inherit !important; text-decoration: none !important; }
+
+  /* — Orphan / Widow 制御 — */
+  p, li { orphans: 3; widows: 3; }
 }

@@ -142,7 +142,12 @@
       border-radius:0 !important;
       border-color:#999 !important;
       box-shadow:none !important;
-      page-break-inside:avoid;
+      /* 大型カードは自然分割を許可（白紙余白の解消） */
+      break-inside:auto !important;
+      page-break-inside:auto !important;
+    }
+    .strategy-card, .persona-card, .matrix-cell {
+      break-inside:avoid !important; page-break-inside:avoid !important;
     }
     .card h2 { margin:0 0 8px !important; font-size:13pt !important; padding-left:8px !important; }
     .card h3 { margin:10px 0 4px !important; font-size:11pt !important; }

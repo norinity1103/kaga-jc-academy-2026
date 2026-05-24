@@ -145,10 +145,10 @@
     .phase-flow-arrow { display:block; }
   }
   @media print {
-    @page { size: A4 portrait; margin: 12mm 14mm; }
+    @page { size: A4 portrait; margin: 8mm 10mm; }
     body { background:#fff; }
     .nav { display:none; }
-    .card, .outline { page-break-inside: avoid; box-shadow:none; }
+    .card, .outline { box-shadow:none; } .callout, figure { page-break-inside: avoid; }
     header .eyebrow, header .subtitle,
   }
 </style>
