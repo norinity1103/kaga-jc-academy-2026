@@ -149,21 +149,14 @@
     .strategy-card, .persona-card, .matrix-cell {
       break-inside:avoid !important; page-break-inside:avoid !important;
     }
-    /* ペルソナ画像：印刷時は強制2カラム＋max-height で圧縮 */
-    .persona-cards {
-      display:grid !important;
-      grid-template-columns:1fr 1fr !important;
-      gap:6px !important;
-      margin-bottom:8px !important;
-    }
-    figure.persona-card { padding:0 !important; border:none !important; }
-    figure.persona-card img {
-      width:100% !important;
+    /* ペルソナ統合画像：印刷時 max-height で1/3ページに収める */
+    figure img[src*="persona-ab"] {
       max-width:100% !important;
-      max-height:95mm !important;     /* A4縦 約297mm の1/3に収める */
+      max-height:90mm !important;
       height:auto !important;
       object-fit:contain !important;
       display:block !important;
+      margin:0 auto !important;
     }
     .card h2 { margin:0 0 8px !important; font-size:13pt !important; padding-left:8px !important; }
     .card h3 { margin:10px 0 4px !important; font-size:11pt !important; }
@@ -333,23 +326,11 @@
   <!-- Persona section -->
   <h3 style="margin-top:28px; font-size:15px; color:#0f172a; border-left:4px solid #f59e0b; padding-left:10px;">コアターゲット ペルソナ</h3>
 
-  <div class="persona-cards" style="margin-bottom:14px;">
-
-    <!-- Persona A -->
-    <figure class="persona-card" style="padding:8px; text-align:center; margin:0;">
-      <img src="../assets/persona-a.png"
-           alt="コアターゲット ペルソナ A（最優先）／ 入会1年未満・若手会員 ／ 参加率低 × 入会歴浅 ／ 30代前半・製造業・入会8ヶ月 ／ PAIN：役割が見えない。先輩との接点が少なく、相談できない。『置いていかれる感覚』 ／ GAIN：先輩の強みを知り『次の例会で自分から声をかける』最初の一歩を踏み出す"
-           style="width:100%; height:auto; display:block; border-radius:6px;">
-    </figure>
-
-    <!-- Persona B -->
-    <figure class="persona-card" style="padding:8px; text-align:center; margin:0;">
-      <img src="../assets/persona-b.png"
-           alt="コアターゲット ペルソナ B（最優先）／ 中堅・低アクティブ会員 ／ 参加率低 × 入会歴深 ／ 30代後半・飲食業・入会5年 ／ PAIN：久しぶり参加で『浦島太郎』状態。頼られなくなった孤立感。退会も視野に。 ／ GAIN：『まだ自分にできることがある』と再発見。負担にならない範囲で役割を持つ。"
-           style="width:100%; height:auto; display:block; border-radius:6px;">
-    </figure>
-
-  </div>
+  <figure style="margin:0 0 14px; text-align:center;">
+    <img src="../assets/persona-ab.png"
+         alt="コアターゲット ペルソナA・B：【A・コア（最優先）】入会1年未満・若手会員（30代前半・製造業・入会8ヶ月）／ 参加率低 × 入会歴浅 ／ PAIN：役割が見えない。先輩との接点が少なく相談できない。『置いていかれる感覚』 ／ GAIN：先輩の強みを知り『次の例会で自分から声をかける』最初の一歩。 ／ 【B・コア（最優先）】中堅・低アクティブ会員（30代後半・飲食業・入会5年）／ 参加率低 × 入会歴深 ／ PAIN：久しぶり参加で『浦島太郎』状態。頼られなくなった孤立感。退会も視野に。 ／ GAIN：『まだ自分にできることがある』と再発見。負担にならない範囲で役割を持つ。"
+         style="max-width:100%; height:auto; display:block; margin:0 auto; border:1px solid #e5e7eb; border-radius:8px;">
+  </figure>
 
   <!-- 参照ペルソナ -->
   <table class="tbl" style="font-size:13px;">
