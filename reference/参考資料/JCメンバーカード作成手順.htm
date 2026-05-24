@@ -4,210 +4,7 @@
 <meta charset="UTF-8">
 <title>JCメンバーカード作成手順 — KAGA JC GATHERING</title>
 <link rel="stylesheet" href="../shared.css">
-<style>
-  :root {
-    --bg: #f6f7f9;
-    --card: #ffffff;
-    --text: #1f2937;
-    --muted: #6b7280;
-    --line: #e5e7eb;
-    --accent: #0d9488;
-    --hover: #f3f4f6;
-  }
-  * { box-sizing: border-box; }
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
-    background: var(--bg); color: var(--text);
-    margin: 0; line-height: 1.75;
-  }
 
-
-
-
-  main { max-width: 1000px; margin: 28px auto; padding: 0 16px 64px; }
-
-  .toolbar {
-    background: #fff; border-bottom: 1px solid var(--line);
-    padding: 10px 16px; display: flex; gap: 8px;
-    position: sticky; top: 0; z-index: 10;
-    align-items: center;
-  }
-  .toolbar .label { font-size: 12px; color: var(--muted); flex: 1; }
-  .toolbar button {
-    background: var(--accent); color: #fff; border: none;
-    padding: 7px 14px; border-radius: 6px;
-    font-size: 12.5px; cursor: pointer; font-family: inherit;
-  }
-  .toolbar a {
-    background: #fff; color: var(--text);
-    padding: 7px 14px; border-radius: 6px;
-    text-decoration: none; font-size: 12.5px;
-    border: 1px solid var(--line);
-  }
-
-  .links {
-    background: #fff; border: 1px solid var(--line);
-    border-radius: 10px; padding: 14px 18px;
-    margin-bottom: 24px;
-    display: flex; flex-wrap: wrap; gap: 8px;
-  }
-  .links span.label {
-    font-size: 11px; color: var(--muted); letter-spacing: 0.06em;
-    text-transform: uppercase; align-self: center; margin-right: 6px;
-  }
-  .links a {
-    background: #f3f4f6; color: var(--text);
-    padding: 7px 12px; border-radius: 6px;
-    font-size: 12.5px; text-decoration: none;
-    border: 1px solid var(--line);
-  }
-  .links a:hover { background: #e5e7eb; }
-  .links a.current { background: #ccfbf1; border-color: var(--accent); color: #134e4a; }
-
-  .alert {
-    background: #fffbeb;
-    border-left: 4px solid #d97706;
-    padding: 14px 18px;
-    border-radius: 4px;
-    margin-bottom: 24px;
-    font-size: 14px;
-    color: #78350f;
-  }
-  .alert strong { color: #92400e; }
-
-  section.block {
-    background: #fff;
-    border: 1px solid var(--line);
-    border-radius: 12px;
-    margin-bottom: 22px;
-    overflow: hidden;
-  }
-  .block-head {
-    padding: 16px 22px;
-    background: #f0fdfa;
-    border-bottom: 1px solid var(--line);
-    display: flex; align-items: center; gap: 10px;
-  }
-  .block-head .num {
-    width: 28px; height: 28px;
-    border-radius: 50%;
-    background: var(--accent); color: #fff;
-    display: flex; align-items: center; justify-content: center;
-    font-weight: 700; font-size: 13px;
-    flex-shrink: 0;
-  }
-  .block-head h2 { margin: 0; font-size: 16px; font-weight: 700; color: #134e4a; }
-  .block-body { padding: 18px 22px; }
-  .block-body p { margin: 0 0 10px; font-size: 14px; }
-  .block-body p:last-child { margin-bottom: 0; }
-  .block-body ul, .block-body ol {
-    margin: 6px 0 12px; padding-left: 22px;
-    font-size: 13.5px;
-  }
-  .block-body ul li, .block-body ol li { margin-bottom: 4px; }
-
-  table.qtable, table.maptable {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 13.5px;
-    margin: 8px 0 12px;
-  }
-  table.qtable th, table.qtable td,
-  table.maptable th, table.maptable td {
-    border: 1px solid var(--line);
-    padding: 10px 12px;
-    text-align: left;
-    vertical-align: top;
-  }
-  table.qtable th, table.maptable th {
-    background: #f0fdfa;
-    color: #134e4a;
-    font-weight: 600;
-  }
-  table.qtable td.scale {
-    text-align: center;
-    color: var(--muted);
-    white-space: nowrap;
-    font-size: 12px;
-  }
-
-  .flow-list {
-    counter-reset: flow;
-    list-style: none;
-    padding: 0; margin: 8px 0 0;
-  }
-  .flow-list li {
-    counter-increment: flow;
-    background: #f8fafc;
-    border: 1px solid var(--line);
-    border-radius: 8px;
-    padding: 12px 14px 12px 44px;
-    margin-bottom: 8px;
-    font-size: 13.5px;
-    position: relative;
-  }
-  .flow-list li::before {
-    content: counter(flow);
-    position: absolute;
-    left: 12px; top: 12px;
-    width: 22px; height: 22px;
-    border-radius: 50%;
-    background: var(--accent); color: #fff;
-    display: flex; align-items: center; justify-content: center;
-    font-weight: 700; font-size: 12px;
-  }
-
-  .doc-text {
-    background: #f8fafc;
-    border: 1px solid var(--line);
-    border-radius: 8px;
-    padding: 16px 20px;
-    font-size: 13.5px;
-    color: #1f2937;
-    white-space: pre-wrap;
-    margin: 8px 0;
-  }
-
-  .pill {
-    display: inline-block;
-    background: #f0fdfa;
-    border: 1px solid #5eead4;
-    color: #115e59;
-    border-radius: 999px;
-    padding: 4px 12px;
-    font-size: 12.5px;
-    margin: 2px 4px 2px 0;
-    font-weight: 600;
-  }
-
-  .ok-ng-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-    margin: 12px 0;
-  }
-  .ok-box, .ng-box {
-    padding: 14px 16px;
-    border-radius: 8px;
-  }
-  .ok-box { background: #ecfdf5; border: 1px solid #86efac; }
-  .ng-box { background: #fef2f2; border: 1px solid #fca5a5; }
-  .ok-box h3 { margin: 0 0 8px; font-size: 13.5px; font-weight: 700; color: #14532d; }
-  .ng-box h3 { margin: 0 0 8px; font-size: 13.5px; font-weight: 700; color: #7f1d1d; }
-  .ok-box ul, .ng-box ul { margin: 0; padding-left: 18px; font-size: 13px; }
-  .ok-box ul li { color: #14532d; margin-bottom: 3px; }
-  .ng-box ul li { color: #7f1d1d; margin-bottom: 3px; }
-
-  @media print {
-    @page { size: A4 portrait; margin: 12mm 14mm; }
-    body { background: #fff; }
-    .toolbar, .links { display: none; }
-    section.block { page-break-inside: avoid; }
-    header .eyebrow,
-    main { padding: 0; }
-    .ok-ng-grid { grid-template-columns: 1fr 1fr; }
-  }
-</style>
 </head>
 <body>
 <div class="nav">
@@ -227,13 +24,14 @@
   <a class="zip-btn" href="../gian.htm">📦 全資料ZIP</a>
 </div>
 
+
+
 <div class="toolbar">
   <span class="label">JCメンバーカード作成手順 ／ 事前アンケート・本人確認・プライバシー配慮</span>
   <a href="../gian.htm">← 議案本文</a>
   <a href="../資料一覧.htm">資料一覧</a>
   <button class="pdf-btn" onclick="window.print()">📄 PDFで保存</button>
 </div>
-
 <header class="header-ref">
   <p class="eyebrow">審議対象資料 7</p>
   <h1>JCメンバーカード作成手順</h1>

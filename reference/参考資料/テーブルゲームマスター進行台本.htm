@@ -4,164 +4,7 @@
 <meta charset="UTF-8">
 <title>テーブルゲームマスター進行台本 — KAGA JC GATHERING</title>
 <link rel="stylesheet" href="../shared.css">
-<style>
-  :root {
-    --bg: #f6f7f9;
-    --card: #ffffff;
-    --text: #1f2937;
-    --muted: #6b7280;
-    --line: #e5e7eb;
-    --gm: #ea580c;
-    --hover: #f3f4f6;
-  }
-  * { box-sizing: border-box; }
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
-    background: var(--bg); color: var(--text);
-    margin: 0; line-height: 1.75;
-  }
 
-
-
-
-  main { max-width: 1000px; margin: 28px auto; padding: 0 16px 64px; }
-
-  .toolbar {
-    background: #fff; border-bottom: 1px solid var(--line);
-    padding: 10px 16px; display: flex; gap: 8px;
-    position: sticky; top: 0; z-index: 10;
-    align-items: center;
-  }
-  .toolbar .label {
-    font-size: 12px; color: var(--muted); flex: 1;
-  }
-  .toolbar button {
-    background: var(--gm); color: #fff; border: none;
-    padding: 7px 14px; border-radius: 6px;
-    font-size: 12.5px; cursor: pointer; font-family: inherit;
-  }
-  .toolbar a {
-    background: #fff; color: var(--text);
-    padding: 7px 14px; border-radius: 6px;
-    text-decoration: none; font-size: 12.5px;
-    border: 1px solid var(--line);
-  }
-
-  .links {
-    background: #fff; border: 1px solid var(--line);
-    border-radius: 10px; padding: 14px 18px;
-    margin-bottom: 24px;
-    display: flex; flex-wrap: wrap; gap: 8px;
-  }
-  .links span.label {
-    font-size: 11px; color: var(--muted); letter-spacing: 0.06em;
-    text-transform: uppercase; align-self: center; margin-right: 6px;
-  }
-  .links a {
-    background: #f3f4f6; color: var(--text);
-    padding: 7px 12px; border-radius: 6px;
-    font-size: 12.5px; text-decoration: none;
-    border: 1px solid var(--line);
-  }
-  .links a:hover { background: #e5e7eb; }
-  .links a.current { background: #ffedd5; border-color: var(--gm); color: #9a3412; }
-
-  .intro {
-    background: #fff; border: 1px solid var(--line);
-    border-radius: 12px; padding: 22px 24px;
-    margin-bottom: 24px;
-  }
-  .intro h2 {
-    margin: 0 0 8px; font-size: 13px;
-    color: var(--muted); letter-spacing: 0.06em;
-    text-transform: uppercase;
-  }
-  .intro p { margin: 0 0 8px; font-size: 14.5px; }
-  .intro p:last-child { margin-bottom: 0; }
-
-  .scene {
-    background: #fff;
-    border: 1px solid var(--line);
-    border-radius: 12px;
-    margin-bottom: 18px;
-    overflow: hidden;
-  }
-  .scene-head {
-    padding: 14px 22px;
-    background: #fff7ed;
-    border-bottom: 1px solid var(--line);
-    display: flex; align-items: center; gap: 14px;
-  }
-  .scene-num {
-    width: 32px; height: 32px;
-    border-radius: 50%;
-    background: var(--gm); color: #fff;
-    display: flex; align-items: center; justify-content: center;
-    font-weight: 700; font-size: 15px;
-    flex-shrink: 0;
-  }
-  .scene-head h2 { margin: 0; font-size: 16px; font-weight: 700; }
-  .scene-body { padding: 18px 22px; }
-  .scene-body p { margin: 0 0 10px; font-size: 14px; }
-
-  .script {
-    background: #fff7ed;
-    border-left: 4px solid var(--gm);
-    padding: 12px 16px;
-    border-radius: 4px;
-    margin: 10px 0;
-    font-size: 13.5px;
-    color: #7c2d12;
-    font-style: italic;
-  }
-  .script::before { content: "「"; }
-  .script::after { content: "」"; }
-
-  .check {
-    display: flex;
-    align-items: flex-start;
-    gap: 8px;
-    font-size: 13.5px;
-    margin-bottom: 4px;
-  }
-  .check::before {
-    content: ""; width: 14px; height: 14px;
-    border: 1.5px solid #94a3b8;
-    border-radius: 3px; flex-shrink: 0;
-    margin-top: 4px;
-  }
-
-  .qbox {
-    background: #f8fafc;
-    border: 1px solid var(--line);
-    border-radius: 8px;
-    padding: 12px 14px;
-    margin: 10px 0;
-    font-size: 13px;
-  }
-  .qbox .qlabel {
-    font-size: 10.5px;
-    color: var(--gm);
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    font-weight: 700;
-    margin-bottom: 6px;
-  }
-  .qbox ul {
-    margin: 0; padding-left: 18px;
-  }
-  .qbox ul li { margin-bottom: 4px; }
-
-  @media print {
-    @page { size: A4 portrait; margin: 12mm 14mm; }
-    body { background: #fff; }
-    .toolbar, .links { display: none; }
-    .scene, .intro { page-break-inside: avoid; box-shadow: none; }
-    header .eyebrow,
-    main { padding: 0; }
-    a { color: inherit; text-decoration: none; }
-  }
-</style>
 </head>
 <body>
 <div class="nav">
@@ -181,13 +24,14 @@
   <a class="zip-btn" href="../gian.htm">📦 全資料ZIP</a>
 </div>
 
+
+
 <div class="toolbar">
-  <span class="label">テーブルゲームマスター（参加委員長） 用</span>
+  <span class="label">テーブルゲームマスター進行台本 ／ KAGA JC GATHERING ／ 参加委員長用</span>
   <a href="../gian.htm">← 議案本文</a>
   <a href="../資料一覧.htm">資料一覧</a>
-  <button onclick="window.print()">🖨️ 印刷する</button>
+  <button class="pdf-btn" onclick="window.print()">📄 PDFで保存</button>
 </div>
-
 <header class="header-ref">
   <p class="eyebrow">参考資料 6</p>
   <h1>テーブルゲームマスター進行台本</h1>

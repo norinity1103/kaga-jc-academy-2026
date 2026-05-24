@@ -4,199 +4,7 @@
 <meta charset="UTF-8">
 <title>正副メンター役割確認シート — KAGA JC GATHERING</title>
 <link rel="stylesheet" href="../shared.css">
-<style>
-  :root {
-    --bg: #f6f7f9;
-    --card: #ffffff;
-    --text: #1f2937;
-    --muted: #6b7280;
-    --line: #e5e7eb;
-    --mentor: #6366f1;
-    --ok: #2da44e;
-    --ng: #cf222e;
-    --hover: #f3f4f6;
-  }
-  * { box-sizing: border-box; }
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
-    background: var(--bg); color: var(--text);
-    margin: 0; line-height: 1.75;
-  }
 
-
-
-
-  .toolbar {
-    background: #fff; border-bottom: 1px solid var(--line);
-    padding: 10px 16px; display: flex; gap: 8px;
-    position: sticky; top: 0; z-index: 10;
-    align-items: center;
-  }
-  .toolbar .label {
-    font-size: 12px; color: var(--muted); flex: 1;
-  }
-  .toolbar button {
-    background: var(--mentor); color: #fff; border: none;
-    padding: 7px 14px; border-radius: 6px;
-    font-size: 12.5px; cursor: pointer; font-family: inherit;
-  }
-  .toolbar a {
-    background: #fff; color: var(--text);
-    padding: 7px 14px; border-radius: 6px;
-    text-decoration: none; font-size: 12.5px;
-    border: 1px solid var(--line);
-  }
-
-  main { max-width: 980px; margin: 28px auto; padding: 0 16px 64px; }
-
-  .links {
-    background: #fff; border: 1px solid var(--line);
-    border-radius: 10px; padding: 14px 18px;
-    margin-bottom: 24px;
-    display: flex; flex-wrap: wrap; gap: 8px;
-  }
-  .links span.label {
-    font-size: 11px; color: var(--muted); letter-spacing: 0.06em;
-    text-transform: uppercase; align-self: center; margin-right: 6px;
-  }
-  .links a {
-    background: #f3f4f6; color: var(--text);
-    padding: 7px 12px; border-radius: 6px;
-    font-size: 12.5px; text-decoration: none;
-    border: 1px solid var(--line);
-  }
-  .links a:hover { background: #e5e7eb; }
-  .links a.current { background: #eef2ff; border-color: var(--mentor); color: #312e81; }
-
-  .intro {
-    background: #fff; border: 1px solid var(--line);
-    border-radius: 12px; padding: 22px 24px;
-    margin-bottom: 24px;
-  }
-  .intro h2 {
-    margin: 0 0 8px; font-size: 13px;
-    color: var(--muted); letter-spacing: 0.06em;
-    text-transform: uppercase;
-  }
-  .intro p { margin: 0 0 8px; font-size: 14.5px; }
-  .intro p:last-child { margin-bottom: 0; }
-
-  section.block {
-    background: #fff;
-    border: 1px solid var(--line);
-    border-radius: 12px;
-    margin-bottom: 20px;
-    overflow: hidden;
-  }
-  .block-head {
-    padding: 16px 22px;
-    background: #f5f3ff;
-    border-bottom: 1px solid var(--line);
-    display: flex; align-items: center; gap: 10px;
-  }
-  .block-head h2 { margin: 0; font-size: 17px; font-weight: 700; color: #312e81; }
-  .block-body { padding: 20px 22px; }
-  .block-body p { margin: 0 0 10px; font-size: 14px; }
-  .block-body p:last-child { margin-bottom: 0; }
-
-  .role-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 12px;
-  }
-  .role-card {
-    background: #f8fafc;
-    border: 1px solid var(--line);
-    border-radius: 8px;
-    padding: 14px;
-    font-size: 13.5px;
-  }
-  .role-card h3 {
-    margin: 0 0 6px;
-    font-size: 14px;
-    color: var(--mentor);
-    font-weight: 700;
-  }
-
-  .checkpoints {
-    list-style: none;
-    padding: 0; margin: 0;
-  }
-  .checkpoints li {
-    border-bottom: 1px solid var(--line);
-    padding: 10px 0;
-    display: flex;
-    align-items: flex-start;
-    gap: 12px;
-    font-size: 14px;
-  }
-  .checkpoints li:last-child { border-bottom: none; }
-  .checkpoints li::before {
-    content: "";
-    width: 16px; height: 16px;
-    border: 1.5px solid #94a3b8;
-    border-radius: 3px;
-    flex-shrink: 0;
-    margin-top: 4px;
-  }
-
-  .ok-ng-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-  }
-  .ok-box, .ng-box {
-    padding: 16px;
-    border-radius: 8px;
-  }
-  .ok-box {
-    background: #ecfdf5;
-    border: 1px solid #86efac;
-  }
-  .ng-box {
-    background: #fef2f2;
-    border: 1px solid #fca5a5;
-  }
-  .ok-box h3, .ng-box h3 {
-    margin: 0 0 8px;
-    font-size: 14px;
-    font-weight: 700;
-  }
-  .ok-box h3 { color: #14532d; }
-  .ng-box h3 { color: #7f1d1d; }
-  .ok-box ul, .ng-box ul {
-    margin: 0; padding-left: 18px;
-    font-size: 13px;
-  }
-  .ok-box ul li { color: #14532d; margin-bottom: 4px; }
-  .ng-box ul li { color: #7f1d1d; margin-bottom: 4px; }
-
-  .quote-script {
-    background: #eef2ff;
-    border-left: 4px solid var(--mentor);
-    padding: 12px 16px;
-    border-radius: 4px;
-    margin: 10px 0;
-    font-size: 13.5px;
-    color: #312e81;
-    font-style: italic;
-  }
-  .quote-script::before { content: "「"; }
-  .quote-script::after { content: "」"; }
-
-  @media print {
-    @page { size: A4 portrait; margin: 12mm 14mm; }
-    body { background: #fff; }
-    .toolbar, .links { display: none; }
-    section.block, .intro { page-break-inside: avoid; }
-    header .eyebrow,
-    main { padding: 0; }
-  }
-
-  @media (max-width: 600px) {
-    .ok-ng-grid { grid-template-columns: 1fr; }
-  }
-</style>
 </head>
 <body>
 <div class="nav">
@@ -216,12 +24,14 @@
   <a class="zip-btn" href="../gian.htm">📦 全資料ZIP</a>
 </div>
 
-<div class="toolbar">
-  <span class="label">正副メンバー（メンター）用</span>
-  <a href="../gian.htm">← 議案本文</a>
-  <button onclick="window.print()">🖨️ 印刷する</button>
-</div>
 
+
+<div class="toolbar">
+  <span class="label">正副メンター役割確認シート ／ KAGA JC GATHERING ／ 正副メンバー用</span>
+  <a href="../gian.htm">← 議案本文</a>
+  <a href="../資料一覧.htm">資料一覧</a>
+  <button class="pdf-btn" onclick="window.print()">📄 PDFで保存</button>
+</div>
 <header class="header-ref">
   <p class="eyebrow">参考資料 7</p>
   <h1>正副メンター役割確認シート</h1>
