@@ -2,164 +2,1002 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<title>コンプライアンスチェックシート — 会員開発委員会アカデミー事業</title>
+<title>コンプライアンスチェックシート 【規則様式3】— 会員開発委員会アカデミー事業</title>
 <link rel="stylesheet" href="../shared.css">
 <style>
-  * { box-sizing: border-box; }
-  body { font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
-    background:#f6f7f9; color:#1f2937; margin:0; line-height:1.75; -webkit-font-smoothing:antialiased; }
-  header { background: linear-gradient(135deg,#0f172a,#1e293b); color:#fff; padding:48px 24px 40px; text-align:center; }
-  header .eyebrow { font-size:12px; letter-spacing:.14em; color:#94a3b8; margin:0 0 10px; text-transform:uppercase; }
-  header h1 { margin:0 0 6px; font-size:28px; font-weight:700; }
-  header .subtitle { color:#cbd5e1; font-size:14px; margin:0; }
-  header .meta { margin-top:18px; font-size:12px; color:#94a3b8; }
-  main { max-width:1100px; margin:32px auto; padding:0 16px 64px; }
-  .card { background:#fff; border:1px solid #e5e7eb; border-radius:12px; padding:22px 26px; margin-bottom:20px; }
-  .card h2 { margin:0 0 14px; font-size:18px; color:#0f172a; border-left:4px solid #2da44e; padding-left:10px; }
-  .card h3 { margin:18px 0 8px; font-size:15px; color:#1f2937; }
-  .card p { margin:0 0 10px; font-size:14.5px; }
-  .nav {
-  position: sticky;
-  top: 0;
-  z-index: 200; font-size:13px; color:#6b7280; padding:12px 16px; background:#fff; border-bottom:1px solid #e5e7eb; }
-  .nav a { margin-right:14px; color:#1f6feb; text-decoration:none; }
-  a { color:#1f6feb; text-decoration:none; }
-  a:hover { text-decoration:underline; }
-  table.tbl { width:100%; border-collapse:collapse; font-size:13.5px; margin-top:8px; }
-  table.tbl th, table.tbl td { border:1px solid #e5e7eb; padding:9px 10px; text-align:left; vertical-align:top; }
-  table.tbl th { background:#f3f4f6; font-weight:600; white-space:nowrap; }
-  .muted { color:#6b7280; font-size:13px; }
-  .check { display:inline-block; width:16px; height:16px; border:2px solid #cbd5e1; border-radius:3px; vertical-align:middle; margin-right:8px; }
-  .pillar { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-bottom:14px; }
-  .pillar-card { padding:14px 16px; border-radius:10px; border:1px solid; }
-  .pillar-card.p1 { background:#eff6ff; border-color:#bfdbfe; }
-  .pillar-card.p2 { background:#fef3c7; border-color:#fcd34d; }
-  .pillar-card.p3 { background:#dcfce7; border-color:#bbf7d0; }
-  .pillar-card h3 { margin:0 0 4px; font-size:14px; }
-  .pillar-card.p1 h3 { color:#1e40af; }
-  .pillar-card.p2 h3 { color:#92400e; }
-  .pillar-card.p3 h3 { color:#15803d; }
-  .pillar-card p { margin:0; font-size:12.5px; color:#374151; }
-  .check-list li { list-style:none; padding:6px 0; border-bottom:1px solid #f1f3f5; font-size:14px; }
-  .check-list li:last-child { border-bottom:none; }
-  .judge-box { background:#f9fafb; border:1px dashed #cbd5e1; border-radius:8px; padding:12px 16px; margin-top:12px; }
-  @media print { @page { size: A4 portrait; margin: 12mm 14mm; } body{background:#fff} .nav{display:none} .card{page-break-inside:avoid} header{background:#fff!important;color:#1f2937!important;padding:20px 0 14px} header .eyebrow,header .subtitle,header .meta{color:#6b7280!important} .pillar{grid-template-columns:1fr 1fr 1fr} }
+body { font-family:'ＭＳ Ｐゴシック','MS PGothic',sans-serif; background:#f6f7f9; margin:0; }
+.nav { position:sticky; top:0; z-index:200; font-size:13px; color:#6b7280; padding:12px 16px; background:#fff; border-bottom:1px solid #e5e7eb; }
+.nav a { margin-right:14px; color:#1f6feb; text-decoration:none; }
+.form-wrap { max-width:1400px; margin:24px auto; padding:0 16px 64px; }
+.form-note { background:#fff; border:1px solid #ccc; border-bottom:none; padding:12px 16px; font-size:12px; color:#444; }
+.form-note h1 { margin:0 0 4px; font-size:14px; font-weight:bold; font-family:'ＭＳ Ｐゴシック','MS PGothic',sans-serif; }
+.form-note p { margin:0; font-size:11px; color:#666; }
+.form-body { background:#fff; border:1px solid #ccc; padding:8px; overflow-x:auto; }
+@media print {
+  @page { size:A4 landscape; margin:8mm; }
+  body { background:#fff; }
+  .nav { display:none; }
+  .form-wrap { max-width:none; margin:0; padding:0; }
+  .form-note { display:none; }
+  .form-body { border:none; padding:0; overflow-x:visible; }
+}
 </style>
 </head>
 <body>
 <div class="nav">
   <a class="nav-brand" href="../gian.htm">KAGA JC <span>2026</span></a>
   <a href="../資料一覧.htm">資料一覧</a>
-  <a href="../想定問答集.htm">想定問答集</a>
-  <a href="コンプライアンス審査ガイド.htm">コンプライアンス</a>
-  <a href="../改善ロードマップ.htm">改善ロードマップ</a>
-  <div class="nav-dd">
-    <button class="nav-dd-btn">実行タスク ▾</button>
-    <div class="nav-dd-menu">
-      <a href="../委員長の実行アクション.htm">委員長の実行アクション</a>
-      <a href="../室長確認依頼項目.htm">室長確認依頼項目</a>
-      <a href="../改善ロードマップ.htm">改善ロードマップ</a>
-    </div>
+  <a href="コンプライアンス受付表.htm">様式1 受付表</a>
+  <a href="コンプライアンス審査ガイド.htm">コンプライアンス審査ガイド</a>
+  <button class="pdf-btn" onclick="window.print()">📄 印刷</button>
+</div>
+<div class="form-wrap">
+  <div class="form-note">
+    <h1>コンプライアンスチェックシート 【規則様式3】</h1>
+    <p>2026年度 会員開発委員会アカデミー事業 ／ 本様式は加賀JC規則様式3（計画書議案用チェックシート）に準拠しています。印刷して必要事項を記入し、受付表と併せて提出してください。</p>
   </div>
-  <button class="pdf-btn" onclick="window.print()">📄 PDFで保存</button>
-</div>
-<header>
-  <p class="eyebrow">参考資料 9</p>
-  <h1>コンプライアンスチェックシート</h1>
-  <p class="subtitle">協賛品・配布物・予算項目の公益性・対価関係・透明性を判定する</p>
-  <p class="meta">2026年度 会員開発委員会アカデミー事業</p>
-</header>
-<main>
-
-<div class="card">
-  <h2>本シートの目的</h2>
-  <p>本事業に関連する<b>協賛品・配布物・予算項目・地域連携</b>について、コンプライアンス上のリスクがないかを<b>3つの観点</b>から判定する作業シート。<a href="コンプライアンス受付表.htm">参考資料13：コンプライアンス受付表</a>で受け付けた案件ごとに本シートを適用する。</p>
-</div>
-
-<div class="card">
-  <h2>判定の3つの柱</h2>
-  <div class="pillar">
-    <div class="pillar-card p1">
-      <h3>① 公益性との整合</h3>
-      <p>本事業の目的（公益事業）と整合し、特定の事業者や個人の宣伝にならないこと</p>
-    </div>
-    <div class="pillar-card p2">
-      <h3>② 対価関係の不発生</h3>
-      <p>提供を受けることで、加賀JCに継続的な義務・推奨・対価関係が生じないこと</p>
-    </div>
-    <div class="pillar-card p3">
-      <h3>③ 透明性の担保</h3>
-      <p>参加者・地域・対外関係者に対し、提供者名と用途を明示できること</p>
-    </div>
+  <div class="form-body">
+<table style="width:100%;border-collapse:collapse;table-layout:fixed;font-family:'ＭＳ Ｐゴシック','MS PGothic',sans-serif">
+<colgroup>
+<col style="width:2.11%">
+<col style="width:1.63%">
+<col style="width:1.25%">
+<col style="width:2.11%">
+<col style="width:2.59%">
+<col style="width:2.59%">
+<col style="width:2.59%">
+<col style="width:2.59%">
+<col style="width:2.59%">
+<col style="width:4.32%">
+<col style="width:4.23%">
+<col style="width:3.84%">
+<col style="width:2.11%">
+<col style="width:2.59%">
+<col style="width:2.59%">
+<col style="width:2.59%">
+<col style="width:2.59%">
+<col style="width:1.63%">
+<col style="width:2.11%">
+<col style="width:2.98%">
+<col style="width:2.11%">
+<col style="width:2.59%">
+<col style="width:2.59%">
+<col style="width:2.11%">
+<col style="width:2.59%">
+<col style="width:2.59%">
+<col style="width:2.59%">
+<col style="width:2.59%">
+<col style="width:2.59%">
+<col style="width:2.59%">
+<col style="width:2.59%">
+<col style="width:2.59%">
+<col style="width:2.59%">
+<col style="width:2.59%">
+<col style="width:2.59%">
+<col style="width:2.59%">
+<col style="width:2.69%">
+<col style="width:1.25%">
+<col style="width:1.73%">
+<col style="width:2.11%">
+</colgroup>
+<tr style="height:15.75pt">
+<td style="font-size:9.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:9.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:9.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:9.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:9.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:9.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:9.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:9.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:9.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:9.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:9.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:9.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:9.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:9.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:9.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:9.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:9.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:9.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:9.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:9.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:9.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:9.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:9.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:9.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:9.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:9.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:9.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:9.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:9.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:9.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:9.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:9.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:9.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:9.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:9.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td colspan="5" style="font-size:10.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden">【規則様式3】</td>
+</tr>
+<tr style="height:18.9pt">
+<td style="font-size:9.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td colspan="23" style="font-size:16.0pt;font-weight:bold;vertical-align:middle;white-space:pre-wrap;border-right:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">コンプライアンスチェックシート　（１／２）</td>
+<td colspan="5" style="font-size:11.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">確認日</td>
+<td colspan="3" style="font-size:11.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">2025</td>
+<td style="font-size:9.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">年</td>
+<td colspan="2" style="font-size:11.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">1</td>
+<td style="font-size:9.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">月</td>
+<td colspan="2" style="font-size:11.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">1</td>
+<td style="font-size:9.0pt;text-align:left;vertical-align:middle;white-space:pre-wrap;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">日</td>
+<td style="font-size:9.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+</tr>
+<tr style="height:18.9pt">
+<td style="font-size:9.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td colspan="6" style="font-size:10.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">事業名</td>
+<td colspan="32" style="font-size:11.0pt;text-align:center;vertical-align:middle;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">KAGA JC GATHERING（仮）アカデミー事業</td>
+<td style="font-size:9.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+</tr>
+<tr style="height:18.9pt">
+<td style="font-size:9.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td colspan="6" style="font-size:10.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;padding:1px 4px;overflow:hidden">会議・委員会</td>
+<td colspan="17" style="font-size:11.0pt;text-align:left;vertical-align:middle;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;padding:1px 4px;overflow:hidden">会員開発委員会</td>
+<td colspan="7" style="font-size:11.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;padding:1px 4px;overflow:hidden">議案作成者</td>
+<td colspan="8" style="font-size:11.0pt;text-align:left;vertical-align:middle;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;padding:1px 4px;overflow:hidden">藤澤祐希</td>
+<td style="font-size:9.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+</tr>
+<tr style="height:15.0pt">
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td colspan="23" style="font-size:8.0pt;text-align:left;vertical-align:middle;border-left:1px solid #777;padding:1px 4px;overflow:hidden">【資料の作成について】　※Ｑ１～Ｑ５は、全て回答してください</td>
+<td colspan="13" style="font-size:8.0pt;font-weight:bold;text-align:right;white-space:pre-wrap;padding:1px 4px;overflow:hidden">該当する項目に☑をつけてください</td>
+<td colspan="2" style="font-size:8.0pt;text-align:center;white-space:pre-wrap;border-right:1px solid #777;padding:1px 4px;overflow:hidden">↓</td>
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+</tr>
+<tr style="height:16.5pt">
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td colspan="2" style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;padding:1px 4px;overflow:hidden">Q1</td>
+<td colspan="34" style="font-size:8.0pt;font-weight:bold;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;padding:1px 4px;overflow:hidden">受付表を用意してください</td>
+<td colspan="2" style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+</tr>
+<tr style="height:15.0pt">
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td rowspan="6" colspan="2" style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;padding:1px 4px;overflow:hidden">Q2</td>
+<td colspan="24" style="font-size:8.0pt;font-weight:bold;text-align:left;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">著作物の使用がありますか？</td>
+<td colspan="10" style="font-size:8.0pt;font-weight:bold;text-align:right;white-space:pre-wrap;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">該当する項目に☑をつけてください</td>
+<td colspan="2" style="font-size:8.0pt;text-align:center;white-space:pre-wrap;border-right:1px solid #777;padding:1px 4px;overflow:hidden">↓</td>
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+</tr>
+<tr style="height:15.0pt">
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">A</td>
+<td colspan="14" style="font-size:8.0pt;text-align:left;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">ポスター・チラシ・映像等を使用します</td>
+<td style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">→</td>
+<td colspan="18" style="font-size:8.0pt;text-align:left;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">Ｑ６へ</td>
+<td colspan="2" style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+</tr>
+<tr style="height:15.0pt">
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">B</td>
+<td colspan="14" style="font-size:8.0pt;text-align:left;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">講師やアーティストなどがいます</td>
+<td style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">→</td>
+<td colspan="18" style="font-size:8.0pt;text-align:left;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">Ｑ９へ</td>
+<td colspan="2" style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+</tr>
+<tr style="height:26.1pt">
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">C</td>
+<td colspan="14" style="font-size:8.0pt;text-align:left;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">パワーポイントや配布資料等のプレゼン報告資料を使用します</td>
+<td style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">→</td>
+<td colspan="18" style="font-size:8.0pt;text-align:left;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">Ｑ１２へ</td>
+<td colspan="2" style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+</tr>
+<tr style="height:15.0pt">
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">D</td>
+<td colspan="14" style="font-size:8.0pt;text-align:left;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">音楽を使用します</td>
+<td style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">→</td>
+<td colspan="18" style="font-size:8.0pt;text-align:left;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">Ｑ１６へ</td>
+<td colspan="2" style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+</tr>
+<tr style="height:15.0pt">
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;padding:1px 4px;overflow:hidden">E</td>
+<td colspan="14" style="font-size:8.0pt;text-align:left;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-top:1px solid #777;padding:1px 4px;overflow:hidden">著作物等の使用はありません</td>
+<td style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">→</td>
+<td colspan="18" style="font-size:8.0pt;text-align:left;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;padding:1px 4px;overflow:hidden">Ｑ６以降のコンプライアンスチェックシートの記載はありません。</td>
+<td colspan="2" style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+</tr>
+<tr style="height:15.0pt">
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td rowspan="7" colspan="2" style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;padding:1px 4px;overflow:hidden">Q3</td>
+<td colspan="24" style="font-size:8.0pt;font-weight:bold;text-align:left;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">各種承諾書の注意点を確認してください</td>
+<td colspan="10" style="font-size:8.0pt;font-weight:bold;text-align:right;white-space:pre-wrap;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">該当する項目に☑をつけてください</td>
+<td colspan="2" style="font-size:8.0pt;text-align:center;white-space:pre-wrap;border-right:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">↓</td>
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+</tr>
+<tr style="height:26.1pt">
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">A</td>
+<td colspan="14" style="font-size:8.0pt;text-align:justify;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">[様式5]映像・ポスター等作成依頼承諾書</td>
+<td style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">→</td>
+<td colspan="18" style="font-size:8.0pt;text-align:left;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">原本を１部提出してください。依頼人の氏名・捺印の確認・収入印紙はいりません。</td>
+<td colspan="2" style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+</tr>
+<tr style="height:26.1pt">
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">B</td>
+<td colspan="14" style="font-size:8.0pt;text-align:justify;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">[様式6]講師等出演依頼承諾書</td>
+<td style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">→</td>
+<td colspan="18" style="font-size:8.0pt;text-align:left;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">表裏両面印刷にし原本を１部提出してください。依頼人の氏名・捺印の確認・収入印紙はいりません。</td>
+<td colspan="2" style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+</tr>
+<tr style="height:26.1pt">
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">C</td>
+<td colspan="14" style="font-size:8.0pt;text-align:justify;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">[様式7]著作物利用等に関する承諾書</td>
+<td style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">→</td>
+<td colspan="18" style="font-size:8.0pt;text-align:left;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">原本を１部提出してください。依頼人の氏名・捺印の確認・収入印紙はいりません。</td>
+<td colspan="2" style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+</tr>
+<tr style="height:15.0pt">
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">D</td>
+<td colspan="14" style="font-size:8.0pt;text-align:justify;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">[様式8]著作物の引用における出所表記の確認及び報告書</td>
+<td style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">→</td>
+<td colspan="18" style="font-size:8.0pt;text-align:left;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">原本を１部提出してください。</td>
+<td colspan="2" style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+</tr>
+<tr style="height:15.0pt">
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">E</td>
+<td colspan="14" style="font-size:8.0pt;text-align:left;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">各団体所定の契約書（承諾書）、その他</td>
+<td style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">→</td>
+<td colspan="18" style="font-size:8.0pt;text-align:left;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">各団体の規程に従い作成してください。原本を１部提出してください。</td>
+<td colspan="2" style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+</tr>
+<tr style="height:15.0pt">
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;padding:1px 4px;overflow:hidden">Ｆ</td>
+<td colspan="14" style="font-size:8.0pt;text-align:left;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;padding:1px 4px;overflow:hidden">各種承諾書の提出はありません</td>
+<td style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">→</td>
+<td colspan="18" style="font-size:8.0pt;text-align:left;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;padding:1px 4px;overflow:hidden">Ｑ４～Ｑ５へ</td>
+<td colspan="2" style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+</tr>
+<tr style="height:15.0pt">
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td rowspan="4" colspan="2" style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;padding:1px 4px;overflow:hidden">Q4</td>
+<td colspan="24" style="font-size:8.0pt;font-weight:bold;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">映像・動画を使用しますか？</td>
+<td colspan="10" style="font-size:8.0pt;font-weight:bold;text-align:right;white-space:pre-wrap;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">該当する項目に☑をつけてください</td>
+<td colspan="2" style="font-size:8.0pt;text-align:center;white-space:pre-wrap;border-right:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">↓</td>
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+</tr>
+<tr style="height:26.1pt">
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">A</td>
+<td colspan="14" style="font-size:8.0pt;text-align:left;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">外部業者に委託します</td>
+<td style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">→</td>
+<td colspan="18" style="font-size:8.0pt;text-align:left;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">基本的に映像を用意してください。支払いの関係上、どうしても映像を用意できない場合は絵コンテでも構いません。</td>
+<td colspan="2" style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+</tr>
+<tr style="height:15.0pt">
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">B</td>
+<td colspan="14" style="font-size:8.0pt;text-align:left;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">会議体・委員会で作成します</td>
+<td style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">→</td>
+<td colspan="18" style="font-size:8.0pt;text-align:left;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">必ず映像を用意してください。</td>
+<td colspan="2" style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+</tr>
+<tr style="height:15.0pt">
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;padding:1px 4px;overflow:hidden">C</td>
+<td colspan="14" style="font-size:8.0pt;text-align:left;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;padding:1px 4px;overflow:hidden">映像・動画の使用はありません</td>
+<td style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">→</td>
+<td colspan="18" style="font-size:8.0pt;text-align:left;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;padding:1px 4px;overflow:hidden">Ｑ５へ</td>
+<td colspan="2" style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+</tr>
+<tr style="height:15.0pt">
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td rowspan="6" colspan="2" style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;padding:1px 4px;overflow:hidden">Q5</td>
+<td colspan="24" style="font-size:8.0pt;font-weight:bold;text-align:left;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">JCマークを使用する場合、以下を確認してください。</td>
+<td colspan="10" style="font-size:8.0pt;font-weight:bold;text-align:right;white-space:pre-wrap;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">該当する項目に☑をつけてください</td>
+<td colspan="2" style="font-size:8.0pt;text-align:center;white-space:pre-wrap;border-right:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">↓</td>
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+</tr>
+<tr style="height:22.35pt">
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">A</td>
+<td colspan="14" style="font-size:8.0pt;text-align:left;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">マーク自体の注意点</td>
+<td style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">→</td>
+<td colspan="18" style="font-size:8.0pt;text-align:left;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">比率を変えたり、変形させたり、一部だけ抜き出して使用してはいけません。</td>
+<td colspan="2" style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+</tr>
+<tr style="height:36.0pt">
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">B</td>
+<td colspan="14" style="font-size:8.0pt;text-align:left;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">背景色の注意点</td>
+<td style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">→</td>
+<td colspan="18" style="font-size:8.0pt;text-align:left;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">ＪＣマークの背景色はＪＣＩが承認した５色のうち１色のみ使用可能です。<br>※グラデーション・写真不可（2023改定版JCIマークブランドガイドライン参照）</td>
+<td colspan="2" style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+</tr>
+<tr style="height:15.0pt">
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">C</td>
+<td colspan="14" style="font-size:8.0pt;text-align:left;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">周囲のクリアランス（余白）の注意点</td>
+<td style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">→</td>
+<td colspan="18" style="font-size:8.0pt;text-align:left;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">JCマークの周りに地球儀半個分のクリアランスを空けてください。</td>
+<td colspan="2" style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+</tr>
+<tr style="height:36.0pt">
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">D</td>
+<td colspan="14" style="font-size:8.0pt;text-align:left;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">色の注意点</td>
+<td style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">→</td>
+<td colspan="18" style="font-size:8.0pt;text-align:left;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">JCマークの色はアクア・ブラック・ホワイトを使用してください。なお、国名のみゴールドを使用しても構いません。（2023改定版JCIマークブランドガイドライン参照）</td>
+<td colspan="2" style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+</tr>
+<tr style="height:15.0pt">
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">E</td>
+<td colspan="14" style="font-size:8.0pt;text-align:left;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">ＪＣマークの使用はありません</td>
+<td style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">→</td>
+<td colspan="18" style="font-size:8.0pt;text-align:left;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">※その他、必要箇所を回答ください。</td>
+<td colspan="2" style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+</tr>
+<tr style="height:15.0pt">
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td colspan="38" style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;padding:1px 4px;overflow:hidden">【ポスター・チラシ・映像等の使用について】</td>
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+</tr>
+<tr style="height:15.0pt">
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td rowspan="3" colspan="2" style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;padding:1px 4px;overflow:hidden">Q6</td>
+<td colspan="24" style="font-size:8.0pt;font-weight:bold;text-align:left;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">外部業者に委託しますか？</td>
+<td colspan="10" style="font-size:8.0pt;font-weight:bold;text-align:right;white-space:pre-wrap;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">該当する項目に☑をつけてください</td>
+<td colspan="2" style="font-size:8.0pt;text-align:center;white-space:pre-wrap;border-right:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">↓</td>
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+</tr>
+<tr style="height:15.0pt">
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-right:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">A</td>
+<td colspan="14" style="font-size:8.0pt;text-align:left;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">外部業者に委託します</td>
+<td style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">→</td>
+<td colspan="18" style="font-size:8.0pt;text-align:left;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">Ｑ７へ</td>
+<td colspan="2" style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+</tr>
+<tr style="height:15.0pt">
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-right:1px solid #777;border-top:1px solid #777;padding:1px 4px;overflow:hidden">B</td>
+<td colspan="14" style="font-size:8.0pt;text-align:left;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;padding:1px 4px;overflow:hidden">会議体・委員会で作成します</td>
+<td style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;padding:1px 4px;overflow:hidden">→</td>
+<td colspan="18" style="font-size:8.0pt;text-align:left;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;padding:1px 4px;overflow:hidden">Ｑ８へ</td>
+<td colspan="2" style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+</tr>
+<tr style="height:15.0pt">
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td rowspan="3" colspan="2" style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">Q7</td>
+<td colspan="24" style="font-size:8.0pt;font-weight:bold;text-align:left;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">イラスト・写真・動画・プロフィール等のデータは誰が準備しますか？</td>
+<td colspan="10" style="font-size:8.0pt;font-weight:bold;text-align:right;white-space:pre-wrap;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">該当する項目に☑をつけてください</td>
+<td colspan="2" style="font-size:8.0pt;text-align:center;white-space:pre-wrap;border-right:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">↓</td>
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+</tr>
+<tr style="height:26.1pt">
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">A</td>
+<td colspan="14" style="font-size:8.0pt;text-align:left;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">外部業者が画像等のデータを準備します</td>
+<td style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">→</td>
+<td colspan="18" style="font-size:8.0pt;font-weight:bold;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">［様式5］映像・ポスター等作成依頼承諾書を記載し、依頼先に許可を得て提出してください。</td>
+<td colspan="2" style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+</tr>
+<tr style="height:15.0pt">
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;padding:1px 4px;overflow:hidden">B</td>
+<td colspan="14" style="font-size:8.0pt;text-align:left;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;padding:1px 4px;overflow:hidden">会議体・委員会で準備する資料があります</td>
+<td style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;padding:1px 4px;overflow:hidden">→</td>
+<td colspan="18" style="font-size:8.0pt;text-align:left;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;padding:1px 4px;overflow:hidden">Ｑ８へ</td>
+<td colspan="2" style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+</tr>
+<tr style="height:15.0pt">
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td rowspan="5" colspan="2" style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">Q8</td>
+<td colspan="24" style="font-size:8.0pt;font-weight:bold;text-align:left;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">会議体・委員会で準備した資料はどのように準備したものですか？</td>
+<td colspan="10" style="font-size:8.0pt;font-weight:bold;text-align:right;white-space:pre-wrap;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">該当する項目に☑をつけてください</td>
+<td colspan="2" style="font-size:8.0pt;text-align:center;white-space:pre-wrap;border-right:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">↓</td>
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+</tr>
+<tr style="height:15.0pt">
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">A</td>
+<td colspan="14" style="font-size:8.0pt;text-align:left;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">イラスト・写真・動画・プロフィール等は全て自作です</td>
+<td style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">→</td>
+<td colspan="18" style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">著作権の確認は不要です。</td>
+<td colspan="2" style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+</tr>
+<tr style="height:26.1pt">
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">B</td>
+<td colspan="14" style="font-size:8.0pt;text-align:left;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">講師等の写真やプロフィール等があります</td>
+<td style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">→</td>
+<td colspan="18" style="font-size:8.0pt;font-weight:bold;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">［様式6］講師等出演依頼承諾書を記載し、依頼先に許可を得て提出してください。</td>
+<td colspan="2" style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+</tr>
+<tr style="height:26.1pt">
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">C</td>
+<td colspan="14" style="font-size:8.0pt;text-align:left;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">イラスト・写真・動画等の引用、転載があります</td>
+<td style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">→</td>
+<td colspan="18" style="font-size:8.0pt;font-weight:bold;text-align:left;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">［様式7］著作物利用等に関する承諾書を記載し、著作者に許可を得て提出してください。</td>
+<td colspan="2" style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+</tr>
+<tr style="height:26.1pt">
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">D</td>
+<td colspan="14" style="font-size:8.0pt;text-align:left;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">フリー素材を使用します</td>
+<td style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">→</td>
+<td colspan="18" style="font-size:8.0pt;font-weight:bold;text-align:left;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">［様式8］著作物の引用における出所表記の確認及び報告書を提出してください。</td>
+<td colspan="2" style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+</tr>
+<tr style="height:15.9pt">
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td colspan="38" style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;padding:1px 4px;overflow:hidden">【講師やアーティストの出演について】</td>
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+</tr>
+<tr style="height:15.9pt">
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td rowspan="3" colspan="2" style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;padding:1px 4px;overflow:hidden">Q9</td>
+<td colspan="24" style="font-size:8.0pt;font-weight:bold;text-align:left;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">講師やアーティスト等は、ＪＣの現役ですか？</td>
+<td colspan="10" style="font-size:8.0pt;font-weight:bold;text-align:right;white-space:pre-wrap;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">該当する項目に☑をつけてください</td>
+<td colspan="2" style="font-size:8.0pt;text-align:center;white-space:pre-wrap;border-right:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">↓</td>
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+</tr>
+<tr style="height:15.9pt">
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-right:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">A</td>
+<td colspan="14" style="font-size:8.0pt;text-align:left;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">はい　現役です</td>
+<td style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">→</td>
+<td colspan="18" style="font-size:8.0pt;text-align:left;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">Ｑ１０へ</td>
+<td colspan="2" style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+</tr>
+<tr style="height:30.45pt">
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-right:1px solid #777;border-top:1px solid #777;padding:1px 4px;overflow:hidden">B</td>
+<td colspan="14" style="font-size:8.0pt;text-align:left;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;padding:1px 4px;overflow:hidden">いいえ　ＯＢまたは、外部の協力者です</td>
+<td style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;padding:1px 4px;overflow:hidden">→</td>
+<td colspan="18" style="font-size:8.0pt;font-weight:bold;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;padding:1px 4px;overflow:hidden">［様式6］講師等出演依頼承諾書を記載し、依頼先に許可を得て提出してください。<br>Q１０へ</td>
+<td colspan="2" style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+</tr>
+<tr style="height:15.75pt">
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td rowspan="3" colspan="2" style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">Q10</td>
+<td colspan="24" style="font-size:8.0pt;font-weight:bold;text-align:left;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">パワーポイントや映像、配布資料等のプレゼン報告資料を使用しますか？</td>
+<td colspan="10" style="font-size:8.0pt;font-weight:bold;text-align:right;white-space:pre-wrap;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">該当する項目に☑をつけてください</td>
+<td colspan="2" style="font-size:8.0pt;text-align:center;white-space:pre-wrap;border-right:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">↓</td>
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+</tr>
+<tr style="height:15.9pt">
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-right:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">A</td>
+<td colspan="14" style="font-size:8.0pt;text-align:left;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">使用します</td>
+<td style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">→</td>
+<td colspan="18" style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">Ｑ２にチェックつけてＱ１１へ、その後Ｑ１２へ</td>
+<td colspan="2" style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+</tr>
+<tr style="height:15.9pt">
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">B</td>
+<td colspan="14" style="font-size:8.0pt;text-align:left;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">使用しません</td>
+<td style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">→</td>
+<td colspan="18" style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">著作権の確認は不要です。Ｑ１１へ</td>
+<td colspan="2" style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+</tr>
+<tr style="height:15.9pt">
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;text-align:left;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;text-align:left;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;text-align:left;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;text-align:left;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;text-align:left;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;text-align:left;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;text-align:left;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;text-align:left;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;text-align:left;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;text-align:left;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;text-align:left;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;text-align:left;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;text-align:left;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;text-align:left;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+</tr>
+<tr style="height:18.9pt">
+<td style="font-size:9.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td colspan="23" style="font-size:16.0pt;font-weight:bold;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">コンプライアンスチェックシート　（２／２）</td>
+<td colspan="5" style="font-size:11.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">確認日</td>
+<td colspan="3" style="font-size:11.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">2025</td>
+<td style="font-size:9.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">年</td>
+<td colspan="2" style="font-size:11.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">1</td>
+<td style="font-size:9.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">月</td>
+<td colspan="2" style="font-size:11.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">1</td>
+<td style="font-size:9.0pt;text-align:left;vertical-align:middle;white-space:pre-wrap;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">日</td>
+<td style="font-size:9.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+</tr>
+<tr style="height:18.9pt">
+<td style="font-size:9.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td colspan="6" style="font-size:10.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">議案ファイル名</td>
+<td colspan="32" style="font-size:11.0pt;text-align:center;vertical-align:middle;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">KAGA JC GATHERING（仮）アカデミー事業</td>
+<td style="font-size:9.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+</tr>
+<tr style="height:18.9pt">
+<td style="font-size:9.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td colspan="6" style="font-size:10.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;padding:1px 4px;overflow:hidden">会議・委員会</td>
+<td colspan="17" style="font-size:11.0pt;text-align:left;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;padding:1px 4px;overflow:hidden">会員開発委員会</td>
+<td colspan="7" style="font-size:11.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;padding:1px 4px;overflow:hidden">議案作成者</td>
+<td colspan="8" style="font-size:11.0pt;text-align:left;vertical-align:middle;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;padding:1px 4px;overflow:hidden">藤澤祐希</td>
+<td style="font-size:9.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+</tr>
+<tr style="height:15.0pt">
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td rowspan="3" colspan="2" style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">Q11</td>
+<td colspan="24" style="font-size:8.0pt;font-weight:bold;text-align:left;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">講師や出演者の出演料がある場合の契約形態は？</td>
+<td colspan="10" style="font-size:8.0pt;font-weight:bold;text-align:right;white-space:pre-wrap;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">該当する項目に☑をつけてください</td>
+<td colspan="2" style="font-size:8.0pt;text-align:center;white-space:pre-wrap;border-right:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">↓</td>
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+</tr>
+<tr style="height:15.0pt">
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-right:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">A</td>
+<td colspan="14" style="font-size:8.0pt;text-align:left;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">契約形態は法人です</td>
+<td style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">→</td>
+<td colspan="18" style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">[様式6別表]の提出は不要です。</td>
+<td colspan="2" style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+</tr>
+<tr style="height:15.0pt">
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-right:1px solid #777;border-top:1px solid #777;padding:1px 4px;overflow:hidden">B</td>
+<td colspan="14" style="font-size:8.0pt;text-align:left;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;padding:1px 4px;overflow:hidden">契約形態は個人です</td>
+<td style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;padding:1px 4px;overflow:hidden">→</td>
+<td colspan="18" style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;padding:1px 4px;overflow:hidden">出演料が50,000円以上の場合、［様式6別表］の提出が必要です。</td>
+<td colspan="2" style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+</tr>
+<tr style="height:15.0pt">
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td colspan="38" style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;padding:1px 4px;overflow:hidden">【パワーポイントや配布資料等のプレゼン報告資料の使用について】</td>
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+</tr>
+<tr style="height:22.35pt">
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td rowspan="6" colspan="2" style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;padding:1px 4px;overflow:hidden">Q12</td>
+<td colspan="24" style="font-size:8.0pt;font-weight:bold;text-align:left;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">講師等の外部協力者の写真やプロフィール等の掲載、<br>他人の著作物からの文章、画像等の引用、転載、音楽の使用はありますか？</td>
+<td colspan="10" style="font-size:8.0pt;font-weight:bold;text-align:right;white-space:pre-wrap;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">該当する項目に☑をつけてください</td>
+<td colspan="2" style="font-size:8.0pt;text-align:center;white-space:pre-wrap;border-right:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">↓</td>
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+</tr>
+<tr style="height:26.1pt">
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">A</td>
+<td colspan="14" style="font-size:8.0pt;text-align:left;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">講師は現役JC会員もしくはおらず、文章と画像は自作で音楽の使用はありません</td>
+<td style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">→</td>
+<td colspan="18" style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">著作権・肖像権の確認は不要です。</td>
+<td colspan="2" style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+</tr>
+<tr style="height:15.0pt">
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">B</td>
+<td colspan="14" style="font-size:8.0pt;text-align:left;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">情報・文章等の引用、転載があります</td>
+<td style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">→</td>
+<td colspan="18" style="font-size:8.0pt;text-align:left;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">Ｑ１３へ</td>
+<td colspan="2" style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+</tr>
+<tr style="height:26.1pt">
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">C</td>
+<td colspan="14" style="font-size:8.0pt;text-align:left;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">画像やイラスト等の引用、転載があります</td>
+<td style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">→</td>
+<td colspan="18" style="font-size:8.0pt;font-weight:bold;text-align:left;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">［様式7］著作物利用等に関する承諾書』を記載し、著作者に許可を得て提出してください。</td>
+<td colspan="2" style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+</tr>
+<tr style="height:31.95pt">
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">D</td>
+<td colspan="14" style="font-size:8.0pt;text-align:left;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">音楽を使用しています</td>
+<td style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">→</td>
+<td colspan="18" style="font-size:8.0pt;text-align:left;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">プレゼン・報告資料に音楽を組み込んで使用する場合は『複製』にあたり、著作権料が発生するため、JASRAC等に許可を得て契約書を提出してください。</td>
+<td colspan="2" style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+</tr>
+<tr style="height:26.1pt">
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;padding:1px 4px;overflow:hidden">E</td>
+<td colspan="14" style="font-size:8.0pt;text-align:left;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;padding:1px 4px;overflow:hidden">講師等の写真やプロフィール等を掲載します</td>
+<td style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;padding:1px 4px;overflow:hidden">→</td>
+<td colspan="18" style="font-size:8.0pt;font-weight:bold;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;padding:1px 4px;overflow:hidden">［様式6］講師等出演依頼承諾書または、［様式7］著作物利用等に関する承諾書を記載し、依頼先に許可を得て提出してください。</td>
+<td colspan="2" style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+</tr>
+<tr style="height:15.0pt">
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td rowspan="3" colspan="2" style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">Q13</td>
+<td colspan="24" style="font-size:8.0pt;font-weight:bold;text-align:left;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">引用される側の著作物は公表されているものですか？</td>
+<td colspan="10" style="font-size:8.0pt;font-weight:bold;text-align:right;white-space:pre-wrap;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">該当する項目に☑をつけてください</td>
+<td colspan="2" style="font-size:8.0pt;text-align:center;white-space:pre-wrap;border-right:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">↓</td>
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+</tr>
+<tr style="height:15.0pt">
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">A</td>
+<td colspan="14" style="font-size:8.0pt;text-align:left;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">公表されています</td>
+<td style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">→</td>
+<td colspan="18" style="font-size:8.0pt;text-align:left;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">Ｑ１４へ</td>
+<td colspan="2" style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+</tr>
+<tr style="height:26.1pt">
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;padding:1px 4px;overflow:hidden">B</td>
+<td colspan="14" style="font-size:8.0pt;text-align:left;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;padding:1px 4px;overflow:hidden">公表されていません</td>
+<td style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;padding:1px 4px;overflow:hidden">→</td>
+<td colspan="18" style="font-size:8.0pt;font-weight:bold;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;padding:1px 4px;overflow:hidden">［様式7］著作物利用等に関する承諾書を記載し、著作者に許可を得て提出してください。</td>
+<td colspan="2" style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+</tr>
+<tr style="height:15.0pt">
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td rowspan="3" colspan="2" style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">Q14</td>
+<td colspan="24" style="font-size:8.0pt;font-weight:bold;text-align:left;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">引用される側の著作物は，引用する著作物に対して，附従的なものですか？</td>
+<td colspan="10" style="font-size:8.0pt;font-weight:bold;text-align:right;white-space:pre-wrap;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">該当する項目に☑をつけてください</td>
+<td colspan="2" style="font-size:8.0pt;text-align:center;white-space:pre-wrap;border-right:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">↓</td>
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+</tr>
+<tr style="height:15.0pt">
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">A</td>
+<td colspan="14" style="font-size:8.0pt;text-align:left;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">附従的なものです</td>
+<td style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">→</td>
+<td colspan="18" style="font-size:8.0pt;text-align:left;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">Q１５へ</td>
+<td colspan="2" style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+</tr>
+<tr style="height:26.1pt">
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;padding:1px 4px;overflow:hidden">B</td>
+<td colspan="14" style="font-size:8.0pt;text-align:left;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;padding:1px 4px;overflow:hidden">附従的なものではありません</td>
+<td style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;padding:1px 4px;overflow:hidden">→</td>
+<td colspan="18" style="font-size:8.0pt;font-weight:bold;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;padding:1px 4px;overflow:hidden">［様式7］著作物利用等に関する承諾書を記載し、著作者に許可を得て提出してください。</td>
+<td colspan="2" style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+</tr>
+<tr style="height:15.0pt">
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td rowspan="3" colspan="2" style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">Q15</td>
+<td colspan="24" style="font-size:8.0pt;font-weight:bold;text-align:left;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">引用の客観的必要性はありますか？</td>
+<td colspan="10" style="font-size:8.0pt;font-weight:bold;text-align:right;white-space:pre-wrap;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">該当する項目に☑をつけてください</td>
+<td colspan="2" style="font-size:8.0pt;text-align:center;white-space:pre-wrap;border-right:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">↓</td>
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+</tr>
+<tr style="height:36.0pt">
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">A</td>
+<td colspan="14" style="font-size:8.0pt;text-align:left;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">客観的必要性があります</td>
+<td style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">→</td>
+<td colspan="18" style="font-size:8.0pt;font-weight:bold;text-align:left;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">［様式8］著作物の引用における出所表記の確認及び報告書を記載して、引用する部分をカギ括弧などで明確に区分し、出所を明示した上で引用してください。</td>
+<td colspan="2" style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+</tr>
+<tr style="height:26.1pt">
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;padding:1px 4px;overflow:hidden">B</td>
+<td colspan="14" style="font-size:8.0pt;text-align:left;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;padding:1px 4px;overflow:hidden">客観的必要性がありません</td>
+<td style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;padding:1px 4px;overflow:hidden">→</td>
+<td colspan="18" style="font-size:8.0pt;font-weight:bold;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;padding:1px 4px;overflow:hidden">［様式7］著作物利用等に関する承諾書を記載し、著作者に許可を得て提出してください。</td>
+<td colspan="2" style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+</tr>
+<tr style="height:15.0pt">
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td colspan="38" style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;padding:1px 4px;overflow:hidden">【音楽の使用について】</td>
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+</tr>
+<tr style="height:15.0pt">
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td rowspan="4" colspan="2" style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">Q16</td>
+<td colspan="24" style="font-size:8.0pt;font-weight:bold;text-align:left;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">音楽の使用方法は？</td>
+<td colspan="10" style="font-size:8.0pt;font-weight:bold;text-align:right;white-space:pre-wrap;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">該当する項目に☑をつけてください</td>
+<td colspan="2" style="font-size:8.0pt;text-align:center;white-space:pre-wrap;border-right:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">↓</td>
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+</tr>
+<tr style="height:15.0pt">
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">A</td>
+<td colspan="14" style="font-size:8.0pt;text-align:left;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">例会や事業における講師等の入退場時や例会前のBGM等として</td>
+<td style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">→</td>
+<td colspan="18" style="font-size:8.0pt;text-align:left;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">Ｑ１７へ</td>
+<td colspan="2" style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+</tr>
+<tr style="height:15.0pt">
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">B</td>
+<td colspan="14" style="font-size:8.0pt;text-align:left;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">例会や事業における演奏者の演奏として</td>
+<td style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">→</td>
+<td colspan="18" style="font-size:8.0pt;text-align:left;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">Ｑ１８へ</td>
+<td colspan="2" style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+</tr>
+<tr style="height:15.0pt">
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;padding:1px 4px;overflow:hidden">Ｃ</td>
+<td colspan="14" style="font-size:8.0pt;text-align:left;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;padding:1px 4px;overflow:hidden">パワーポイントやDVD、映像等の中で流れる音楽として</td>
+<td style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;padding:1px 4px;overflow:hidden">→</td>
+<td colspan="18" style="font-size:8.0pt;text-align:left;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;padding:1px 4px;overflow:hidden">Ｑ２１へ</td>
+<td colspan="2" style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+</tr>
+<tr style="height:15.0pt">
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td rowspan="3" colspan="2" style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">Q17</td>
+<td colspan="24" style="font-size:8.0pt;font-weight:bold;text-align:left;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">その際にかける音源（CDやLP等）は原盤ですか？</td>
+<td colspan="10" style="font-size:8.0pt;font-weight:bold;text-align:right;white-space:pre-wrap;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">該当する項目に☑をつけてください</td>
+<td colspan="2" style="font-size:8.0pt;text-align:center;white-space:pre-wrap;border-right:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">↓</td>
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+</tr>
+<tr style="height:15.0pt">
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">A</td>
+<td colspan="14" style="font-size:8.0pt;text-align:left;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">はい。　自身で購入、または借りた原盤です</td>
+<td style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">→</td>
+<td colspan="18" style="font-size:8.0pt;text-align:left;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">Ｑ１８へ</td>
+<td colspan="2" style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+</tr>
+<tr style="height:36.9pt">
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;padding:1px 4px;overflow:hidden">B</td>
+<td colspan="14" style="font-size:8.0pt;text-align:left;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;padding:1px 4px;overflow:hidden">いいえ。　この事業のために編集、作成したものです</td>
+<td style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;padding:1px 4px;overflow:hidden">→</td>
+<td colspan="18" style="font-size:8.0pt;text-align:left;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;padding:1px 4px;overflow:hidden">レンタルしたものはもちろん、自分のCDをCD－Rに焼いたものも『複製』にあたり、著作権料が発生するため、JASRAC等に許可を得て契約書を提出してください</td>
+<td colspan="2" style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+</tr>
+<tr style="height:15.0pt">
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td rowspan="3" colspan="2" style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">Q18</td>
+<td colspan="24" style="font-size:8.0pt;font-weight:bold;text-align:left;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">参加料は無料ですか？</td>
+<td colspan="10" style="font-size:8.0pt;font-weight:bold;text-align:right;white-space:pre-wrap;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">該当する項目に☑をつけてください</td>
+<td colspan="2" style="font-size:8.0pt;text-align:center;white-space:pre-wrap;border-right:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">↓</td>
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+</tr>
+<tr style="height:15.0pt">
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">A</td>
+<td colspan="14" style="font-size:8.0pt;text-align:left;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">無料です</td>
+<td style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">→</td>
+<td colspan="18" style="font-size:8.0pt;text-align:left;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">Ｑ１９へ</td>
+<td colspan="2" style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+</tr>
+<tr style="height:15.0pt">
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;padding:1px 4px;overflow:hidden">B</td>
+<td colspan="14" style="font-size:8.0pt;text-align:left;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;padding:1px 4px;overflow:hidden">有料です</td>
+<td style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;padding:1px 4px;overflow:hidden">→</td>
+<td colspan="18" style="font-size:8.0pt;text-align:left;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;padding:1px 4px;overflow:hidden">Ｑ２２へ</td>
+<td colspan="2" style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+</tr>
+<tr style="height:15.0pt">
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td rowspan="4" colspan="2" style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;padding:1px 4px;overflow:hidden">Q19</td>
+<td colspan="24" style="font-size:8.0pt;font-weight:bold;text-align:left;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">実演家への報酬は無料ですか？</td>
+<td colspan="10" style="font-size:8.0pt;font-weight:bold;text-align:right;white-space:pre-wrap;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">該当する項目に☑をつけてください</td>
+<td colspan="2" style="font-size:8.0pt;text-align:center;white-space:pre-wrap;border-right:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">↓</td>
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+</tr>
+<tr style="height:15.0pt">
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">A</td>
+<td colspan="14" style="font-size:8.0pt;text-align:left;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">無料です</td>
+<td style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">→</td>
+<td colspan="18" style="font-size:8.0pt;text-align:left;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">Ｑ２０へ</td>
+<td colspan="2" style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+</tr>
+<tr style="height:31.35pt">
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;padding:1px 4px;overflow:hidden">B</td>
+<td colspan="14" style="font-size:8.0pt;text-align:left;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;padding:1px 4px;overflow:hidden">有料です</td>
+<td style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;padding:1px 4px;overflow:hidden">→</td>
+<td colspan="18" style="font-size:8.0pt;text-align:left;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;padding:1px 4px;overflow:hidden">有料の場合は著作権料が発生するため、JASRAC等に許可を得て契約書を提出してください　また実演家が支払うのか、当方が支払うのか確認してください</td>
+<td colspan="2" style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+</tr>
+<tr style="height:15.9pt">
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;padding:1px 4px;overflow:hidden">Ｃ</td>
+<td colspan="14" style="font-size:8.0pt;text-align:left;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;padding:1px 4px;overflow:hidden">実演家はいません</td>
+<td style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;padding:1px 4px;overflow:hidden">→</td>
+<td colspan="18" style="font-size:8.0pt;text-align:left;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;padding:1px 4px;overflow:hidden">Ｑ２０へ</td>
+<td colspan="2" style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+</tr>
+<tr style="height:15.0pt">
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td rowspan="3" colspan="2" style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">Q20</td>
+<td colspan="24" style="font-size:8.0pt;font-weight:bold;text-align:left;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">営利性はありますか？</td>
+<td colspan="10" style="font-size:8.0pt;font-weight:bold;text-align:right;white-space:pre-wrap;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">該当する項目に☑をつけてください</td>
+<td colspan="2" style="font-size:8.0pt;text-align:center;white-space:pre-wrap;border-right:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">↓</td>
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+</tr>
+<tr style="height:30.0pt">
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">A</td>
+<td colspan="14" style="font-size:8.0pt;text-align:left;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">ありません</td>
+<td style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">→</td>
+<td colspan="18" style="font-size:8.0pt;text-align:left;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">原則として著作権料は発生しませんが、ダンス等の音楽を利用したイベント等は著作権料が発生する場合があります　JASRAC等に問い合わせてください</td>
+<td colspan="2" style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+</tr>
+<tr style="height:15.0pt">
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;padding:1px 4px;overflow:hidden">B</td>
+<td colspan="14" style="font-size:8.0pt;text-align:left;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;padding:1px 4px;overflow:hidden">あります</td>
+<td style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;padding:1px 4px;overflow:hidden">→</td>
+<td colspan="18" style="font-size:8.0pt;text-align:left;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;padding:1px 4px;overflow:hidden">Ｑ２２へ</td>
+<td colspan="2" style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+</tr>
+<tr style="height:15.0pt">
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td rowspan="3" colspan="2" style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">Q21</td>
+<td colspan="24" style="font-size:8.0pt;font-weight:bold;text-align:left;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">誰が作成しますか？</td>
+<td colspan="10" style="font-size:8.0pt;font-weight:bold;text-align:right;white-space:pre-wrap;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">該当する項目に☑をつけてください</td>
+<td colspan="2" style="font-size:8.0pt;text-align:center;white-space:pre-wrap;border-right:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">↓</td>
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+</tr>
+<tr style="height:26.1pt">
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">A</td>
+<td colspan="14" style="font-size:8.0pt;text-align:left;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">外部業者に委託します</td>
+<td style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">→</td>
+<td colspan="18" style="font-size:8.0pt;font-weight:bold;text-align:left;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">［様式5］映像・ポスター等作成依頼承諾書を記載し、発注先に許可を得て提出してください</td>
+<td colspan="2" style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+</tr>
+<tr style="height:32.4pt">
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;padding:1px 4px;overflow:hidden">B</td>
+<td colspan="14" style="font-size:8.0pt;text-align:left;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;padding:1px 4px;overflow:hidden">会議体・委員会で作成します</td>
+<td style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;padding:1px 4px;overflow:hidden">→</td>
+<td colspan="18" style="font-size:8.0pt;text-align:left;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;padding:1px 4px;overflow:hidden">ムービーやスライド等に音楽を組み込んで使用する場合は『複製』にあたり、著作権料が発生するため、JASRAC等に許可を得て契約書を提出してください</td>
+<td colspan="2" style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+</tr>
+<tr style="height:15.0pt">
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td rowspan="3" colspan="2" style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">Q22</td>
+<td colspan="24" style="font-size:8.0pt;font-weight:bold;text-align:left;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">会場は、包括的利用許諾契約を結んでいますか？</td>
+<td colspan="10" style="font-size:8.0pt;font-weight:bold;text-align:right;white-space:pre-wrap;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">該当する項目に☑をつけてください</td>
+<td colspan="2" style="font-size:8.0pt;text-align:center;white-space:pre-wrap;border-right:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">↓</td>
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+</tr>
+<tr style="height:26.1pt">
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-right:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">A</td>
+<td colspan="14" style="font-size:8.0pt;text-align:left;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">はい　包括的利用許諾契約を結んでいます</td>
+<td style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">→</td>
+<td colspan="18" style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">原則として著作権料は発生しませんが、会場管理者と著作権の契約について問い合わせをしてください</td>
+<td colspan="2" style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+</tr>
+<tr style="height:22.95pt">
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">B</td>
+<td colspan="14" style="font-size:8.0pt;text-align:left;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">いいえ　包括的利用許諾契約を結んでいません</td>
+<td style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">→</td>
+<td colspan="18" style="font-size:8.0pt;text-align:left;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden">著作権料が発生するため、JASRAC等に許可を得て契約書を提出してください</td>
+<td colspan="2" style="font-size:8.0pt;text-align:center;vertical-align:middle;white-space:pre-wrap;border-left:1px solid #777;border-right:1px solid #777;border-top:1px solid #777;border-bottom:1px solid #777;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:8.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+</tr>
+<tr style="height:8.4pt">
+<td style="font-size:9.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:9.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:9.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:9.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:9.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:9.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:9.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:9.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:9.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:9.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:9.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:9.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:9.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:9.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:9.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:9.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:9.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:9.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:9.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:9.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:9.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:9.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:9.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:9.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:9.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:9.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:9.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:9.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:9.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:9.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:9.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:9.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:9.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:9.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:9.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:9.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:9.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:9.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:9.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+<td style="font-size:9.0pt;vertical-align:middle;white-space:pre-wrap;padding:1px 4px;overflow:hidden"></td>
+</tr>
+</table>
   </div>
 </div>
-
-<div class="card">
-  <h2>柱① 公益性との整合 — チェック項目</h2>
-  <ul class="check-list">
-    <li><span class="check"></span>本事業（会員開発委員会アカデミー事業）の目的・趣旨と整合しているか</li>
-    <li><span class="check"></span>特定の事業者・個人の<b>営業宣伝</b>にならないか</li>
-    <li><span class="check"></span>提供品の選定基準が<b>公益事業として説明可能</b>か</li>
-    <li><span class="check"></span>提供者の業務内容が公序良俗に反していないか</li>
-    <li><span class="check"></span>地域・社会への波及が見込めるか（または少なくとも害を与えないか）</li>
-  </ul>
-</div>
-
-<div class="card">
-  <h2>柱② 対価関係の不発生 — チェック項目</h2>
-  <ul class="check-list">
-    <li><span class="check"></span>提供を受けることで、加賀JCに<b>継続的義務</b>（推奨・優遇・調達）が生じないか</li>
-    <li><span class="check"></span>提供者からの<b>事業内容変更の要求</b>を伴っていないか</li>
-    <li><span class="check"></span>提供者の<b>商品・サービスの推奨</b>が事業内に組み込まれていないか</li>
-    <li><span class="check"></span>事業後の<b>個別取引・契約</b>を前提としていないか</li>
-    <li><span class="check"></span>提供品の金額・規模が<b>過大</b>（社会通念上の相場を逸脱）していないか</li>
-  </ul>
-</div>
-
-<div class="card">
-  <h2>柱③ 透明性の担保 — チェック項目</h2>
-  <ul class="check-list">
-    <li><span class="check"></span>提供者名と用途を<b>参加者に開示</b>できるか</li>
-    <li><span class="check"></span>提供者名と用途を<b>事業後報告書</b>に記載できるか</li>
-    <li><span class="check"></span>提供者名と用途を<b>対外発信</b>（必要に応じて）できるか</li>
-    <li><span class="check"></span>収支処理を<b>予算書・決算書に反映</b>できるか</li>
-    <li><span class="check"></span>記録・領収書類が適切に保管されるか</li>
-  </ul>
-</div>
-
-<div class="card">
-  <h2>総合判定</h2>
-  <div class="judge-box">
-    <p style="margin:0 0 8px"><b>判定結果</b>：</p>
-    <p style="margin:0 0 4px"><span class="check"></span> ✅ <b>受領可</b>（3つの柱すべてが満たされる）</p>
-    <p style="margin:0 0 4px"><span class="check"></span> ⚠️ <b>条件付き受領</b>（条件を満たせば受領可）</p>
-    <p style="margin:0 0 4px"><span class="check"></span> ❌ <b>受領不可</b>（柱のいずれかが満たされない）</p>
-    <p style="margin:8px 0 0;font-size:13px;color:#6b7280">※ 条件付き／不可の場合は理由・代替案を委員会内で記録し、必要に応じて専務理事・事務局へエスカレーション</p>
-  </div>
-</div>
-
-<div class="card">
-  <h2>判定者・承認フロー</h2>
-  <table class="tbl">
-    <thead><tr><th>役割</th><th>担当</th><th>役割</th></tr></thead>
-    <tbody>
-      <tr><td>初次判定</td><td>受付担当者</td><td>3つの柱に基づき初次判定</td></tr>
-      <tr><td>委員会内承認</td><td>委員長</td><td>初次判定をレビューし委員会内承認</td></tr>
-      <tr><td>室長確認</td><td>室長</td><td>規模・性質によって最終確認</td></tr>
-      <tr><td>事務局・専務理事</td><td>—</td><td>規模が大きい場合・前例がない場合にエスカレーション</td></tr>
-    </tbody>
-  </table>
-</div>
-
-
-</main>
-<footer class="rel-footer">
-  <p class="rf-label">FOR STAFF — 関連資料ナビゲーション</p>
-  <ul>
-    <li><a href="コンプライアンス受付表.htm">参考資料13：コンプライアンス受付表</a></li>
-    <li></li>
-    <li></li>
-  </ul>
-</footer>
 </body>
 </html>

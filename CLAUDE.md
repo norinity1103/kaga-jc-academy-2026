@@ -130,6 +130,43 @@ kaga-jc-academy/
 - `border-radius`, `box-shadow`, `gradient`, `flex`, `grid`, `transition` 等の CSS3 プロパティをセル内容に使用してはならない
 - `#gian-dl-bar`（グローバルナビバー）は例外として web スタイルを使用してよい
 
+## 6-B. コンプライアンス様式フォーマット規則（固定・厳守）
+
+**対象ファイル**: `reference/参考資料/コンプライアンス受付表.htm` / `reference/参考資料/コンプライアンスチェックシート.htm`  
+**元本**: `/Users/kawanishi-nori/Downloads/academy2/kisoku/コンプライアンス様式2025.xlsx`（加賀JC公式コンプライアンス様式 Excel版）に準拠。gian.htm と同レベルの厳密スタイル維持が必要。
+
+### フォント
+| 箇所 | フォント | サイズ |
+|---|---|---|
+| 全セル本文 | `'ＭＳ Ｐゴシック','MS PGothic',sans-serif` | **9pt**（本文）/ 10〜12pt（ヘッダ） |
+| タイトル行 | 同上 | **12pt bold** |
+
+### 構造維持規則
+- HTML は Python（openpyxl）から自動生成。**手動で table 構造を書き替えてはならない**
+- `colspan` / `rowspan` はExcelのマージセルから自動計算されたもの。変更禁止
+- 行高さ（`height:19.35pt`）を維持する
+- 列幅（`<colgroup>` の `<col style="width:X%">`）はExcel列幅を比率変換したもの。変更禁止
+
+### 罫線
+- `medium` 罫線 → `2px solid #000`
+- `thin` 罫線 → `1px solid #777`
+- 罫線なし → CSS border プロパティ自体を省略（`1px solid transparent` 等に置換しない）
+
+### スタイル維持の対策
+ファイルを修正する場合は必ず以下の手順：
+1. Excel元本を `openpyxl` で読み込み（`data_only=True`）
+2. `generate_sheet_html()` 関数でテーブルHTMLを再生成
+3. プロジェクト固有データ（事業名・委員会名・担当者名）を置換
+4. 既存HTML `<div class="form-body">` の内側のみ差し替え
+
+### 禁止事項
+- 手書きでテーブル行列を追加・削除すること
+- `border-radius`, `box-shadow`, `gradient` 等のCSS3
+- `-apple-system`, `Hiragino`, `Yu Gothic` 等のWebフォント
+- `#f3f4f6`, `#0f172a` 等の任意のhex色（Excel fillからRGB変換したもの以外）
+
+---
+
 ## 7. プロジェクトの現状（2026年5月時点）
 
 - ✅ 議案背景の言語化（既存会員の主体性差／負担集中／孤立への対応）
