@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<title>ビジネスゲーム導入事例 — 会員開発委員会アカデミー事業</title>
+<title>JCにおけるビジネスゲーム導入事例 — 会員開発委員会アカデミー事業</title>
 <link rel="stylesheet" href="../shared.css">
 <style>
   * { box-sizing: border-box; }
@@ -13,7 +13,7 @@
   }
   header { background: linear-gradient(135deg,#0f172a,#1e293b); color:#fff; padding:48px 24px 40px; text-align:center; }
   header .eyebrow { font-size:12px; letter-spacing:.14em; color:#94a3b8; margin:0 0 10px; text-transform:uppercase; }
-  header h1 { margin:0 0 6px; font-size:28px; font-weight:700; }
+  header h1 { margin:0 0 6px; font-size:26px; font-weight:700; }
   header .subtitle { color:#cbd5e1; font-size:14px; margin:0; }
   header .meta { margin-top:18px; font-size:12px; color:#94a3b8; }
   main { max-width:1000px; margin:32px auto; padding:0 16px 64px; }
@@ -35,6 +35,32 @@
   .nav a { margin-right:14px; }
   .muted { color:#6b7280; font-size:13px; }
   blockquote { border-left:3px solid #cbd5e1; margin:10px 0; padding:6px 14px; color:#374151; background:#f9fafb; font-size:14px; }
+
+  /* ゲーム事例カード */
+  .game-grid { display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-top:16px; }
+  @media(max-width:700px){ .game-grid { grid-template-columns:1fr; } }
+  .game-card { border:1px solid #e5e7eb; border-radius:10px; overflow:hidden; background:#fff; }
+  .game-card img { width:100%; height:200px; object-fit:cover; display:block; }
+  .game-card .gc-body { padding:16px; }
+  .game-card .gc-num { display:inline-block; background:#0f172a; color:#fff; font-size:11px; font-weight:700; border-radius:4px; padding:2px 8px; margin-bottom:8px; letter-spacing:.05em; }
+  .game-card h3 { margin:0 0 8px; font-size:16px; color:#0f172a; }
+  .game-card p { margin:0 0 8px; font-size:13.5px; color:#374151; }
+  .game-card .gc-tags { display:flex; flex-wrap:wrap; gap:6px; margin-top:10px; }
+  .game-card .tag { font-size:11.5px; background:#eff6ff; color:#1e40af; border-radius:20px; padding:2px 10px; }
+  .game-card .tag.green { background:#f0fdf4; color:#15803d; }
+  .game-card a.gc-link { display:inline-block; margin-top:10px; font-size:13px; color:#1f6feb; font-weight:600; }
+  .effect-list { margin:8px 0 0 1.2em; padding:0; }
+  .effect-list li { font-size:13px; color:#374151; margin-bottom:4px; }
+  .hero-img { width:100%; border-radius:8px; margin-bottom:16px; }
+  .criteria-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:12px; margin-top:12px; }
+  @media(max-width:600px){ .criteria-grid { grid-template-columns:1fr; } }
+  .criteria-item { background:#f8fafc; border:1px solid #e5e7eb; border-radius:8px; padding:12px 14px; }
+  .criteria-item .ci-label { font-size:12px; font-weight:700; color:#0f172a; margin-bottom:4px; }
+  .criteria-item p { margin:0; font-size:13px; color:#374151; }
+  .success-row { display:flex; gap:16px; flex-wrap:wrap; margin-top:8px; }
+  .success-item { flex:1; min-width:200px; background:#f0fdf4; border:1px solid #bbf7d0; border-radius:8px; padding:12px 14px; }
+  .success-item .si-icon { font-size:20px; margin-bottom:4px; }
+  .success-item p { margin:0; font-size:13px; color:#15803d; }
 </style>
 </head>
 <body>
@@ -43,73 +69,235 @@
   <a href="../資料一覧.htm">資料一覧</a>
   <a href="../想定問答集.htm">想定問答集</a>
   <a href="コンプライアンス審査ガイド.htm">コンプライアンス</a>
-  <a href="../改善ロードマップ.htm">改善ロードマップ</a>
   <div class="nav-dd">
     <button class="nav-dd-btn">実行タスク ▾</button>
     <div class="nav-dd-menu">
       <a href="../委員長の実行アクション.htm">委員長の実行アクション</a>
       <a href="../室長確認依頼項目.htm">室長確認依頼項目</a>
-      <a href="../改善ロードマップ.htm">改善ロードマップ</a>
     </div>
   </div>
   <button class="pdf-btn" onclick="window.print()">📄 PDFで保存</button>
 </div>
 <header>
   <p class="eyebrow">参考資料 7</p>
-  <h1>ビジネスゲーム導入事例</h1>
-  <p class="subtitle">JC例会へのビジネスゲーム導入実証成果</p>
+  <h1>JCにおけるビジネスゲーム導入事例</h1>
+  <p class="subtitle">青年会議所の例会で活用されるビジネスゲーム5選と実証成果</p>
   <p class="meta">2026年度 会員開発委員会アカデミー事業</p>
 </header>
 <main>
 
 <div class="card">
   <h2>出典</h2>
-  <p>ビジネスゲーム研究所 JC例会導入事例（公開コラム）<br>
+  <p>ビジネスゲーム研究所「青年会議所(JC)の例会でオススメなビジネスゲーム5選をご紹介！」（2025年4月28日公開）<br>
   <a href="https://business-games.jp/jc_businessgame5s/" target="_blank" rel="noopener">https://business-games.jp/jc_businessgame5s/</a></p>
+  <img class="hero-img" src="https://business-games.jp/wp-content/uploads/2025/04/JC_top-730x410.jpg" alt="JCビジネスゲーム導入事例トップ" loading="lazy">
+</div>
+
+<div class="card">
+  <h2>なぜJC例会にビジネスゲームが向いているのか</h2>
+  <p>JCの例会は<b>地域リーダー育成・異業種交流・地域貢献</b>の場。しかし以下の課題が生じやすい：</p>
+  <ul>
+    <li>内容の堅苦しさ・マンネリ化で参加意欲が上がらない</li>
+    <li>一部メンバーに発言が偏り、新入会員が疎外感を覚える</li>
+    <li>交流のきっかけがなく、異業種間の距離が縮まらない</li>
+  </ul>
+  <p>ビジネスゲームは参加型・体験型の解決策として有効。全員が役割を持ち、<b>対話で意思決定するプロセス自体が学び</b>になる。リーダーシップ・チームワーク・戦略思考を体験から習得できる。</p>
 </div>
 
 <div class="card">
   <h2>導入の目的</h2>
   <ul>
-    <li>マンネリ化・温度差・一部偏重・新人疎外感の解消</li>
-    <li>「内容が堅苦しく参加意欲が上がらない」「一部メンバーに発言が偏る」課題への対処</li>
+    <li>マンネリ化・温度差・一部偏重・新入会員の疎外感の解消</li>
+    <li>「内容が堅苦しく参加意欲が上がらない」「一部メンバーに発言が偏る」課題への構造的対処</li>
+    <li>誰もが役割を持ち、対話で意思決定する場づくりを通じたリーダーシップ体験の提供</li>
   </ul>
+
+  <h3>ゲーム選定の4基準</h3>
+  <div class="criteria-grid">
+    <div class="criteria-item">
+      <div class="ci-label">① 短時間で完結</div>
+      <p>90〜120分で完結。ルール説明から振り返りまで収められる構成が理想。</p>
+    </div>
+    <div class="criteria-item">
+      <div class="ci-label">② 異業種交流を促進</div>
+      <p>相談・交渉・協力が勝敗に直結。「話す・聴く」機会を構造的に生み出す。</p>
+    </div>
+    <div class="criteria-item">
+      <div class="ci-label">③ 経営・社会性の学び</div>
+      <p>楽しさと学びを両立。地域課題・経営シミュレーション・チームプレゼン型が有効。</p>
+    </div>
+    <div class="criteria-item">
+      <div class="ci-label">④ 初参加者も安心</div>
+      <p>直感的ルール＋ファシリテーターのサポートで誰でも参加できる環境を確保。</p>
+    </div>
+  </div>
 </div>
 
 <div class="card">
-  <h2>90分構成テンプレ</h2>
+  <h2>JC例会でオススメなビジネスゲーム5選</h2>
+  <p class="muted">例会は60〜90分が多いため、その時間で実施できる内容を紹介。</p>
+
+  <div class="game-grid">
+
+    <div class="game-card">
+      <img src="http://business-games.jp/wp-content/uploads/2025/04/JC_NASA-768x576.jpg" alt="委員長当てゲーム" loading="lazy">
+      <div class="gc-body">
+        <span class="gc-num">① 委員長当てゲーム</span>
+        <h3>コミュニケーション型・合意形成</h3>
+        <p>4〜6人チームで情報カードを<b>口頭のみ</b>で共有し、時間内に正解を導く協力ゲーム。</p>
+        <p>約60分で完結。論理的思考・チームビルディングに有効。</p>
+        <ul class="effect-list">
+          <li>合意形成の重要性を体感</li>
+          <li>コミュニケーション技術の習得</li>
+          <li>情報整理・質問力の向上</li>
+          <li>協働業務のポイントを理解</li>
+        </ul>
+        <div class="gc-tags">
+          <span class="tag">60分</span>
+          <span class="tag">チームビルディング</span>
+          <span class="tag green">合意形成</span>
+        </div>
+        <a class="gc-link" href="https://business-games.jp/communicationgame_guess_chairman/" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </div>
+
+    <div class="game-card">
+      <img src="http://business-games.jp/wp-content/uploads/2025/04/JC_-768x576.jpg" alt="砂漠からの脱出ゲーム" loading="lazy">
+      <div class="gc-body">
+        <span class="gc-num">② 砂漠からの脱出ゲーム</span>
+        <h3>合意形成型・コンセンサス体験</h3>
+        <p>個人意見とチーム意見をすり合わせ、話し合いで同じ解答を選ぶ合意形成ゲーム。</p>
+        <p>多数決・強制ではなく<b>対話による合意</b>の重要性を体験する。</p>
+        <ul class="effect-list">
+          <li>コンセンサス（合意形成）の習得</li>
+          <li>グループからチームへの変化を体感</li>
+          <li>傾聴・発言バランスの意識向上</li>
+        </ul>
+        <div class="gc-tags">
+          <span class="tag">60分</span>
+          <span class="tag green">合意形成</span>
+          <span class="tag">コンセンサス</span>
+        </div>
+        <a class="gc-link" href="https://business-games.jp/teambuilding_sabaku/" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </div>
+
+    <div class="game-card">
+      <img src="http://business-games.jp/wp-content/uploads/2022/10/DSC05074-768x512.jpg" alt="7人の人事異動当てゲーム" loading="lazy">
+      <div class="gc-body">
+        <span class="gc-num">③ 7人の人事異動当てゲーム</span>
+        <h3>情報共有型・論理的思考</h3>
+        <p>委員長当てゲームと同形式。人事異動配属後の情報をチームで口頭共有し正解を導く。</p>
+        <p>約60分で完結。職場シーンを題材にした<b>実務直結型</b>の設計。</p>
+        <ul class="effect-list">
+          <li>合意形成・情報整理の重要性</li>
+          <li>質問力・コミュニケーション力向上</li>
+          <li>協働業務のポイントを再確認</li>
+        </ul>
+        <div class="gc-tags">
+          <span class="tag">60分</span>
+          <span class="tag">情報整理</span>
+          <span class="tag green">実務直結</span>
+        </div>
+        <a class="gc-link" href="https://business-games.jp/communicationgame_jinjibu/" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </div>
+
+    <div class="game-card">
+      <img src="http://business-games.jp/wp-content/uploads/2025/02/謎解きゲーム②-768x576.jpg" alt="謎解きゲーム" loading="lazy">
+      <div class="gc-body">
+        <span class="gc-num">④ 謎解きゲーム「ハッカーからの挑戦状」</span>
+        <h3>チームビルディング型・思考力</h3>
+        <p>ウイルスを破壊するためハッカーの謎（暗号）をチームで解き明かすゲーム。</p>
+        <p>頭の体操とチームビルディングを同時に実現。レクリエーション活用にも対応。</p>
+        <ul class="effect-list">
+          <li>チームでのアイデア出しの重要性</li>
+          <li>他者視点の大切さを理解</li>
+          <li>ゲーム感覚で没入度が高い</li>
+        </ul>
+        <div class="gc-tags">
+          <span class="tag">60分</span>
+          <span class="tag">謎解き</span>
+          <span class="tag green">レクリエーション対応</span>
+        </div>
+        <a class="gc-link" href="https://business-games.jp/mystery-solving-game/" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </div>
+
+  </div><!-- /game-grid -->
+
+  <!-- ゲーム5は横長1枚 -->
+  <div class="game-card" style="margin-top:20px;display:grid;grid-template-columns:320px 1fr;gap:0">
+    <img src="http://business-games.jp/wp-content/uploads/2024/08/S__75440278_0-768x576.jpg" alt="報連相パズル" loading="lazy" style="height:220px;object-fit:cover">
+    <div class="gc-body">
+      <span class="gc-num">⑤ 報連相パズル</span>
+      <h3>コミュニケーション制限型・報告連絡相談</h3>
+      <p>1チーム5名（リーダーA・リーダーB・メンバーA・メンバーB・マネージャー）で<b>メモのやり取りのみ</b>で課題クリアを目指す。情報整理と効果的な報連相が求められる。</p>
+      <ul class="effect-list">
+        <li>指示の出し方・報連相の重要性を体感</li>
+        <li>管理職としてのあり方を考える機会</li>
+        <li>コミュニケーション制限による気づきの深化</li>
+      </ul>
+      <div class="gc-tags">
+        <span class="tag">60〜90分</span>
+        <span class="tag">報連相</span>
+        <span class="tag green">管理職向け要素あり</span>
+      </div>
+      <a class="gc-link" href="https://business-games.jp/hourensou_puzzle/" target="_blank" rel="noopener">詳細を見る →</a>
+    </div>
+  </div>
+
+</div>
+
+<div class="card">
+  <h2>90分構成テンプレ（例会への組み込み方）</h2>
   <table class="tbl">
-    <thead><tr><th>時間</th><th>セッション</th></tr></thead>
+    <thead><tr><th>時間</th><th>セッション</th><th>ポイント</th></tr></thead>
     <tbody>
-      <tr><td>10分</td><td>開会・趣旨説明</td></tr>
-      <tr><td>10分</td><td>ルール説明・アイスブレイク</td></tr>
-      <tr><td>50分</td><td>メインゲーム</td></tr>
-      <tr><td>15分</td><td><b>振り返り</b>（成果を決める要）</td></tr>
-      <tr><td>5分</td><td>閉会</td></tr>
+      <tr><td>10分</td><td>開会・趣旨説明</td><td>参加意義を明確に伝える</td></tr>
+      <tr><td>10分</td><td>ルール説明・チーム編成</td><td>年次・業種が偏らないチーム配置</td></tr>
+      <tr><td>50分</td><td>メインゲーム</td><td>ファシリテーターが各チームをサポート</td></tr>
+      <tr><td>15分</td><td><b>振り返り・共有</b>（成果を決める要）</td><td>「今日の学びをJC活動でどう活かすか」</td></tr>
+      <tr><td>5分</td><td>閉会のことば</td><td>次回行動への接続を促す</td></tr>
     </tbody>
   </table>
-  <p class="muted">代表的なゲーム例：NASAゲーム／マシュマロチャレンジ／砂漠からの脱出／報連相パズル 等</p>
+  <p class="muted">チーム編成の理想：4〜6人／年次・役職が偏らない構成／初対面同士を同チームにしてネットワーキング促進</p>
 </div>
 
 <div class="card">
   <h2>報告された実証成果</h2>
-  <ul>
-    <li><b>新入会員1年以内離脱率ゼロ</b>を達成したLOM</li>
-    <li>普段意見を控える会員がゲーム内でリーダー役 → 自信 → <b>委員会で立候補</b></li>
-    <li>異業種間の距離が縮まり<b>事業提携に発展</b></li>
-    <li>満足度アンケートで「JC活動意義を再確認」「次回例会参加率向上」</li>
-  </ul>
+  <img src="http://business-games.jp/wp-content/uploads/2025/04/JC様サッカーのポジション当てゲームの実施後アンケート（回答）-scaled.jpg" alt="JC例会実施後アンケート結果" loading="lazy" style="width:100%;border-radius:8px;margin-bottom:16px">
+  <div class="success-row">
+    <div class="success-item">
+      <div class="si-icon">🏆</div>
+      <p><b>新入会員1年以内離脱率ゼロ</b>を達成したLOM（歓迎例会導入後）</p>
+    </div>
+    <div class="success-item">
+      <div class="si-icon">🎤</div>
+      <p>普段意見を控える会員がゲーム内でリーダー役 → 自信獲得 → <b>委員会で立候補</b></p>
+    </div>
+    <div class="success-item">
+      <div class="si-icon">🤝</div>
+      <p>異業種間（建設業×IT業）の距離が縮まり<b>事業提携相談に発展</b></p>
+    </div>
+    <div class="success-item">
+      <div class="si-icon">📈</div>
+      <p>例会後アンケートで「JC活動意義を再確認」「次回以降の参加率が向上」</p>
+    </div>
+  </div>
 </div>
 
 <div class="card">
   <h2>振り返りの問い（例）</h2>
-  <blockquote>「JC活動でチャレンジしてみたいことは？」</blockquote>
-  <p>ゲームをやって終わりにせず、<b>振り返り設計が成果を決める</b>。気づき→次の行動への接続が必須。</p>
+  <blockquote>「今回のゲームを通じて、仕事や地域活動で実践したいことは？」</blockquote>
+  <blockquote>「この体験から、JC活動でチャレンジしてみたいことは？」</blockquote>
+  <p>ゲームをやって終わりにせず、<b>振り返り設計が成果を決める</b>。気づき→次の行動への接続が必須。未来志向の問いかけが参加者の行動変容を促す。</p>
 </div>
 
 <div class="card">
   <h2>本議案への応用</h2>
   <p>「KAGA JC GATHERING（仮）」の120分構成・2周制・ふりかえり時間配分は、本事例の構成テンプレを下敷きにしている。「ゲーム内リーダー体験→自信→主体性発火」という成果回路を、加賀LOMの公益事業ミッションに接続する形で実装する。</p>
+  <p class="muted">体験学習（Experiential Learning）の観点：新入会員の早期定着 / 参加率・満足度向上 / JC活動の本質（地域貢献・リーダー育成）への回帰</p>
 </div>
 
 </main>
