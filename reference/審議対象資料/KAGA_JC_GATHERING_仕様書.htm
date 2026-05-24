@@ -324,20 +324,16 @@
 </div>
 
 
-<!-- TOC -->
-<nav class="toc">
-  <p class="toc-title">構成</p>
-  <ul>
-    <li data-c="c1"><a href="#c-c1"><span class="dot"></span>① ミッションカード</a></li>
-    <li data-c="c2"><a href="#c-c2"><span class="dot"></span>② ハードルカード</a></li>
-    <li data-c="c3"><a href="#c-c3"><span class="dot"></span>③ JCメンバーカード</a></li>
-    <li data-c="c4"><a href="#c-c4"><span class="dot"></span>④ 地域パートナーカード</a></li>
-    <li data-c="c5"><a href="#c-c5"><span class="dot"></span>⑤ ロールカード</a></li>
-    <li data-c="flow"><a href="#c-flow"><span class="dot"></span>ゲームの進行（7ステップ）</a></li>
-    <li data-c="role"><a href="#c-role"><span class="dot"></span>当日の役割設計</a></li>
-    <li data-c="kit"><a href="#c-kit"><span class="dot"></span>キット仕様（DIY）</a></li>
-    <li data-c="ops"><a href="#c-ops"><span class="dot"></span>運営・プライバシー配慮</a></li>
-  </ul>
+<nav class="page-nav" id="page-nav">
+  <a href="#c-c1">① ミッションカード</a>
+  <a href="#c-c2">② ハードルカード</a>
+  <a href="#c-c3">③ JCメンバーカード</a>
+  <a href="#c-c4">④ 地域パートナーカード</a>
+  <a href="#c-c5">⑤ ロールカード</a>
+  <a href="#c-flow">ゲームの進行</a>
+  <a href="#c-role">当日の役割設計</a>
+  <a href="#c-kit">キット仕様</a>
+  <a href="#c-ops">運営・プライバシー</a>
 </nav>
 
 <!-- ① ミッションカード -->
@@ -546,5 +542,27 @@
   </ul>
 </footer>
 
+<script>
+(function () {
+  var nav = document.querySelector('.page-nav');
+  if (!nav) return;
+  var links = Array.from(nav.querySelectorAll('a[href^="#"]'));
+  var ids   = links.map(function (a) { return a.getAttribute('href').slice(1); });
+  var secs  = ids.map(function (id) { return document.getElementById(id); }).filter(Boolean);
+  function update() {
+    var offset = (parseInt(getComputedStyle(document.documentElement).getPropertyValue('--nav-h')) || 50) + 52;
+    var current = secs[0];
+    secs.forEach(function (s) {
+      if (s && s.getBoundingClientRect().top <= offset) current = s;
+    });
+    links.forEach(function (a) {
+      var tid = a.getAttribute('href').slice(1);
+      a.classList.toggle('pn-active', current && current.id === tid);
+    });
+  }
+  window.addEventListener('scroll', update, { passive: true });
+  update();
+})();
+</script>
 </body>
 </html>

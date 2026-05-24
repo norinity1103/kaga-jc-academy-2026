@@ -29,15 +29,6 @@
   a:hover { text-decoration:underline; }
   .muted { color:#6b7280; font-size:13px; }
 
-  /* Anchor nav */
-  .anchor-nav { display:flex; gap:10px; margin-bottom:24px; flex-wrap:wrap; }
-  .anchor-nav a {
-    display:inline-block; padding:8px 16px; background:#f3f4f6;
-    border:1px solid #e5e7eb; border-radius:8px; font-size:13px;
-    color:#1f6feb; text-decoration:none;
-  }
-  .anchor-nav a:hover { background:#e5e7eb; }
-
   /* Brand table */
   table.brand-table { width:100%; border-collapse:collapse; font-size:14px; }
   table.brand-table th,
@@ -160,13 +151,12 @@
 </header>
 <main>
 
-<!-- Anchor nav -->
-<div class="anchor-nav">
+<nav class="page-nav" id="page-nav">
   <a href="#brand">1. ブランドマネジメントシート</a>
   <a href="#positioning">2. ポジショニングマップ</a>
   <a href="#selection">3. 手段選定理由書</a>
   <a href="#kgi">4. コアターゲット KGI</a>
-</div>
+</nav>
 
 <!-- ===== Section 1: ブランドマネジメントシート ===== -->
 <div class="card" id="brand">
@@ -557,5 +547,27 @@
 </div>
 
 </main>
+<script>
+(function () {
+  var nav = document.querySelector('.page-nav');
+  if (!nav) return;
+  var links = Array.from(nav.querySelectorAll('a[href^="#"]'));
+  var ids   = links.map(function (a) { return a.getAttribute('href').slice(1); });
+  var secs  = ids.map(function (id) { return document.getElementById(id); }).filter(Boolean);
+  function update() {
+    var offset = (parseInt(getComputedStyle(document.documentElement).getPropertyValue('--nav-h')) || 50) + 52;
+    var current = secs[0];
+    secs.forEach(function (s) {
+      if (s && s.getBoundingClientRect().top <= offset) current = s;
+    });
+    links.forEach(function (a) {
+      var tid = a.getAttribute('href').slice(1);
+      a.classList.toggle('pn-active', current && current.id === tid);
+    });
+  }
+  window.addEventListener('scroll', update, { passive: true });
+  update();
+})();
+</script>
 </body>
 </html>

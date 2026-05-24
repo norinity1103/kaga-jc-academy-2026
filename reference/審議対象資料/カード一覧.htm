@@ -270,15 +270,12 @@
 <main>
 
 
-<nav class="toc">
-  <p class="toc-title">5種類のカード</p>
-  <div class="toc-grid">
-    <a href="#mission" data-c="m"><span class="dot"></span>① ミッションカード（9枚）</a>
-    <a href="#hurdle" data-c="h"><span class="dot"></span>② ハードルカード（8枚）</a>
-    <a href="#jc-member" data-c="j"><span class="dot"></span>③ JCメンバーカード</a>
-    <a href="#partner" data-c="p"><span class="dot"></span>④ 地域パートナーカード</a>
-    <a href="#role" data-c="r"><span class="dot"></span>⑤ ロールカード（8種）</a>
-  </div>
+<nav class="page-nav" id="page-nav">
+  <a href="#mission">① ミッションカード（9枚）</a>
+  <a href="#hurdle">② ハードルカード（8枚）</a>
+  <a href="#jc-member">③ JCメンバーカード</a>
+  <a href="#partner">④ 地域パートナーカード</a>
+  <a href="#role">⑤ ロールカード（8種）</a>
 </nav>
 
 <!-- ① Mission -->
@@ -680,5 +677,27 @@
   </div>
 </footer>
 
+<script>
+(function () {
+  var nav = document.querySelector('.page-nav');
+  if (!nav) return;
+  var links = Array.from(nav.querySelectorAll('a[href^="#"]'));
+  var ids   = links.map(function (a) { return a.getAttribute('href').slice(1); });
+  var secs  = ids.map(function (id) { return document.getElementById(id); }).filter(Boolean);
+  function update() {
+    var offset = (parseInt(getComputedStyle(document.documentElement).getPropertyValue('--nav-h')) || 50) + 52;
+    var current = secs[0];
+    secs.forEach(function (s) {
+      if (s && s.getBoundingClientRect().top <= offset) current = s;
+    });
+    links.forEach(function (a) {
+      var tid = a.getAttribute('href').slice(1);
+      a.classList.toggle('pn-active', current && current.id === tid);
+    });
+  }
+  window.addEventListener('scroll', update, { passive: true });
+  update();
+})();
+</script>
 </body>
 </html>
