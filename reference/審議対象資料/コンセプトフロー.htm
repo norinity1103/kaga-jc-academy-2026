@@ -11,16 +11,33 @@
   .note { font-size:12.5px; color:#6b7280; margin:14px 0 0; line-height:1.85; }
   .note b { color:#374151; }
   @media print {
-    @page { size: A4 landscape; margin: 8mm; }
-    body { background:#fff; font-size:10pt; }
+    @page { size: A4 landscape; margin: 4mm 6mm; }
+    html, body { background:#fff !important; }
+    body { font-size:9pt; margin:0 !important; padding:0 !important; }
     main { margin:0 !important; padding:0 !important; max-width:none !important; }
-    .card { padding:6px !important; margin:0 !important; border:none !important; border-radius:0 !important; box-shadow:none !important; page-break-inside:avoid; }
-    header { padding:8px 0 6px !important; margin-bottom:8px !important; background:#fff !important; color:#000 !important; border-bottom:1.5px solid #000 !important; }
-    header h1 { font-size:14pt !important; color:#000 !important; margin:2px 0 !important; }
-    header .eyebrow { color:#555 !important; font-size:9pt !important; }
-    header .subtitle { color:#333 !important; font-size:10pt !important; }
+    /* header: 極限まで圧縮 */
+    header {
+      padding:2px 0 2px !important;
+      margin:0 0 2mm !important;
+      background:#fff !important; color:#000 !important;
+      border-bottom:1pt solid #000 !important;
+    }
+    header h1 { font-size:11pt !important; color:#000 !important; margin:0 !important; line-height:1.2 !important; }
+    header .eyebrow { color:#555 !important; font-size:7.5pt !important; margin:0 !important; line-height:1.1 !important; }
+    header .subtitle { display:none !important; }
     header .meta { display:none !important; }
-    .nav, .nav-dd, .toolbar, .page-nav, footer, .rel-footer, .related-docs { display:none !important; }
+    /* image card: 全幅で表示 */
+    .card { padding:0 !important; margin:0 !important; border:none !important; border-radius:0 !important; box-shadow:none !important; page-break-inside:avoid; }
+    .card figure img {
+      width:100% !important;
+      max-width:100% !important;
+      max-height:185mm !important;   /* A4横の高さ210mm − header〜余白分 */
+      height:auto !important;
+      object-fit:contain !important;
+    }
+    /* 補足noteと参照は印刷時に非表示 */
+    .note, .related-docs { display:none !important; }
+    .nav, .nav-dd, .toolbar, .page-nav, footer, .rel-footer { display:none !important; }
   }
 </style>
 </head>
