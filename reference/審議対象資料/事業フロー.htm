@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>事業フロー — 会員開発委員会アカデミー事業</title>
+<link rel="stylesheet" href="../shared.css">
+<style>
+  * { box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
+    background:#f6f7f9; color:#1f2937; margin:0; line-height:1.75; -webkit-font-smoothing:antialiased; }
+  header { background: linear-gradient(135deg,#0f172a,#1e293b); color:#fff; padding:48px 24px 40px; text-align:center; }
+  header .eyebrow { font-size:12px; letter-spacing:.14em; color:#94a3b8; margin:0 0 10px; text-transform:uppercase; }
+  header h1 { margin:0 0 6px; font-size:28px; font-weight:700; }
+  header .subtitle { color:#cbd5e1; font-size:14px; margin:0; }
+  header .meta { margin-top:18px; font-size:12px; color:#94a3b8; }
+  main { max-width:1100px; margin:32px auto; padding:0 16px 64px; }
+  .card { background:#fff; border:1px solid #e5e7eb; border-radius:12px; padding:22px 26px; margin-bottom:20px; }
+  .card h2 { margin:0 0 14px; font-size:18px; color:#0f172a; border-left:4px solid #d8345f; padding-left:10px; }
+  .card h2.center { text-align:center; border-left:none; padding-left:0; }
+  .card h3 { margin:18px 0 8px; font-size:15px; color:#1f2937; }
+  .card p { margin:0 0 10px; font-size:14.5px; }
+  .card ul { margin:0 0 10px 1.2em; padding:0; }
+  .card li { font-size:14.5px; margin-bottom:6px; }
+  .nav {
+  position: sticky;
+  top: 0;
+  z-index: 200; font-size:13px; color:#6b7280; padding:12px 16px; background:#fff; border-bottom:1px solid #e5e7eb; }
+  .nav a { margin-right:14px; color:#1f6feb; text-decoration:none; }
+  a { color:#1f6feb; text-decoration:none; }
+  a:hover { text-decoration:underline; }
+  .muted { color:#6b7280; font-size:13px; }
+
+  /* Outline at a glance */
+  .outline {
+    background: linear-gradient(135deg,#fef3c7 0%,#fde68a 100%);
+    border:1px solid #fcd34d; border-radius:14px;
+    padding:24px 28px; margin-bottom:24px;
+  }
+  .outline h2 { margin:0 0 14px; font-size:17px; color:#78350f; border-left:4px solid #d97706; padding-left:10px; }
+  .outline p { margin:0 0 10px; font-size:15px; line-height:1.9; color:#451a03; }
+  .outline .formula { background:#fff; border-radius:8px; padding:14px 18px; font-size:14.5px; color:#1f2937; border:1px solid #fcd34d; margin-top:10px; }
+  .outline .formula b { color:#92400e; }
+
+  /* 3-phase grid */
+  .phases { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-bottom:14px; }
+  .phase {
+    background:#fff; border:1px solid #e5e7eb; border-radius:12px; padding:18px 20px;
+    border-top:4px solid;
+  }
+  .phase.before { border-top-color:#3b82f6; }
+  .phase.day { border-top-color:#d8345f; }
+  .phase.after { border-top-color:#16a34a; }
+  .phase .ph-label {
+    font-size:11px; letter-spacing:.12em; text-transform:uppercase;
+    font-weight:700; margin-bottom:6px;
+  }
+  .phase.before .ph-label { color:#1d4ed8; }
+  .phase.day .ph-label { color:#b91c4d; }
+  .phase.after .ph-label { color:#15803d; }
+  .phase h3 { margin:0 0 6px; font-size:16px; color:#0f172a; }
+  .phase .ph-period { font-size:12px; color:#6b7280; margin-bottom:12px; }
+  .phase ul { margin:0 0 12px 1.1em; padding:0; }
+  .phase ul li { font-size:13.5px; margin-bottom:5px; line-height:1.6; }
+  .phase .deliverable { background:#f9fafb; border:1px solid #e5e7eb; border-radius:8px; padding:8px 12px; font-size:12.5px; color:#374151; }
+  .phase .deliverable b { color:#0f172a; }
+
+  .phase-flow-arrow {
+    text-align:center; color:#94a3b8; font-size:22px; margin:4px 0 14px;
+    display:none; /* flex on mobile */
+  }
+
+  /* Why-What-How-Verify chain */
+  .chain { display:grid; grid-template-columns:repeat(4,1fr); gap:10px; }
+  .chain-step {
+    background:#fff; border:1px solid #e5e7eb; border-radius:10px;
+    padding:14px 16px;
+    border-left:4px solid;
+  }
+  .chain-step.why { border-left-color:#8b5cf6; }
+  .chain-step.what { border-left-color:#f59e0b; }
+  .chain-step.how { border-left-color:#d8345f; }
+  .chain-step.verify { border-left-color:#16a34a; }
+  .chain-step .step-label { font-size:11px; font-weight:700; letter-spacing:.1em; margin-bottom:4px; }
+  .chain-step.why .step-label { color:#6d28d9; }
+  .chain-step.what .step-label { color:#b45309; }
+  .chain-step.how .step-label { color:#b91c4d; }
+  .chain-step.verify .step-label { color:#15803d; }
+  .chain-step h4 { margin:0 0 6px; font-size:14px; color:#0f172a; }
+  .chain-step p { margin:0; font-size:12.5px; color:#374151; line-height:1.6; }
+  .chain-step a { font-size:12px; color:#1f6feb; }
+
+  /* Section mapping table */
+  table.map { width:100%; border-collapse:collapse; font-size:13.5px; }
+  table.map th, table.map td { border:1px solid #e5e7eb; padding:9px 12px; text-align:left; vertical-align:top; }
+  table.map th { background:#f3f4f6; font-weight:600; white-space:nowrap; }
+  table.map td.phase-col { font-weight:600; white-space:nowrap; }
+  table.map td.phase-col.before { color:#1d4ed8; }
+  table.map td.phase-col.day { color:#b91c4d; }
+  table.map td.phase-col.after { color:#15803d; }
+
+  /* Status badges */
+  .badge-draft { display:inline-block; font-size:10.5px; background:#fef3c7; color:#92400e; border:1px solid #fcd34d; border-radius:4px; padding:1px 6px; margin-left:4px; font-weight:600; }
+  .badge-update { display:inline-block; font-size:10.5px; background:#dbeafe; color:#1e40af; border:1px solid #93c5fd; border-radius:4px; padding:1px 6px; margin-left:4px; font-weight:600; }
+
+  @media (max-width:760px) {
+    .phases { grid-template-columns:1fr; }
+    .chain { grid-template-columns:1fr 1fr; }
+    .phase-flow-arrow { display:block; }
+  }
+  @media print {
+    @page { size: A4 portrait; margin: 12mm 14mm; }
+    body { background:#fff; }
+    .nav { display:none; }
+    .card, .outline { page-break-inside: avoid; box-shadow:none; }
+    header { background:#fff !important; color:#1f2937 !important; padding:20px 0 14px; }
+    header .eyebrow, header .subtitle, header .meta { color:#6b7280 !important; }
+  }
+</style>
+</head>
+<body>
+<div class="nav">
+  <a class="nav-brand" href="../gian.htm">KAGA JC <span>2026</span></a>
+  <a href="../資料一覧.htm">資料一覧</a>
+  <a href="../想定問答集.htm">想定問答集</a>
+  <a href="../参考資料/コンプライアンス審査ガイド.htm">コンプライアンス</a>
+  <a href="../改善ロードマップ.htm">改善ロードマップ</a>
+  <div class="nav-dd">
+    <button class="nav-dd-btn">実行タスク ▾</button>
+    <div class="nav-dd-menu">
+      <a href="../委員長の実行アクション.htm">委員長の実行アクション</a>
+      <a href="../室長確認依頼項目.htm">室長確認依頼項目</a>
+      <a href="../改善ロードマップ.htm">改善ロードマップ</a>
+    </div>
+  </div>
+  <button class="pdf-btn" onclick="window.print()">📄 PDFで保存</button>
+</div>
+<header>
+  <p class="eyebrow">審議対象資料 1</p>
+  <h1>事業フロー</h1>
+  <p class="subtitle">議案全体の構造と、事前→当日→事後の流れを一望する資料</p>
+  <p class="meta">2026年度 会員開発委員会アカデミー事業</p>
+</header>
+<main>
+
+<!-- ===== Outline at a glance ===== -->
+<div class="outline">
+  <h2>📌 この事業を1行で言うと</h2>
+  <p>既存会員を対象に、メンバーの<b>仕事観・強み・地域での役割をカード化</b>し、公益事業ミッションを起点に「誰に何を頼り、どう役割分担するか」をグループで考える<b>参加型カードワーク</b>を通じて、相互理解・役割発見・共助意識を育てる事業。</p>
+  <div class="formula">
+    <b>WHY</b> 一部メンバーへの負担集中・関わり方の差　→
+    <b>WHAT</b> 全員で支え合う関係づくり　→
+    <b>HOW</b> KAGA JC GATHERING（仮）　→
+    <b>VERIFY</b> アンケート・ふりかえりで定量検証
+  </div>
+</div>
+
+<!-- ===== Phase 1: 全体フロー（事前→当日→事後）===== -->
+<div class="card">
+  <h2 class="center">事業全体フロー（事前 → 当日 → 事後）</h2>
+  <p style="text-align:center; color:#6b7280; font-size:13px; margin:0 0 18px">本事業は3フェーズで構成される。当日のカードワークだけでなく、事前準備と事後検証を含めた一連の体験として設計。</p>
+
+  <div class="phases">
+
+    <!-- 事前準備 -->
+    <div class="phase before">
+      <div class="ph-label">PHASE 1</div>
+      <h3>事前準備</h3>
+      <p class="ph-period">事業 6〜2週間前</p>
+      <ul>
+        <li>事前アンケート＋簡易ヒアリング＋役割傾向チェック</li>
+        <li>メンバーカード制作</li>
+        <li><b>本人確認・修正</b>（プライバシー配慮）</li>
+        <li>会員への周知・出欠回収</li>
+        <li>会場・備品・運営役割の最終確認</li>
+      </ul>
+      <div class="deliverable">
+        <b>主な成果物：</b>JCメンバーカード／地域パートナーカード／ミッション・ハードルカードセット
+      </div>
+    </div>
+
+    <!-- 当日 -->
+    <div class="phase day">
+      <div class="ph-label">PHASE 2</div>
+      <h3>当日（2026/8/30 土）</h3>
+      <p class="ph-period">10:00〜12:00 本編＋12:00〜 BBQ</p>
+      <ul>
+        <li>開会・趣旨説明（10分）</li>
+        <li>ルール説明・アイスブレイク（10分）</li>
+        <li><b>メインワーク：QUEST</b>（70分／2周）</li>
+        <li>グループ発表・ふりかえり（25分）</li>
+        <li>閉会・JC活動への接続（5分）</li>
+        <li><b>BBQ・懇親会</b>（昼食を兼ねた交流時間）</li>
+      </ul>
+      <div class="deliverable">
+        <b>主な成果物：</b>ふりかえりシート記入物／グループ発表内容／当日アンケート回答
+      </div>
+    </div>
+
+    <!-- 事後 -->
+    <div class="phase after">
+      <div class="ph-label">PHASE 3</div>
+      <h3>事後</h3>
+      <p class="ph-period">事業後 1〜3ヶ月</p>
+      <ul>
+        <li>事業後アンケート集計・分析</li>
+        <li>ふりかえりシート内容の整理</li>
+        <li><b>検証項目に基づく目的達成度評価</b></li>
+        <li>事業報告書作成・理事会報告</li>
+        <li>次のJC活動・委員会活動への接続</li>
+        <li>3ヶ月後フォローアップアンケート（行動変容測定）</li>
+      </ul>
+      <div class="deliverable">
+        <b>主な成果物：</b>事業報告書／検証結果サマリ／次年度議案へのフィードバック
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ===== Why → What → How → Verify ===== -->
+<div class="card">
+  <h2 class="center">議案の論理構造（WHY → WHAT → HOW → VERIFY）</h2>
+  <p style="text-align:center; color:#6b7280; font-size:13px; margin:0 0 18px">議案を上から読み進めた際に、各セクションがどの役割を果たしているか。</p>
+
+  <div class="chain">
+    <div class="chain-step why">
+      <div class="step-label">WHY</div>
+      <h4>なぜやるか</h4>
+      <p>関わり方の差・負担集中・孤立リスク</p>
+      <p style="margin-top:6px"><a href="../gian.htm">1. 背景</a> ／ <a href="../gian.htm">2. 目的</a></p>
+    </div>
+    <div class="chain-step what">
+      <div class="step-label">WHAT</div>
+      <h4>何を変えるか</h4>
+      <p>相互理解・役割発見・共助意識の醸成</p>
+      <p style="margin-top:6px"><a href="../gian.htm">4. 期待される効果</a></p>
+    </div>
+    <div class="chain-step how">
+      <div class="step-label">HOW</div>
+      <h4>どうやって</h4>
+      <p>KAGA JC GATHERING／カードワーク</p>
+      <p style="margin-top:6px"><a href="../gian.htm">7. 事業内容</a> ／ <a href="KAGA_JC_GATHERING_仕様書.htm">審議3</a></p>
+    </div>
+    <div class="chain-step verify">
+      <div class="step-label">VERIFY</div>
+      <h4>どう確かめるか</h4>
+      <p>3点検証（アンケート／シート／発表）</p>
+      <p style="margin-top:6px"><a href="../gian.htm">8. 検証方法</a> ／ <a href="ふりかえりシート.htm">審議8</a></p>
+    </div>
+  </div>
+</div>
+
+
+
+</main>
+</body>
+</html>
