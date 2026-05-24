@@ -412,6 +412,8 @@ section.card {
   margin: 0;
   font-size: 16px;
   font-weight: 700;
+  border-left: none;   /* .card h2 の黒バーを上書きして消す */
+  padding-left: 0;
 }
 .card-head .tag,
 .sec-head .tag {
