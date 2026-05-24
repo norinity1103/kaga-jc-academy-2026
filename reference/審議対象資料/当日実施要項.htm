@@ -35,29 +35,6 @@
 
   main { max-width: 1000px; margin: 28px auto; padding: 0 16px 64px; }
 
-  .links {
-  position: sticky;
-  top: 8px;
-  z-index: 100;
-  box-shadow: 0 2px 8px rgba(0,0,0,.08);
-    background: #fff; border: 1px solid var(--line);
-    border-radius: 10px; padding: 14px 18px;
-    margin-bottom: 24px;
-    display: flex; flex-wrap: wrap; gap: 8px;
-  }
-  .links span.label {
-    font-size: 11px; color: var(--muted); letter-spacing: 0.06em;
-    text-transform: uppercase; align-self: center; margin-right: 6px;
-  }
-  .links a {
-    background: #f3f4f6; color: var(--text);
-    padding: 7px 12px; border-radius: 6px;
-    font-size: 12.5px; text-decoration: none;
-    border: 1px solid var(--line);
-  }
-  .links a:hover { background: #e5e7eb; }
-  .links a.current { background: #eff6ff; border-color: var(--accent); color: var(--accent); }
-
   section {
     background: #fff;
     border: 1px solid var(--line);
@@ -196,27 +173,6 @@
     margin-top: 4px;
   }
 
-  footer {
-    text-align: center; color: var(--muted);
-    font-size: 12px; padding: 32px 16px 48px;
-  }
-  .back {
-    display: inline-block; margin-top: 12px;
-    padding: 8px 16px; background: var(--card);
-    border: 1px solid var(--line); border-radius: 8px;
-    text-decoration: none; color: var(--text); font-size: 13px;
-  }
-  .back:hover { background: var(--hover); }
-
-  @media print {
-    @page { size: A4 portrait; margin: 12mm 14mm; }
-    body { background: #fff; }
-    .links { display: none; }
-    section { page-break-inside: avoid; box-shadow: none; }
-    header { background: #fff !important; color: var(--text) !important; padding: 24px 0 16px; }
-    header .eyebrow, header .subtitle, header .meta { color: var(--muted); }
-    main { padding: 0; }
-  }
 </style>
 </head>
 <body>

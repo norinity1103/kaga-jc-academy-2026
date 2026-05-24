@@ -60,16 +60,6 @@
   }
   .toolbar a:hover, .toolbar button:hover { opacity: 0.9; }
 
-  .sheet {
-    max-width: 800px;
-    margin: 24px auto;
-    background: var(--paper);
-    border: 1px solid var(--line);
-    border-radius: 4px;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
-    padding: 28px 32px;
-  }
-
   .sheet-header {
     border-bottom: 2px solid var(--accent);
     padding-bottom: 14px;
@@ -94,28 +84,6 @@
     font-size: 12px;
     color: var(--muted);
   }
-
-  .meta-row {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 14px;
-    margin-bottom: 22px;
-    font-size: 12.5px;
-  }
-  .meta-row .field {
-    border-bottom: 1px solid var(--rule);
-    padding-bottom: 6px;
-    min-height: 36px;
-  }
-  .meta-row .field .lbl {
-    display: block;
-    color: var(--muted);
-    font-size: 10.5px;
-    letter-spacing: 0.06em;
-    margin-bottom: 4px;
-    text-transform: uppercase;
-  }
-  .meta-row .field .val { color: var(--text); }
 
   section.block {
     margin-bottom: 22px;
@@ -151,37 +119,6 @@
   .lines.tall { min-height: 188px; }
   .lines.short { min-height: 64px; }
 
-  .scale {
-    display: flex;
-    gap: 10px;
-    margin-top: 6px;
-    align-items: center;
-  }
-  .scale-item {
-    flex: 1;
-    text-align: center;
-    border: 1px solid var(--line);
-    border-radius: 6px;
-    padding: 10px 6px;
-    font-size: 11px;
-    color: var(--muted);
-  }
-  .scale-item .num {
-    display: block;
-    font-size: 18px;
-    color: var(--text);
-    font-weight: 700;
-    margin-bottom: 2px;
-  }
-  .scale-item .bubble {
-    display: inline-block;
-    width: 16px;
-    height: 16px;
-    border: 1.5px solid var(--rule);
-    border-radius: 50%;
-    margin-top: 4px;
-  }
-
   .checklist {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -202,26 +139,6 @@
     flex-shrink: 0;
   }
 
-  .qa {
-    border: 1px solid var(--line);
-    border-radius: 6px;
-    padding: 12px 14px;
-    margin-bottom: 10px;
-    background: #fafbfc;
-  }
-  .qa .q {
-    font-size: 13px;
-    font-weight: 600;
-    margin: 0 0 6px;
-    color: var(--accent);
-  }
-  .qa .a {
-    border-bottom: 1px solid var(--rule);
-    min-height: 28px;
-    margin-bottom: 4px;
-  }
-  .qa .a:last-child { margin-bottom: 0; }
-
   .footer-note {
     border-top: 1px solid var(--line);
     padding-top: 10px;
@@ -231,33 +148,10 @@
     text-align: center;
   }
 
-  /* Print styles */
-  @media print {
-    @page {
-      size: A4 portrait;
-      margin: 12mm 14mm;
-    }
-    body {
-      background: #fff;
-    }
-    .toolbar { display: none; }
-    .sheet {
-      box-shadow: none;
-      border: none;
-      margin: 0;
-      padding: 0;
-      max-width: none;
-    }
-    .qa, .lines, .scale-item, .meta-row .field {
-      page-break-inside: avoid;
-    }
-    a { color: var(--text); text-decoration: none; }
-  }
-
   @media (max-width: 600px) {
-    .meta-row { grid-template-columns: 1fr; }
+    .meta-grid { grid-template-columns: 1fr; }
     .checklist { grid-template-columns: 1fr; }
-    .sheet { padding: 20px; }
+    .form-sheet { padding: 20px; }
   }
 </style>
 </head>
@@ -287,18 +181,18 @@
   <button class="pdf-btn" onclick="window.print()">📄 PDFで保存</button>
 </div>
 
-<div class="sheet">
-  <div class="meta-row">
-    <div class="field">
-      <span class="lbl">氏名</span>
+<div class="form-sheet">
+  <div class="meta-grid">
+    <div class="meta-field">
+      <span class="meta-label">氏名</span>
       <span class="val">&nbsp;</span>
     </div>
-    <div class="field">
-      <span class="lbl">グループ</span>
+    <div class="meta-field">
+      <span class="meta-label">グループ</span>
       <span class="val">&nbsp;</span>
     </div>
-    <div class="field">
-      <span class="lbl">記入日</span>
+    <div class="meta-field">
+      <span class="meta-label">記入日</span>
       <span class="val">　　年　　月　　日</span>
     </div>
   </div>
@@ -307,7 +201,7 @@
   <section class="block">
     <h2>1. 今日のグループのミッション</h2>
     <p class="desc">グループで選んだ公益ミッションカードのテーマと、設定された条件を書き出してください。</p>
-    <div class="qa">
+    <div class="form-qa">
       <p class="q">選んだミッションテーマ</p>
       <div class="a"></div>
       <p class="q" style="margin-top:8px">設定された条件</p>
@@ -319,7 +213,7 @@
   <section class="block">
     <h2>2. 印象に残った「頼れる仲間カード」</h2>
     <p class="desc">活用したカードのうち、特に印象に残った人物・事業者を3つまで挙げてください。</p>
-    <div class="qa">
+    <div class="form-qa">
       <p class="q">①</p>
       <div class="a"></div>
       <p class="q" style="margin-top:8px">②</p>
@@ -333,17 +227,17 @@
   <section class="block">
     <h2>3. もし自分がその役職だったら…</h2>
     <p class="desc">それぞれの立場で「誰に何を頼るか」を整理してください。</p>
-    <div class="qa">
+    <div class="form-qa">
       <p class="q">委員長だったら、誰に何を頼みますか？</p>
       <div class="a"></div>
       <div class="a"></div>
     </div>
-    <div class="qa">
+    <div class="form-qa">
       <p class="q">副委員長だったら、どのように委員長を支えますか？</p>
       <div class="a"></div>
       <div class="a"></div>
     </div>
-    <div class="qa">
+    <div class="form-qa">
       <p class="q">運営幹事だったら、どのようにメンバーを巻き込みますか？</p>
       <div class="a"></div>
       <div class="a"></div>
@@ -415,7 +309,7 @@
   <section class="block">
     <h2>7. 今後頼りたいメンバー</h2>
     <p class="desc">具体的に「誰に・どんな場面で・何を」頼りたいかを記入してください。</p>
-    <div class="qa">
+    <div class="form-qa">
       <p class="q">頼りたいメンバー</p>
       <div class="a"></div>
       <p class="q" style="margin-top:8px">頼りたい場面・内容</p>

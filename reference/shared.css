@@ -69,6 +69,17 @@
   --font-sans: -apple-system, BlinkMacSystemFont, "Hiragino Sans",
                "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
   --font-mono: "SF Mono", "Fira Code", Menlo, Consolas, monospace;
+
+  /* — Typography scale — */
+  --fs-label: 10.5px;
+  --fs-xs:    11px;
+  --fs-sm:    12px;
+  --fs-base:  13.5px;
+  --fs-ui:    13px;
+  --fs-h3:    14.5px;
+  --fs-h2:    16px;
+  --fs-h1-sm: 22px;
+  --fs-h1:    28px;
 }
 
 
@@ -1115,18 +1126,303 @@ footer.rel-footer .rf-pages a.current {
 }
 
 
+/* ─────────────────────────────────────────────────────────
+   § Document Table  (.doc-table)
+   フォーマル・印刷対応テーブル
+   ───────────────────────────────────────────────────────── */
+.doc-table {
+  width:           100%;
+  border-collapse: collapse;
+  font-size:       var(--fs-base);
+  margin:          0 0 20px;
+  line-height:     1.65;
+}
+.doc-table th {
+  background:     #f1f5f9;
+  border:         1px solid #cbd5e1;
+  padding:        8px 13px;
+  text-align:     left;
+  font-size:      var(--fs-sm);
+  font-weight:    700;
+  color:          #475569;
+  letter-spacing: .03em;
+  white-space:    nowrap;
+}
+.doc-table td {
+  border:         1px solid #e2e8f0;
+  padding:        9px 13px;
+  vertical-align: top;
+  color:          var(--text);
+}
+.doc-table tbody tr:nth-child(even) td { background: #fafbfc; }
+.doc-table.compact th,
+.doc-table.compact td { padding: 5px 10px; font-size: var(--fs-sm); }
+.doc-table.ruled th,
+.doc-table.ruled td  { border-left: none; border-right: none; }
+.doc-table.ruled th  { border-bottom: 2px solid #94a3b8; background: none; color: var(--text); }
+
+
+/* ─────────────────────────────────────────────────────────
+   § Callout / Alert  (.callout)
+   情報・警告・OK・NGのインラインアラート
+   ───────────────────────────────────────────────────────── */
+.callout {
+  display:      flex;
+  gap:          12px;
+  padding:      13px 16px;
+  border-radius:var(--r-md);
+  border:       1px solid;
+  margin:       0 0 16px;
+  font-size:    var(--fs-base);
+  line-height:  1.75;
+}
+.callout-icon { font-size: 15px; flex-shrink: 0; margin-top: 2px; }
+.callout-body { flex: 1; }
+.callout-label {
+  display:        block;
+  font-size:      var(--fs-xs);
+  font-weight:    700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  margin:         0 0 4px;
+}
+.callout p:last-child { margin: 0; }
+/* Color variants */
+.callout.info    { background: #eff6ff; border-color: #bfdbfe; }
+.callout.info    .callout-label,
+.callout.info    .callout-icon { color: #1e40af; }
+.callout.warn    { background: #fffbeb; border-color: #fde68a; }
+.callout.warn    .callout-label,
+.callout.warn    .callout-icon { color: #b45309; }
+.callout.ok      { background: #f0fdf4; border-color: #bbf7d0; }
+.callout.ok      .callout-label,
+.callout.ok      .callout-icon { color: #15803d; }
+.callout.ng      { background: #fef2f2; border-color: #fecaca; }
+.callout.ng      .callout-label,
+.callout.ng      .callout-icon { color: #b91c1c; }
+.callout.neutral { background: #f8fafc; border-color: #e2e8f0; color: var(--text); }
+.callout.neutral .callout-label { color: var(--muted); }
+/* Left-accent bar variant */
+.callout.bar { border-left-width: 4px; border-radius: 0 var(--r-md) var(--r-md) 0; }
+
+
+/* ─────────────────────────────────────────────────────────
+   § Step List  (.step-list)
+   手順・ステップのナンバード順序リスト
+   ───────────────────────────────────────────────────────── */
+.step-list {
+  list-style:    none;
+  margin:        0 0 20px;
+  padding:       0;
+  counter-reset: steps;
+}
+.step-list > li {
+  counter-increment: steps;
+  display:           flex;
+  gap:               14px;
+  align-items:       flex-start;
+  padding:           14px 0;
+  border-bottom:     1px solid var(--line);
+}
+.step-list > li:last-child { border-bottom: none; }
+.step-list > li::before {
+  content:         counter(steps);
+  display:         flex;
+  align-items:     center;
+  justify-content: center;
+  width:           26px;
+  height:          26px;
+  background:      var(--accent, #1e40af);
+  color:           #fff;
+  font-size:       12px;
+  font-weight:     700;
+  border-radius:   50%;
+  flex-shrink:     0;
+  margin-top:      1px;
+}
+.step-list .step-title { font-size: var(--fs-h3); font-weight: 700; margin: 0 0 4px; }
+.step-list .step-body  { font-size: var(--fs-base); color: var(--text); margin: 0; }
+
+
+/* ─────────────────────────────────────────────────────────
+   § Form / Sheet Components
+   ふりかえりシート・アンケート用フォームコンポーネント
+   ───────────────────────────────────────────────────────── */
+/* Sheet wrapper */
+.form-sheet {
+  background:    var(--card);
+  border:        1px solid var(--line);
+  border-radius: var(--r-lg);
+  padding:       28px 32px;
+  margin:        0 auto 28px;
+  max-width:     840px;
+  box-shadow:    var(--shadow-sm);
+}
+/* Section divider within sheet */
+.form-section {
+  border-top:  1px solid var(--line);
+  padding-top: 18px;
+  margin-top:  18px;
+}
+.form-section:first-child { border-top: none; padding-top: 0; margin-top: 0; }
+/* Metadata row (name / date / group) */
+.meta-grid {
+  display:               grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap:                   10px 18px;
+  margin:                0 0 18px;
+}
+.meta-field {
+  border-bottom: 1px solid #94a3b8;
+  padding-bottom:6px;
+  min-height:    36px;
+}
+.meta-label {
+  display:        block;
+  font-size:      var(--fs-label);
+  color:          var(--muted);
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  margin-bottom:  4px;
+}
+/* Q&A box */
+.form-qa {
+  border:        1px solid var(--line);
+  border-radius: var(--r-sm);
+  padding:       12px 14px;
+  background:    #fafbfc;
+  margin:        0 0 10px;
+}
+.form-qa .q {
+  font-size:   var(--fs-sm);
+  font-weight: 700;
+  color:       var(--accent, #1e40af);
+  margin:      0 0 8px;
+}
+.form-qa .a {
+  border-bottom: 1px solid #cbd5e1;
+  min-height:    28px;
+  font-size:     var(--fs-base);
+}
+.form-qa .a.tall { min-height: 70px; }
+/* Rating scale */
+.scale {
+  display:         flex;
+  gap:             6px;
+  margin:          8px 0 4px;
+  justify-content: space-between;
+}
+.scale-item {
+  flex:            1;
+  display:         flex;
+  flex-direction:  column;
+  align-items:     center;
+  gap:             6px;
+  padding:         10px 4px;
+  border:          1px solid var(--line);
+  border-radius:   var(--r-sm);
+  transition:      border-color .12s, background .12s;
+}
+.scale-item:hover { border-color: var(--accent, #1e40af); background: #eff6ff; }
+.scale-item .num  { font-size: 18px; font-weight: 700; line-height: 1; color: var(--text); }
+.scale-item .bubble {
+  width:         15px;
+  height:        15px;
+  border-radius: 50%;
+  border:        1.5px solid #94a3b8;
+  background:    #fff;
+}
+.scale-labels {
+  display:         flex;
+  justify-content: space-between;
+  font-size:       var(--fs-xs);
+  color:           var(--muted);
+  margin-top:      4px;
+}
+
+
+/* ─────────────────────────────────────────────────────────
+   § Definition List  (.def-list)
+   用語定義・キーバリュー説明リスト
+   ───────────────────────────────────────────────────────── */
+.def-list { margin: 0 0 16px; }
+.def-list dt {
+  font-size:      var(--fs-xs);
+  font-weight:    700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color:          var(--muted);
+  margin:         12px 0 3px;
+}
+.def-list dt:first-child { margin-top: 0; }
+.def-list dd {
+  margin:      0;
+  font-size:   var(--fs-base);
+  line-height: 1.7;
+  padding-left:12px;
+  border-left: 2px solid var(--line);
+  color:       var(--text);
+}
+
+
+/* ─────────────────────────────────────────────────────────
+   § Print / PDF  (@media print)
+   印刷・PDF出力時のスタイル（全ページ共通）
+   ───────────────────────────────────────────────────────── */
 @media print {
   @page { size: A4 portrait; margin: 15mm 12mm; }
-  .nav, .pdf-btn, .links, .toolbar, .page-nav { display: none; }
-  footer { display: none !important; }
-  body   { background: #fff; color: #000; }
-  main   { padding: 0; margin: 0; max-width: none; }
-  .card,
-  section.card { box-shadow: none; page-break-inside: avoid; }
-  header { background: #fff !important; color: #000 !important; }
+
+  /* — Hide interactive UI — */
+  .nav, .nav-dd, .pdf-btn, .zip-btn,
+  .links, .toolbar, .page-nav,
+  footer, .rel-footer,
+  .badge-draft, .badge-update { display: none !important; }
+
+  /* — Reset surfaces — */
+  *, *::before, *::after { box-shadow: none !important; }
+  body {
+    background: #fff !important;
+    color:      #000 !important;
+    font-size:  11pt;
+  }
+  main { padding: 0 !important; margin: 0 !important; max-width: none !important; }
+
+  /* — Page header — */
+  header {
+    background:   #fff !important;
+    color:        #000 !important;
+    border-bottom:2px solid #000 !important;
+    padding:      12px 0 10px !important;
+    margin-bottom:16px !important;
+  }
   header .eyebrow,
+  header .page-eyebrow { color: #555 !important; font-size: 9pt !important; }
+  header h1   { color: #000 !important; font-size: 20pt !important; }
   header .subtitle,
-  header .meta { color: var(--muted) !important; }
-  a { color: #000; text-decoration: none; }
-  .related-docs { display: none; }
+  header .page-subtitle { color: #333 !important; }
+  header .meta { color: #555 !important; font-size: 9pt !important; }
+
+  /* — Cards & containers — */
+  .card, section.card, .doc-section, .form-sheet, .card-section {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+  .sec-head, .card-head { background: #f5f5f5 !important; }
+
+  /* — Tables — */
+  .doc-table, .tbl { border-collapse: collapse !important; }
+  .doc-table th, .doc-table td,
+  .tbl th, .tbl td { border: 1px solid #aaa !important; }
+  .doc-table tr:nth-child(even) td { background: #f5f5f5 !important; }
+
+  /* — Callouts — */
+  .callout { background: #fff !important; border: 1px solid #999 !important; }
+  .note-box { background: #fff !important; border: 1px solid #999 !important; }
+
+  /* — Typography — */
+  h2 { break-after: avoid; page-break-after: avoid; }
+  h3 { break-after: avoid; page-break-after: avoid; }
+
+  /* — Links — */
+  a { color: inherit !important; text-decoration: none !important; }
 }
