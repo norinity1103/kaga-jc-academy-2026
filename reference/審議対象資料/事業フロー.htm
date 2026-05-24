@@ -40,32 +40,92 @@
   .outline .formula { background:#fff; border-radius:8px; padding:14px 18px; font-size:14.5px; color:#1f2937; border:1px solid #fcd34d; margin-top:10px; }
   .outline .formula b { color:#92400e; }
 
+  /* ── Flow hero strip (3-icon visual summary) ── */
+  .flow-hero {
+    display:grid; grid-template-columns:1fr 40px 1fr 40px 1fr; align-items:stretch;
+    gap:0; margin:0 0 22px; padding:18px 8px;
+    background:linear-gradient(180deg, #f8fafc 0%, #fff 100%);
+    border:1px solid #e5e7eb; border-radius:14px;
+  }
+  .flow-hero-cell { text-align:center; padding:6px 8px; }
+  .flow-hero-icon {
+    width:60px; height:60px; border-radius:50%; margin:0 auto 8px;
+    display:flex; align-items:center; justify-content:center;
+    font-size:30px; line-height:1; box-shadow:0 2px 8px rgba(0,0,0,.08);
+    border:3px solid;
+  }
+  .flow-hero-icon.before { background:#eff6ff; border-color:#3b82f6; }
+  .flow-hero-icon.day    { background:#fef2f2; border-color:#d8345f; }
+  .flow-hero-icon.after  { background:#f0fdf4; border-color:#16a34a; }
+  .flow-hero-num {
+    display:inline-block; font-size:10px; font-weight:700; letter-spacing:.14em;
+    padding:2px 8px; border-radius:99px; margin-bottom:6px;
+  }
+  .flow-hero-num.before { background:#dbeafe; color:#1d4ed8; }
+  .flow-hero-num.day    { background:#fee2e2; color:#b91c4d; }
+  .flow-hero-num.after  { background:#dcfce7; color:#15803d; }
+  .flow-hero-title { font-size:15px; font-weight:700; color:#0f172a; margin:0 0 3px; }
+  .flow-hero-period { font-size:11.5px; color:#6b7280; margin:0; }
+  .flow-hero-arrow {
+    display:flex; align-items:center; justify-content:center;
+    color:#cbd5e1; font-size:28px; font-weight:300;
+  }
+
   /* 3-phase grid */
-  .phases { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-bottom:14px; }
+  .phases { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-bottom:14px; position:relative; }
   .phase {
-    background:#fff; border:1px solid #e5e7eb; border-radius:12px; padding:18px 20px;
-    border-top:4px solid;
+    background:#fff; border:1px solid #e5e7eb; border-radius:12px; padding:18px 20px 16px;
+    border-top:4px solid; position:relative;
   }
   .phase.before { border-top-color:#3b82f6; }
   .phase.day { border-top-color:#d8345f; }
   .phase.after { border-top-color:#16a34a; }
+  .phase-head { display:flex; align-items:center; gap:10px; margin-bottom:10px; }
+  .phase-icon-sm {
+    width:36px; height:36px; border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    font-size:18px; line-height:1; flex-shrink:0;
+  }
+  .phase.before .phase-icon-sm { background:#dbeafe; }
+  .phase.day .phase-icon-sm    { background:#fee2e2; }
+  .phase.after .phase-icon-sm  { background:#dcfce7; }
   .phase .ph-label {
-    font-size:11px; letter-spacing:.12em; text-transform:uppercase;
-    font-weight:700; margin-bottom:6px;
+    font-size:10.5px; letter-spacing:.14em; text-transform:uppercase;
+    font-weight:700; margin:0 0 2px;
   }
   .phase.before .ph-label { color:#1d4ed8; }
   .phase.day .ph-label { color:#b91c4d; }
   .phase.after .ph-label { color:#15803d; }
-  .phase h3 { margin:0 0 6px; font-size:16px; color:#0f172a; }
-  .phase .ph-period { font-size:12px; color:#6b7280; margin-bottom:12px; }
+  .phase h3 { margin:0; font-size:16px; color:#0f172a; }
+  .phase .ph-period { font-size:12px; color:#6b7280; margin:0 0 12px; padding-left:46px; }
   .phase ul { margin:0 0 12px 1.1em; padding:0; }
   .phase ul li { font-size:13.5px; margin-bottom:5px; line-height:1.6; }
-  .phase .deliverable { background:#f9fafb; border:1px solid #e5e7eb; border-radius:8px; padding:8px 12px; font-size:12.5px; color:#374151; }
+  .phase .deliverable { background:#f9fafb; border-left:3px solid #e5e7eb; border-radius:0 8px 8px 0; padding:8px 12px; font-size:12.5px; color:#374151; }
+  .phase.before .deliverable { border-left-color:#93c5fd; }
+  .phase.day    .deliverable { border-left-color:#fda4af; }
+  .phase.after  .deliverable { border-left-color:#86efac; }
   .phase .deliverable b { color:#0f172a; }
+
+  /* Between-phase arrows (desktop) */
+  .phase-arrow {
+    position:absolute; top:50%; transform:translateY(-50%);
+    width:30px; height:30px; border-radius:50%;
+    background:#fff; border:2px solid #e5e7eb;
+    display:flex; align-items:center; justify-content:center;
+    font-size:14px; color:#94a3b8; font-weight:700;
+    z-index:2;
+  }
 
   .phase-flow-arrow {
     text-align:center; color:#94a3b8; font-size:22px; margin:4px 0 14px;
-    display:none; /* flex on mobile */
+    display:none;
+  }
+
+  @media (max-width:760px) {
+    .flow-hero { grid-template-columns:1fr; gap:8px; }
+    .flow-hero-arrow { transform:rotate(90deg); padding:4px 0; }
+    .phases { grid-template-columns:1fr; }
+    .phase-arrow { display:none; }
   }
 
   /* Why-What-How-Verify chain */
@@ -163,58 +223,97 @@
   <h2 class="center">事業全体フロー（事前 → 当日 → 事後）</h2>
   <p style="text-align:center; color:#6b7280; font-size:13px; margin:0 0 18px">本事業は3フェーズで構成される。当日のカードワークだけでなく、事前準備と事後検証を含めた一連の体験として設計。</p>
 
+  <!-- Visual hero strip -->
+  <div class="flow-hero" aria-hidden="true">
+    <div class="flow-hero-cell">
+      <div class="flow-hero-icon before">📋</div>
+      <span class="flow-hero-num before">PHASE 1</span>
+      <p class="flow-hero-title">事前準備</p>
+      <p class="flow-hero-period">6〜2週間前</p>
+    </div>
+    <div class="flow-hero-arrow">▶</div>
+    <div class="flow-hero-cell">
+      <div class="flow-hero-icon day">🎯</div>
+      <span class="flow-hero-num day">PHASE 2</span>
+      <p class="flow-hero-title">当日</p>
+      <p class="flow-hero-period">2026/8/30（土）</p>
+    </div>
+    <div class="flow-hero-arrow">▶</div>
+    <div class="flow-hero-cell">
+      <div class="flow-hero-icon after">📈</div>
+      <span class="flow-hero-num after">PHASE 3</span>
+      <p class="flow-hero-title">事後検証</p>
+      <p class="flow-hero-period">1〜3ヶ月後</p>
+    </div>
+  </div>
+
   <div class="phases">
 
     <!-- 事前準備 -->
     <div class="phase before">
-      <div class="ph-label">PHASE 1</div>
-      <h3>事前準備</h3>
+      <div class="phase-head">
+        <div class="phase-icon-sm">📋</div>
+        <div>
+          <div class="ph-label">PHASE 1</div>
+          <h3>事前準備</h3>
+        </div>
+      </div>
       <p class="ph-period">事業 6〜2週間前</p>
       <ul>
-        <li>事前アンケート＋簡易ヒアリング＋役割傾向チェック</li>
-        <li>メンバーカード制作</li>
-        <li><b>本人確認・修正</b>（プライバシー配慮）</li>
-        <li>会員への周知・出欠回収</li>
-        <li>会場・備品・運営役割の最終確認</li>
+        <li>📝 事前アンケート＋簡易ヒアリング＋役割傾向チェック</li>
+        <li>🎴 メンバーカード制作</li>
+        <li>✅ <b>本人確認・修正</b>（プライバシー配慮）</li>
+        <li>📣 会員への周知・出欠回収</li>
+        <li>🏛 会場・備品・運営役割の最終確認</li>
       </ul>
       <div class="deliverable">
-        <b>主な成果物：</b>JCメンバーカード／地域パートナーカード／ミッション・ハードルカードセット
+        <b>📦 成果物：</b>JCメンバーカード／地域パートナーカード／ミッション・ハードルカードセット
       </div>
     </div>
 
     <!-- 当日 -->
     <div class="phase day">
-      <div class="ph-label">PHASE 2</div>
-      <h3>当日（2026/8/30 土）</h3>
+      <div class="phase-head">
+        <div class="phase-icon-sm">🎯</div>
+        <div>
+          <div class="ph-label">PHASE 2</div>
+          <h3>当日（2026/8/30 土）</h3>
+        </div>
+      </div>
       <p class="ph-period">10:00〜12:00 本編＋12:00〜 BBQ</p>
       <ul>
-        <li>開会・趣旨説明（10分）</li>
-        <li>ルール説明・アイスブレイク（10分）</li>
-        <li><b>メインワーク：QUEST</b>（70分／2周）</li>
-        <li>グループ発表・ふりかえり（25分）</li>
-        <li>閉会・JC活動への接続（5分）</li>
-        <li><b>BBQ・懇親会</b>（昼食を兼ねた交流時間）</li>
+        <li>🎤 開会・趣旨説明（10分）</li>
+        <li>🧊 ルール説明・アイスブレイク（10分）</li>
+        <li>🎲 <b>メインワーク：QUEST</b>（70分／2周）</li>
+        <li>🗣 グループ発表・ふりかえり（25分）</li>
+        <li>🤝 閉会・JC活動への接続（5分）</li>
+        <li>🍖 <b>BBQ・懇親会</b>（昼食を兼ねた交流時間）</li>
       </ul>
       <div class="deliverable">
-        <b>主な成果物：</b>ふりかえりシート記入物／グループ発表内容／当日アンケート回答
+        <b>📦 成果物：</b>ふりかえりシート記入物／グループ発表内容／当日アンケート回答
       </div>
     </div>
 
     <!-- 事後 -->
     <div class="phase after">
-      <div class="ph-label">PHASE 3</div>
-      <h3>事後</h3>
+      <div class="phase-head">
+        <div class="phase-icon-sm">📈</div>
+        <div>
+          <div class="ph-label">PHASE 3</div>
+          <h3>事後検証</h3>
+        </div>
+      </div>
       <p class="ph-period">事業後 1〜3ヶ月</p>
       <ul>
-        <li>事業後アンケート集計・分析</li>
-        <li>ふりかえりシート内容の整理</li>
-        <li><b>検証項目に基づく目的達成度評価</b></li>
-        <li>事業報告書作成・理事会報告</li>
-        <li>次のJC活動・委員会活動への接続</li>
-        <li>3ヶ月後フォローアップアンケート（行動変容測定）</li>
+        <li>📊 事業後アンケート集計・分析</li>
+        <li>🗂 ふりかえりシート内容の整理</li>
+        <li>✔️ <b>検証項目に基づく目的達成度評価</b></li>
+        <li>📄 事業報告書作成・理事会報告</li>
+        <li>🔗 次のJC活動・委員会活動への接続</li>
+        <li>⏱ 3ヶ月後フォローアップアンケート（行動変容測定）</li>
       </ul>
       <div class="deliverable">
-        <b>主な成果物：</b>事業報告書／検証結果サマリ／次年度議案へのフィードバック
+        <b>📦 成果物：</b>事業報告書／検証結果サマリ／次年度議案へのフィードバック
       </div>
     </div>
 
