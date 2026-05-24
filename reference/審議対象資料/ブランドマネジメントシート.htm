@@ -181,7 +181,27 @@
     .persona-card h4 { font-size:11pt !important; margin:0 0 4px !important; }
     .persona-card .p-block { margin-bottom:5px !important; }
     .persona-card .voice-box { padding:6px 10px !important; }
-    .map-wrap { box-shadow:none !important; }
+    /* ポジショニングマップ：背景・象限カラーを印刷に出す */
+    .map-wrap {
+      box-shadow:none !important;
+      -webkit-print-color-adjust:exact !important;
+      print-color-adjust:exact !important;
+    }
+    .map-wrap, .map-inner, .quad-bg, .win-zone,
+    .axis-x, .axis-y, .grid-h, .grid-v,
+    .dot .circle, .dot.highlight .circle {
+      -webkit-print-color-adjust:exact !important;
+      print-color-adjust:exact !important;
+    }
+    /* 印刷で薄くなりすぎないよう象限色を少し濃く */
+    .quad-tr { background:rgba(220,252,231,.95) !important; }
+    .quad-br { background:rgba(254,226,226,.85) !important; }
+    .quad-tl { background:rgba(241,245,249,.95) !important; }
+    .quad-bl { background:#fff !important; }
+    .win-zone {
+      background:radial-gradient(ellipse at 70% 30%, rgba(239,68,68,.18) 0%, transparent 70%) !important;
+      border-color:rgba(239,68,68,.55) !important;
+    }
     /* hide UI chrome */
     .nav, .nav-dd, .toolbar, .page-nav,
     footer, .rel-footer, .related-docs { display:none !important; }

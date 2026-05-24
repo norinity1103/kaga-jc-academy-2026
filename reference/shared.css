@@ -1395,6 +1395,13 @@ footer.rel-footer .rf-pages a.current {
 @media print {
   @page { size: A4 portrait; margin: 15mm 12mm; }
 
+  /* — 背景色・グラデーションを印刷に出す（chrome/safari/firefox 全対応） — */
+  *, *::before, *::after {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust:         exact !important;
+    color-adjust:               exact !important;  /* legacy */
+  }
+
   /* — Hide interactive UI — */
   .nav, .nav-dd, .pdf-btn, .zip-btn,
   .links, .toolbar, .page-nav,
