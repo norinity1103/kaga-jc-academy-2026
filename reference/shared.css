@@ -259,6 +259,28 @@ header .meta {
 .pdf-btn:hover  { background: #b91c3c; }
 .pdf-btn:active { background: #9f1239; }
 
+/* — ZIP download button (global nav) — */
+.zip-btn {
+  margin-left:    auto;
+  display:        inline-flex;
+  align-items:    center;
+  gap:            5px;
+  padding:        5px 13px;
+  background:     #0f172a;
+  color:          #fff !important;
+  border:         none;
+  border-radius:  var(--r-sm);
+  font-size:      12px;
+  font-family:    inherit;
+  font-weight:    600;
+  cursor:         pointer;
+  white-space:    nowrap;
+  letter-spacing: .02em;
+  text-decoration:none !important;
+  transition:     background .15s;
+}
+.zip-btn:hover  { background: #1e293b; }
+
 .links {
   /* — Layout — */
   display:        flex;
