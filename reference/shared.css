@@ -1022,6 +1022,52 @@ footer.rel-footer a {
 }
 footer.rel-footer a:hover { text-decoration: underline; }
 
+/* — Related pages row inside rel-footer — */
+footer.rel-footer .rf-pages {
+  display:        flex;
+  align-items:    center;
+  flex-wrap:      wrap;
+  gap:            6px;
+  margin-top:     16px;
+  padding-top:    14px;
+  border-top:     1px solid var(--line);
+}
+footer.rel-footer .rf-pages-label {
+  font-size:      10px;
+  font-weight:    700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color:          var(--subtle);
+  margin-right:   4px;
+  white-space:    nowrap;
+  flex-shrink:    0;
+}
+footer.rel-footer .rf-pages a {
+  display:        inline-flex;
+  align-items:    center;
+  gap:            4px;
+  padding:        4px 11px;
+  font-size:      12.5px;
+  background:     #fff;
+  border:         1px solid var(--line);
+  border-radius:  6px;
+  color:          var(--text) !important;
+  text-decoration:none !important;
+  transition:     background .12s, border-color .12s;
+}
+footer.rel-footer .rf-pages a:hover {
+  background:     #f0f4ff;
+  border-color:   var(--accent);
+  color:          var(--accent) !important;
+}
+footer.rel-footer .rf-pages a.current {
+  background:     #eff6ff;
+  border-color:   var(--accent);
+  color:          var(--accent) !important;
+  font-weight:    600;
+  pointer-events: none;
+}
+
 
 @media print {
   @page { size: A4 portrait; margin: 15mm 12mm; }
