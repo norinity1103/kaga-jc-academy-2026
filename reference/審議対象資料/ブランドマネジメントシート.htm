@@ -75,29 +75,46 @@
   }
 
   /* Positioning map */
-  .map-wrap { position:relative; width:100%; padding-top:70%; background:#fafafa; border:1px solid #e5e7eb; border-radius:10px; overflow:hidden; margin-bottom:20px; }
-  .map-inner { position:absolute; top:0; left:0; right:0; bottom:0; }
+  .map-wrap { position:relative; width:100%; padding-top:70%; border:1px solid #cbd5e1; border-radius:12px; overflow:hidden; margin-bottom:20px; box-shadow:0 2px 8px rgba(0,0,0,.06); }
+  .map-inner { position:absolute; top:0; left:0; right:0; bottom:0; background:#fff; }
+
+  /* Quadrant backgrounds */
+  .quad-bg { position:absolute; }
+  .quad-tl { top:0; left:0; width:50%; height:50%; background:rgba(248,250,252,.7); }
+  .quad-tr { top:0; right:0; width:50%; height:50%; background:rgba(240,253,244,.8); }
+  .quad-bl { bottom:0; left:0; width:50%; height:50%; background:rgba(255,255,255,.6); }
+  .quad-br { bottom:0; right:0; width:50%; height:50%; background:rgba(254,242,242,.55); }
+
+  /* Winning-zone halo */
+  .win-zone { position:absolute; right:10%; top:8%; width:32%; height:38%; background:radial-gradient(ellipse at 70% 30%, rgba(239,68,68,.08) 0%, transparent 70%); border:1.5px dashed rgba(239,68,68,.25); border-radius:50%; }
 
   /* Map axis lines */
-  .axis-x { position:absolute; left:8%; right:8%; top:50%; height:2px; background:#cbd5e1; }
-  .axis-y { position:absolute; top:8%; bottom:8%; left:50%; width:2px; background:#cbd5e1; }
-  .axis-x::after { content:''; position:absolute; right:-6px; top:-5px; border-top:6px solid transparent; border-bottom:6px solid transparent; border-left:10px solid #94a3b8; }
-  .axis-y::before { content:''; position:absolute; top:-6px; left:-5px; border-left:6px solid transparent; border-right:6px solid transparent; border-bottom:10px solid #94a3b8; }
+  .axis-x { position:absolute; left:8%; right:8%; top:50%; height:1.5px; background:#94a3b8; }
+  .axis-y { position:absolute; top:8%; bottom:8%; left:50%; width:1.5px; background:#94a3b8; }
+  .axis-x::after { content:''; position:absolute; right:-7px; top:-5px; border-top:5px solid transparent; border-bottom:5px solid transparent; border-left:9px solid #64748b; }
+  .axis-y::before { content:''; position:absolute; top:-7px; left:-5px; border-left:5px solid transparent; border-right:5px solid transparent; border-bottom:9px solid #64748b; }
+
+  /* Grid lines (subtle) */
+  .grid-h { position:absolute; left:8%; right:8%; height:1px; background:rgba(148,163,184,.2); }
+  .grid-v { position:absolute; top:8%; bottom:8%; width:1px; background:rgba(148,163,184,.2); }
 
   /* Axis labels */
-  .map-label { position:absolute; font-size:11.5px; color:#6b7280; font-weight:600; }
-  .map-label.left   { left:1%; top:50%; transform:translateY(-50%); text-align:center; writing-mode:initial; white-space:nowrap; }
+  .map-label { position:absolute; font-size:11px; color:#475569; font-weight:700; letter-spacing:.03em; }
+  .map-label.left   { left:1%; top:50%; transform:translateY(-50%); white-space:nowrap; }
   .map-label.right  { right:1%; top:50%; transform:translateY(-50%); white-space:nowrap; }
-  .map-label.top    { top:1%; left:50%; transform:translateX(-50%); white-space:nowrap; }
-  .map-label.bottom { bottom:1%; left:50%; transform:translateX(-50%); white-space:nowrap; }
+  .map-label.top    { top:1.5%; left:50%; transform:translateX(-50%); white-space:nowrap; }
+  .map-label.bottom { bottom:1.5%; left:50%; transform:translateX(-50%); white-space:nowrap; }
+
+  /* Quadrant micro-labels */
+  .quad-label-sm { position:absolute; font-size:9.5px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; opacity:.5; }
 
   /* Plot dot */
   .dot { position:absolute; transform:translate(-50%,-50%); }
-  .dot .circle { width:14px; height:14px; border-radius:50%; border:2px solid #fff; box-shadow:0 1px 4px rgba(0,0,0,.2); display:block; margin:0 auto; }
-  .dot.highlight .circle { width:20px; height:20px; background:#ef4444 !important; box-shadow:0 0 0 4px rgba(239,68,68,.2); }
-  .dot .dot-label { font-size:10.5px; color:#374151; white-space:nowrap; text-align:center; margin-top:3px; line-height:1.3; }
-  .dot.highlight .dot-label { font-size:11.5px; font-weight:700; color:#b91c1c; }
-  .dot .dot-num { font-size:9.5px; background:#fff; border:1px solid #d1d5db; border-radius:3px; padding:0 3px; display:inline-block; }
+  .dot .circle { width:13px; height:13px; border-radius:50%; border:2px solid #fff; box-shadow:0 1px 5px rgba(0,0,0,.22); display:block; margin:0 auto; }
+  .dot.highlight .circle { width:22px; height:22px; background:#ef4444 !important; box-shadow:0 0 0 5px rgba(239,68,68,.18); }
+  .dot .dot-label { font-size:10px; color:#374151; white-space:nowrap; text-align:center; margin-top:3px; line-height:1.3; }
+  .dot.highlight .dot-label { font-size:11.5px; font-weight:800; color:#b91c1c; }
+  .dot .dot-num { font-size:9px; background:#fff; border:1px solid #d1d5db; border-radius:3px; padding:0 3px; display:inline-block; }
 
   /* Selection table */
   table.sel-table { width:100%; border-collapse:collapse; font-size:13.5px; }
@@ -158,7 +175,7 @@
 <nav class="page-nav" id="page-nav">
   <a href="#brand">1. ブランドマネジメントシート</a>
   <a href="#positioning">2. ポジショニングマップ</a>
-  <a href="#selection">3. 手段選定理由書</a>
+  <a href="#selection">3. 手段選定理由</a>
   <a href="#kgi">4. コアターゲット KGI</a>
 </nav>
 
@@ -180,17 +197,13 @@
     <tr>
       <th>一次ターゲット<br>（直接参加者）</th>
       <td>
-        ・加賀JC既存会員全員（2026年度 約54名）<br>
-        ・コアターゲット：直近6ヶ月の例会参加率50%未満、または入会2年以内のメンバー（優先配置）<br>
-        ・正副会議メンバー・委員長クラス（テーブルGM・メンターとして参加、約10名）
+        加賀JC既存会員 約54名。<b>コア</b>：参加率50%未満・入会2年以内（優先テーブル配置）。<b>GM・メンター枠</b>：正副・委員長クラス 約10名。
       </td>
     </tr>
     <tr>
       <th>二次ターゲット<br>（間接的影響層）</th>
       <td>
-        ・加賀JCメンバーの家族（家庭内でのJC活動への理解促進）<br>
-        ・将来の拡大対象者（事業内での地域パートナーカード活用を通じた接点創出）<br>
-        ・地域企業・団体（パートナーとして認知・連携が広がる可能性）
+        地域パートナーカードを通じた接点創出の先にある<b>地域企業・将来の拡大対象者</b>。事業後の広報・報告書経由でJC認知を波及。
       </td>
     </tr>
     <tr>
@@ -240,108 +253,67 @@
 
   <!-- Strategy section -->
   <div class="strategy-card">
-    <h3>上記の要素を総合して当該事業の効果を最大化するための戦略</h3>
-    <p>KAGA JC GATHERING は、「遊びを通じた自己開示・他者理解」という体験設計を核に、参加率の低い会員と入会歴の浅い会員が「自分の役割」を見出し、JC活動を継続したいと思える転換点を提供する。</p>
-    <p>メンバーカードとQUESTの組み合わせにより、事業参加を「単発イベント」でなく「仲間との関係構築と役割発見のプロセス」にする。事業後のふりかえりシートと3ヶ月後のフォローで行動変容を追跡し、参加率KPIへの接続を可視化する。</p>
-    <p>正副・委員長クラスがGM・メンターとして参加することで、経験者と新参者の縦の繋がりを自然に形成し、次年度の組織力向上にも寄与する。</p>
+    <h3>戦略のポイント</h3>
+    <ol style="margin:0; padding-left:1.4em; line-height:1.9;">
+      <li style="margin-bottom:6px;"><b>体験型学習設計：</b>カードワーク×ゲーム化で心理的安全を確保しながら、自己開示・他者理解・役割発見の3軸を120分内で同時達成する。</li>
+      <li style="margin-bottom:6px;"><b>縦の繋がりを構造化：</b>正副・委員長がGM・メンターとして関わることで「頼り方・頼られ方」を双方向かつ体験的に形成し、孤立を組織の仕組みで解消する。</li>
+      <li><b>単発で終わらせない設計：</b>ふりかえりシート→事業後3ヶ月フォローの追跡設計で行動変容をKPIに接続し、事業の成果を次年度議案ブラッシュアップに還元する。</li>
+    </ol>
   </div>
 
   <!-- Persona section -->
-  <h3 style="margin-top:28px; font-size:16px; color:#0f172a; border-left:4px solid #f59e0b; padding-left:10px;">ペルソナ統合（ターゲットマトリクス × 4ペルソナ）</h3>
-  <p class="muted" style="margin-bottom:14px;">参加率 × 入会歴の4象限でターゲットを整理し、各象限のペルソナを設定。</p>
+  <h3 style="margin-top:28px; font-size:15px; color:#0f172a; border-left:4px solid #f59e0b; padding-left:10px;">コアターゲット ペルソナ</h3>
 
-  <div class="matrix-grid">
-    <div class="matrix-cell core">
-      <div class="quad-label">A ・ コア（最優先）</div>
-      <h4>入会歴：浅 × 参加率：低</h4>
-      <p>入会間もない若手、役割を見出せず受け身</p>
-    </div>
-    <div class="matrix-cell core">
-      <div class="quad-label">B ・ コア（最優先）</div>
-      <h4>入会歴：深 × 参加率：低</h4>
-      <p>中堅・低アクティブ、仕事・家庭で疲弊・孤立</p>
-    </div>
-    <div class="matrix-cell ref">
-      <div class="quad-label">C ・ 参照</div>
-      <h4>入会歴：浅 × 参加率：高</h4>
-      <p>熱量はあるが空回り、次のステップが見えない</p>
-    </div>
-    <div class="matrix-cell ref">
-      <div class="quad-label">D ・ 参照</div>
-      <h4>入会歴：深 × 参加率：高</h4>
-      <p>負担集中型ベテラン、役職経験・頼り方が不明</p>
-    </div>
-  </div>
-
-  <div class="persona-cards">
+  <div class="persona-cards" style="margin-bottom:14px;">
 
     <!-- Persona A -->
     <div class="persona-card">
-      <span class="p-tag core">ペルソナ A（コア）</span>
+      <span class="p-tag core">A ・ コア（最優先）</span>
       <h4>入会1年未満・若手会員</h4>
-      <p class="p-attr">30代前半／製造業（家業継承）／入会8ヶ月</p>
+      <p class="p-attr">参加率低 × 入会歴浅 ／ 30代前半・製造業・入会8ヶ月</p>
       <div class="p-block">
-        <div class="label">感情・障壁</div>
-        <p>「何をすればよいのか」が見えない、先輩との接点が少なく相談しにくい、置いていかれる感覚</p>
+        <div class="label">😟 PAIN</div>
+        <p>役割が見えない。先輩との接点が少なく、相談できない。「置いていかれる感覚」</p>
       </div>
       <div class="p-block">
-        <div class="label">本事業で得たい変化</div>
-        <p>頼り合える相手を見つける、次の例会で「自分から手を挙げる」一歩</p>
-      </div>
-      <div class="voice-box">
-        「JCに入ったはいいけど、まだ誰に何を頼っていいのか分からない。今日のワークで先輩の強みを知れたのが大きい。次は自分から声をかけてみようと思う。」
+        <div class="label">✅ GAIN</div>
+        <p>先輩の強みを知り「次の例会で自分から声をかける」最初の一歩を踏み出す</p>
       </div>
     </div>
 
     <!-- Persona B -->
     <div class="persona-card">
-      <span class="p-tag core">ペルソナ B（コア）</span>
+      <span class="p-tag core">B ・ コア（最優先）</span>
       <h4>中堅・低アクティブ会員</h4>
-      <p class="p-attr">30代後半／飲食サービス業／入会5年</p>
+      <p class="p-attr">参加率低 × 入会歴深 ／ 30代後半・飲食業・入会5年</p>
       <div class="p-block">
-        <div class="label">感情・障壁</div>
-        <p>久しぶりに参加しても「浦島太郎」状態、かつての仲間に頼られなくなり孤立感、退会も視野に</p>
+        <div class="label">😟 PAIN</div>
+        <p>久しぶり参加で「浦島太郎」状態。頼られなくなった孤立感。退会も視野に。</p>
       </div>
       <div class="p-block">
-        <div class="label">本事業で得たい変化</div>
-        <p>自分の強みが今もJCで活きる場面を再発見、負担にならない範囲で関われる役割を見出す</p>
-      </div>
-      <div class="voice-box">
-        「最近は仕事と家庭で精一杯でJCから遠ざかっていた。でも今日『飲食まわりはBさんに頼みたい』と言われて、まだ自分にもできることがあると思えた。」
-      </div>
-    </div>
-
-    <!-- Persona C -->
-    <div class="persona-card">
-      <span class="p-tag ref">ペルソナ C（参照）</span>
-      <h4>熱量はあるが空回り型</h4>
-      <p class="p-attr">30代半ば／サービス業／入会3年、出席率高いが発言・立候補は少ない</p>
-      <div class="p-block">
-        <div class="label">感情・障壁</div>
-        <p>役割を引き受けたい気持ちはあるが機会を掴めない、「自分が手を挙げて良いのか」迷い</p>
-      </div>
-      <div class="p-block">
-        <div class="label">本事業で得たい変化</div>
-        <p>相談先が明確になる、自分が引き受けられる役割の具体像を持つ</p>
-      </div>
-    </div>
-
-    <!-- Persona D -->
-    <div class="persona-card">
-      <span class="p-tag ref">ペルソナ D（参照）</span>
-      <h4>負担集中型ベテラン</h4>
-      <p class="p-attr">40代／建設業／入会7年・委員長経験者、事業準備の8割を自分で抱える傾向</p>
-      <div class="p-block">
-        <div class="label">感情・障壁</div>
-        <p>頼める相手の強みが整理されていない、「頼り方」を知らない疲弊感</p>
-      </div>
-      <div class="p-block">
-        <div class="label">本事業で得たい変化</div>
-        <p>メンバーカードを通じて頼れる相手が可視化、負担分散の具体策を獲得</p>
+        <div class="label">✅ GAIN</div>
+        <p>「まだ自分にできることがある」と再発見。負担にならない範囲で役割を持つ。</p>
       </div>
     </div>
 
   </div>
+
+  <!-- 参照ペルソナ -->
+  <table class="tbl" style="font-size:13px;">
+    <thead><tr><th style="width:14em;">参照ペルソナ</th><th>PAIN（現状の障壁）</th><th>GAIN（本事業で得ること）</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><span class="p-tag ref" style="display:inline-block;margin-bottom:4px;">C ・ 参照</span><br><b>熱量はあるが空回り型</b><br><span style="font-size:11.5px;color:#6b7280;">入会3年・出席率高・立候補少</span></td>
+        <td>役割を引き受けたいが機会を掴めない。「手を挙げて良いのか」迷い。</td>
+        <td>自分が担える役割の具体像を持ち、相談先が明確になる。</td>
+      </tr>
+      <tr>
+        <td><span class="p-tag ref" style="display:inline-block;margin-bottom:4px;">D ・ 参照</span><br><b>負担集中型ベテラン</b><br><span style="font-size:11.5px;color:#6b7280;">入会7年・委員長経験・抱え込み傾向</span></td>
+        <td>頼める相手の強みが整理されていない。「頼り方」を知らない疲弊感。</td>
+        <td>メンバーカードで頼れる相手が可視化。負担分散の具体策を得る。</td>
+      </tr>
+    </tbody>
+  </table>
 </div>
 
 <!-- ===== Section 2: ポジショニングマップ ===== -->
@@ -352,34 +324,53 @@
   <!-- Map -->
   <div class="map-wrap">
     <div class="map-inner">
+      <!-- Quadrant backgrounds -->
+      <div class="quad-bg quad-tl"></div>
+      <div class="quad-bg quad-tr"></div>
+      <div class="quad-bg quad-bl"></div>
+      <div class="quad-bg quad-br"></div>
+
+      <!-- Winning zone halo -->
+      <div class="win-zone"></div>
+
+      <!-- Grid lines (subtle) -->
+      <div class="grid-h" style="top:25%;"></div>
+      <div class="grid-h" style="top:75%;"></div>
+      <div class="grid-v" style="left:25%;"></div>
+      <div class="grid-v" style="left:75%;"></div>
+
       <!-- Axes -->
       <div class="axis-x"></div>
       <div class="axis-y"></div>
 
+      <!-- Quadrant micro-labels -->
+      <div class="quad-label-sm" style="left:3%; top:10%; color:#15803d;">高・相互理解</div>
+      <div class="quad-label-sm" style="right:3%; top:10%; color:#b91c1c;">高・相互理解</div>
+      <div class="quad-label-sm" style="left:3%; bottom:8%; color:#475569;">個人完結型</div>
+      <div class="quad-label-sm" style="right:3%; bottom:8%; color:#475569;">個人完結型</div>
+
       <!-- Axis labels -->
-      <div class="map-label left"  style="left:1.5%; top:50%; transform:translateY(-50%);">← 受動的・知識伝達型</div>
-      <div class="map-label right" style="right:1.5%; top:50%; transform:translateY(-50%);">能動的・体験型 →</div>
-      <div class="map-label top"   style="top:1.5%; left:50%; transform:translateX(-50%);">関係構築・相互理解 ↑</div>
+      <div class="map-label left"  style="left:1%; top:50%; transform:translateY(-50%) rotate(-90deg); transform-origin:center; white-space:nowrap;">← 受動的</div>
+      <div class="map-label right" style="right:1%; top:50%; transform:translateY(-50%) rotate(90deg); transform-origin:center; white-space:nowrap;">能動的 →</div>
+      <div class="map-label top"   style="top:1.5%; left:50%; transform:translateX(-50%);">↑ 関係構築・相互理解</div>
       <div class="map-label bottom" style="bottom:1.5%; left:50%; transform:translateX(-50%);">↓ 個人完結</div>
 
-      <!-- 1. 懇親会・飲食型 X:70 Y:40（Y軸は上が高いので bottom寄り） -->
-      <!-- マップのY座標はtop%なので Y:40(高=上) → top = (100-40)% = 60% -->
-      <!-- X:70 → left = 8% + 70%*(84%) = 8% + 58.8% = 66.8% -->
+      <!-- 1. 懇親会・飲食型 X:70 Y:40 → left=66.8%, top=60% -->
       <div class="dot" style="left:66.8%; top:60%;">
         <span class="circle" style="background:#60a5fa;"></span>
         <div class="dot-label"><span class="dot-num">1</span> 懇親会・飲食型</div>
       </div>
 
-      <!-- 2. 講演・外部研修型 X:25 Y:35 → left=8%+25%*84%=29%, top=65% -->
+      <!-- 2. 講演・外部研修型 X:25 Y:35 → left=29%, top=65% -->
       <div class="dot" style="left:29%; top:65%;">
         <span class="circle" style="background:#a78bfa;"></span>
-        <div class="dot-label"><span class="dot-num">2</span> 講演・外部研修型</div>
+        <div class="dot-label"><span class="dot-num">2</span> 講演・外部研修</div>
       </div>
 
       <!-- 3. コーチング・個別面談 X:30 Y:65 → left=33.2%, top=35% -->
       <div class="dot" style="left:33.2%; top:35%;">
         <span class="circle" style="background:#34d399;"></span>
-        <div class="dot-label"><span class="dot-num">3</span> コーチング・個別面談</div>
+        <div class="dot-label"><span class="dot-num">3</span> コーチング</div>
       </div>
 
       <!-- 4. 市販TBゲーム X:55 Y:55 → left=54.2%, top=45% -->
@@ -394,7 +385,7 @@
         <div class="dot-label"><span class="dot-num">5</span> 他LOM事例流用</div>
       </div>
 
-      <!-- 6. KAGA JC GATHERING X:83 Y:82 → left=77.72%, top=18% -->
+      <!-- 6. KAGA JC GATHERING X:83 Y:82 → left=77.7%, top=18% -->
       <div class="dot highlight" style="left:77.7%; top:18%;">
         <span class="circle"></span>
         <div class="dot-label"><span class="dot-num">6</span> KAGA JC<br>GATHERING</div>
@@ -480,53 +471,44 @@
   <p style="font-size:12px; color:#6b7280; margin-top:6px;">評価凡例：◎ 十分な強み / ○ 一定の強み / △ 弱いまたは不確実</p>
 </div>
 
-<!-- ===== Section 3: 手段選定理由書 ===== -->
+<!-- ===== Section 3: 手段選定理由 ===== -->
 <div class="card" id="selection">
-  <h2>手段選定理由書 — 代替案比較・選定根拠・リスク対処</h2>
-  <p><b>結論：</b>本事業の手段として、カードワーク型ビジネスゲーム「KAGA JC GATHERING（仮）」を選定する。(1) 相互理解・役割発見・共助意識の3軸を一日のワーク内で同時に扱える手法であること（他の代替案A〜Eは1〜2軸止まり）、(2) ビジネスゲーム研究所事例での実証成果、(3) 加賀LOM規模（参加者54名）と120分制約への最適スケール適合、の3点が根拠。</p>
+  <h2>手段選定理由</h2>
 
-  <h3>代替案との比較（A〜F）</h3>
+  <!-- 採用理由 3点 -->
+  <div class="strategy-card" style="margin-bottom:20px;">
+    <h3 style="color:#0f172a;">採用根拠 — カードワーク型ビジネスゲームを選ぶ3つの理由</h3>
+    <ol style="margin:0; padding-left:1.4em; line-height:1.9;">
+      <li style="margin-bottom:6px;"><b>3軸を同時達成できる唯一の手段：</b>相互理解・役割発見・共助意識を120分の一体験で同時に扱える。代替案（講演・懇親会・付箋WS等）はいずれも1〜2軸止まり。</li>
+      <li style="margin-bottom:6px;"><b>実証された成果：</b>ビジネスゲーム研究所JC導入事例で「新入会員1年以内離脱率ゼロ」「ゲーム内リーダー体験 → 委員会で立候補」「異業種の距離縮小 → 事業提携」の成果を確認。（<a href="../参考資料/ビジネスゲーム導入事例.htm">参考資料：ビジネスゲーム導入事例</a>）</li>
+      <li><b>スケール最適：</b>参加者54名を7名×8テーブルに分割、120分に収め、予算149,000円内で実現。会員開発委員会＋委員長GM＋正副メンターの3層で運営。</li>
+    </ol>
+  </div>
+
+  <!-- 代替案比較 -->
+  <h3 style="font-size:14.5px; color:#0f172a; margin:0 0 10px;">代替案との比較</h3>
   <table class="tbl">
-    <thead><tr><th>案</th><th>長所</th><th>短所</th><th>不採用理由</th></tr></thead>
+    <thead><tr><th style="width:11em;">手段</th><th>強み</th><th>弱み・不採用理由</th></tr></thead>
     <tbody>
-      <tr><td>A. 講演・セミナー型</td><td>権威性・準備工数小</td><td>一方向／既存会員の主体性が引き出せない</td><td>「主体性発火」というKGIに対し効果が薄い</td></tr>
-      <tr><td>B. 公式JCゲーム導入</td><td>承認を得やすい・教材完成</td><td>加賀LOM固有の公益事業テーマと接続しにくい</td><td>「JC活動への接続」が弱く、学びが汎用論で終わる</td></tr>
-      <tr><td>C. ワークショップ（付箋・KJ法）</td><td>低コスト・自由度高い</td><td>盛り上がりに偏差／発言の偏りが起きやすい</td><td>「一部メンバーへの偏り」を再生産するリスク</td></tr>
-      <tr><td>D. 非日常体験（合宿・修行）</td><td>結束効果が強い・記憶残存</td><td>家庭事情の多様化で参加ハードルが高い／コスト大</td><td>加賀LOMの規模・予算に対しオーバースペック</td></tr>
-      <tr><td>E. 模擬理事会型</td><td>議案構築力が身につく</td><td>入会歴の浅い層には負荷大</td><td>コアターゲット（参加率の低い層）に届かない</td></tr>
-      <tr><td><b>F. カードワーク型ビジネスゲーム（本案）</b></td><td><b>相互理解・役割発見・共助の3軸を同時に扱える／120分に収まる／全員参加</b></td><td>カード教材の制作工数</td><td>—（採用）</td></tr>
+      <tr><td>A. 講演・セミナー</td><td>準備工数小・権威性</td><td>一方向。主体性・関係構築に効果薄。</td></tr>
+      <tr><td>B. 公式JCゲーム</td><td>承認容易・教材完成</td><td>加賀LOM固有のテーマと接続しにくい。</td></tr>
+      <tr><td>C. 付箋WS（KJ法）</td><td>低コスト・自由度高</td><td>発言偏差が起きやすく「偏り」を再生産するリスク。</td></tr>
+      <tr><td>D. 合宿・非日常体験</td><td>結束効果・記憶残存</td><td>参加ハードル高・コスト大。加賀LOMに対しオーバースペック。</td></tr>
+      <tr><td>E. 模擬理事会</td><td>議案構築力が身につく</td><td>入会歴の浅いコアターゲットには負荷大。</td></tr>
+      <tr class="highlight"><td><b>F. カードワーク型ビジネスゲーム（本案）</b></td><td><b>3軸同時 ／ 120分 ／ 全員参加 ／ 加賀文脈カスタム</b></td><td>カード教材の制作工数（スケジュール逆算済み）</td></tr>
     </tbody>
   </table>
 
-  <h3>選定根拠の詳細</h3>
-  <h4>(1) 目的との適合性</h4>
-  <ul>
-    <li>カード化により仕事・強み・地域での役割が<b>可視化</b> → 相互理解</li>
-    <li>公益事業ミッション達成のためのロール割当て → <b>役割発見</b></li>
-    <li>2周目で多用カードを封印する制約 → <b>負担集中の疑似体験</b> → 共助意識</li>
-  </ul>
-  <h4>(2) 実証根拠</h4>
-  <p>ビジネスゲーム研究所のJC例会導入事例で、「新入会員1年以内離脱率ゼロ」「ゲーム内リーダー体験→自信→委員会で立候補」「異業種間の距離縮小→事業提携発展」等の成果が報告されている（<a href="../参考資料/ビジネスゲーム導入事例.htm">参考資料：ビジネスゲーム導入事例</a>参照）。</p>
-  <h4>(3) スケール適合性</h4>
-  <table class="tbl">
-    <thead><tr><th>条件</th><th>本手段の対応</th></tr></thead>
-    <tbody>
-      <tr><td>参加者54名</td><td>7名×8グループに分割。テーブルゲームマスターを各グループ1名配置</td></tr>
-      <tr><td>所要120分</td><td>ビジネスゲーム研究所標準テンプレを120分版に拡張</td></tr>
-      <tr><td>予算149,000円</td><td>会場設営費 35,000円／企画・演出費 30,000円／資料作成費 80,000円（カードデザイン・印刷 64,000円 ＋ 備品 16,000円）／予備費 4,000円（合計149,000円）。BBQ・懇親会は会費制のため計上外。</td></tr>
-      <tr><td>運営本部のリソース</td><td>会員開発委員会＋各委員長GM＋正副メンターの3層で実現</td></tr>
-    </tbody>
-  </table>
-
-  <h3>想定リスクと対処</h3>
+  <!-- リスク対処 -->
+  <h3 style="font-size:14.5px; color:#0f172a; margin:16px 0 10px;">想定リスクと対処</h3>
   <table class="tbl">
     <thead><tr><th>リスク</th><th>対処</th></tr></thead>
     <tbody>
-      <tr><td>カード制作が間に合わない</td><td>事前アンケート→ヒアリング→カード化のスケジュールを逆算し、本人確認2週間前完了をマイルストーン化</td></tr>
-      <tr><td>盛り上がりに偏差が出る</td><td>テーブルゲームマスター進行台本で問いかけを標準化</td></tr>
+      <tr><td>カード制作が間に合わない</td><td>事前アンケート → ヒアリング → カード化を逆算し、本人確認2週間前完了をマイルストーン化</td></tr>
+      <tr><td>テーブル間の盛り上がりに偏差</td><td>ゲームマスター進行台本で問いかけを標準化（審議対象資料5参照）</td></tr>
       <tr><td>メンターが審査員化する</td><td>正副メンター役割確認シートでNG行動を明示</td></tr>
-      <tr><td>自己開示の踏み込みすぎ</td><td>仕事観・地域での役割・JCで活かせる強みに限定（プライバシー運営ルール参照）</td></tr>
-      <tr><td>2周目チャレンジが負担感だけで終わる</td><td>ふりかえりで「制約があったからこそ見えた他者の貢献」を必ず言語化させる</td></tr>
+      <tr><td>自己開示の踏み込みすぎ</td><td>仕事観・地域での役割・強みに限定（プライバシー運営ルール参照）</td></tr>
+      <tr><td>2周目制約が負担感で終わる</td><td>ふりかえりで「制約があったから見えた他者の貢献」を必ず言語化</td></tr>
     </tbody>
   </table>
 </div>
