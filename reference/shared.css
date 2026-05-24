@@ -1398,7 +1398,7 @@ footer.rel-footer .rf-pages a.current {
   /* — Hide interactive UI — */
   .nav, .nav-dd, .pdf-btn, .zip-btn,
   .links, .toolbar, .page-nav,
-  footer, .rel-footer,
+  footer, .rel-footer, .related-docs,
   .badge-draft, .badge-update { display: none !important; }
 
   /* — Reset surfaces — */
