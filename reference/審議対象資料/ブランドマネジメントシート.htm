@@ -149,6 +149,22 @@
     .strategy-card, .persona-card, .matrix-cell {
       break-inside:avoid !important; page-break-inside:avoid !important;
     }
+    /* ペルソナ画像：印刷時は強制2カラム＋max-height で圧縮 */
+    .persona-cards {
+      display:grid !important;
+      grid-template-columns:1fr 1fr !important;
+      gap:6px !important;
+      margin-bottom:8px !important;
+    }
+    figure.persona-card { padding:0 !important; border:none !important; }
+    figure.persona-card img {
+      width:100% !important;
+      max-width:100% !important;
+      max-height:95mm !important;     /* A4縦 約297mm の1/3に収める */
+      height:auto !important;
+      object-fit:contain !important;
+      display:block !important;
+    }
     .card h2 { margin:0 0 8px !important; font-size:13pt !important; padding-left:8px !important; }
     .card h3 { margin:10px 0 4px !important; font-size:11pt !important; }
     .card h4 { margin:8px 0 4px !important; font-size:10.5pt !important; }
