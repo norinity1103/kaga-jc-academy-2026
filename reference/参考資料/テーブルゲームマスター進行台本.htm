@@ -20,17 +20,9 @@
     background: var(--bg); color: var(--text);
     margin: 0; line-height: 1.75;
   }
-  header {
-    background: linear-gradient(135deg, #9a3412 0%, #ea580c 100%);
-    color: #fff; padding: 44px 24px 36px; text-align: center;
-  }
-  header .eyebrow {
-    font-size: 12px; letter-spacing: 0.14em;
-    color: #fed7aa; margin: 0 0 8px;
-    text-transform: uppercase;
-  }
-  header h1 { margin: 0 0 4px; font-size: 28px; font-weight: 700; }
-  header .subtitle { color: #ffedd5; font-size: 13px; margin: 0; }
+
+
+
 
   main { max-width: 1000px; margin: 28px auto; padding: 0 16px 64px; }
 
@@ -165,8 +157,7 @@
     body { background: #fff; }
     .toolbar, .links { display: none; }
     .scene, .intro { page-break-inside: avoid; box-shadow: none; }
-    header { background: #fff !important; color: var(--text) !important; padding: 24px 0 16px; }
-    header .eyebrow, header .subtitle { color: var(--muted); }
+    header .eyebrow,
     main { padding: 0; }
     a { color: inherit; text-decoration: none; }
   }
@@ -197,7 +188,7 @@
   <button onclick="window.print()">🖨️ 印刷する</button>
 </div>
 
-<header>
+<header class="header-ref">
   <p class="eyebrow">参考資料 6</p>
   <h1>テーブルゲームマスター進行台本</h1>
   <p class="subtitle">KAGA JC GATHERING ／ 参加委員長用</p>

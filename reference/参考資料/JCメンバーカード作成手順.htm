@@ -20,17 +20,9 @@
     background: var(--bg); color: var(--text);
     margin: 0; line-height: 1.75;
   }
-  header {
-    background: linear-gradient(135deg, #134e4a 0%, #0d9488 100%);
-    color: #fff; padding: 44px 24px 36px; text-align: center;
-  }
-  header .eyebrow {
-    font-size: 12px; letter-spacing: 0.14em;
-    color: #ccfbf1; margin: 0 0 8px;
-    text-transform: uppercase;
-  }
-  header h1 { margin: 0 0 4px; font-size: 26px; font-weight: 700; }
-  header .subtitle { color: #99f6e4; font-size: 13px; margin: 0; }
+
+
+
 
   main { max-width: 1000px; margin: 28px auto; padding: 0 16px 64px; }
 
@@ -211,8 +203,7 @@
     body { background: #fff; }
     .toolbar, .links { display: none; }
     section.block { page-break-inside: avoid; }
-    header { background: #fff !important; color: var(--text) !important; padding: 24px 0 16px; }
-    header .eyebrow, header .subtitle { color: var(--muted); }
+    header .eyebrow,
     main { padding: 0; }
     .ok-ng-grid { grid-template-columns: 1fr 1fr; }
   }
@@ -243,7 +234,7 @@
   <button class="pdf-btn" onclick="window.print()">📄 PDFで保存</button>
 </div>
 
-<header>
+<header class="header-ref">
   <p class="eyebrow">審議対象資料 7</p>
   <h1>JCメンバーカード作成手順</h1>
   <p class="subtitle">事前アンケート ／ 強みの言語化 ／ 本人確認フロー ／ プライバシー配慮</p>

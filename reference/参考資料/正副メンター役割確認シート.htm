@@ -22,17 +22,9 @@
     background: var(--bg); color: var(--text);
     margin: 0; line-height: 1.75;
   }
-  header {
-    background: linear-gradient(135deg, #312e81 0%, #6366f1 100%);
-    color: #fff; padding: 44px 24px 36px; text-align: center;
-  }
-  header .eyebrow {
-    font-size: 12px; letter-spacing: 0.14em;
-    color: #c7d2fe; margin: 0 0 8px;
-    text-transform: uppercase;
-  }
-  header h1 { margin: 0 0 4px; font-size: 28px; font-weight: 700; }
-  header .subtitle { color: #ddd6fe; font-size: 13px; margin: 0; }
+
+
+
 
   .toolbar {
     background: #fff; border-bottom: 1px solid var(--line);
@@ -197,14 +189,12 @@
     body { background: #fff; }
     .toolbar, .links { display: none; }
     section.block, .intro { page-break-inside: avoid; }
-    header { background: #fff !important; color: var(--text) !important; padding: 24px 0 16px; }
-    header .eyebrow, header .subtitle { color: var(--muted); }
+    header .eyebrow,
     main { padding: 0; }
   }
 
   @media (max-width: 600px) {
     .ok-ng-grid { grid-template-columns: 1fr; }
-    header h1 { font-size: 22px; }
   }
 </style>
 </head>
@@ -232,7 +222,7 @@
   <button onclick="window.print()">🖨️ 印刷する</button>
 </div>
 
-<header>
+<header class="header-ref">
   <p class="eyebrow">参考資料 7</p>
   <h1>正副メンター役割確認シート</h1>
   <p class="subtitle">KAGA JC GATHERING ／ 正副メンバー用</p>

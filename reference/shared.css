@@ -103,35 +103,48 @@ img { max-width: 100%; height: auto; }
 
 
 /* ─────────────────────────────────────────────────────────
-   § 3.  Page Header
+   § 3.  Page Header  (統一コンポーネント)
+   審議対象資料: header.header-gian  /  参考資料: header.header-ref
    ───────────────────────────────────────────────────────── */
 header {
-  color: #fff;
-  padding: 44px 24px 36px;
+  /* — Layout — */
+  color:      #fff;
+  padding:    22px 24px 18px;   /* コンパクト: 旧44/36px → 22/18px */
   text-align: center;
+  /* — Default surface (個別クラスで上書き) — */
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
 }
+/* 審議対象資料カラー: ダークスレート */
+header.header-gian {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+}
+/* 参考資料カラー: ディープオーシャンブルー */
+header.header-ref {
+  background: linear-gradient(135deg, #0c3d5e 0%, #0a4b7a 100%);
+}
+
 header .eyebrow {
-  font-size: 11px;
+  font-size:      11px;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: rgba(255,255,255,.60);
-  margin: 0 0 8px;
+  color:          rgba(255,255,255,.55);
+  margin:         0 0 6px;
 }
 header h1 {
-  margin: 0 0 6px;
-  font-size: 26px;
+  margin:      0 0 5px;
+  font-size:   26px;
   font-weight: 700;
-  line-height: 1.25;
+  line-height: 1.22;
 }
 header .subtitle {
   font-size: 13px;
-  margin: 0;
-  color: rgba(255,255,255,.75);
+  margin:    0;
+  color:     rgba(255,255,255,.72);
 }
 header .meta {
-  font-size: 12px;
-  margin-top: 14px;
-  color: rgba(255,255,255,.55);
+  font-size:  11.5px;
+  margin-top: 8px;
+  color:      rgba(255,255,255,.48);
 }
 
 
