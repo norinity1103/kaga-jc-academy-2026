@@ -207,6 +207,10 @@
   /* Accent colors per category */
   #cat-soumu .badge { background: var(--accent-1); }
   #cat-zaishin .badge { background: var(--accent-2); }
+  #cat-tough .badge { background: #111827; }
+  #cat-tough .category-header { background: #fef2f2; }
+  #cat-tough .qa-item .q::before { background: #991b1b; }
+  li[data-cat="tough"] .dot { background: #991b1b; }
   #cat-jigyo .badge { background: var(--accent-3); }
   #cat-schedule .badge { background: var(--accent-4); }
   #cat-koho .badge { background: var(--accent-5); }
@@ -282,7 +286,7 @@
 <header>
   <h1>会員開発委員会アカデミー事業</h1>
   <p class="subtitle">理事会正副 想定問答集</p>
-  <div class="meta">2026年5月19日 上程 ／ 確認日 2026年5月21日</div>
+  <div class="meta">2026年5月24日 上程 ／ 確認日 2026年5月26日</div>
 </header>
 
 <main>
@@ -297,6 +301,7 @@
     <li data-cat="koho"><a href="#cat-koho"><span class="dot"></span>広報</a></li>
     <li data-cat="kensho"><a href="#cat-kensho"><span class="dot"></span>検証方法</a></li>
     <li data-cat="joui"><a href="#cat-joui"><span class="dot"></span>上位整合</a></li>
+    <li data-cat="tough"><a href="#cat-tough"><span class="dot"></span>厳しい問い・想定反論</a></li>
   </ul>
   <div style="margin-top:18px;padding-top:14px;border-top:1px solid #e5e7eb;display:flex;gap:16px;font-size:12.5px;color:#374151;flex-wrap:wrap;align-items:center">
     <span style="color:#6b7280;font-weight:600">重要度ラベル：</span>
@@ -680,6 +685,109 @@
       <div class="qa-links"><span class="label">関連:</span><a href="gian.htm">議案本文（ヘッダー）</a></div>
       <div class="qa-links"><span class="label">関連:</span><a href="参考資料/公開議案_他LOM事例調査資料.htm">参考資料4：公開議案・他LOM事例調査資料</a></div>
     </div>
+  </div>
+</section>
+
+<!-- 厳しい問い・想定反論 -->
+<section class="category" id="cat-tough">
+  <div class="category-header">
+    <span class="badge"></span>
+    <h2>厳しい問い・想定反論</h2>
+    <span class="count">想定 13問</span>
+  </div>
+  <div class="qa-list">
+
+    <div class="qa-item">
+      <div class="qa-meta"><span class="qa-badge iken">意見</span></div>
+      <p class="q">既存会員の参加率を上げたいだけなら、普通の懇親会やBBQで十分なのでは。なぜわざわざ「カードゲーム」をやる必要があるのか。</p>
+      <p class="a">懇親会・飲食型は参加へのハードルは低い一方、関係性の深いメンバー同士で固まりがちで、新規・低アクティブ層が深い議論に踏み込むには参入障壁が高いという課題があります。本事業はカードとロール設計によって<b>誰もが対等に発言する場を構造的に作り</b>、相互理解・役割発見・共助意識の3軸を一日のワーク内で同時に育てるよう設計しました。BBQは事業後の継続対話の場として併設します（手段選定理由は審議2・ブランドマネジメントシートを参照）。</p>
+      <div class="qa-links"><span class="label">関連:</span><a href="審議対象資料/ブランドマネジメントシート.htm">審議2：ブランドマネジメントシート（手段選定理由）</a></div>
+    </div>
+
+    <div class="qa-item">
+      <div class="qa-meta"><span class="qa-badge iken">意見</span></div>
+      <p class="q">予算約23万円は規模に対して大きすぎないか。費用対効果は説明できるのか。</p>
+      <p class="a">参加者53名で按分すると一人あたり約4,300円です。教材として制作するカードは事業後も次年度メンバー紹介・OB会・対外PRに二次活用可能であり、単発消費型ではありません。KGI（80%以上が相互理解の達成を実感）・KPI（参加率70%・アンケート回答率90%）で定量検証し、未達であれば次年度の手段見直しに直結させます。</p>
+      <div class="qa-links"><span class="label">関連:</span><a href="gian.htm">議案本文 12.予算 ／ 8.検証方法</a></div>
+    </div>
+
+    <div class="qa-item">
+      <div class="qa-meta"><span class="qa-badge iken">意見</span></div>
+      <p class="q">「ゲーミフィケーション」と言っても結局は遊びでしょう。アカデミー事業の名にふさわしいのか。</p>
+      <p class="a">本事業は「カジュアルなレクリエーション」ではなく、<b>目標設定／ルール設計／段階的フィードバック／役割割当て</b>を組み込んだ<b>学習設計</b>です。特に2周目で多用カードを封印する制約ルールは、特定メンバーへの負担集中を疑似的に再現し、共助意識を体験的に学ばせるための構造的仕掛けで、講演・座学では生まれない気づきが設計の核です（仕様書 OVERVIEW・DEFINITION参照）。</p>
+      <div class="qa-links"><span class="label">関連:</span><a href="審議対象資料/KAGA_JC_GATHERING_仕様書.htm">審議3：KAGA JC GATHERING 仕様書</a></div>
+    </div>
+
+    <div class="qa-item">
+      <div class="qa-meta"><span class="qa-badge iken">意見</span></div>
+      <p class="q">カードに本人の仕事・強みを書くのは、結局「個人情報の見せ合い」になるのではないか。プライバシー上問題ないのか。</p>
+      <p class="a">扱う情報は<b>青年経済人としての仕事観・仕事へのこだわり・地域での役割・JC活動で活かせる強み・仲間に頼ってほしいこと</b>に限定し、私生活・家庭事情・趣味・嗜好は扱いません。書面または電子フォームで本人の承諾を取得し、変更要望はいつでも反映できる運用とします。事業後の広報でも個人カードの詳細は公開しません（仕様書「運営・プライバシー」セクション）。</p>
+      <div class="qa-links"><span class="label">関連:</span><a href="審議対象資料/KAGA_JC_GATHERING_仕様書.htm#c-ops">審議3：仕様書 運営・プライバシー</a></div>
+    </div>
+
+    <div class="qa-item">
+      <div class="qa-meta"><span class="qa-badge iken">意見</span></div>
+      <p class="q">そもそも参加率が低いメンバーは、このイベント自体に来ないのではないか。コアターゲットに届かないリスクはどう担保するのか。</p>
+      <p class="a">コアターゲット（参加率50%未満・入会2年以内）には、事業3週間前／1週間前／前日の3回配信に加え、<b>正副・委員長クラスからの個別声かけ</b>を担当制で行います。さらに事前アンケートを通じて「自分の強み・JCで活かせる場面」を本人と一緒に言語化することで、来場前から「自分がこの場に必要だ」と感じられる関与設計にしています（議案 10.広報戦略）。</p>
+      <div class="qa-links"><span class="label">関連:</span><a href="審議対象資料/加賀JCメンバーへの周知文.htm">審議8：加賀JCメンバーへの周知文</a></div>
+    </div>
+
+    <div class="qa-item">
+      <div class="qa-meta"><span class="qa-badge iken">意見</span></div>
+      <p class="q">120分の一日体験で本当に「組織風土」まで変えられるのか。一過性の盛り上がりで終わるのではないか。</p>
+      <p class="a">一日で完結する設計ではありません。事業後の<b>ふりかえりシート → 事業後アンケート → 3ヶ月後フォローアップアンケート</b>で行動変容を継続追跡し、参加率KPIへの接続を可視化します。さらに事業中の気づきは次の例会・委員会での「自分から手を挙げる」具体行動として宣言してもらい、当日の場で終わらせない設計です。</p>
+      <div class="qa-links"><span class="label">関連:</span><a href="審議対象資料/ふりかえりシート.htm">審議9：ふりかえりシート</a> ／ <a href="gian.htm">議案 8.検証方法</a></div>
+    </div>
+
+    <div class="qa-item">
+      <div class="qa-meta"><span class="qa-badge iken">意見</span></div>
+      <p class="q">正副・委員長クラスがGM・メンターとして関わるのは、結局「上層部メリット」になり、若手会員のメリットが見えにくいのではないか。</p>
+      <p class="a">正副・委員長は<b>審査員ではなくサポーター</b>として配置します。「正副メンター役割確認シート」でNG行動（評価・否定・先回り発言）を明文化し、若手の発言・気づきを引き出す問いかけに徹してもらいます。同時に、正副・委員長側にも<b>「頼られ方を学び直す」</b>機会として位置づけており、双方向の学びが起きる構造にしています。</p>
+      <div class="qa-links"><span class="label">関連:</span><a href="参考資料/正副メンター役割確認シート.htm">参考7：正副メンター役割確認シート</a></div>
+    </div>
+
+    <div class="qa-item">
+      <div class="qa-meta"><span class="qa-badge iken">意見</span></div>
+      <p class="q">この事業は委員長・委員会の趣味的・主観的なテーマではないか。加賀LOM全体の課題として取り組む必然性があるのか。</p>
+      <p class="a">本事業は<b>2026年度理事長所信</b>「挑戦する人を孤立させない」、および<b>会員開発委員会方針</b>と直接接続しています。さらに加賀JC出席状況確認資料で示される<b>定量的データ</b>（参加率の偏り・入会歴と参加率の相関）を背景に課題設定しており、委員長個人の主観ではなくLOM全体の構造的課題として捉えています。</p>
+      <div class="qa-links"><span class="label">関連:</span><a href="参考資料/加賀JC2026年度_理事長所信.htm">参考1：理事長所信</a> ／ <a href="参考資料/加賀JC出席状況確認資料.htm">参考2：出席状況確認資料</a></div>
+    </div>
+
+    <div class="qa-item">
+      <div class="qa-meta"><span class="qa-badge iken">意見</span></div>
+      <p class="q">KAGA JC GATHERINGという「仮称」のまま上程して良いのか。事業名がぼやけている印象がある。</p>
+      <p class="a">「KAGA JC GATHERING」は事業内容・コンセプトを最も的確に表現する仮称として、議論の集約点として運用してきました。確定名称は<b>理事会承認後・広報展開前</b>に最終化する予定です（候補：「KAGA JC GATHERING」のまま、または「集（つどい）」など）。仮称運用は議案ブラッシュアップ過程の透明性確保のためであり、上程時点での確定を妨げる要素はありません。</p>
+      <div class="qa-links"><span class="label">関連:</span><a href="gian.htm">議案 7.事業内容</a></div>
+    </div>
+
+    <div class="qa-item">
+      <div class="qa-meta"><span class="qa-badge iken">意見</span></div>
+      <p class="q">JCIゲームプログラム（公式教材）を使えば負担金10,000円で済むのに、わざわざ独自カードを作る必要があるのか。</p>
+      <p class="a">JCI公式ゲームプログラムは標準的な題材を扱う一方、<b>加賀LOMの公益事業テーマ・地域文脈・実在メンバーの強みカード</b>と接続しにくく、学びが汎用論で終わるリスクがあります。本事業のカードは「事業実施時に誰のどの強みを使うか」まで具体化できる設計で、当日のワークが翌日の<b>JC活動への直接的な接続</b>を持ちます。差額は<b>加賀LOM固有の文脈で学習効果を最大化するための必要投資</b>と整理しています。</p>
+      <div class="qa-links"><span class="label">関連:</span><a href="参考資料/JCプログラム公式資料.htm">参考4：JCプログラム公式資料</a></div>
+    </div>
+
+    <div class="qa-item">
+      <div class="qa-meta"><span class="qa-badge iken">意見</span></div>
+      <p class="q">事業当日に参加できなかった会員（出張・家庭事情）はどうフォローするのか。不公平が生じないか。</p>
+      <p class="a">不参加メンバーには事業後に<b>メンバーカード冊子・事業報告書（学び要旨）・ふりかえりシート任意記入版</b>を共有し、次の例会で配布カードを起点に対話できる導線を残します。また、3ヶ月後フォローアップアンケートには不参加者も含めて行動変容の差を計測し、次年度の手段改善に反映します。</p>
+      <div class="qa-links"><span class="label">関連:</span><a href="gian.htm">議案 9.対象者 ／ 10.広報戦略</a></div>
+    </div>
+
+    <div class="qa-item">
+      <div class="qa-meta"><span class="qa-badge iken">意見</span></div>
+      <p class="q">KGI「80%以上が相互理解を実感」「KPI 参加率70%以上」は、達成しやすい数値を設定したのではないか。</p>
+      <p class="a">参加率70%は加賀JC直近の例会平均参加率（参考2：出席状況確認資料）を約20pt上回る挑戦的水準として設定しています。KGI 80%は事業後アンケートの主観評価であり、参考資料4「RNCアンケート評価法」に基づき<b>5段階中4以上</b>を「達成」と定義する基準を採用しています。事業実施前にこれらの設定根拠を再点検し、上振れ／下振れの双方を率直に開示する運用とします。</p>
+      <div class="qa-links"><span class="label">関連:</span><a href="gian.htm">議案 8.検証方法</a></div>
+    </div>
+
+    <div class="qa-item">
+      <div class="qa-meta"><span class="qa-badge iken">意見</span></div>
+      <p class="q">もしこの事業が「失敗」した場合（参加率未達・KPI未達）、責任は誰がどう取るのか。</p>
+      <p class="a">数値未達は「失敗」ではなく<b>次年度議案ブラッシュアップへの最重要インプット</b>として位置づけます。事業報告書では達成・未達の理由を率直に開示し、特に未達領域については「設計上の課題か／運営上の課題か／前提条件の課題か」を切り分けて分析します。委員会としては事業中の判断・運営に責任を負い、結果については組織として学び続ける姿勢を貫きます。</p>
+      <div class="qa-links"><span class="label">関連:</span><a href="gian.htm">議案 11.ブラッシュアップ</a></div>
+    </div>
+
   </div>
 </section>
 
