@@ -187,6 +187,63 @@
   .game-card .body .row b { display: block; font-size: 10.5px; color: var(--muted); margin-bottom: 1px; letter-spacing: 0.04em; }
   .note { color: var(--muted); font-size: 12px; margin-top: 12px; }
 
+  /* ── PDF 印刷時のページ割り調整 ── */
+  @media print {
+    @page { size: A4 portrait; margin: 8mm 10mm; }
+    body { background: #fff !important; font-size: 10pt; }
+    main { margin: 0 !important; padding: 0 !important; max-width: none !important; }
+
+    /* セクション単位で確実に改ページ：各カード種類を独立ページに */
+    #hurdle, #jc-member, #role {
+      break-before: page !important;
+      page-break-before: always !important;
+    }
+
+    /* セクションヘッダーが行末で孤立しないよう、直後と連結 */
+    .card-section { margin-bottom: 0 !important; }
+    .sec-head { break-after: avoid !important; page-break-after: avoid !important;
+                padding: 8px 12px !important; }
+    .sec-head h2 { font-size: 13pt !important; }
+    .sec-desc { font-size: 9.5pt !important; line-height: 1.55 !important;
+                margin: 0 0 10px !important; }
+
+    /* 個別カードは中で分割せず */
+    .mcard, .hcard, .game-card {
+      break-inside: avoid !important;
+      page-break-inside: avoid !important;
+      padding: 8px 10px !important;
+      box-shadow: none !important;
+      border-radius: 4px !important;
+    }
+    .mcard h3, .hcard h3, .game-card h3 { font-size: 11pt !important; margin: 0 0 4px !important; }
+    .mcard .desc, .hcard .desc { font-size: 9pt !important; line-height: 1.5 !important; }
+    .mcard .meta, .hcard .effect { font-size: 8.5pt !important; }
+
+    /* グリッド密度を上げる（A4で適切な行数に） */
+    .grid-mission { grid-template-columns: repeat(3, 1fr) !important; gap: 6px !important; }
+    .grid-hurdle { grid-template-columns: repeat(3, 1fr) !important; gap: 6px !important; }
+    .deck { grid-template-columns: repeat(2, 1fr) !important; gap: 8px !important; }
+
+    /* JCメンバー・お助けはカード密度が高くなりすぎないよう本文も詰める */
+    .game-card .body { font-size: 9pt !important; }
+    .game-card .body .row { margin-bottom: 3px !important; }
+    .game-card .body .row b { font-size: 8.5pt !important; }
+    .game-card .gid { font-size: 8.5pt !important; margin-bottom: 3px !important; }
+    .game-card { min-height: auto !important; }
+
+    /* ヘッダーをコンパクト化 */
+    header { padding: 8px 0 6px !important; margin-bottom: 8px !important;
+             background: #fff !important; color: #000 !important;
+             border-bottom: 1.5px solid #000 !important; }
+    header .eyebrow { color: #555 !important; font-size: 9pt !important; }
+    header h1 { color: #000 !important; font-size: 15pt !important; margin: 2px 0 !important; }
+    header .subtitle { color: #333 !important; font-size: 9.5pt !important; }
+    header .meta { display: none !important; }
+
+    /* 非表示要素 */
+    .nav, .nav-dd, .toolbar, .page-nav, footer, .rel-footer, .related-docs { display: none !important; }
+  }
+
 </style>
 </head>
 <body>
@@ -515,70 +572,57 @@
     <span class="tag">サンプル</span>
   </div>
   <div class="sec-body">
-    <p class="sec-desc">事業実施で困った時に「頂処に頼れる上位役職の方」を可視化する救援カード。各参加者が仮想委員長として事業を組み立てる中で、判断に迷う場面・JCメンバーだけでは突破できないハードルに直面した時、必要に応じて使用する。</p>
+    <p class="sec-desc"><b>困った時に頼れる「先輩や上の立場の人」カード</b>です。「自分が委員長だったら」と事業を考えていく中で、メンバーカードだけでは突破しにくい場面に出会ったとき、必要に応じて使います。<b>1グループにつき2枚まで</b>の使用制限を推奨。安易に使わず、メンバーで設計しきった上で意図的に選ぶことが大事です。</p>
     <div class="deck">
       <div class="game-card role">
         <div class="gid">HP-001 / HELPER</div>
         <h3>理事長</h3>
         <div class="body">
-          <div class="row"><b>所掌領域</b>LOM全体方針・対外代表</div>
-          <div class="row"><b>頼れること</b>事業の意義づけ／対外PR推薦／所信との接続整理</div>
-          <div class="row"><b>使用タイミング</b>事業の上位方針整合に迷ったとき／対外発信の権威付けが必要なとき</div>
-          <div class="row"><b>相談の作法</b>所信・LOM方針との接続点を整理してから相談</div>
+          <div class="row"><b>こんな時に頼れる</b>事業の意義づけ／対外PR推薦／所信との接続整理</div>
+          <div class="row"><b>お願いするコツ</b>所信やLOM方針との接続点を整理してから相談する</div>
         </div>
       </div>
       <div class="game-card role">
         <div class="gid">HP-002 / HELPER</div>
         <h3>副理事長</h3>
         <div class="body">
-          <div class="row"><b>所掌領域</b>担当室統括・委員会間調整</div>
-          <div class="row"><b>頼れること</b>他委員会との連携調整／予算配分の判断／実務サポート</div>
-          <div class="row"><b>使用タイミング</b>他委員会の協力が必要なとき／室内での判断に迷うとき</div>
-          <div class="row"><b>相談の作法</b>目的・必要範囲を先に共有し、段取りを巻き取らない</div>
+          <div class="row"><b>こんな時に頼れる</b>他委員会との連携調整／予算配分の判断／実務サポート</div>
+          <div class="row"><b>お願いするコツ</b>目的と必要な範囲を先に共有し、段取りを巻き取らない</div>
         </div>
       </div>
       <div class="game-card role">
         <div class="gid">HP-003 / HELPER</div>
         <h3>会員開発委員会 室長</h3>
         <div class="body">
-          <div class="row"><b>所掌領域</b>委員会方針・委員長フォロー</div>
-          <div class="row"><b>頼れること</b>事業設計の壁打ち相手／LOM内合意形成／コンプライアンス事前確認</div>
-          <div class="row"><b>使用タイミング</b>議案ブラッシュアップ／審議への準備／判断軸の確認</div>
-          <div class="row"><b>相談の作法</b>論点と仮説を持参し「相談したいこと」を一行で明示</div>
+          <div class="row"><b>こんな時に頼れる</b>事業設計の壁打ち相手／LOM内合意形成／コンプライアンス事前確認</div>
+          <div class="row"><b>お願いするコツ</b>論点と仮説を持参し「相談したいこと」を一行で明示</div>
         </div>
       </div>
       <div class="game-card role">
         <div class="gid">HP-004 / HELPER</div>
-        <h3>他委員会 委員長</h3>
+        <h3>他委員会の委員長</h3>
         <div class="body">
-          <div class="row"><b>所掌領域</b>他委員会の事業・人脈・知見</div>
-          <div class="row"><b>頼れること</b>過去事例の共有／メンバー紹介／共催・連携の可能性</div>
-          <div class="row"><b>使用タイミング</b>他委員会の知見・人材が事業実現に必要なとき</div>
-          <div class="row"><b>相談の作法</b>共催の押し付けではなく、相互利益から提案する</div>
+          <div class="row"><b>こんな時に頼れる</b>過去事例の共有／メンバー紹介／共催・連携の可能性</div>
+          <div class="row"><b>お願いするコツ</b>共催を押し付けず、お互いに得があることを伝える</div>
         </div>
       </div>
       <div class="game-card role">
         <div class="gid">HP-005 / HELPER</div>
-        <h3>前年度幹事・OB</h3>
+        <h3>前年度の幹事・OB</h3>
         <div class="body">
-          <div class="row"><b>所掌領域</b>過去事業のノウハウ・人脈・備品</div>
-          <div class="row"><b>頼れること</b>過去議案の参照／継続事業の引き継ぎ／対外人脈の紹介</div>
-          <div class="row"><b>使用タイミング</b>過去の知見を活かしたいとき／OB会との連携</div>
-          <div class="row"><b>相談の作法</b>過去への敬意を払いつつ、今年度の独自性も明確に伝える</div>
+          <div class="row"><b>こんな時に頼れる</b>過去議案の参照／継続事業の引き継ぎ／対外人脈の紹介</div>
+          <div class="row"><b>お願いするコツ</b>過去への敬意を払いつつ、今年度の独自性も明確に伝える</div>
         </div>
       </div>
       <div class="game-card role">
         <div class="gid">HP-006 / HELPER</div>
         <h3>三十代代表</h3>
         <div class="body">
-          <div class="row"><b>所掌領域</b>世代間連携・対外発信</div>
-          <div class="row"><b>頼れること</b>対外団体・出向ネットワーク／広報リソース／世代間調整</div>
-          <div class="row"><b>使用タイミング</b>地域内での顔つなぎ／JCを超えた対外連携が必要なとき</div>
-          <div class="row"><b>相談の作法</b>事業の対外価値を端的に説明し、紹介後のフォローを明示</div>
+          <div class="row"><b>こんな時に頼れる</b>対外団体・出向ネットワーク／広報リソース／世代間調整</div>
+          <div class="row"><b>お願いするコツ</b>事業の対外価値を端的に説明し、紹介後のフォローも約束する</div>
         </div>
       </div>
     </div>
-    <p class="note">※お助けカードは「困った時に使う救援カード」として位置づけ、1グループにつき2枚までの使用制限を推奨。安易な使用ではなく、JCメンバーカードで設計しきった上での意図的な選択を促す。</p>
   </div>
 </section>
 
