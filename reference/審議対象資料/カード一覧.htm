@@ -189,8 +189,8 @@
 
   /* ── PDF 印刷時のページ割り調整 ── */
   @media print {
-    @page { size: A4 portrait; margin: 8mm 10mm; }
-    body { background: #fff !important; font-size: 10pt; }
+    @page { size: A4 portrait; margin: 6mm 8mm 8mm; }
+    body { background: #fff !important; font-size: 9pt; }
     main { margin: 0 !important; padding: 0 !important; max-width: none !important; }
 
     /* セクション単位で確実に改ページ：各カード種類を独立ページに */
@@ -202,42 +202,49 @@
     /* セクションヘッダーが行末で孤立しないよう、直後と連結 */
     .card-section { margin-bottom: 0 !important; }
     .sec-head { break-after: avoid !important; page-break-after: avoid !important;
-                padding: 8px 12px !important; }
-    .sec-head h2 { font-size: 13pt !important; }
-    .sec-desc { font-size: 9.5pt !important; line-height: 1.55 !important;
-                margin: 0 0 10px !important; }
+                padding: 5px 10px !important; gap: 8px !important; }
+    .sec-head h2 { font-size: 12pt !important; }
+    .sec-head .tag { font-size: 9pt !important; padding: 1px 6px !important; }
+    .sec-stripe { width: 4px !important; }
+    .sec-body { padding: 6px 10px !important; }
+    .sec-desc { font-size: 8.5pt !important; line-height: 1.5 !important;
+                margin: 0 0 8px !important; }
 
-    /* 個別カードは中で分割せず */
+    /* 個別カードは中で分割せず・余白圧縮 */
     .mcard, .hcard, .game-card {
       break-inside: avoid !important;
       page-break-inside: avoid !important;
-      padding: 8px 10px !important;
+      padding: 6px 8px !important;
       box-shadow: none !important;
-      border-radius: 4px !important;
+      border-radius: 3px !important;
+      border-width: 1px !important;
     }
-    .mcard h3, .hcard h3, .game-card h3 { font-size: 11pt !important; margin: 0 0 4px !important; }
-    .mcard .desc, .hcard .desc { font-size: 9pt !important; line-height: 1.5 !important; }
-    .mcard .meta, .hcard .effect { font-size: 8.5pt !important; }
+    .mcard .num, .hcard .num { font-size: 8pt !important; padding: 1px 5px !important; margin-bottom: 3px !important; }
+    .mcard h3, .hcard h3 { font-size: 10pt !important; margin: 0 0 3px !important; line-height: 1.25 !important; }
+    .game-card h3 { font-size: 10.5pt !important; margin: 0 0 3px !important; line-height: 1.25 !important; }
+    .mcard .desc, .hcard .desc { font-size: 8pt !important; line-height: 1.4 !important; margin: 0 0 4px !important; }
+    .mcard .meta, .hcard .effect { font-size: 7.5pt !important; line-height: 1.4 !important; padding-top: 4px !important; }
+    .hcard .effect strong { margin-right: 2px !important; }
 
     /* グリッド密度を上げる（A4で適切な行数に） */
-    .grid-mission { grid-template-columns: repeat(3, 1fr) !important; gap: 6px !important; }
-    .grid-hurdle { grid-template-columns: repeat(3, 1fr) !important; gap: 6px !important; }
-    .deck { grid-template-columns: repeat(2, 1fr) !important; gap: 8px !important; }
+    .grid-mission { grid-template-columns: repeat(3, 1fr) !important; gap: 5px !important; }
+    .grid-hurdle { grid-template-columns: repeat(4, 1fr) !important; gap: 4px !important; }
+    .deck { grid-template-columns: repeat(2, 1fr) !important; gap: 6px !important; }
 
-    /* JCメンバー・お助けはカード密度が高くなりすぎないよう本文も詰める */
-    .game-card .body { font-size: 9pt !important; }
-    .game-card .body .row { margin-bottom: 3px !important; }
-    .game-card .body .row b { font-size: 8.5pt !important; }
-    .game-card .gid { font-size: 8.5pt !important; margin-bottom: 3px !important; }
-    .game-card { min-height: auto !important; }
+    /* JCメンバー・お助けはカード密度を確保 */
+    .game-card .body { font-size: 8.5pt !important; line-height: 1.45 !important; }
+    .game-card .body .row { margin-bottom: 2px !important; }
+    .game-card .body .row b { font-size: 7.5pt !important; margin-bottom: 0 !important; letter-spacing: 0.02em !important; }
+    .game-card .gid { font-size: 7.5pt !important; margin-bottom: 2px !important; }
+    .game-card { min-height: auto !important; border-top-width: 2px !important; }
 
     /* ヘッダーをコンパクト化 */
-    header { padding: 8px 0 6px !important; margin-bottom: 8px !important;
+    header { padding: 6px 0 4px !important; margin-bottom: 6px !important;
              background: #fff !important; color: #000 !important;
              border-bottom: 1.5px solid #000 !important; }
-    header .eyebrow { color: #555 !important; font-size: 9pt !important; }
-    header h1 { color: #000 !important; font-size: 15pt !important; margin: 2px 0 !important; }
-    header .subtitle { color: #333 !important; font-size: 9.5pt !important; }
+    header .eyebrow { color: #555 !important; font-size: 8pt !important; margin: 0 !important; }
+    header h1 { color: #000 !important; font-size: 13pt !important; margin: 1px 0 !important; }
+    header .subtitle { color: #333 !important; font-size: 8.5pt !important; margin: 0 !important; }
     header .meta { display: none !important; }
 
     /* 非表示要素 */
