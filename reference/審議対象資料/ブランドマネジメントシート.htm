@@ -149,15 +149,27 @@
     .strategy-card, .persona-card, .matrix-cell {
       break-inside:avoid !important; page-break-inside:avoid !important;
     }
-    /* ペルソナ統合画像：印刷時 max-height で1/3ページに収める */
+    /* ペルソナ統合画像：印刷時 max-height で空きを抑制 */
     figure img[src*="persona-ab"] {
-      max-width:100% !important;
-      max-height:90mm !important;
+      max-width:92% !important;
+      max-height:72mm !important;
       height:auto !important;
       object-fit:contain !important;
       display:block !important;
       margin:0 auto !important;
     }
+    /* セクション間の改ページ制御（ページ割りバランス改善） */
+    #positioning { break-before: page !important; page-break-before: always !important; }
+    #selection   { break-before: page !important; page-break-before: always !important; }
+    /* ポジショニングマップの縦比率を抑えて1ページに収める */
+    #positioning .map-wrap { padding-top:58% !important; }
+    /* 代替案比較表は分割可能だが、見出し直後で分割しないよう */
+    #selection h3 { break-after: avoid !important; page-break-after: avoid !important; }
+    #selection table { break-inside: avoid-page; page-break-inside: avoid; }
+    /* 戦略のポイント直前で改ページしない */
+    .strategy-card { break-before: avoid !important; page-break-before: avoid !important; }
+    /* ペルソナh3直後の図は同一ページに保つ */
+    .persona-cards { break-inside: avoid !important; page-break-inside: avoid !important; }
     .card h2 { margin:0 0 8px !important; font-size:13pt !important; padding-left:8px !important; }
     .card h3 { margin:10px 0 4px !important; font-size:11pt !important; }
     .card h4 { margin:8px 0 4px !important; font-size:10.5pt !important; }
